@@ -6,10 +6,11 @@ import java.util.Scanner;
 public class transactionAnalysis {
     public static void main(String[] args){
         transactionClass[] transaction={
-                new transactionClass(new Date(2023,5,29),230000,"Sam","Education"),
-                new transactionClass(new Date(2024,7,12),120000,"Razi","Emergency"),
-                new transactionClass(new Date(2023,2,17),150000,"Prashanth","Bills"),
-                new transactionClass(new Date(2022,4,10),170000,"David","Health")
+                new transactionClass(new Date(2023,5,29),230000.0,"Sam","Education"),
+                new transactionClass(new Date(2024,7,12),120000.0,"Razi","Emergency"),
+                new transactionClass(new Date(2023,2,17),150000.0,"Prashanth","Bills"),
+                new transactionClass(new Date(2022,4,10),170000.0,"David","Health"),
+                new transactionClass(new Date(2024,5,13),160000.0,"David","Education")
 
         };
         Scanner scanner=new Scanner(System.in);
@@ -20,10 +21,11 @@ public class transactionAnalysis {
         int startDay=scanner.nextInt();
         System.out.println("Enter the end date");
         int endDay=scanner.nextInt();
+        scanner.nextLine();
         analysis.transactionWithinRange(transaction,startDay,endDay);
 
-//        System.out.println("-----Lowest Transaction performed-------");//print the minimum transaction
-//        analysis.leastTransaction(transaction);
+        System.out.println("-----Lowest Transaction performed-------");//print the minimum transaction
+        analysis.leastTransaction(transaction);
 
         System.out.println("-----Highest Transaction Performed------");
         analysis.maxTransaction(transaction);
@@ -47,37 +49,37 @@ public class transactionAnalysis {
     }
     public void transactionWithinRange(transactionClass[] transaction,int start,int end){   //print the transaction done within the specified range
         for (transactionClass each:transaction){
-            if(each.getDateOfTransaction().getDay()>=start && each.getDateOfTransaction().getDay()<=end){
-                System.out.println("Transaction's within the range "+"\n"+each.getDateOfTransaction()+ " "+each.getReciept()+"\n");
+            if(each.getDateOfTransaction().getDate()>=start && each.getDateOfTransaction().getDate()<=end ){
+                System.out.println("Transaction's within the range "+"\n"+each.getDateOfTransaction().getDate()+ " "+each.getReciept()+"\n");
             }
         }
     }
 
     public void leastTransaction(transactionClass[] transaction )//print the minimum transaction
     {
-        int min=transaction[0].getTransactionAmount();
+        Double min=transaction[0].getTransactionAmount();
         for(int var=1;var<transaction.length;var++){
-            if(transaction[var].getTransactionAmount() <= min){
+            if(transaction[var].getTransactionAmount() <=min){
                 min=transaction[var].getTransactionAmount();
             }
         }
-        System.out.println("Minimum transaction performed is "+min+" by "+transaction[min].getReciept());
+        System.out.println("Minimum transaction performed is "+min+" by ");//+transaction[min].getReciept());
     }
 
     public void maxTransaction(transactionClass[] transaction){//for obtaining the maximum transaction
-        int max=transaction[0].getTransactionAmount();
+        Double max=transaction[0].getTransactionAmount();
         for (int var=1;var<transaction.length;var++){
             if(transaction[var].getTransactionAmount()>=max){
                 max=transaction[var].getTransactionAmount();
             }
         }
-        System.out.println("Maximum transaction performed is "+max+" by "+transaction[max].getReciept());
+        System.out.println("Maximum transaction performed is "+max+" by ");//+transaction[max].getReciept());
     }
 
     public void remarksTransaction(transactionClass[] transaction,String remarks){ //filter based on the remarks
         for(transactionClass each:transaction){
             if(each.getRemarks().equalsIgnoreCase(remarks)){
-                System.out.println("The remarks are "+each.getRemarks());
+                System.out.println("The remarks are "+each.getRemarks()+" by "+each.getReciept());
             }
         }
     }
@@ -88,8 +90,8 @@ public class transactionAnalysis {
             if (each.getReciept().equalsIgnoreCase(benificiaryName)) {
                 count++;
             }
-            System.out.println("Total transactions with " + benificiaryName + " is " + count);
         }
+        System.out.println("Total transactions with " + benificiaryName + " is " + count);
     }
 
     public void sortingBeneficiary(transactionClass[] transaction){//sorting baesd on benificiary name

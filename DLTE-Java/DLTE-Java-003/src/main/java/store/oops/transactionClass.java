@@ -11,7 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class transactionClass {
     private Date dateOfTransaction;
-    private int transactionAmount;
+    private Double transactionAmount;
     private String reciept;
     private String remarks;
 
