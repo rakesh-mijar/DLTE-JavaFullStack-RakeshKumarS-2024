@@ -1,0 +1,130 @@
+sqlplus
+
+demo 
+1234
+
+sys
+Rakesh4@*
+
+1) create table transaction_second(transaction_id number not null,transaction_date date not null, transaction_to varchar(255) not null,transaction_amount number(10) not null, transaction_remarks varchar(255) not null);
+
+2) describe transaction_second;
+
+3) alter table transaction_second add primary key(transaction_id);
+
+4) describe transaction_second;
+
+5)create sequence transaction_seq start with 20240041 increment by 1; 
+
+6) alter table transaction_second drop column transaction_id;
+
+7) alter table transaction_second add transaction_id number not null;
+
+8)alter table transaction_second add constraint transaction_seq primary key(transaction_id);
+
+9)insert into transaction_second(transaction_id,transaction_amount,transaction_date,transaction_to,transaction_remarks) values(transaction_seq.nextval,100,'20Feb2024','Suresh Kumar','Friend');
+
+10)commit;
+
+11)drop sequence transaction_seq;
+
+12) create sequence transaction_seq start with 2024001 increment by 1;
+
+13)truncate table transaction_second;
+
+14)insert into transaction_second(transaction_id,transaction_amount,transaction_date,transaction_to,transaction_remarks) values(transaction_seq.nextval,100,'20Feb2024','Suresh Kumar','Friend');
+
+ commit;
+
+insert into transaction_second(transaction_id,transaction_amount,transaction_date,transaction_to,transaction_remarks) values(transaction_seq.nextval,500,'21Feb2024','Mahesh Kumar','Father');
+
+ commit;
+
+--rollback;
+
+create view emergency_name as select transaction_to from transaction_second where transaction_remarks='Friend';
+
+update transacion_second set transaction_remarks ='Bill' where transction_number >=2000
+
+--------------------------------------------------------------------------------------
+database
+->NOSQL
+  ->Firebase
+  ->MongoDB
+->SQL
+  ->oracle
+    ->SQL Developer  >> UI
+    ->sqlplus        >> cii
+	Tables: columns and rows
+	Data types: varchar,number,int,bigint,text,double,float,blob,date
+  ->PostgreSQL
+  ->MySQL
+  ->MS SQL
+
+-->SQL
+	->Data definition Language(DDL):create,drop,alter
+		databases,tables,views,types,users,procedure,triggers,sequence
+	->Data control language(DCL): Grant,Revoke, >>users
+	->Data Manipulation Language(DML): insert,update,delete,truncate
+	->Data Query Language(DQL): select >> joins
+	->Transaction Control language >> commit,rollback("	Friend");
+
+
+procedures
+triggers
+er-diagrams:normalization
+--------------------------------------------------------------------------------------------
+update transacion_second set transaction_remarks ='Bill' where transction_number >=2000
+
+
+
+
+Create view's to perform all these analysis
+
+Filter based on given ranges of date
+least amount transferred
+maximum amount transferred
+number of transaction made to particular beneficiary
+filter based on particular remarks
+
+
+https://github.com/rakesh-mijar/DLTE-JavaFullStack-RakeshKumarS-2024/blob/main/DLTE-Java/DLTE-Java-002/src/main/java/branches/blocks/minimumBalance.java
+
+
+
+
+MyBank Bonds
+
+Encapsulated Class Bonds with maturity, interest rate, their tax status, bondholder, period
+
+Create at least 5 funds in array
+
+
+
+sort and view bonds with high rate of interest
+
+--------------------22/2/2024-----------------------------------------
+--procedure:to make redunance code as a single block and call it whenever required(can be executed ..)
+	|
+	-->>write complex/repeated queries in procedure to compile code and execute it whenever required,avoids network traffic, 	    compilaton,exception handling.
+	|-->>syntax:
+		create or replace procedure PROCEDURE_NAME(parameters)
+		begin
+		end
+		/
+	|-->>parameters:in,out,inout    
+
+
+--triggers:whenever a event is occured it is called automatically.
+	   time >> before,after
+	   event >> insert,update,delete
+	   
+	   syntax:
+	   create or replace triggers TRIGGER_NAME
+	   TIME EVENT on TABLE
+	   for each row
+	   CONDITION
+	   begin
+	   ....
+	   end;
+	    /
