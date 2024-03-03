@@ -19,18 +19,24 @@
 
 7.create view transc1 as select transaction_date from transaction where transaction_date between '01Jan2024' and '01Jan2025';
 
+select * from transc1;
 --------------least amount transferred--------------------------
 
 8.create view transac2 as select min(transaction_amount) as min_transaction_amount from transaction;
 
+select * from transac2;
 -------------maximum amount transferred-------------------------
 
 9.create view transac3 as select max(transaction_amount) as max_transaction_amount from transaction;
 
+select * from transac3;
 ------------number of transaction made to particular beneficiary--------
 
 10.create view transac4 as select transaction_to,count(*) as transaction_count from transaction group by transaction_to;
 
+select * from transac4;
 ------------filter based on particular remarks--------------------------
 
 11.create view transac5 as select transaction_to from transaction where transaction_remarks='health';
+
+select * from transac5;

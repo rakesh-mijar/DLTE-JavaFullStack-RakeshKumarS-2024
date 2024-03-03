@@ -5,6 +5,15 @@ demo
 
 sys
 Rakesh4@*
+---------------------------------------------------
+Create view's to perform all these analysis
+
+Filter based on given ranges of date
+least amount transferred
+maximum amount transferred
+number of transaction made to particular beneficiary
+filter based on particular remarks
+-----------------------------------------------------
 
 1) create table transaction_second(transaction_id number not null,transaction_date date not null, transaction_to varchar(255) not null,transaction_amount number(10) not null, transaction_remarks varchar(255) not null);
 
@@ -128,3 +137,10 @@ sort and view bonds with high rate of interest
 	   ....
 	   end;
 	    /
+----------------------------------------------------------------------------------------------------------
+
+--DCL
+
+1.grant,revoke
+
+2.select,connect,insert,delte,create
