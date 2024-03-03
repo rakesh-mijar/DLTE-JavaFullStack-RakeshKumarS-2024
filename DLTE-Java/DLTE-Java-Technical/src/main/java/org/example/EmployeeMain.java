@@ -15,6 +15,11 @@ public class EmployeeMain
         this.empMobileNumber = empMobileNumber;
         this.empId = empId;
     }
+
+    public EmployeeMain() {
+
+    }
+
     @Override
     public String toString() {
         return "EmployeeMain{" +
@@ -25,79 +30,44 @@ public class EmployeeMain
                 ", empId=" + empId +
                 '}';
     }
-}
-class EmployeeAddress{
-    private String permStreet;
-    private String permState;
-    private String permCountry;
-    private String permPincode;
 
-    private String tempStreet;
-    private String tempState;
-    private String tempCountry;
-    private String tempPincode;
-
-    public String getPermStreet() {
-        return permStreet;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setPermStreet(String permStreet) {
-        this.permStreet = permStreet;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getPermState() {
-        return permState;
+    public String getMiddleName() {
+        return middleName;
     }
 
-    public void setPermState(String permState) {
-        this.permState = permState;
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
-    public String getPermCountry() {
-        return permCountry;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setPermCountry(String permCountry) {
-        this.permCountry = permCountry;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getPermPincode() {
-        return permPincode;
+    public Long getEmpMobileNumber() {
+        return empMobileNumber;
     }
 
-    public void setPermPincode(String permPincode) {
-        this.permPincode = permPincode;
+    public void setEmpMobileNumber(Long empMobileNumber) {
+        this.empMobileNumber = empMobileNumber;
     }
 
-    public String getTempStreet() {
-        return tempStreet;
+    public Long getEmpId() {
+        return empId;
     }
 
-    public void setTempStreet(String tempStreet) {
-        this.tempStreet = tempStreet;
-    }
-
-    public String getTempState() {
-        return tempState;
-    }
-
-    public void setTempState(String tempState) {
-        this.tempState = tempState;
-    }
-
-    public String getTempCountry() {
-        return tempCountry;
-    }
-
-    public void setTempCountry(String tempCountry) {
-        this.tempCountry = tempCountry;
-    }
-
-    public String getTempPincode() {
-        return tempPincode;
-    }
-
-    public void setTempPincode(String tempPincode) {
-        this.tempPincode = tempPincode;
+    public void setEmpId(Long empId) {
+        this.empId = empId;
     }
 }
