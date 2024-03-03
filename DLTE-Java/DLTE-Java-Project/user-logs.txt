@@ -1,0 +1,20 @@
+Mar 02, 2024 11:19:57 PM org.example.UserFileRepository save
+INFO: maheshNew User saved successfully
+Mar 02, 2024 11:24:48 PM org.example.UserFileRepository save
+INFO: ramesh@123New User saved successfully
+Mar 02, 2024 11:57:18 PM org.example.UserFileRepository save
+INFO: 2New User saved successfully
+Mar 03, 2024 12:18:05 AM org.example.UserFileRepository findById
+WARNING: euser not available
+Mar 03, 2024 12:19:23 AM org.example.UserFileRepository findById
+WARNING: rameshuser not available
+Mar 03, 2024 12:21:03 AM org.example.UserFileRepository findById
+WARNING: rameshno such user available
+Mar 03, 2024 12:23:16 AM org.example.UserFileRepository findById
+WARNING: rno such user available
+Mar 03, 2024 12:25:00 AM org.example.UserFileRepository findById
+WARNING: rno such user available
+Mar 03, 2024 12:25:08 AM org.example.UserFileRepository findById
+WARNING: 12no such user available
+Mar 03, 2024 12:25:24 AM org.example.UserFileRepository findById
+WARNING: 1no such user available
