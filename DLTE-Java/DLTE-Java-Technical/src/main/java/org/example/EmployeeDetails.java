@@ -6,10 +6,9 @@ import java.util.Scanner;
 
 public class EmployeeDetails{
     static int count;
+    static EmployeeMain[] employee;
+    static EmployeeAddress[] empaddress;
     public static void main(String[] args){
-        EmployeeMain[] employee = new EmployeeMain[0];
-        EmployeeAddress[] empaddress = new EmployeeAddress[0];
-        EmployeeDetails.readDetails(employee,empaddress);
         EmployeeDetails details=new EmployeeDetails();
         Scanner scanner=new Scanner(System.in);
         int option=0;
@@ -23,9 +22,11 @@ public class EmployeeDetails{
             switch(option){
                 case 1:System.out.println("Enter the number of employees");
                        count=scanner.nextInt();
+                       employee = new EmployeeMain[count];
+                       empaddress = new EmployeeAddress[count];
                        readDetails(employee,empaddress);
                        break;
-                case 2:displayEmpDetails(employee,empaddress);
+                case 2:EmployeeDetails.displayEmpDetails(employee,empaddress);
                 break;
                 case 3:System.exit(0);
             }
