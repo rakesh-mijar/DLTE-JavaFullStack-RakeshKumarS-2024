@@ -1,0 +1,32 @@
+insert new transaction
+-----------------------
+create or replace procedure insert_new_transaction(
+trans_id number,
+trans_date date,
+trans_to varchar2,
+trans_amt number,
+trans_remarks varchar2,
+trans_info out varchar2
+)
+as
+begin
+insert into transaction(transaction_id,transaction_date,transaction_to,transaction_amount,transaction_remarks) values(trans_id,trans_date,trans_to,trans_amt,trans_remarks);
+trans_info:='new  transaction inserted';
+exception
+when others then
+trans_info:='Transaction failed due to '||SQLERRM;
+end;
+/
+
+--Procedure created.
+
+variable error_or_info varchar2(255);
+execute insert_new_transaction(1,'20-oct-2024','Mahesh',5000,'Health',:error_or_info);
+
+--PL/SQL procedure successfully completed.
+
+print error_or_info;
+
+--ERROR_OR_INFO
+--------------------------------------------------------------------------------
+--new  transaction inserted
