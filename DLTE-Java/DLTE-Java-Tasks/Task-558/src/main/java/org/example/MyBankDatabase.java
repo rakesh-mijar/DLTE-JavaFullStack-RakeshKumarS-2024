@@ -10,7 +10,7 @@ public class MyBankDatabase<T> implements Activity<T> {
         //MyBankDatabase<CreditCard> myBankDataBase = new MyBankDatabase();
         MyBankDatabase<CreditCard> myBankDatabase=new MyBankDatabase<>();
 
-        myBankDatabase.myObjects=new CreditCard[3];//initialize myBankDatabase
+        myBankDatabase.myObjects=new CreditCard[3];//initialize myObjects
 
         CreditCard creditCard1 = new CreditCard(12345222L, "Mahesh", new Date(2024, 2, 8), 1234, 100000, new Date(2024, 05, 2), new Date(2024, 03, 5), 99887);
         CreditCard creditCard2 = new CreditCard(12536232L, "Suresh", new Date(2024, 7, 18), 4321, 50000, new Date(2024, 10, 20), new Date(2024, 12, 30), 77665);
