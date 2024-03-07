@@ -1,0 +1,2 @@
+Mar 06, 2024 11:02:29 PM org.example.CreditCardAnalysis main
+WARNING: org.example.MyBankException: Please Try again
