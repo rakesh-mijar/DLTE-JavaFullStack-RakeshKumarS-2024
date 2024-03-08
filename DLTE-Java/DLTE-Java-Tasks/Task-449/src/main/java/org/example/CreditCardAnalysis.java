@@ -1,16 +1,19 @@
 package org.example;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class CreditCardAnalysis {
     static ResourceBundle resourceBundle=ResourceBundle.getBundle("application");
     static Logger logger= Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-    
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws IOException {
         CreditCard[] myBank = {  //array of objects
                 new CreditCard(8765678765678L, "Ramesh", new Date(2034, 12, 30), 555, 100000, new Date(2024, 3, 11), new Date(2024, 03, 30), 1111),
                 new CreditCard(9876543L, "Suresh", new Date(2023, 02, 25), 432, 150000, new Date(2028, 4, 9), new Date(2025, 06, 26), 2345),
@@ -18,6 +21,13 @@ public class CreditCardAnalysis {
         };
         Scanner scanner = new Scanner(System.in);
         CreditCardAnalysis analysis = new CreditCardAnalysis();
+
+        //creating a log file
+        FileHandler fileHandler=new FileHandler("credit-card-logs.txt",false);
+        //SimpleFormatter simpleFormatter=new SimpleFormatter();
+        //fileHandler.setFormatter(simpleFormatter);
+        logger.addHandler(fileHandler);
+
         try{
             System.out.println(resourceBundle.getString("filter.limit"));
             System.out.println(resourceBundle.getString("enter.limit")); //Filter based on the given limit

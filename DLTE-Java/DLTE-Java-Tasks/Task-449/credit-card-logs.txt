@@ -1,2 +1,14 @@
-Mar 06, 2024 11:02:29 PM org.example.CreditCardAnalysis main
-WARNING: org.example.MyBankException: Please Try again
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-03-07T10:53:10</date>
+  <millis>1709788990044</millis>
+  <sequence>0</sequence>
+  <logger>global</logger>
+  <level>WARNING</level>
+  <class>org.example.CreditCardAnalysis</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>org.example.MyBankException: Please Try again</message>
+</record>

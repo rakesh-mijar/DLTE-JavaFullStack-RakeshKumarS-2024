@@ -35,19 +35,23 @@ public class Gpay extends Account {
         Scanner scanner = new Scanner(System.in);
         int count=0;
         while(count<5){
-            System.out.println("Enter the upi pin");
-            int pin = scanner.nextInt();
-            if (pin==getUpiPin()) {
-                System.out.println(resourceBundle.getString("payment.ok"));
-                logger.log(Level.INFO,"Payment Done");
-                break;
-            } else {
-                System.out.println(resourceBundle.getString("payment.not.ok"));
+            try{
+                System.out.println("Enter the upi pin");
+                int pin = scanner.nextInt();
+                if (pin==getUpiPin()) {//checks if the entered pin is equal to actual upi-pin
+                    System.out.println(resourceBundle.getString("payment.ok"));//inform the payment is done
+                    logger.log(Level.INFO,"Payment Done");
+                    break;
+                } else {
+                    throw new MyBankException();//if invalid pin entered then raise exception
+                }
+            }catch (MyBankException exception){//handle the exception
+                System.out.println(resourceBundle.getString("payment.not.ok"));//
                 logger.log(Level.WARNING,"Incorrect pin entered");
                 count++;
                 System.out.println();
-
             }
+
         }
         if(count==5){
             System.out.println(resourceBundle.getString("account.blocked"));

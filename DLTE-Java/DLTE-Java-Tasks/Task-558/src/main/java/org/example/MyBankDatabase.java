@@ -11,12 +11,11 @@ public class MyBankDatabase<T> implements Activity<T> {
         MyBankDatabase<CreditCard> myBankDatabase=new MyBankDatabase<>();
 
         myBankDatabase.myObjects=new CreditCard[3];//initialize myObjects
-
         CreditCard creditCard1 = new CreditCard(12345222L, "Mahesh", new Date(2024, 2, 8), 1234, 100000, new Date(2024, 05, 2), new Date(2024, 03, 5), 99887);
         CreditCard creditCard2 = new CreditCard(12536232L, "Suresh", new Date(2024, 7, 18), 4321, 50000, new Date(2024, 10, 20), new Date(2024, 12, 30), 77665);
         CreditCard creditCard3 = new CreditCard(23457522L, "Razi", new Date(2024, 4, 18), 54367, 30000, new Date(2024, 07, 8), new Date(2024, 07, 1), 55443);
 
-        //read operations
+        //read operations-1
         System.out.println(myBankDatabase.create(creditCard1));
         System.out.println(myBankDatabase.create(creditCard2));
         System.out.println(myBankDatabase.create(creditCard3));
@@ -24,7 +23,26 @@ public class MyBankDatabase<T> implements Activity<T> {
         //delete
         System.out.println(myBankDatabase.delete(1));
 
+        //view all
         myBankDatabase.viewAll();
+
+        //update
+        //System.out.println(myBankDatabase.update(0,creditCard3));
+
+        MyBankDatabase<Transaction> myTransaction=new MyBankDatabase<>();
+
+        myTransaction.myObjects=new Transaction[3];
+        Transaction transaction1=new Transaction(new Date(2023,5,29),230000.0,"Sam","Education");
+        Transaction transaction2=new Transaction(new Date(2024,7,12),120000.0,"Razi","Emergency");
+        Transaction transaction3=new Transaction(new Date(2023,2,17),150000.0,"Prashanth","Bills");
+        Transaction transaction4=new Transaction(new Date(2022,4,10),170000.0,"David","Health");
+
+        //read operations-2
+        System.out.println(myTransaction.create(transaction1));
+        System.out.println(myTransaction.create(transaction2));
+        System.out.println(myTransaction.create(transaction3));
+        System.out.println(myTransaction.create(transaction4));
+
     }
 
     //implementation of methods defined in activity interface
@@ -57,7 +75,7 @@ public class MyBankDatabase<T> implements Activity<T> {
 
     @Override
     public String delete(int index) {
-        if(index>=0&&index<=myObjects.length&& myObjects[index] !=null)
+        if(index>=0 && index<=myObjects.length && myObjects[index] != null)
         {
             T object= myObjects[index];
             myObjects[index]= null;
