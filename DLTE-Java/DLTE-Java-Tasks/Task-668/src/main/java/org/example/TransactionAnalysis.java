@@ -9,12 +9,15 @@ import java.util.concurrent.locks.ReentrantLock;
 public class TransactionAnalysis implements Runnable {
     ResourceBundle resourceBundle=ResourceBundle.getBundle("application");
     Lock lock=new ReentrantLock();
+    //Array of objects for Transaction
     Transaction analysis[]={
             new Transaction(new Date(2024,3,12),1000.0,"Razi","Education"),
             new Transaction(new Date(2023,5,15),2000.0,"Pranav","Health"),
             new Transaction(new Date(2022,8,29),3000.0,"Venkatesh","Friend"),
             new Transaction(new Date(2025,9,15),4000.0,"Nazir","Friend")
     };
+
+    //filter based on range of date specified
     public void filterByDate(Transaction[] analysis,int startDate,int endDate){
         for(Transaction each:analysis){
             if(startDate<=each.getDateOfTransaction().getDate()&&endDate>=each.getDateOfTransaction().getDate()){
@@ -22,6 +25,8 @@ public class TransactionAnalysis implements Runnable {
             }
         }
     }
+
+    //among the different transaction print the least transaction
     public void filterLeastAmount(Transaction[] analysis){
         Double minAmount=analysis[0].getTransactionAmount();
         for (Transaction each:analysis){
@@ -31,6 +36,8 @@ public class TransactionAnalysis implements Runnable {
         }
         System.out.println("Minimum Transaction amount is "+minAmount);
     }
+
+    //among the different transaction print the maximum transaction
     public void filterMaximumAmount(Transaction[] analysis){
         Double maxAmount=analysis[0].getTransactionAmount();
         for(Transaction each:analysis){
@@ -41,6 +48,7 @@ public class TransactionAnalysis implements Runnable {
         System.out.println("Maximum Transaction amount is "+maxAmount);
     }
 
+    //based on the reciept name print the transaction amount
     public void filterReciept(Transaction[] analysis,String name){
         for (Transaction each:analysis){
             if(each.getReciept().equalsIgnoreCase(name)){
@@ -49,6 +57,7 @@ public class TransactionAnalysis implements Runnable {
         }
     }
 
+    //filter the transaction based on the remarks given
     public void filterByRemarks(Transaction[] analysis,String reamrks){
         for(Transaction each:analysis){
             if(each.getRemarks().equalsIgnoreCase(reamrks)){
