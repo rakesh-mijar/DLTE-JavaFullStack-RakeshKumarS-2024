@@ -101,6 +101,10 @@ public class TransactionAnalysis implements Runnable {
                     break;
                 default:System.exit(0);
             }
+            lock.unlock();
         }
+
     }
+
+
 }
