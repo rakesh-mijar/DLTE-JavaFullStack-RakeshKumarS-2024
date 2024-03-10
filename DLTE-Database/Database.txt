@@ -123,6 +123,28 @@ sort and view bonds with high rate of interest
 		/
 	|-->>parameters:in,out,inout    
 
+ex: 
+create or replace procedure insert_new_transaction(
+trans_id number,
+trans_to varchar2,
+trans_date date,
+trans_amt number,
+trans_remarks varchar2,
+trans_info out varchar2
+)
+as
+begin
+insert into transaction(transaction_id,transaction_to,transaction_date,transaction_amount,transaction_remarks)
+values(trans_id,trans_to,trans_date,trans_amt,trans_remarks);
+trans_info:='new transaction inserted';
+exception
+when others then
+trans_info:='Transaction Failed due to '||SQLERRM;
+end;
+/
+variable error_or_info varchar2;
+execute insert_new_transaction(1,'Mahesh','20-oct-2024',5000,'Health',:error_or_info);
+print error_or_info;
 
 --triggers:whenever a event is occured it is called automatically.
 	   time >> before,after
