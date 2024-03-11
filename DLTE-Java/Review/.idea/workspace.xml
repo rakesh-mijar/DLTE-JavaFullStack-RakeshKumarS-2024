@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a0aa64b9-1350-40ce-9a78-e5bc715c2b9c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../DLTE-JAVA-DAO/DLTE-JAVA-DAO.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-Java-Technical2/demo.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-Java-Technical2/emp.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DLTE-Java-Technical2/target/classes/org/example2/EmployeeDetails.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/Demo-001.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/src/main/java/org/example/EmployeeManagement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/target/Demo-001-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/target/classes/org/example/EmployeeManagement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/target/surefire-reports/TEST-org.example.AppTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/target/surefire-reports/org.example.AppTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-001/target/test-classes/org/example/AppTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/src/main/java/org/example2/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/src/main/java/org/example2/EmployeeManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/src/test/java/org/example2/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/target/Demo-002-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/target/classes/org/example2/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/target/classes/org/example2/EmployeeManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/target/surefire-reports/TEST-org.example2.AppTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/target/surefire-reports/org.example2.AppTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-002/target/test-classes/org/example2/AppTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/Demo-003.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/src/main/java/org/example3/EmployeeAddress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/src/main/java/org/example3/EmployeeMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/src/main/java/org/example3/EmployeeMediator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/src/test/java/org/example3/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/target/Demo-003-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/target/classes/org/example3/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/target/classes/org/example3/EmployeeAddress.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/target/classes/org/example3/EmployeeMain.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/target/classes/org/example3/EmployeeMediator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/target/surefire-reports/TEST-org.example3.AppTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/target/surefire-reports/org.example3.AppTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Demo-003/target/test-classes/org/example3/AppTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Review.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/demo.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/src/main/java/org/console/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/src/test/java/org/console/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/target/Console-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/target/classes/org/console/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/target/surefire-reports/TEST-org.console.AppTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/target/surefire-reports/org.console.AppTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Console/target/test-classes/org/console/AppTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/src/main/java/org/file/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/src/test/java/org/file/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/target/FileRepo-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/target/classes/org/file/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/target/surefire-reports/TEST-org.file.AppTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/target/surefire-reports/org.file.AppTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileRepo/target/test-classes/org/file/AppTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/src/main/java/org/middle/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/src/test/java/org/middle/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/target/MiddleWare-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/target/classes/org/middle/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/target/surefire-reports/TEST-org.middle.AppTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/target/surefire-reports/org.middle.AppTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiddleWare/target/test-classes/org/middle/AppTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/details.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/main/java/org/midware/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/src/test/java/org/midware/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DLTE-JavaEE/DLTE-JavaEE-001/DLTE-JavaEE-001.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-001/src/main/java/branches/blocks/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-001/src/main/java/branches/blocks/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-001/target/classes/META-INF/DLTE-Java-001.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-003/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-003/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-003/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-003/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-003/src/main/java/store/oops/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-003/src/main/java/store/oops/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-003/target/test-classes/store/oops/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-003/target/test-classes/store/oops/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-005/DLTE-JAVA-005.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/FileStorageTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/FileStorageTarget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/StorageTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/StorageTarget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/UserFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/UserFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/UserServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/resources/user.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/resources/user.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/src/user.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/src/user.doc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/FileStorageTarget.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/FileStorageTarget.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/StorageTarget.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/StorageTarget.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/UserFileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/UserFileRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/UserServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/UserServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/user.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/user.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/user-logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/user-logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/user.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/user.doc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/Technical-Review.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/src/main/java/org/example/EmployeeDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/src/main/java/org/example/EmployeeMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/src/test/java/org/example/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Tasks/Task-671/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Tasks/Task-671/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical-2/DLTE-Java-Technical-2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/src/main/java/org/example/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/src/main/java/org/example/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/src/main/java/org/example/EmployeeAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/src/main/java/org/example/EmployeeAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/src/main/java/org/example/EmployeeMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/src/main/java/org/example/EmployeeMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/target/classes/org/example/Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/target/classes/org/example/Demo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/target/classes/org/example/EmployeeAddress.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/target/classes/org/example/EmployeeAddress.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/target/classes/org/example/EmployeeDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/target/classes/org/example/EmployeeMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/target/classes/org/example/EmployeeMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/target/test-classes/org/example/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/target/test-classes/org/example/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/~$ployee.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical2/employee.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical2/employee.doc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical2/target/DLTE-Java-Technical2-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical2/target/DLTE-Java-Technical2-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical2/target/surefire-reports/TEST-org.example2.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical2/target/surefire-reports/TEST-org.example2.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical2/target/surefire-reports/org.example2.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical2/target/surefire-reports/org.example2.AppTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java004/DLTE-Java004.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2dYKUpNqIBRWjn27Hncuwg0G4Kz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a0aa64b9-1350-40ce-9a78-e5bc715c2b9c" name="Default Changelist" comment="" />
+      <created>1710179589106</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710179589106</updated>
+      <workItem from="1710179590412" duration="118000" />
+      <workItem from="1710180902075" duration="191000" />
+      <workItem from="1710181146879" duration="18000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1710179689493">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1710179689493" />
+    <state x="209" y="117" key="new project wizard" timestamp="1710179705059">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="209" y="117" key="new project wizard/0.0.1536.816@0.0.1536.816" timestamp="1710179705059" />
+  </component>
+</project>
