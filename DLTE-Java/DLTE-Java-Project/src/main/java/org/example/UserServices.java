@@ -5,25 +5,22 @@ import jdk.jfr.consumer.RecordedObject;
 import java.util.logging.Level;
 
 public class UserServices {
-    UserFileRepository userFileRepository;
+    UserRepository userRepository;
     public UserServices(StorageTarget storageTarget){
-        userFileRepository=storageTarget.getUserFileRepository();
+        userRepository=storageTarget.getUserRepository();
     }
 
-    public UserServices() {
-
-    }
 
     public void callSave(User user){
         try{
-            userFileRepository.save(user);
+            userRepository.save(user);
         }catch (UserException userException){
             throw userException;
         }
     }
     public User callFindById(String username){
         try{
-            return userFileRepository.findById(username);
+            return userRepository.findById(username);
         }
         catch (UserException userException){
             throw userException;

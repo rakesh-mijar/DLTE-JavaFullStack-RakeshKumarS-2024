@@ -18,3 +18,31 @@ Mar 03, 2024 12:25:08 AM org.example.UserFileRepository findById
 WARNING: 12no such user available
 Mar 03, 2024 12:25:24 AM org.example.UserFileRepository findById
 WARNING: 1no such user available
+Mar 04, 2024 11:28:16 PM org.example.UserFileRepository save
+INFO: rak@123New User saved successfully
+Mar 04, 2024 11:29:35 PM org.example.UserFileRepository save
+INFO: demo@123New User saved successfully
+Mar 05, 2024 12:08:40 AM org.example.UserFileRepository save
+WARNING: rak@123user already exists
+Mar 05, 2024 9:48:28 AM org.example.UserFileRepository save
+WARNING: rak@123user already exists
+Mar 10, 2024 2:18:41 PM org.example.UserFileRepository save
+WARNING: rak@123user already exists
+Mar 11, 2024 8:48:02 AM org.example.UserFileRepository findById
+WARNING: rano such user available
+Mar 11, 2024 8:49:08 AM org.example.UserFileRepository findById
+WARNING: ramno such user available
+Mar 11, 2024 8:49:11 AM org.example.UserFileRepository findById
+WARNING: ramno such user available
+Mar 11, 2024 4:48:07 PM org.example.UserFileRepository save
+WARNING: ramesh@123user already exists
+Mar 11, 2024 5:34:50 PM org.example.UserFileRepository findById
+WARNING: ramno such user available
+Mar 12, 2024 7:26:40 PM org.example.UserDatabaseRepository findById
+INFO: no such user available
+Mar 13, 2024 6:03:12 PM org.example.UserDatabaseRepository save
+INFO: User Account created in MyBank
+Mar 13, 2024 10:30:02 PM org.example.UserDatabaseRepository save
+INFO: User Account created in MyBank
+Mar 14, 2024 7:44:40 AM org.example.UserDatabaseRepository findById
+INFO: no such user available

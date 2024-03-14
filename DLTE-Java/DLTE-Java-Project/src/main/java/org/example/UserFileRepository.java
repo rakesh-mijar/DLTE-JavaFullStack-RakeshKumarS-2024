@@ -1,30 +1,34 @@
 package org.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class UserFileRepository implements UserRepository {
     private String filePath;
-    private ResourceBundle resourceBundle=ResourceBundle.getBundle("user");
-    private Logger logger=Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    public ResourceBundle resourceBundle=ResourceBundle.getBundle("user");
+    //    public Logger logger=Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    private static Logger logger = LoggerFactory.getLogger(UserFileRepository.class);
+
     private List<User> userList=new ArrayList<>();
     public UserFileRepository(String url){
         filePath=url;
-        try{
-            FileHandler fileHandler=new FileHandler("user-logs.txt",true);
-            SimpleFormatter simpleFormatter=new SimpleFormatter();
-            fileHandler.setFormatter(simpleFormatter);
-            logger.addHandler(fileHandler);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try{
+//            FileHandler fileHandler=new FileHandler("user-logs.txt",true);
+//            SimpleFormatter simpleFormatter=new SimpleFormatter();
+//            fileHandler.setFormatter(simpleFormatter);
+//            logger.addHandler(fileHandler);
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
     private void writeIntoFile(){
         try{
@@ -58,15 +62,15 @@ public class UserFileRepository implements UserRepository {
     @Override
     public void save(User user) {
         readFromFile();
-        User object= userList.stream().filter(each->each.getUserName().equals(user.getUserName())).findFirst().orElse(null);
+        User object= userList.stream().filter(each->each.getUsername().equals(user.getUsername())).findFirst().orElse(null);
         if(object!=null){
-            logger.log(Level.WARNING,user.getUserName()+resourceBundle.getString("user exists"));
+            logger.info(user.getUsername()+resourceBundle.getString("user.exists"));
             throw new UserException();
         }
         userList.add(user);
         writeIntoFile();
-        logger.log(Level.INFO,user.getUserName()+resourceBundle.getString("user.saved"));
-        System.out.println(user.getUserName()+resourceBundle.getString("user.saved"));
+        logger.info(user.getUsername()+resourceBundle.getString("user.saved"));
+        System.out.println(user.getUsername()+resourceBundle.getString("user.saved"));
 
 
     }
@@ -74,9 +78,9 @@ public class UserFileRepository implements UserRepository {
     @Override
     public User findById(String username) {
         readFromFile();
-        User object=userList.stream().filter(each->each.getUserName().equals(username)).findFirst().orElse(null);
+        User object=userList.stream().filter(each->each.getUsername().equals(username)).findFirst().orElse(null);
         if(object==null){
-            logger.log(Level.WARNING,username+resourceBundle.getString("user.notExists"));
+            logger.warn(username+resourceBundle.getString("user.notExists"));
             System.out.println(username+" " +resourceBundle.getString("user.notExists"));
             throw new UserException();
         }

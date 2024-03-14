@@ -3,83 +3,85 @@ package org.example;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    private String userName;
-    private String userPassword;
-    private String userAddress;
-    private String userMailId;
-    private Long contactInfo;
-    private Double initialBalance;
+    private String username;
+    private String password;
+    private String address;
+    private String email;
+    private Long contact;
 
-    public User(String userName, String userPassword, String userAddress, String userMailId,    long contactInfo, Double initialBalance) {
-        this.userName = userName;
-        this.userPassword = userPassword;
-        this.userAddress = userAddress;
-        this.userMailId = userMailId;
-        this.contactInfo = contactInfo;
-        this.initialBalance = initialBalance;
+    public User(String username, String password, String address, String email, Long contact, Double balance) {
+        this.username = username;
+        this.password = password;
+        this.address = address;
+        this.email = email;
+        this.contact = contact;
+        this.balance = balance;
     }
 
     public User() {
 
     }
 
-    public String getUserName() {
-        return userName;
+
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getUserPassword() {
-        return userPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getUserAddress() {
-        return userAddress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setUserAddress(String userAddress) {
-        this.userAddress = userAddress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getUserMailId() {
-        return userMailId;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserMailId(String userMailId) {
-        this.userMailId = userMailId;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public  long getContactInfo() {
-        return contactInfo;
+    public Long getContact() {
+        return contact;
     }
 
-    public void setContactInfo(Long contactInfo) {
-        this.contactInfo = contactInfo;
+    public void setContact(Long contact) {
+        this.contact = contact;
     }
 
-    public Double getInitialBalance() {
-        return initialBalance;
+    public Double getBalance() {
+        return balance;
     }
 
-    public void setInitialBalance(Double initialBalance) {
-        this.initialBalance = initialBalance;
+    public void setBalance(Double balance) {
+        this.balance = balance;
     }
 
     @Override
     public String toString() {
-        return "user{" +
-                "userName='" + userName + '\'' +
-                ", userPassword='" + userPassword + '\'' +
-                ", userAddress='" + userAddress + '\'' +
-                ", userMailId='" + userMailId + '\'' +
-                ", contactInfo='" + contactInfo + '\'' +
-                ", initialBalance='" + initialBalance + '\'' +
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", contact=" + contact +
+                ", balance=" + balance +
                 '}';
     }
+
+    private Double balance;
 }
