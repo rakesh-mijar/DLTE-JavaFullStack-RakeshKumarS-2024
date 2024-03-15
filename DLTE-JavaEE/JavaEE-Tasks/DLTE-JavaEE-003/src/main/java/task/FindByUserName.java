@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/findByUsername/")
+@WebServlet("/findByUsername/ed")
 public class FindByUserName extends HttpServlet {
     private StorageTarget storageTarget;
     private UserServices userServices;
