@@ -1,0 +1,9 @@
+org\example\StorageTarget.class
+org\example\Transaction.class
+org\example\User.class
+org\example\UserException.class
+org\example\DatabaseTarget.class
+org\example\UserDatabaseRepository.class
+org\example\UserRepository.class
+org\example\App.class
+org\example\UserServices.class

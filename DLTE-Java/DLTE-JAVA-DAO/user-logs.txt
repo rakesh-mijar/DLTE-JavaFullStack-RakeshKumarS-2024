@@ -1,0 +1,32 @@
+Mar 10, 2024 6:12:26 PM org.example.UserDatabaseRepository findById
+INFO: no such user available
+Mar 10, 2024 6:18:30 PM org.example.UserDatabaseRepository save
+INFO: User Account created in MyBank
+Mar 10, 2024 6:18:30 PM org.example.UserDatabaseRepository findById
+INFO: no such user available
+Mar 10, 2024 6:19:37 PM org.example.UserDatabaseRepository findById
+INFO: no such user available
+Mar 10, 2024 6:29:38 PM org.example.UserDatabaseRepository findById
+INFO: no such user available
+Mar 10, 2024 6:30:20 PM org.example.UserDatabaseRepository findById
+INFO: no such user available
+Mar 10, 2024 6:31:52 PM org.example.UserDatabaseRepository findById
+INFO: no such user available
+Mar 10, 2024 6:33:19 PM org.example.UserDatabaseRepository findById
+INFO: no such user available
+Mar 10, 2024 6:34:01 PM org.example.UserDatabaseRepository findById
+INFO: no such user available
+Mar 10, 2024 6:37:02 PM org.example.UserDatabaseRepository save
+INFO: User Account created in MyBank
+Mar 10, 2024 6:37:22 PM org.example.UserDatabaseRepository findById
+INFO: no such user available
+Mar 10, 2024 6:38:06 PM org.example.UserDatabaseRepository findById
+INFO: no such user available
+Mar 11, 2024 2:04:05 PM org.example.UserDatabaseRepository save
+INFO: User Account created in MyBank
+Mar 12, 2024 5:30:01 PM org.example.UserDatabaseRepository save
+INFO: User Account created in MyBank
+Mar 13, 2024 10:10:26 AM org.example.UserDatabaseRepository save
+INFO: User Account created in MyBank
+Mar 13, 2024 10:17:13 AM org.example.UserDatabaseRepository save
+INFO: User Account created in MyBank
