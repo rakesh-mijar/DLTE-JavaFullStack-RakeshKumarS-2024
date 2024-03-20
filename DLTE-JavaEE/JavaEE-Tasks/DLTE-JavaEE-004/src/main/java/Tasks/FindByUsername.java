@@ -15,8 +15,9 @@ import java.io.IOException;
 
 @WebServlet("/findByUsername")
 public class FindByUsername extends HttpServlet {
+
     private StorageTarget storageTarget;
-    private UserServices userServices;
+    public UserServices userServices;
 
     @Override
     public void init() throws ServletException {
@@ -26,7 +27,7 @@ public class FindByUsername extends HttpServlet {
 
     //method to get the user details based on the user name from the accounts table
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json");
         try{
             User user=userServices.callFindById("pranav@123");

@@ -15,7 +15,8 @@ import java.io.IOException;
 
 @WebServlet("/create/*")
 public class CreateAccount extends HttpServlet {
-    private UserServices userServices;
+    public UserServices userServices;
+
     private StorageTarget storageTarget;
 
     @Override
@@ -27,7 +28,7 @@ public class CreateAccount extends HttpServlet {
 
     //this method is used to create a new user into the accounts table and save it using save() method
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json");
         Gson gson=new Gson();
         User user=gson.fromJson(req.getReader(), User.class);

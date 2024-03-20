@@ -13,8 +13,9 @@ import java.util.List;
 
 @WebServlet("/username/transac")
 public class FindByTransacName extends HttpServlet {
+    public UserServices userServices;
     private StorageTarget storageTarget;
-    private UserServices userServices;
+
 
     @Override
     public void init() throws ServletException {
@@ -25,7 +26,7 @@ public class FindByTransacName extends HttpServlet {
 
     //this method corresponds to get the details of user transaction based on username from the transaction table
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json");
         try{
             List<Transaction> transactions=userServices.callFindByUsername("ram@123");
