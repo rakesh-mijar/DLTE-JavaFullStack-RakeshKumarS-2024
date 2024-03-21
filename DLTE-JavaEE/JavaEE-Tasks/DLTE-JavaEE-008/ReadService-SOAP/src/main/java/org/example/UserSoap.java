@@ -10,7 +10,7 @@ import java.util.List;
 @WebService
 @SOAPBinding(style = SOAPBinding.Style.RPC)
 public class UserSoap {
-    private UserServices userServices;
+    public UserServices userServices;
     public UserSoap(){
         StorageTarget storageTarget = new DatabaseTarget();
         userServices = new UserServices(storageTarget);
