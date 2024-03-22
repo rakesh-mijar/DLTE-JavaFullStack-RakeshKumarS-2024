@@ -39,7 +39,6 @@ git push origin master
 
 git push -u origin main
 
-token -- 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
 git push origin master
 
 ------delete everything in local file---
