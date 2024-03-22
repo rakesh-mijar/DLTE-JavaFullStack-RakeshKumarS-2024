@@ -1,0 +1,24 @@
+testing spring
+----------------
+>
+
+
+soap web services
+--------------------
+>check notes
+>create .xsd file in resources
+	>here,
+		>targetname and target url is given by us
+		>creating the entity with element names similar as given in entity class and should be in sequence
+		>create xsd for status: returns status and message
+		>create xsd for operations: name not same as the method response and request elements
+		>in response xsd we return status and object ---- tns: target name space is written here bcz complextypes are defined under that target name space(check at top) maxOccur bcz 		we recieve a multiple objects.
+		>add jaxb2-maven plugin in pom.xml----------rename the schema files same as the <schema files>---</schema files>
+		>extra packages will be generated
+		>@RequestPayload---request parameter
+		>@ResponsePayload---response parameter
+		>@PayloadRoot specifies where the url is stored
+		>in soapPhase project-----List<Loan> loan is from dao part(separate package)
+		>BeanUtils.copyProperties();---------can copy the properties from previous one
+		>run the file....then....(.wsdl file is generated in edge)
+		>open soap ui and paste the url generated.
