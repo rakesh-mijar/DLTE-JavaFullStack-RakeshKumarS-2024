@@ -1,0 +1,96 @@
+01/03/2024
+------------------
+Normalization,JDBC with oracle, testing jdbc,mockito
+
+
+Normalization:
+
+1)1st normal form: primary key
+2)2nd normal form: composite key
+3)3rd normal fom: transitive dependency
+
+
+->ER MODEL--->entity relationship
+
+->Entity
+	->Weak entity
+
+->Attribute
+	->key attribute
+	->compose attribute
+	->multivalued attribute
+	->derived attribute
+->Relation
+	->one to one
+	->many-to many
+	->one to many
+	->many-to-one
+
+---------------------
+JDBC
+----
+
+->Java Database Connectivity
+
+->JDBC-----connectivity between Backend & Database.(Statement(static) needs a query to transfer the data betwwen backend and database)
+   |							|->static prepared statement->query(?,?)......>obj.setType(?:position,value)(prepared statement takes the query and carry it to the 							   database and executes the query and gets back)
+   |							|->call prepared statements->procedures
+							|->procedures are called using CallableStatement;
+   |							|->executeQuery()---->returns the records(resulSet) in a table(for dql queries,joins)......obj.getString(''),obj.getInt(INDEX);
+							|->executeUpdate()---->returns acknowledge as int not the table or record (whenever returns int like insert,delete,update--dml 	             |							   queries)
+							|->execute()----->create,ddl queries..
+   |
+   |
+connection class ----------
+|
+|
+|
+DB property
+|
+|--->manny url's
+=======================================
+
+-->specific method to fetch whole row in a one call......
+-->access columns as index or column name
+
+Standup discussions
+--try an example to change the position of elements in list ----sort..
+--difference between arraylist and linkedlist
+--what happens if  duplicated values in set.
+
+
+====JDBC database dependency=============
+<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6 -->
+<dependency>
+    <groupId>com.oracle.database.jdbc</groupId>
+    <artifactId>ojdbc6</artifactId>
+    <version>11.2.0.4</version>
+</dependency>
+
+-------------------
+Integration
+--------------------
+
+Mockito
+============
+Mockito is a mocking framework. It is a Java-based library used to create simple and basic test APIs for performing unit testing of Java applications.
+Mocking is a process of developing the objects that act as the mock or clone of the real objects.
+
+Mock objects provide a specific (dummy) output for a particular (dummy) input passed to it.
+
+The main purpose of using the Mockito framework is to simplify the development of a test by mocking external dependencies and use them in the test code. As a result, it provides a simpler test code that is easier to read, understand, and modify. We can also use Mockito with other testing frameworks like JUnit and TestNG.
+
+====mockito dependency===========
+<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>4.5.1</version>
+    <scope>test</scope>
+</dependency>
+
+==>
+
+=====================================
+-->integration requires server for the connection.
+-->

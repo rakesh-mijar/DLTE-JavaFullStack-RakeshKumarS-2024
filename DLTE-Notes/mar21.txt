@@ -1,0 +1,22 @@
+JDBC Template
+----------------
+creating new project
+>>war 
+>>dependencies---->spring web,spring data jdbc,dev tools,oracle driver
+>>change the versions refer git,check project structure,settins also.
+>>mvn dependecy tree---check the dependency tree
+>>continue
+---------------------
+
+
+------------------------------------
+deployment of spring in jboss server
+------------------------------------
+>>>in pom.xml
+>include the dependency webflux-2.7.10---spring-boot-starter-webflux
+>remove the tomcat dependency and add within the exclusions
+>servlet 4.0.1 version dependency----check git
+
+>clean and install----------war file is generated in the folder structure
+>in standalone.xml check the port number it should match with port number specified in application.properties
+>run the standalone batch file----go to browser localhost:/8087/name of war file/name given in mapping...then check

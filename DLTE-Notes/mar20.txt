@@ -1,0 +1,39 @@
+Hibernate-------Object relational mapping:
+-----------------------
+>POJO converted as relational(sql).
+>interfaces: crudrepository
+	|---->JpaRepository
+methods: save(no update method hence save performs both post and put),findById,findAll,delete
+
+if we wish to create own own query 
+>HQL(hibernate query language)----concentrate on entities with attributes---but sql uses tables
+>Native Query
+
+creating project
+----------------------
+>spring initializer project
+>packaging is war bcz works with the container.
+>dependency spring web,jpa,spring boot dev tools,oracle driver
+>in pom.xml------------>change the versions of 2.7.1.0(spring framework),java version,jdbc version..check razaks git
+>go to project structure...check the versions and dependencies.
+>in application.properties add----->(check git)
+>spring.jpa.properties...(...is used to show sql queries corresponding to the built in method available)
+>open the drive first then run the project
+
+>@Entity(from jpa package) is used to create the table for required table 
+>@Id is used to create the primary key
+>@Table(),@Columns is used to make customized names for tables and attributes./
+>for performing interactions we want to create another file extending crudrepository<entity_name,type of primary key>
+> we dont need middleware but use services.
+>check architecture dig for more understanding.
+>
+
+dependency used
+----------------
+----------------
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml -->
+<dependency>
+    <groupId>com.fasterxml.jackson.dataformat</groupId>
+    <artifactId>jackson-dataformat-xml</artifactId>
+    <version>2.17.0</version>
+</dependency>

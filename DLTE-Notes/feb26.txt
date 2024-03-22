@@ -1,0 +1,146 @@
+generics,lambda exp,collections
+
+Generics
+---------
+
+->when we want place the object of a particular entity together independent of the other projects. 
+->Java Generics allows us to create a single class, interface, and method that can be used with different types of data (objects).
+->This helps us to reuse our code.
+->Generics does not work with primitive types (int, float, char, etc).
+
+->Advantages:(check  -003)
+1)Type Safety: we can hold only a single type of objects in generics and not different bjects can be stored.
+	=>List list = new ArrayList();    
+	list.add(10);  
+	list.add("10");  
+
+	With Generics, it is required to specify the type of object we need to store.  
+	List<Integer> list = new ArrayList<Integer>();    
+	list.add(10);  
+	list.add("10");// compile-time error 
+
+2)Type casting is not required: There is no need to typecast the object.
+
+3)Compile-Time Checking: It is checked at compile time so problem will not occur at runtime. The good programming strategy says it is far better to handle the problem at compile time than runtime.
+
+
+-------------
+class:
+class className<T>
+{
+//data members
+//methods
+}
+
+instance:
+classname <Double> object1 = new Classname<Double>();
+classname <String> object2 = new Classname<String>();
+
+interface:
+interface InterFaceName<T>{
+
+}
+
+methods:
+public void methodName(T object){
+
+}
+public T methodName(){
+
+}
+
+----------------------
+
+Lambda expression:
+------------------
+instance=(parameter)->{method definition}
+
+-can be applied when only if the components(interface or abstract class) contains only one abstract
+
+--------------------------
+collections frameworks:>> java.util
+-------------------------
+is a dynamic array with temporary memory.
+->why??
+   -no size and type restriction(if wish we can have it).
+   -flexibility to work with generics and non-generics.
+   -it offers storage classes. and each storage classes offer a built in method which can be used to perform and analysis and crud operations.-----------array doen't provide this
+   -it has fixed or dynamic storage(size)
+   -incorporate with class's and objects
+   -
+
+->Iterable>interface
+->collections:   ,
+
+
+  
+List:
+	for..each,typical for loop,for loop,
+
+	->ArrayList(no thread safety as present in Vector,1object=10bits,2object=20...,better for multithreading,or storage logic applications),
+		->methods of arrayList
+		   -get(index)
+	 	   -add,addAll,add(pos,obj)
+		   -remove(ops),remove(obj)
+	 	   -foreach,stream
+
+		  --myPortfolio.retainAll(myStocks);
+		  --myPortfolio.removeAll(myStocks);
+
+	->LinkedList,
+		-->LinkedList
+			-addLast,add(adds at the last of index),addFirst,get(index),getFirst(),getLast(),removeFirst()/remove,removeLast(),-----------
+			>>>by default adding at the last and 			removing from the 	first(diif from arraylist)
+		-->linkedList implements the Collection interface. It uses a doubly linked list internally to store the elements. It can store the duplicate elements. It maintains the 		   insertion order and is not synchronized.
+
+	->Vector(is meant for thread safety,synchronized, at a time only thread can use the resource and complete it then next thread,object size varies),
+		similar methods as used in ArrayList
+
+	->tostring method,
+
+	->stack(LIFO)
+		-->It implements the last-in-first-out data structure.
+		-->stack-push,pop,peek,clear,isEmpty();
+
+
+Set:
+	-dynamic memory,does not allows us to store the duplicate items.
+
+	->LinkedHashSet works like ArraList(prints based on the order of input given)
+		-add,contains,remove(object),---------no index based tasks or methods performed--------------,removeAll,retainAll
+		-does not allows duplicate copy in the methods	
+		-key based operations are not performed
+
+	->HashSet(gives sytem defined order for the input ),
+	
+	->TreeSet(completly printed in the ascending order irrespective of input given),
+		-It uses two methods comaperTo() or compare() to compare the elements. It is to be noted that the implementation of  TreeSet is not synchronized. It means that it is not 		 thread-safe.
+		-==from comparator method we shld override methode compare
+		 ==from comparable method we shld override method compareTo 
+
+	
+ 
+Map:
+	-since it is a customized one we have to specify the object index
+	-<Key,Value>
+	-method: put,putAll,get(key),remove(key),containsKey,containsValue,keySet,value
+	-ex:contact details(String name,Long phoneNumber)
+	-key should be non duplicatable but value can be duplicate(same name to 2 number)
+	
+	-key based ascending order.
+
+	-Hashtable(asynchronous-not thread safety,takes 11 bits for object)/HashMap()>>both are system defined order of given inputs,
+
+	-TreeMap:Java TreeMap maintains ascending order........ TreeMap cannot have a null key but can have multiple null values.......Java TreeMap is non synchronized.
+  
+Queue:
+	
+
+
+
+--List<Integer> integerList=new ArrrayList<>(); //creating a obj of List type and we can access all the methods of arrayList
+--Both array(fixed size) and collection(dynamic size) are temporary memory 
+
+--compareTo has 1 parameter so it compares with other element using this keyword(treeset)
+--comparable has two parametr through whih we can compare and used for sorting)arraylist)
+

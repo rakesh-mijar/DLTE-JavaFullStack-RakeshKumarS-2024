@@ -1,0 +1,92 @@
+concurrency,files,stringBuilder,stringBuffer
+--------------------------------------------
+
+concurrency
+
+-synchronization using Lock >>loack,unlock
+
+-executor,executors,ThreadPool(A thread pool reuses previously created threads to execute current tasks and offers a solution to the problem of thread cycle overhead and resource thrashing
+):catchedThreadPool,ScheduledThreadPool
+
+-when multiple threads approach we use Lock lock = new ReenTrate();
+	use Lock.lock() and Lock.unlock();
+
+
+->ScheduledExecutorServices: method creates a service instance that can schedule commands to run after a given delay or to execute periodically. and for ex if 1 is number of threads in the pool(execute 1 task at a time)
+
+->
+
+concurrency is achieved using
+--------------------------------------
+--ading the synchronized keyword
+--use of joins
+--use of synchronized block
+--use of Lock.lock() and Lock.unlock();
+
+
+->
+
+===>SreingBuilder & StringBuffer
+	-Mutable: need not assign again and again
+	-insert(pos,characters)
+	-delete(start,end),append(obj),toString(),append()----concatenated and no requirement of assigning, insert(15,"-")----------inserted at 15th position by just shifting the existing 	element and not replacing,-----------replace(18,23,"technical")-------,
+	-
+
+	-StringBuffer>>thread safe
+	-StringBuilder>>(paraller or concurrent threads can access at same tim----better)
+
+
+
+Files------------------------
+
+Database  >> permanent >>server			ex:Whatsapp
+File 	  >>permanent  >>local system
+
+-->temporary memory is required to connect(interact) to the permanent memory
+
+-->java.io
+	
+	-File  >>  absolutePath,name,createNewFile
+	-Stream:
+		InputStream	>> reading
+			FileInputStream
+			DataInputStream
+			ObjectInputStream
+			InflaterInputStream
+			
+		OutputStream	>> writing
+			-FileOutputStream
+			-ObjectOutputStream
+			-DeflaterOutputStream
+
+Java code----------->Output(writing)------------->File system
+	^	file output stream			|
+	|
+	|						|
+	|<-----------input(reading)<---------------------	
+		file input stream
+
+
+--when running from intellij current directory is project structure but in command prompt it would be the package as the current directory.
+
+--\\=current directory in the position of file path.
+--input is taken as string but it cannot be directly written to the file,hence converted to byte format using getBytes();
+
+--FileNotFound exception is a subset of IOException
+
+--filss willl overide the content if takes same fike name orelse oerl
+
+
+-->>>while read or writing of binary data
+
+--to write the binary data instaed of giving directly to file output stream to file here code is given to Deflater(encoded the code) then writing into FileOutput
+--similary to read the content inflater is used to decode the data from the file to format which we can see and understand properly.
+
+
+-->>serializable-----writing object into the file(convert out object into the file)
+--->>deserialization------reading object from the file(converting file into the object)
+
+-->
+
+
+

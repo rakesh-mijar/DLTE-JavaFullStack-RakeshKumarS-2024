@@ -1,0 +1,107 @@
+28/02/2024
+-------------------
+Console APP.testing, junit	
+--------------------
+creditcard: cardNumber,cardExpiry,cardCvv,cardPin,cardTotalLimit,cardAvailableLimit,cardUsage,cardStatus
+
+operations:
+readByCardNumber,update
+
+transactions:
+transactionId,doneBy,dateBy,amount,receiver
+
+operations:
+create,read,update,sort
+
+==from comparator method we shld override methode compare
+==from comparable method we shld override method compareTo
+
+-created creditcard class
+-creadted transaction class
+-
+-create their interfces
+-create compartor method
+
+implement the interface
+
+--------------------------------
+
+29/02/2024
+------------
+console application development
+
+Testing
+----------------
+->Unit-------performed by developer
+
+->functional-------|performed by 
+->non-functional---|tester
+
+----manual---------------&----------automation--------------
+
+
+
+-->Test suite: inorder to perform an operation(ex:logi) we need to perform set of test cases(valid card no,ivalid card no.....in login ex).
+ex:login||test suites are: dashboard,update,transaction,view,suspend
+-->Test maven goals(compile,clean install)
+-->separate execution.
+
+
+-->Test methods
+	-Assertions(comparition with actual and the uservalue(expected))--asserNull,assertNotNull,assertsame,assertTrue,assertFalse,..
+
+		void assertEquals(boolean expected,boolean actual): checks that two primitives/objects are equal. It is overloaded.
+		void assertTrue(boolean condition): checks that a condition is true.
+		void assertFalse(boolean condition): checks that a condition is false.
+		void assertNull(Object obj): checks that object is null.
+		void assertNotNull(Object obj): checks that object is not null.
+	-timeout
+	-exception
+
+Annotations
+=============
+-BeforeClass
+-Before
+-Test
+-After
+-AfterClass
+
+-----------------------------------junit(4.13.2) dependency----------(check more on it).................
+
+--for testing part change the dependency with the below one
+--performs unit testing in java.
+--
+
+<!-- https://mvnrepository.com/artifact/junit/junit -->
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13.2</version>
+    <scope>test</scope>
+</dependency>
+(need not configure  just import changes)
+
+-->mvn test-compile test.............command used to exceute from terminal.
+
+-->what is the difference between failure and error?
+
+-->files for testing can be out of test folder but scope in pom.xl should be changed(check for other scopes in pom.xml).
+
+-->we need to place the testing files in test folder itself bcz maven looks in the test folder(mvn test-compile test command or in side panel also there test is there).
+
+
+Annotations
+------------------
+-->@Test(timeout=1000) annotation specifies that method will be failed if it takes longer than 1000 milliseconds (1 second).
+
+-->@BeforeClass annotation specifies that method will be invoked only once, before starting all the tests.
+
+-->@Before annotation specifies that method will be invoked before each test.
+
+-->difference between these
+method for beforeclass should be static and need not be so for before 
+
+-->@After annotation specifies that method will be invoked after each test.
+
+-->@AfterClass annotation specifies that method will be invoked only once, after finishing all the tests.
+

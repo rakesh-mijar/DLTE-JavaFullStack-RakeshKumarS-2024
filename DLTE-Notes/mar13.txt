@@ -1,0 +1,81 @@
+13/03/2024
+-----------------------------
+SOAP
+
+
+-->check for the dependency of SOAP UI.
+-->creating the webapp project.
+-->in soap webservices if return list it cannot have bound  of objects then it shld be present separate and entities(orivate var,and .
+
+-->?wsdl --(web service description layer)---added along with the path. 
+-->to create files in the server go to ..src/main/java path in the terminal----->command: wsimport -keep (link from service)?wsdl
+-->taken care by jaxx sr team
+
+
+14/03/2024
+---------------------------
+JNDI----jboss server
+---------------------------
+
+
+ in jboss-eap-7.3 server
+
+---add the user at C:\Program Files\jboss-eap-7.3\bin\adduser.bat       ----for creating the new user.
+---put the link in search bar : localhost:9990/console----->tto check the port visit:C:\Program Files\jboss-eap-7.3\standalone\configuration\standalone.xml-----at the below part u find it.
+--it should ask for username and password.  or else open...."C:\Program Files\jboss-eap-7.3\bin\standalone.bat"
+---to start the naming: configurations->subsystems->Naming-->binding-->u can create new by clicking add---> then enter needful.
+--resource is cretaed ..accessing it can be done by using servlets...refer razak's code.
+
+--the created subsystems can be viewed through ----C:\Program Files\jboss-eap-7.3\standalone\configuration\standalone.xml-----in subsystem section
+
+for database activity
+
+configurations->subsystems->datasources&drivers...
+
+-----------------------------------------------
+-----------------------------------------------
+whenever object factory is to be binded as a resouce into JNDI.(not primitve type like int,float and all..)
+
+
+-->jar file of the dependency included is present 
+
+-->location where jar file is present(here oracle, it is used as the dependency available at local repo)----C:\Users\xxshetur\.m2\repository\com\oracle\database\jdbc\ojdbc6\11.2.0.4\jdbc6.jar
+
+-->C:\Program Files\jboss-eap-7.3\modules\system\layers\base-----next in this location create the folder structure based on the group id of oracle dependency(check some project where we used its dependency)....here    \base\com\oracle\database\jdbc......\main(create another folder named main inside the path)...inside this paste the jar file copied from the previous path and also create file module.xml(code will be given here) ..... 
+
+<?xml version="1.0" ?>
+<module xmlns="urn:jboss:module:1.1" name="com.oracle.ojdbc6">
+    <resources>
+        <resource-root path="ojdbc6.jar"/>
+    </resources>
+    <dependencies>
+        <module name="javax.api"/>
+        <module name="javax.transaction.api"/>
+    </dependencies>
+</module>
+
+change the name and path of the code to ur respective one...
+
+save it
+
+in the jboss server(opening is as similar to above steps) but now not naming instead do the datasources and drivers....first in drivers...name=OracleDriver.....oracle.com.(based on groupid)
+
+then reload then datasources should be added classname is oracle.jdbc.OracleDriver and modulename is similar to group id..
+
+
+---------------------------------------------------------------
+---------------------------------------------------------------
+
+
+RMI(refer notes)
+
+-building over the layers(stub.... so need to serialize)
+-binding through the constructors.
+-created registry
+-created properties of registry
+-provide location of registry
+-binding
+
+-client--->stubing<--------------------->skelteon<--------Server
+   (marshalling) 			    (unmarshalling)
+

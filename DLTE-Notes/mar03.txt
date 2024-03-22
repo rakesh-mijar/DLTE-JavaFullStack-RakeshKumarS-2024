@@ -1,0 +1,74 @@
+Testing DAO,SOAP,servlet(refer nores for more)
+-=-=-=-=-=-=-=-=-=-=-=-=-
+
+ 2While implementation of CRUD---------methods that return nothing(void) .....like save,update,delete.........using verify method of testing.
+			|
+			|===========methods the return something(like int,float..)......................using assertions method of testing. 				     
+=>testing requires two dependencies--------junit
+			|
+			|-------------------mockito-creating dummy dataset to check whther all input's are working.
+
+
+
+=>Soap app configuration..??
+-------------
+
+<!-- https://mvnrepository.com/artifact/javax.xml.ws/jaxws-api -->
+<dependency>
+    <groupId>javax.xml.ws</groupId>
+    <artifactId>jaxws-api</artifactId>
+    <version>2.2.10</version>
+</dependency>
+
+SOAP
+---------------------------
+-------------------------wsimport -keep url?wsdl
+The wsimport command is a tool provided by the Java Development Kit (JDK) for generating Java classes based on a given WSDL (Web Services Description Language) file. WSDL is an XML format used to describe web services and their functionality.
+
+-keep: This option tells wsimport to retain the generated source files. By default, wsimport generates the necessary Java files and compiles them into class files, discarding the source files. The -keep option preserves the generated source files, allowing you to inspect them and make modifications if needed.
+
+WSDL (Web Services Description Language) is a standardized XML format used to describe the functionality offered by a web service. It serves as a contract between the service provider and the service consumer, defining how the service can be accessed and what operations it supports. 
+
+
+--------------------------
+
+>SOAP: SOAP is a protocol that follows a strict standard for communication between client and server. It uses XML for message format and works with Web Services Description Language (WSDL).
+
+>REST: REST is an architectural style, not a protocol. It doesn’t follow strict standards but adheres to six constraints defined by Roy Fielding. REST uses various media types (e.g., XML, JSON) and operates over HTTP.
+
+
+SERVLET
+--------
+>Servlet technology is used to create a web application (resides at server side and generates a dynamic web page).
+>Servlet is a class that extends the capabilities of the servers and responds to the incoming requests. It can respond to any requests.Servlet is a web component that is deployed on the server to create a dynamic web page.
+>The javax.servlet package contains many interfaces and classes that are used by the servlet or web container. 
+
+
+Standup questions:
+-----------------------------
+-----------------------------
+
+>>>Is jboss a web server or an applcation server?
+
+JBoss application server is an open-source platform, developed by Red Hat, used for implementing Java applications and a wide variety of other software applications. 
+While JBoss includes features for serving web applications, such as HTTP and servlet support,
+A web server primarily handles static content (such as HTML files, images, and CSS) and responds to HTTP requests from clients (usually web browsers).
+An application server is more versatile and handles dynamic content. It executes business logic, interacts with databases, and generates dynamic responses.(manages servlets and jsp)
+
+>>>Explain the life cycle of servlets with an example.
+
+
+>>>In the HttpServlet class, the init() method is invoked during which phase ?
+
+
+>>>What happens if we invoke init method for the second time or multiple times?
+
+
+>>>What is the diffence between init and destroy methods ?
+
+
+>>>Other than HttpServlet class are there any other inbuilt classes which gives same functionality.
+
+in case of http specific functionality we use httpservelet(from javax.servlet.http package) for response and request tracking but in case of non-http(like ftp,smtp taks..) taks other class like GenericServlet(from javax.servlet package) are used.
+GenericServlet: It provides service() method, which is protocol-independent and must be overridden by subclasses to handle requests.
+HttpServlet: It provides specific methods like doGet(), doPost(), doPut(), doDelete(), etc., corresponding to HTTP methods

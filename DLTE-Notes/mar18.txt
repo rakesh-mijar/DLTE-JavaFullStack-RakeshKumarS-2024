@@ -1,0 +1,98 @@
+Testing RestAPI
+--------------------
+
+->create a test directory similar to java created in webapp then packagess then testing java file.
+
+standup discussions(18-03-2024):
+--------------------------------.
+servelts,different from standalone program,how is servlet different from webservices,lifecycles of servlets(*),is it necessary to extend HttpServlet always,GenericServlet, 
+
+
+spring
+==================
+dependency used in spring(spring context-5.3.19)
+------------------------
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>5.3.19</version>
+</dependency>
+
+
+IOC->DI----------------------->CONTAINER(with beans)-------->
+           configuration					POJO's(Like Account class)													<----------------------			    -------->
+  
+Account 
+
+->configuration is through---------->xml
+		|
+		|-------------------->annotations(controller,component,entity,configuration,service,repository)
+
+1) ------------using xml-------------------
+
+>>using quickstart
+>>add the dependency
+>>create the pojo class
+>>create own xml..then creating beans
+	>>....set the path in xml for beans....url's of beans required(check documentation or razzaks git)
+	>>...id referes to creation objects for a class.
+	>>here default construct is called for intializing the objects(inversion of control is used to make the beans)....or else similar to constructors one or two..or all properties(attributes like 	  		bankname,branch....) initialized through <properties> tag of the pojo class.
+	>>constructors of pojo class can be initialized using <constructor-arg> tag.... but shld be in the order as specified in the pojo class or the particular name or index shld be 	matching properly.
+
+	>>BeanFactory is used when our xml file is present in other than resource location...XmlBeanFactory to specify the location(dependency in
+gestion)
+
+	>>ApplicationContext when our xml file is present in the resouce folder.
+
+
+2)----------------using springboot annotations-------------
+
+two ways of creation-------1)spring plugin
+	   |-------2)spring intializer--->start.spring.io
+
+different annotations are:(check to it??????????)BN
+
+
+
+
+
+
+>autowire: 
+--------------
+>@Autowired: This annotation is used to automatically inject the bean dependency.
+>@Qualifier("homeLoan"): This annotation is used along with @Autowired when there are multiple beans of the same type and you want to specify which one to inject. In this case, it tells Spring to inject the bean with the name "homeLoan" that implements the LoanInterface interface into the MyBank class.
+>@Service: This annotation is used to indicate that the MyBank class is a service component in the Spring application context. It allows Spring to automatically detect and register MyBank as a bean.
+
+>AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();: This line creates a new instance of AnnotationConfigApplicationContext, which is the class that provides the functionality to register Spring beans and manage the application context.
+
+>any class to work as a dependency ingestion---component is used
+>entity(orm)
+>controller--------url mapping
+>restcontroller------webservice(soap or rest)----->request 
+
+
+>for creating spring file it is spring initializer give version 17 then,bu that can be changed    as 3.17                                                                                                                        
+
+>Autowire (use streotype--------Stereotype annotations in the Spring Framework provide additional metadata to clarify the role of a class within the application. ---- @Component, @Service, @Repository, and @Controller.)
+
+>Qualifier is unique name given same operations is to be performed
+
+>constructor based autowire and setter based constructor, field based autowire---------------3ways
+
+
+>>executing field injection:
+----------------------====
+>spring initializer
+>jar file
+>no dependencies used
+chnage the versions as said bove
+refer spring task-001
+=======================================================================
+>>executing rest mapping controller
+-------------------------------
+>spring initializer project
+>jar file
+>spring web as the dependency
+>then next change the versions properly (check razak's git),settings,project structure,compiler

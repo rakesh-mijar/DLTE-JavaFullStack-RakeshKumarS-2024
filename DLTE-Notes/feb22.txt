@@ -1,0 +1,172 @@
+...
+final modifiers---interface
+errors vs exceptions
+different errors and exceptions
+
+run-time exceptions:
+-while running an code exceptions would occur due to unexpected data/ condition which cause our code to be terminated incomplete
+
+-ex:
+
+objective:
+1.let the code complete even exception occurs
+2.offer another chance to fix the execution and continue.
+
+----------------
+Exceptions
+------------------
+1.Checked excp----compile time----------using throws at signature of the methods
+2.unchecked excp---------runtime-------using throw or try..catch..finally
+
+-->throw
+	-->The throw keyword in Java is used to explicitly throw an exception from a method or any block of code.
+	-->We are allowed to throw only one exception at a time i.e. we cannot throw multiple exceptions.
+	-->throw is used within the method.
+	-->The throw keyword is followed by an instance of Exception to be thrown.>
+
+
+-->throws
+	-->Java throws keyword is used in the method signature to declare an exception which might be thrown by the function while the 			execution of the code.
+	-->We can declare multiple exceptions using throws keyword that can be thrown by the method. For example, main() throws IOException, SQLException.
+	-->throws is used with the method signature.
+
+------------------------
+--exception handling
+---------------------------
+-compile time exceptions--using throws at signature of methods is used
+
+---try..catch..finally---- blocks for----runtime exceptions.
+-finally executes irrespective of try and block.
+-if catch block is skipped, exceptions can be handeled in finally block but it will execute even if there is no error in the code.
+
+---------------------
+stand-up points: 22/2/2024
+---when private class with public mem
+---when class is defined as protected and accessed 
+----when class is default how can it be accessed.
+----different access specifiers.
+--store the jar in another location //change location of libraries to some other besides the ./m2 repository.
+---in .m2 folder why other folders are ther other than junit and loambok
+--transitive libararies.(the libraries which we have not used but are actually existing in the ./m2 repository)
+--
+-----------------------
+
+Logging
+---------------
+-resiurcebundler fetches the files based on the name
+->Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+->errors are presented through properties file in resource folder and not hard-coded
+->logging is better than just printing the error messages, in logs it specifies the time date and also type(INFO,WARNING),..
+
+
+->if it is a class member need not be initialized
+->if it is a local variable in a method then it is not required to be initialized
+->once the inputException is met then scanner cannot be used again so we have to re-initialize it for usage of scanner class
+
+
+->configuration part will be not visible in logs
+
+->Nested try..catch..finally
+---------------------------------
+
+Asserition
+------------------------------------------
+
+23/2/2024-------------------------------------------
+
+singleton classes-one instance at a time.
+
+--//Runtimew runtime=Runtime.getRuntime();
+Insurance insurance=Insurance.getInsurance();//we defines the singleton classes.
+---------------multithreading-------------------
+
+parallel processing - ticket booking system
+
+components:
+	-resource class/service provider
+	 1.extends Thread >> java.lang
+	 2.implements Runnable >> java.lang
+
+main class
+	customer/thread created  towards the resource
+
+public void run() {
+Thread.currentThread().getName();
+} //starting point of execution
+
+Thread threadObject = new Thread(resource,"Name of the thread");          //born state
+
+
+//execued in as --->start,run
+
+//thread id is given by compiler based on compiler version---using implements
+
+/main is also a thread
+
+-->Single Task Multithread >> synchronizedis at signature level(synchronized public void run()) is used to make sure the thread which has enterd completes their tasks...and only then next thread can enter
+
+-->synchronized<-----
+	1) block so that nly the required statements can be executed in the order synchronized(this){}
+	2) to ensure thread safety avoid race condition(multiple threads accesing same resources)
+
+-->join--thread enters and executes the entire task until then others have to wait--->thread1.join()
+
+-->method reference: need not implement the interface we can just refer to it.
+
+
+-->creating object of a class within another class to access it other than inheritance----aggregate methode---used in transaction analysis.
+
+
+--Thread life cycle:
+born
+running:start,run,notify
+waiting:sleep,wait
+trminst
+
+-------------
+Thread
+---------------
+is a lightweight unit of execution that operates independently and shares the same memory space with other threads within a process.
+
+Two ways of creating
+1)creating a class as the subclass of the Thread class
+	->This subclass should override the run method of the Thread class. An instance of the subclass can then be allocated and started.
+	->It has start()-it starts the execution of run by executing the threads internally and run() methods...shld call start() first it creates a new thread where run() starts execuing but directly running run() executed from current thread itself....run contains the actual code to be executed.
+	->after a class extends Thread class, it can not extend any other class
+
+2)another way is to declare a class that implements the interface
+	->An instance of the class can then be allocated, passed as an argument when creating Thread, and started.
+	->it has only abstract run() methods
+	->If a class is implementing the runnable interface then your class can extend another class.
+------------------
+Multi-tasking
+------------------
+-enhances responsiveness and performance of applications.
+-execute multiple tasks concurrently utilizing of effiecient resources.
+-refers to ability of a sysytem to execute multiple tasks simultaneously or in overlapping time intervals.
+-two approaches:
+	1)multi-tasking using multiple processes
+	2)multi-tasking using multiple threads
+
+inter thread communication,multi-task & singl-task multithreading,method reference.---------------------
+
+-----------------------------------
+C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-001>cd C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-001\src\main\java\branches\blocks
+
+->C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-001\src\main\java\branches\blocks>javac -d C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-001\out App.java
+
+C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-001\src\main\java\branches\blocks>cd C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-001\out
+
+C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-001\out>java App
+Error: Could not find or load main class App
+
+C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-001\out>java branches.blocks.App
+Welcome to Tietoevry
+
+C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-001\out>
+
+
+
+
+
+https://paste.rs/mMJzM.txt

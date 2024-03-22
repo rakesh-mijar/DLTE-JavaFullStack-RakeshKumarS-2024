@@ -1,0 +1,115 @@
+Java EE:
+-------------------
+Application:
+
+->Standalone:Desktop/Laptop---installation required(console based,swing)---->single tier application(all three logics in same system)------>Java SE
+
+->web:application server->internet----- 2-tier architecture---(client and server present here---if server got hacked data will be lost permanently)-------->Java EE
+
+->mobile app: mobile application
+
+
+3-tier architrecture
+->client --ui business
+->Ap.server --ui business
+->Database.server--data
+
+N-tier architecture
+in the app.server----we have proxy/isp servers----which retards some of the ret
+
+MVC
+--they get a copy of database.server in application server and used again and again
+--model :db copy
+--view  :ui
+--controller: business 
+
+webservices:
+-->here need not develop same apllications again and again instead just call the existing api's
+-->xml(soap api) and json(rest api) are two format widely accpetd by all languages or application(web,..)
+-->cross platform support
+
+
+Logics:
+1)Presentation logic/UI
+2)Business Logic/application coding
+3)data logic/storage
+
+-->MVC can be implemented using Java EE where view is presentation,
+					      controller is servlet,
+					      oracle is applicatio.server
+
+
+     ------1) Presentation Laye---->JSP,JSF
+    /                                     /------access request
+web--------2) Busiess Logic---------->servlet--------read infor
+   \			\		  \-------process
+    \			 \		   \------provide response
+     \			  \
+      |			   \------->model(pojo/entity)
+3) oracle
+     |
+    web services
+       	|
+    a).JAX-WS
+    B).JAX-RS
+
+=============================================================
+-->SL4J(Simple Logging Facade 4 Java)
+
+
+--logback>1.13>framework
+
+1)configure the dependencies
+2)appender
+
+-->if u want set the different location of log file then use system.set property....by default location of the file is in resource folder. 
+
+<<<<<<<<<<<<<<<<<<<<<dependency to be added>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.3.14</version>
+    <scope>test</scope>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>2.0.7</version>
+</dependency>
+
+
+----->configuration appender:
+		ConsoleAppender>>
+			Pattern
+			>>%d>>date/timestamp
+			>>thread>
+			>>levels
+			>>msg
+------->FileAppender>>
+
+
+FileAppender>>
+
+
+root:appender names,
+
+
+
+implement:
+Logger,LoggerFactory(Classname.class)
+
+util.logger:
+logger.log(level,msg)
+slf4j:
+logger.info(msg)
+logger.error(msg)
+logger.warning(msg)
+
+
+
+----

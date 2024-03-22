@@ -1,0 +1,31 @@
+Spring framework
+--------------------
+>during creation of spring project web is the dependecy to be selected.
+>change the versions properly (check razak's git),settings,project structure,compiler
+
+
+
+to add the dependency---that allows not torestart the server again and again
+-------------------------------------------------------------------------------
+>in setting ->build,execute->comipler->select build project automatically.
+     |->Advanced settings-...
+
+or
+
+pasteit in pom.xml
+
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <version>2.7.10</version>
+</dependency>
+
+
+=================================
+spring with jpa
+
+>war
+>maven
+>dependency:spring boot dev tools,oracle driver,spring web,spring data jpa
+>change the versions check git of razak
