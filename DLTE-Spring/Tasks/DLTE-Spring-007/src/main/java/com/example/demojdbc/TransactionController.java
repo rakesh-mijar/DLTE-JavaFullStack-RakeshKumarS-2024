@@ -17,7 +17,7 @@ public class TransactionController {
     TransactionService transactionService;
 
 
-    Logger logger =LoggerFactory.getLogger(TransactionController.class);
+    //Logger logger =LoggerFactory.getLogger(TransactionController.class);
 
     //save the transaction entry into the table
     //http://localhost:8082/transaction/jdbc/new/transac;
@@ -30,7 +30,7 @@ public class TransactionController {
             transactionNew=transactionService.apiSave(transaction);
         }
         catch (TransactionException transacException){
-            logger.warn(transacException.toString());
+            //logger.warn(transacException.toString());
         }
         return transactionNew;
     }

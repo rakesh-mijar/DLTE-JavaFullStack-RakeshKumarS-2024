@@ -60,7 +60,7 @@ public class TransactionService {
      to TransactionNew objects. The mapRow method defines how each row in the result
      set should be mapped to a TransactionNew object.
      */
-    protected class CardMapper implements RowMapper<TransactionNew>{
+    protected class TransactiondMapper implements RowMapper<TransactionNew>{
         @Override
         public TransactionNew mapRow(ResultSet rs, int rowNum) throws SQLException {
             TransactionNew transaction=new TransactionNew();
