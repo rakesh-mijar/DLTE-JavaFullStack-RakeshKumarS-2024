@@ -17,7 +17,7 @@ public class Database {
             connection = DriverManager.getConnection(resourceBundle.getString("db.url"), resourceBundle.getString("db.user"), resourceBundle.getString("db.pass"));
     }
 
-    public Connection getConnection(){
+    public  Connection getConnection(){
         return connection;
     }
 }

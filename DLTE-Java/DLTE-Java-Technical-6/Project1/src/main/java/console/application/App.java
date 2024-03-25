@@ -30,92 +30,7 @@ public class App {
                 switch (choice) {
                     case 1:
                         try {
-                            do {
-                                Entities.Backend.EmployeeDetails employeeDetails = new Entities.Backend.EmployeeDetails();
-
-                                System.out.println("Enter the employee id");
-                                int empId = scanner.nextInt();
-                                employeeDetails.setEmpId(empId);
-                                scanner.nextLine();
-                                System.out.println("Enter employee first name");
-                                String firstName = scanner.nextLine();
-                                employeeDetails.setFirstName(firstName);
-                                System.out.println("Enter employee middle name");
-                                String middleName = scanner.nextLine();
-                                employeeDetails.setMiddleName(middleName);
-                                System.out.println("Enter employee last name");
-                                String lastName = scanner.nextLine();
-                                employeeDetails.setLastName(lastName);
-                                System.out.println("Enter the mobile number");
-                                Long empMobileNumber = scanner.nextLong();
-                                employeeDetails.setEmpMobileNumber(empMobileNumber);
-                                while (!isvalidatePhone(empMobileNumber)) {
-                                    System.out.println(resourceBundle.getString("employee.contact.invalid"));
-                                    empMobileNumber = scanner.nextLong();
-                                }
-                                scanner.nextLine();
-
-                                Entities.Backend.EmployeeAddress permAddress = new Entities.Backend.EmployeeAddress();
-
-                                System.out.println("Enter the permanent address");
-                                System.out.println("Enter the street or locality");
-                                String permStreet = scanner.nextLine();
-                                permAddress.setStreet(permStreet);
-                                System.out.println("Enter the State");
-                                String permState = scanner.nextLine();
-                                permAddress.setState(permState);
-                                System.out.println("Enter the Country");
-                                String permCountry = scanner.nextLine();
-                                permAddress.setCountry(permCountry);
-                                System.out.println("Enter the pincode");
-                                int permPincode = scanner.nextInt();
-                                //permAddress.setPincode(Integer.parseInt(permPincode));
-                                permAddress.setPincode(permPincode);
-                                while (!isvalidatePin(permPincode)) {
-                                    System.out.println(resourceBundle.getString("employee.pin.invalid"));
-                                    //logger.warn("Invalid pin");
-                                    permPincode = scanner.nextInt();
-                                }
-                                scanner.nextLine();
-
-                                Entities.Backend.EmployeeAddress tempAddress = new Entities.Backend.EmployeeAddress();
-
-//                            EmployeeAddress tempAddress = new EmployeeAddress();
-                                System.out.println("Enter the temporary address");
-                                System.out.println("Enter the street or locality");
-                                String tempStreet = scanner.nextLine();
-                                tempAddress.setStreet(tempStreet);
-                                System.out.println("Enter the State");
-                                String tempState = scanner.nextLine();
-                                tempAddress.setState(tempState);
-                                System.out.println("Enter the Country");
-                                String tempCountry = scanner.nextLine();
-                                tempAddress.setCountry(tempCountry);
-                                System.out.println("Enter the pincode");
-                                int tempPincode = scanner.nextInt();
-                                //tempAddress.setPincode(Integer.parseInt(tempPincode));
-                                tempAddress.setPincode(tempPincode);
-                                while (!isvalidatePin(tempPincode)) {
-                                    System.out.println(resourceBundle.getString("employee.pin.invalid"));
-                                    //logger.warn("Invalid pin");
-                                    tempPincode = scanner.nextInt();
-                                }
-
-                                employeeDetails.setTempAddress(tempAddress);
-                                employeeDetails.setPermAddress(permAddress);
-
-                                implementations.App app1 = new implementations.App();
-                                //app1.writeEmployeeDetails(employeeDetails);
-
-                                boolean success = app1.writeEmployeeDetails(employeeDetails);//Implementations.App.writeEmployeeDetails(employeeDetails);
-                                if (success) {
-                                    System.out.println(resourceBundle.getString("employee.create.success"));
-                                } else {
-                                    System.out.println(resourceBundle.getString("employee.create.failure"));
-                                }
-
-                                System.out.println(resourceBundle.getString("app.continue"));
-                            } while (scanner.nextInt() == 1);
+                            collectEmployeeDetails();
                         } catch (backend.exceptions.ConnectionFailureException | SQLException ex) {
                             System.out.println(resourceBundle.getString("no.connection"));
                         }catch (backend.exceptions.UserAlreadyExistsException userEx){
@@ -196,23 +111,12 @@ public class App {
                          }
                         break;
 
-//                    case 3: System.out.println(resourceBundle.getString("enter.pincode"));
-//                        int pinCode = scanner.nextInt();
-//                        try {
-//                            //Employee employee = inputEmployeeDetails.displayBasedOnPinCode(pinCode);
-//                            Interface.EmployeeInterface app1 = new Implementations.App();
-//                            Entitties.Console.data.EmployeeDetails employee=app1.findByPincode(pinCode);
-//                            System.out.println(app1.employeeOutputDetails());
-//                        } catch (EmployeeNotFoundException e) {
-//                            System.out.println(e.getMessage());
-//                            logger.warn(e.getMessage());
-//                        }
-//                        break;
-
 
                     case 3: try {
                         // Initialize your App instance
                         interfaces.EmployeeInterface app1 = new implementations.App();
+
+                        //implementations.App app1= new implementations.App();
 
                         System.out.println("Enter the pincode to search for:");
                         int pincode = scanner.nextInt();
@@ -251,6 +155,94 @@ public class App {
                 scanner.next();
             }
         }
+    }
+    static void collectEmployeeDetails() throws SQLException {
+        do {
+            Entities.Backend.EmployeeDetails employeeDetails = new Entities.Backend.EmployeeDetails();
+
+            System.out.println("Enter the employee id");
+            int empId = scanner.nextInt();
+            employeeDetails.setEmpId(empId);
+            scanner.nextLine();
+            System.out.println("Enter employee first name");
+            String firstName = scanner.nextLine();
+            employeeDetails.setFirstName(firstName);
+            System.out.println("Enter employee middle name");
+            String middleName = scanner.nextLine();
+            employeeDetails.setMiddleName(middleName);
+            System.out.println("Enter employee last name");
+            String lastName = scanner.nextLine();
+            employeeDetails.setLastName(lastName);
+            System.out.println("Enter the mobile number");
+            Long empMobileNumber = scanner.nextLong();
+            employeeDetails.setEmpMobileNumber(empMobileNumber);
+            while (!isvalidatePhone(empMobileNumber)) {
+                System.out.println(resourceBundle.getString("employee.contact.invalid"));
+                empMobileNumber = scanner.nextLong();
+            }
+            scanner.nextLine();
+
+            Entities.Backend.EmployeeAddress permAddress = new Entities.Backend.EmployeeAddress();
+
+            System.out.println("Enter the permanent address");
+            System.out.println("Enter the street or locality");
+            String permStreet = scanner.nextLine();
+            permAddress.setStreet(permStreet);
+            System.out.println("Enter the State");
+            String permState = scanner.nextLine();
+            permAddress.setState(permState);
+            System.out.println("Enter the Country");
+            String permCountry = scanner.nextLine();
+            permAddress.setCountry(permCountry);
+            System.out.println("Enter the pincode");
+            int permPincode = scanner.nextInt();
+            //permAddress.setPincode(Integer.parseInt(permPincode));
+            permAddress.setPincode(permPincode);
+            while (!isvalidatePin(permPincode)) {
+                System.out.println(resourceBundle.getString("employee.pin.invalid"));
+                //logger.warn("Invalid pin");
+                permPincode = scanner.nextInt();
+            }
+            scanner.nextLine();
+
+            Entities.Backend.EmployeeAddress tempAddress = new Entities.Backend.EmployeeAddress();
+
+//                            EmployeeAddress tempAddress = new EmployeeAddress();
+            System.out.println("Enter the temporary address");
+            System.out.println("Enter the street or locality");
+            String tempStreet = scanner.nextLine();
+            tempAddress.setStreet(tempStreet);
+            System.out.println("Enter the State");
+            String tempState = scanner.nextLine();
+            tempAddress.setState(tempState);
+            System.out.println("Enter the Country");
+            String tempCountry = scanner.nextLine();
+            tempAddress.setCountry(tempCountry);
+            System.out.println("Enter the pincode");
+            int tempPincode = scanner.nextInt();
+            //tempAddress.setPincode(Integer.parseInt(tempPincode));
+            tempAddress.setPincode(tempPincode);
+            while (!isvalidatePin(tempPincode)) {
+                System.out.println(resourceBundle.getString("employee.pin.invalid"));
+                //logger.warn("Invalid pin");
+                tempPincode = scanner.nextInt();
+            }
+
+            employeeDetails.setTempAddress(tempAddress);
+            employeeDetails.setPermAddress(permAddress);
+
+            implementations.App app1 = new implementations.App();
+            app1.writeEmployeeDetails(employeeDetails);
+
+//                                boolean success = app1.writeEmployeeDetails(employeeDetails);//implementations.App.writeEmployeeDetails(employeeDetails);
+//                                if (success) {
+//                                    System.out.println(resourceBundle.getString("employee.create.success"));
+//                                } else {
+//                                    System.out.println(resourceBundle.getString("employee.create.failure"));
+//                                }
+
+            System.out.println(resourceBundle.getString("app.continue"));
+        } while (scanner.nextInt() == 1);
     }
 
 }

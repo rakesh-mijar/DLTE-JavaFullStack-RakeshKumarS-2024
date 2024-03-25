@@ -1,2 +1,24 @@
 11:01:25.217 [34m[main][0;39m INFO  implementations.App - [34mEmployee details saved successfully!![0;39m
 11:36:43.702 [34m[main][0;39m INFO  console.application.App - [34mno.employee[0;39m 
+09:08:49.776 [34m[main][0;39m INFO  console.application.App - [34mno.employee[0;39m 
+09:08:58.163 [34m[main][0;39m INFO  console.application.App - [34mno.employee[0;39m 
+09:09:07.052 [34m[main][0;39m INFO  console.application.App - [34mno.employee[0;39m 
+09:09:19.698 [34m[main][0;39m INFO  console.application.App - [34mno.employee[0;39m 
+09:29:01.660 [34m[main][0;39m INFO  console.application.App - [34mno.employee[0;39m 
+09:31:25.931 [34m[main][0;39m INFO  console.application.App - [34mno.employee[0;39m 
+09:47:23.676 [34m[main][0;39m INFO  implementations.App - [34mEmployee details saved successfully!![0;39m 
+10:05:06.871 [34m[main][0;39m INFO  implementations.App - [34mEmployee details saved successfully!![0;39m 
+10:06:16.095 [34m[main][0;39m INFO  console.application.App - [34mno.employee[0;39m 
+10:08:24.534 [34m[main][0;39m INFO  implementations.App - [34mEmployee details saved successfully!![0;39m 
+10:11:42.919 [31m[main][0;39m WARN  implementations.App - [31mFailed to insert the employee Entities.Backend.EmployeeDetails@36c88a32 Employee already present[0;39m 
+10:37:00.025 [34m[main][0;39m INFO  console.application.App - [34mno.employee[0;39m 
+10:42:21.201 [34m[main][0;39m INFO  console.application.App - [34mno.employee[0;39m 
+10:43:44.578 [34m[main][0;39m INFO  implementations.App - [34mEmployee details saved successfully!![0;39m 
+11:01:45.795 [31m[main][0;39m WARN  implementations.App - [31mFailed to insert the employee Entities.Backend.EmployeeDetails@36c88a32 Employee already present[0;39m 
+11:26:15.896 [34m[main][0;39m INFO  implementations.App - [34mEmployee details saved successfully!![0;39m 
+11:34:49.448 [31m[main][0;39m WARN  implementations.App - [31mFailed to insert the employee Entities.Backend.EmployeeDetails@36c88a32 Employee already present[0;39m 
+12:17:16.959 [31m[main][0;39m WARN  implementations.App - [31mFailed to insert the employee Entities.Backend.EmployeeDetails@6af93788 Employee already present[0;39m 
+13:24:21.853 [31m[main][0;39m WARN  implementations.App - [31mFailed to insert the employee Entities.Backend.EmployeeDetails@44ebcd03 Employee already present[0;39m 
+14:37:44.339 [31m[main][0;39m WARN  implementations.App - [31mFailed to insert the employee Entities.Backend.EmployeeDetails@1fa268de Employee already present[0;39m 
+14:38:01.329 [31m[main][0;39m WARN  implementations.App - [31mFailed to insert the employee Entities.Backend.EmployeeDetails@1fa268de Employee already present[0;39m 
+14:38:31.912 [31m[main][0;39m WARN  implementations.App - [31mFailed to insert the employee Entities.Backend.EmployeeDetails@1fa268de Employee already present[0;39m 
