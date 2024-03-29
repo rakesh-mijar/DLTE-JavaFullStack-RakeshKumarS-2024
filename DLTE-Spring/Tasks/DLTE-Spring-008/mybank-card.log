@@ -1,0 +1,439 @@
+[31m2024-03-28 20:00:41,724[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarting Application using Java 1.8.0_292 on WPF45DE29 with PID 11704 (C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008\target\classes started by xxshetur in C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008)
+[0;39m[31m2024-03-28 20:00:41,724[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-28 20:00:41,858[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [32mThe Class-Path manifest attribute in C:\Users\xxshetur\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxshetur/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxshetur/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxshetur/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxshetur/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
+[0;39m[31m2024-03-28 20:00:41,858[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[0;39m[31m2024-03-28 20:00:41,858[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[0;39m[31m2024-03-28 20:00:42,704[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-28 20:00:42,719[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 15 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-28 20:00:42,973[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker restartedMain [32mBean 'soapServiceConfiguration' of type [com.example.demo.configs.SoapServiceConfiguration$$EnhancerBySpringCGLIB$$25d54e32] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:00:42,973[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker restartedMain [32mBean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$61881489] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:00:43,051[0;39m [32m[INFO][0;39m org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping restartedMain [32mSupporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[0;39m[31m2024-03-28 20:00:43,444[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
+[0;39m[31m2024-03-28 20:00:43,460[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
+[0;39m[31m2024-03-28 20:00:43,460[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[31m2024-03-28 20:00:43,722[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
+[0;39m[31m2024-03-28 20:00:43,722[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 1864 ms
+[0;39m[31m2024-03-28 20:00:44,542[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-28 20:00:44,542[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-28 20:00:44,685[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-28 20:00:44,685[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-28 20:00:44,850[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
+[0;39m[31m2024-03-28 20:00:44,900[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
+[0;39m[31m2024-03-28 20:00:44,916[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarted Application in 4.115 seconds (JVM running for 6.02)
+[0;39m[31m2024-03-28 20:06:59,244[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] http-nio-8082-exec-2 [32mInitializing Spring DispatcherServlet 'dispatcherServlet'
+[0;39m[31m2024-03-28 20:06:59,244[0;39m [32m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8082-exec-2 [32mInitializing Servlet 'dispatcherServlet'
+[0;39m[31m2024-03-28 20:06:59,244[0;39m [32m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8082-exec-2 [32mCompleted initialization in 0 ms
+[0;39m[31m2024-03-28 20:13:25,162[0;39m [32m[INFO][0;39m com.example.demo.ApplicationTests main [32mStarting ApplicationTests using Java 1.8.0_292 on WPF45DE29 with PID 9920 (started by xxshetur in C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008)
+[0;39m[31m2024-03-28 20:13:25,162[0;39m [32m[INFO][0;39m com.example.demo.ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-28 20:13:26,155[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-28 20:13:26,188[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 13 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-28 20:13:26,549[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker main [32mBean 'soapServiceConfiguration' of type [com.example.demo.configs.SoapServiceConfiguration$$EnhancerBySpringCGLIB$$917b0d8d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:13:26,549[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker main [32mBean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$cd2dd3e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:13:26,643[0;39m [32m[INFO][0;39m org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping main [32mSupporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[0;39m[31m2024-03-28 20:13:29,415[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-28 20:13:29,415[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-28 20:13:29,997[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-28 20:13:30,013[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-28 20:13:30,500[0;39m [32m[INFO][0;39m com.example.demo.ApplicationTests main [32mStarted ApplicationTests in 5.996 seconds (JVM running for 7.717)
+[0;39m[31m2024-03-28 20:13:31,065[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-28 20:13:31,092[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-28 20:19:54,956[0;39m [32m[INFO][0;39m com.example.demo.ApplicationTests main [32mStarting ApplicationTests using Java 1.8.0_292 on WPF45DE29 with PID 13080 (started by xxshetur in C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008)
+[0;39m[31m2024-03-28 20:19:54,956[0;39m [32m[INFO][0;39m com.example.demo.ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-28 20:19:55,836[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-28 20:19:55,860[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 18 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-28 20:19:56,294[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker main [32mBean 'soapServiceConfiguration' of type [com.example.demo.configs.SoapServiceConfiguration$$EnhancerBySpringCGLIB$$d799e991] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:19:56,294[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker main [32mBean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$134cafe8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:19:56,431[0;39m [32m[INFO][0;39m org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping main [32mSupporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[0;39m[31m2024-03-28 20:19:58,867[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-28 20:19:58,873[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-28 20:19:59,582[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-28 20:19:59,582[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-28 20:20:00,235[0;39m [32m[INFO][0;39m com.example.demo.ApplicationTests main [32mStarted ApplicationTests in 5.837 seconds (JVM running for 7.377)
+[0;39m[31m2024-03-28 20:20:00,891[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-28 20:20:00,913[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-28 20:20:23,658[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarting Application using Java 1.8.0_292 on WPF45DE29 with PID 1600 (C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008\target\classes started by xxshetur in C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008)
+[0;39m[31m2024-03-28 20:20:23,658[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-28 20:20:23,798[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [32mThe Class-Path manifest attribute in C:\Users\xxshetur\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxshetur/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxshetur/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxshetur/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxshetur/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
+[0;39m[31m2024-03-28 20:20:23,798[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[0;39m[31m2024-03-28 20:20:23,798[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[0;39m[31m2024-03-28 20:20:25,132[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-28 20:20:25,148[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 13 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-28 20:20:25,494[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker restartedMain [32mBean 'soapServiceConfiguration' of type [com.example.demo.configs.SoapServiceConfiguration$$EnhancerBySpringCGLIB$$b3f55499] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:20:25,494[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker restartedMain [32mBean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$efa81af0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:20:25,594[0;39m [32m[INFO][0;39m org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping restartedMain [32mSupporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[0;39m[31m2024-03-28 20:20:25,998[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
+[0;39m[31m2024-03-28 20:20:26,014[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
+[0;39m[31m2024-03-28 20:20:26,014[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[31m2024-03-28 20:20:26,187[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
+[0;39m[31m2024-03-28 20:20:26,187[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 2389 ms
+[0;39m[31m2024-03-28 20:20:26,942[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-28 20:20:26,959[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-28 20:20:27,131[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-28 20:20:27,146[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-28 20:20:27,444[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
+[0;39m[31m2024-03-28 20:20:27,571[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
+[0;39m[31m2024-03-28 20:20:27,597[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarted Application in 4.771 seconds (JVM running for 6.833)
+[0;39m[31m2024-03-28 20:20:44,031[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] http-nio-8082-exec-1 [32mInitializing Spring DispatcherServlet 'dispatcherServlet'
+[0;39m[31m2024-03-28 20:20:44,031[0;39m [32m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8082-exec-1 [32mInitializing Servlet 'dispatcherServlet'
+[0;39m[31m2024-03-28 20:20:44,031[0;39m [32m[INFO][0;39m org.springframework.web.servlet.DispatcherServlet http-nio-8082-exec-1 [32mCompleted initialization in 0 ms
+[0;39m[31m2024-03-28 20:26:07,638[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener File Watcher [32mRestarting due to 15 class path changes (0 additions, 15 deletions, 0 modifications)
+[0;39m[31m2024-03-28 20:26:07,945[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService Thread-16 [32mStopping service [Tomcat]
+[0;39m[31m2024-03-28 20:26:07,945[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Thread-16 [32mDestroying Spring FrameworkServlet 'dispatcherServlet'
+[0;39m[31m2024-03-28 20:26:08,000[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-16 [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-28 20:26:08,016[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-16 [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-28 20:26:10,791[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarting Application using Java 1.8.0_292 on WPF45DE29 with PID 1600 (C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008\target\classes started by xxshetur in C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008)
+[0;39m[31m2024-03-28 20:26:10,791[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-28 20:26:11,136[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-28 20:26:11,136[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-28 20:26:11,215[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker restartedMain [32mBean 'soapServiceConfiguration' of type [com.example.demo.configs.SoapServiceConfiguration$$EnhancerBySpringCGLIB$$b3f55499] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:26:11,215[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker restartedMain [32mBean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$efa81af0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:26:11,215[0;39m [32m[INFO][0;39m org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping restartedMain [32mSupporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[0;39m[31m2024-03-28 20:26:11,279[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
+[0;39m[31m2024-03-28 20:26:11,279[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
+[0;39m[31m2024-03-28 20:26:11,279[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[31m2024-03-28 20:26:11,294[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat-1].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
+[0;39m[31m2024-03-28 20:26:11,294[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 488 ms
+[0;39m[31m2024-03-28 20:26:11,577[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-2 - Starting...
+[0;39m[31m2024-03-28 20:26:11,577[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-28 20:26:11,609[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-2 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-28 20:26:11,609[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-2 - Start completed.
+[0;39m[31m2024-03-28 20:26:11,640[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
+[0;39m[31m2024-03-28 20:26:11,660[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
+[0;39m[31m2024-03-28 20:26:11,672[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarted Application in 0.972 seconds (JVM running for 350.911)
+[0;39m[31m2024-03-28 20:26:11,672[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener restartedMain [32mCondition evaluation unchanged
+[0;39m[31m2024-03-28 20:26:13,075[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener File Watcher [32mRestarting due to 13 class path changes (13 additions, 0 deletions, 0 modifications)
+[0;39m[31m2024-03-28 20:26:13,281[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService Thread-23 [32mStopping service [Tomcat]
+[0;39m[31m2024-03-28 20:26:13,296[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-23 [32mHikariPool-2 - Shutdown initiated...
+[0;39m[31m2024-03-28 20:26:13,315[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-23 [32mHikariPool-2 - Shutdown completed.
+[0;39m[31m2024-03-28 20:26:13,548[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarting Application using Java 1.8.0_292 on WPF45DE29 with PID 1600 (C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008\target\classes started by xxshetur in C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008)
+[0;39m[31m2024-03-28 20:26:13,548[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-28 20:26:13,847[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-28 20:26:13,847[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 3 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-28 20:26:13,910[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker restartedMain [32mBean 'soapServiceConfiguration' of type [com.example.demo.configs.SoapServiceConfiguration$$EnhancerBySpringCGLIB$$b3f55499] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:26:13,910[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker restartedMain [32mBean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$efa81af0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:26:13,910[0;39m [32m[INFO][0;39m org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping restartedMain [32mSupporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[0;39m[31m2024-03-28 20:26:13,995[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
+[0;39m[31m2024-03-28 20:26:13,996[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
+[0;39m[31m2024-03-28 20:26:13,996[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[31m2024-03-28 20:26:14,036[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat-1].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
+[0;39m[31m2024-03-28 20:26:14,036[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 473 ms
+[0;39m[31m2024-03-28 20:26:14,303[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-3 - Starting...
+[0;39m[31m2024-03-28 20:26:14,303[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-28 20:26:14,337[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-3 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-28 20:26:14,337[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-3 - Start completed.
+[0;39m[31m2024-03-28 20:26:14,368[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
+[0;39m[31m2024-03-28 20:26:14,384[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
+[0;39m[31m2024-03-28 20:26:14,384[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarted Application in 0.878 seconds (JVM running for 353.626)
+[0;39m[31m2024-03-28 20:26:14,384[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener restartedMain [32mCondition evaluation unchanged
+[0;39m[31m2024-03-28 20:26:14,778[0;39m [32m[INFO][0;39m com.example.demo.ApplicationTests main [32mStarting ApplicationTests using Java 1.8.0_292 on WPF45DE29 with PID 16668 (started by xxshetur in C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008)
+[0;39m[31m2024-03-28 20:26:14,793[0;39m [32m[INFO][0;39m com.example.demo.ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-28 20:26:15,739[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-28 20:26:15,766[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 13 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-28 20:26:16,148[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker main [32mBean 'soapServiceConfiguration' of type [com.example.demo.configs.SoapServiceConfiguration$$EnhancerBySpringCGLIB$$78386b9c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:26:16,148[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker main [32mBean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b3eb31f3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:26:16,227[0;39m [32m[INFO][0;39m org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping main [32mSupporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[0;39m[31m2024-03-28 20:26:18,494[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-28 20:26:18,510[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-28 20:26:19,252[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-28 20:26:19,271[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-28 20:26:20,133[0;39m [32m[INFO][0;39m com.example.demo.ApplicationTests main [32mStarted ApplicationTests in 6.065 seconds (JVM running for 8.024)
+[0;39m[31m2024-03-28 20:26:20,973[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-28 20:26:21,001[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-28 20:29:26,692[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener File Watcher [32mRestarting due to 15 class path changes (0 additions, 15 deletions, 0 modifications)
+[0;39m[31m2024-03-28 20:29:26,970[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService Thread-31 [32mStopping service [Tomcat]
+[0;39m[31m2024-03-28 20:29:26,991[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-31 [32mHikariPool-3 - Shutdown initiated...
+[0;39m[31m2024-03-28 20:29:27,007[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-31 [32mHikariPool-3 - Shutdown completed.
+[0;39m[31m2024-03-28 20:29:29,592[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarting Application using Java 1.8.0_292 on WPF45DE29 with PID 1600 (C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008\target\classes started by xxshetur in C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008)
+[0;39m[31m2024-03-28 20:29:29,617[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-28 20:29:30,095[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-28 20:29:30,128[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 29 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-28 20:29:30,212[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker restartedMain [32mBean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$efa81af0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:29:30,212[0;39m [32m[INFO][0;39m org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping restartedMain [32mSupporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[0;39m[31m2024-03-28 20:29:30,301[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
+[0;39m[31m2024-03-28 20:29:30,301[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
+[0;39m[31m2024-03-28 20:29:30,301[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[31m2024-03-28 20:29:30,322[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat-2].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
+[0;39m[31m2024-03-28 20:29:30,322[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 694 ms
+[0;39m[31m2024-03-28 20:29:30,568[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-4 - Starting...
+[0;39m[31m2024-03-28 20:29:30,571[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-28 20:29:30,606[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-4 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-28 20:29:30,606[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-4 - Start completed.
+[0;39m[31m2024-03-28 20:29:30,657[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
+[0;39m[31m2024-03-28 20:29:30,679[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
+[0;39m[31m2024-03-28 20:29:30,679[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarted Application in 1.255 seconds (JVM running for 549.918)
+[0;39m[31m2024-03-28 20:29:30,686[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener restartedMain [32mCondition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   WebServicesAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.ws.transport.http.MessageDispatcherServlet' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.ws.config.annotation.WsConfigurationSupport; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   WebServicesAutoConfiguration#wsdlDefinitionBeanFactoryPostProcessor:
+      Did not match:
+         - WSDL locations did not find property spring.webservices.wsdl-locations (OnWsdlLocationsCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+[0;39m[31m2024-03-28 20:29:32,099[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener File Watcher [32mRestarting due to 19 class path changes (19 additions, 0 deletions, 0 modifications)
+[0;39m[31m2024-03-28 20:29:32,406[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService Thread-36 [32mStopping service [Tomcat]
+[0;39m[31m2024-03-28 20:29:32,422[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-36 [32mHikariPool-4 - Shutdown initiated...
+[0;39m[31m2024-03-28 20:29:32,435[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-36 [32mHikariPool-4 - Shutdown completed.
+[0;39m[31m2024-03-28 20:29:32,721[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarting Application using Java 1.8.0_292 on WPF45DE29 with PID 1600 (C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008\target\classes started by xxshetur in C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008)
+[0;39m[31m2024-03-28 20:29:32,722[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-28 20:29:33,215[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-28 20:29:33,228[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-28 20:29:33,300[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker restartedMain [32mBean 'soapServiceConfiguration' of type [com.example.demo.configs.SoapServiceConfiguration$$EnhancerBySpringCGLIB$$b3f55499] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:29:33,300[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker restartedMain [32mBean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$efa81af0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:29:33,300[0;39m [32m[INFO][0;39m org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping restartedMain [32mSupporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[0;39m[31m2024-03-28 20:29:33,397[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
+[0;39m[31m2024-03-28 20:29:33,403[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
+[0;39m[31m2024-03-28 20:29:33,405[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[31m2024-03-28 20:29:33,445[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat-2].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
+[0;39m[31m2024-03-28 20:29:33,445[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 722 ms
+[0;39m[31m2024-03-28 20:29:33,830[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-5 - Starting...
+[0;39m[31m2024-03-28 20:29:33,830[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-28 20:29:33,874[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-5 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-28 20:29:33,874[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-5 - Start completed.
+[0;39m[31m2024-03-28 20:29:33,924[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
+[0;39m[31m2024-03-28 20:29:33,951[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
+[0;39m[31m2024-03-28 20:29:33,962[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarted Application in 1.314 seconds (JVM running for 553.195)
+[0;39m[31m2024-03-28 20:29:33,968[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener restartedMain [32mCondition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   WebServicesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.ws.config.annotation.WsConfigurationSupport; SearchStrategy: all) found beans of type 'org.springframework.ws.config.annotation.WsConfigurationSupport' org.springframework.ws.config.annotation.DelegatingWsConfiguration (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.ws.transport.http.MessageDispatcherServlet' (OnClassCondition)
+         - found 'session' scope (OnWebApplicationCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+[0;39m[31m2024-03-28 20:29:34,916[0;39m [32m[INFO][0;39m com.example.demo.ApplicationTests main [32mStarting ApplicationTests using Java 1.8.0_292 on WPF45DE29 with PID 10820 (started by xxshetur in C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008)
+[0;39m[31m2024-03-28 20:29:34,916[0;39m [32m[INFO][0;39m com.example.demo.ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-28 20:29:36,082[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-28 20:29:36,110[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-28 20:29:36,504[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker main [32mBean 'soapServiceConfiguration' of type [com.example.demo.configs.SoapServiceConfiguration$$EnhancerBySpringCGLIB$$78386b9c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:29:36,505[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker main [32mBean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b3eb31f3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:29:36,665[0;39m [32m[INFO][0;39m org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping main [32mSupporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[0;39m[31m2024-03-28 20:29:39,670[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-28 20:29:39,693[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-28 20:29:40,777[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-28 20:29:40,788[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-28 20:29:41,568[0;39m [32m[INFO][0;39m com.example.demo.ApplicationTests main [32mStarted ApplicationTests in 7.294 seconds (JVM running for 9.713)
+[0;39m[31m2024-03-28 20:29:42,707[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-28 20:29:42,743[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-28 20:31:41,865[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener File Watcher [32mRestarting due to 21 class path changes (0 additions, 21 deletions, 0 modifications)
+[0;39m[31m2024-03-28 20:31:42,134[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService Thread-44 [32mStopping service [Tomcat]
+[0;39m[31m2024-03-28 20:31:42,150[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-44 [32mHikariPool-5 - Shutdown initiated...
+[0;39m[31m2024-03-28 20:31:42,170[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-44 [32mHikariPool-5 - Shutdown completed.
+[0;39m[31m2024-03-28 20:31:42,386[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarting Application using Java 1.8.0_292 on WPF45DE29 with PID 1600 (C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008\target\classes started by xxshetur in C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008)
+[0;39m[31m2024-03-28 20:31:42,386[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-28 20:31:42,574[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-28 20:31:42,590[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-28 20:31:42,633[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker restartedMain [32mBean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$efa81af0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:31:42,634[0;39m [32m[INFO][0;39m org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping restartedMain [32mSupporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[0;39m[31m2024-03-28 20:31:42,731[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
+[0;39m[31m2024-03-28 20:31:42,731[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
+[0;39m[31m2024-03-28 20:31:42,731[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[31m2024-03-28 20:31:42,763[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat-2].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
+[0;39m[31m2024-03-28 20:31:42,763[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 377 ms
+[0;39m[31m2024-03-28 20:31:42,983[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-6 - Starting...
+[0;39m[31m2024-03-28 20:31:42,983[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-28 20:31:43,015[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-6 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-28 20:31:43,026[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-6 - Start completed.
+[0;39m[31m2024-03-28 20:31:43,062[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
+[0;39m[31m2024-03-28 20:31:43,094[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
+[0;39m[31m2024-03-28 20:31:43,094[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarted Application in 0.74 seconds (JVM running for 682.335)
+[0;39m[31m2024-03-28 20:31:43,094[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener restartedMain [32mCondition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   WebServicesAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.ws.transport.http.MessageDispatcherServlet' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.ws.config.annotation.WsConfigurationSupport; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   WebServicesAutoConfiguration#wsdlDefinitionBeanFactoryPostProcessor:
+      Did not match:
+         - WSDL locations did not find property spring.webservices.wsdl-locations (OnWsdlLocationsCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+[0;39m[31m2024-03-28 20:31:44,497[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener File Watcher [32mRestarting due to 21 class path changes (21 additions, 0 deletions, 0 modifications)
+[0;39m[31m2024-03-28 20:31:44,793[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService Thread-49 [32mStopping service [Tomcat]
+[0;39m[31m2024-03-28 20:31:44,819[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-49 [32mHikariPool-6 - Shutdown initiated...
+[0;39m[31m2024-03-28 20:31:44,828[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource Thread-49 [32mHikariPool-6 - Shutdown completed.
+[0;39m[31m2024-03-28 20:31:44,999[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarting Application using Java 1.8.0_292 on WPF45DE29 with PID 1600 (C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008\target\classes started by xxshetur in C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008)
+[0;39m[31m2024-03-28 20:31:44,999[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-28 20:31:45,204[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-28 20:31:45,204[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 5 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-28 20:31:45,283[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker restartedMain [32mBean 'soapServiceConfiguration' of type [com.example.demo.configs.SoapServiceConfiguration$$EnhancerBySpringCGLIB$$b3f55499] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:31:45,283[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker restartedMain [32mBean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$efa81af0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:31:45,283[0;39m [32m[INFO][0;39m org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping restartedMain [32mSupporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[0;39m[31m2024-03-28 20:31:45,394[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
+[0;39m[31m2024-03-28 20:31:45,394[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
+[0;39m[31m2024-03-28 20:31:45,394[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[31m2024-03-28 20:31:45,429[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat-2].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
+[0;39m[31m2024-03-28 20:31:45,429[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 430 ms
+[0;39m[31m2024-03-28 20:31:45,644[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-7 - Starting...
+[0;39m[31m2024-03-28 20:31:45,644[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-28 20:31:45,693[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-7 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-28 20:31:45,697[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-7 - Start completed.
+[0;39m[31m2024-03-28 20:31:45,723[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
+[0;39m[31m2024-03-28 20:31:45,739[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
+[0;39m[31m2024-03-28 20:31:45,755[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarted Application in 0.779 seconds (JVM running for 684.986)
+[0;39m[31m2024-03-28 20:31:45,755[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener restartedMain [32mCondition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   WebServicesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.ws.config.annotation.WsConfigurationSupport; SearchStrategy: all) found beans of type 'org.springframework.ws.config.annotation.WsConfigurationSupport' org.springframework.ws.config.annotation.DelegatingWsConfiguration (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.ws.transport.http.MessageDispatcherServlet' (OnClassCondition)
+         - found 'session' scope (OnWebApplicationCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+[0;39m[31m2024-03-28 20:31:47,698[0;39m [32m[INFO][0;39m com.example.demo.ApplicationTests main [32mStarting ApplicationTests using Java 1.8.0_292 on WPF45DE29 with PID 20264 (started by xxshetur in C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008)
+[0;39m[31m2024-03-28 20:31:47,698[0;39m [32m[INFO][0;39m com.example.demo.ApplicationTests main [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-28 20:31:48,689[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-28 20:31:48,721[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate main [32mFinished Spring Data repository scanning in 16 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-28 20:31:49,113[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker main [32mBean 'soapServiceConfiguration' of type [com.example.demo.configs.SoapServiceConfiguration$$EnhancerBySpringCGLIB$$2c70c2c3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:31:49,113[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker main [32mBean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$6823891a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:31:49,208[0;39m [32m[INFO][0;39m org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping main [32mSupporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[0;39m[31m2024-03-28 20:31:51,338[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-28 20:31:51,348[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource main [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-28 20:31:51,932[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase main [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-28 20:31:51,939[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource main [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-28 20:31:52,611[0;39m [32m[INFO][0;39m com.example.demo.ApplicationTests main [32mStarted ApplicationTests in 5.507 seconds (JVM running for 7.665)
+[0;39m[31m2024-03-28 20:31:53,272[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown initiated...
+[0;39m[31m2024-03-28 20:31:53,292[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource SpringApplicationShutdownHook [32mHikariPool-1 - Shutdown completed.
+[0;39m[31m2024-03-28 20:32:14,331[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarting Application using Java 1.8.0_292 on WPF45DE29 with PID 21444 (C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008\target\classes started by xxshetur in C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Spring\Tasks\DLTE-Spring-008)
+[0;39m[31m2024-03-28 20:32:14,331[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mNo active profile set, falling back to 1 default profile: "default"
+[0;39m[31m2024-03-28 20:32:14,474[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.restart.ChangeableUrls restartedMain [32mThe Class-Path manifest attribute in C:\Users\xxshetur\.m2\repository\com\oracle\database\security\oraclepki\21.5.0.0\oraclepki-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/xxshetur/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_core.jar,file:/C:/Users/xxshetur/.m2/repository/com/oracle/database/security/oraclepki/21.5.0.0/osdt_cert.jar,file:/C:/Users/xxshetur/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/xxshetur/.m2/repository/com/oracle/database/security/oraclepki/oracle.osdt/osdt_cert.jar
+[0;39m[31m2024-03-28 20:32:14,474[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mDevtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[0;39m[31m2024-03-28 20:32:14,474[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor restartedMain [32mFor additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[0;39m[31m2024-03-28 20:32:15,762[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mBootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[0;39m[31m2024-03-28 20:32:15,793[0;39m [32m[INFO][0;39m org.springframework.data.repository.config.RepositoryConfigurationDelegate restartedMain [32mFinished Spring Data repository scanning in 18 ms. Found 0 JDBC repository interfaces.
+[0;39m[31m2024-03-28 20:32:16,178[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker restartedMain [32mBean 'soapServiceConfiguration' of type [com.example.demo.configs.SoapServiceConfiguration$$EnhancerBySpringCGLIB$$bd76ae50] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:32:16,178[0;39m [32m[INFO][0;39m org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker restartedMain [32mBean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$f92974a7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[0;39m[31m2024-03-28 20:32:16,266[0;39m [32m[INFO][0;39m org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping restartedMain [32mSupporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[0;39m[31m2024-03-28 20:32:16,897[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat initialized with port(s): 8082 (http)
+[0;39m[31m2024-03-28 20:32:16,897[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardService restartedMain [32mStarting service [Tomcat]
+[0;39m[31m2024-03-28 20:32:16,897[0;39m [32m[INFO][0;39m org.apache.catalina.core.StandardEngine restartedMain [32mStarting Servlet engine: [Apache Tomcat/9.0.73]
+[0;39m[31m2024-03-28 20:32:17,054[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] restartedMain [32mInitializing Spring embedded WebApplicationContext
+[0;39m[31m2024-03-28 20:32:17,054[0;39m [32m[INFO][0;39m org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext restartedMain [32mRoot WebApplicationContext: initialization completed in 2580 ms
+[0;39m[31m2024-03-28 20:32:17,654[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Starting...
+[0;39m[31m2024-03-28 20:32:17,654[0;39m [32m[WARN][0;39m com.zaxxer.hikari.util.DriverDataSource restartedMain [32mRegistered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[0;39m[31m2024-03-28 20:32:17,764[0;39m [32m[INFO][0;39m com.zaxxer.hikari.pool.PoolBase restartedMain [32mHikariPool-1 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+[0;39m[31m2024-03-28 20:32:17,764[0;39m [32m[INFO][0;39m com.zaxxer.hikari.HikariDataSource restartedMain [32mHikariPool-1 - Start completed.
+[0;39m[31m2024-03-28 20:32:17,907[0;39m [32m[INFO][0;39m org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer restartedMain [32mLiveReload server is running on port 35729
+[0;39m[31m2024-03-28 20:32:17,953[0;39m [32m[INFO][0;39m org.springframework.boot.web.embedded.tomcat.TomcatWebServer restartedMain [32mTomcat started on port(s): 8082 (http) with context path ''
+[0;39m[31m2024-03-28 20:32:17,969[0;39m [32m[INFO][0;39m com.example.demo.Application restartedMain [32mStarted Application in 4.434 seconds (JVM running for 5.972)
+[0;39m[31m2024-03-28 20:33:07,528[0;39m [32m[INFO][0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] http-nio-8082-exec-2 [32mInitializing Spring MessageDispatcherServlet 'messageDispatcherServlet'
+[0;39m[31m2024-03-28 20:33:07,528[0;39m [32m[INFO][0;39m org.springframework.ws.transport.http.MessageDispatcherServlet http-nio-8082-exec-2 [32mInitializing Servlet 'messageDispatcherServlet'
+[0;39m[31m2024-03-28 20:33:07,575[0;39m [32m[INFO][0;39m org.springframework.ws.soap.saaj.SaajSoapMessageFactory http-nio-8082-exec-2 [32mCreating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+[0;39m[31m2024-03-28 20:33:07,606[0;39m [32m[INFO][0;39m org.springframework.ws.transport.http.MessageDispatcherServlet http-nio-8082-exec-2 [32mCompleted initialization in 78 ms
+[0;39m[31m2024-03-28 20:53:25,196[0;39m [32m[WARN][0;39m com.zaxxer.hikari.pool.HikariPool HikariPool-1 housekeeper [32mHikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m37s280ms570µs700ns).
+[0;39m
