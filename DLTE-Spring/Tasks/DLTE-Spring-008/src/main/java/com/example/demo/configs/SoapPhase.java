@@ -17,25 +17,32 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
+//http://localhost:8082/transactionsrepo/transactions.wsdl
+// Endpoint configuration for SOAP web services
 @Endpoint
 public class SoapPhase {
+    // Namespace URL for SOAP requests
     private final String url="http://transactions.services";
 
+    // Injecting TransactionsService for handling transactions
     @Autowired
     private TransactionsService transactionService;
 
+    //method corresponds tot the creating new transaction
     @PayloadRoot(namespace = url,localPart="newTransactionRequest")
     @ResponsePayload
     public NewTransactionResponse addNewLoan(@RequestPayload NewTransactionRequest newTransactionRequest){
         NewTransactionResponse newTransactionResponse=new NewTransactionResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
 
+        // Extract transaction details from the request
         services.transactions.Transactions actual=newTransactionRequest.getTransactions();
         Date date=newTransactionRequest.getTransactions().getTransactionDate().toGregorianCalendar().getTime();
         Transactions daoTransaction=new Transactions();
         daoTransaction.setTransactionDate(date);
         BeanUtils.copyProperties(actual,daoTransaction);
 
+        // Publish the new transaction and handle response
         daoTransaction=transactionService.publishNewTransactions(daoTransaction);
         if(daoTransaction!=null){
             serviceStatus.setStatus("SUCCESS");
@@ -51,12 +58,15 @@ public class SoapPhase {
         return newTransactionResponse;
     }
 
+    //method corresponds to get the transaction details based on the sender name
     @PayloadRoot(namespace=url,localPart = "filterBySenderRequest")
     @ResponsePayload
     public FilterBySenderResponse filterSender(@RequestPayload FilterBySenderRequest filterBySenderRequest){
         FilterBySenderResponse filterBySenderResponse=new FilterBySenderResponse();
         List<services.transactions.Transactions> returnTransactions=new ArrayList<>();
         ServiceStatus serviceStatus=new ServiceStatus();
+
+        // Retrieve transactions by sender name
         List<Transactions> received =transactionService.findBySender(filterBySenderRequest.getSender());
 
         Iterator<Transactions> iterator=received.iterator();
@@ -66,6 +76,7 @@ public class SoapPhase {
             returnTransactions.add(currentTransactions);
         }
 
+        // Set service status and response objects
         serviceStatus.setStatus("SUCCESS");
         serviceStatus.setMessage("Transaction details fetched based on sender name");
 
@@ -75,14 +86,18 @@ public class SoapPhase {
         return filterBySenderResponse;
     }
 
+    //method corresponds to get the transaction details based on the receiver name
    @PayloadRoot(namespace=url,localPart = "filterByReceiverRequest")
    @ResponsePayload
     public FilterByReceiverResponse filterReceiver(@RequestPayload FilterByReceiverRequest filterByReceiverRequest){
         FilterByReceiverResponse filterByReceiverResponse=new FilterByReceiverResponse();
         List<services.transactions.Transactions> returnTransactions=new ArrayList<>();
         ServiceStatus serviceStatus=new ServiceStatus();
+
+       // Retrieve transactions by receiver name
         List<Transactions> received =transactionService.findByReceiver(filterByReceiverRequest.getReceiver());
 
+       // Convert and copy transactions to response object
         Iterator<Transactions> iterator=received.iterator();
         while(iterator.hasNext()){
             services.transactions.Transactions currentTransactions=new services.transactions.Transactions();
@@ -99,6 +114,7 @@ public class SoapPhase {
         return filterByReceiverResponse;
     }
 
+    //method corresponds to delete the transaction details within the specified dates
     @PayloadRoot(namespace = url,localPart = "removeTransactionRequest")
     @ResponsePayload
     public RemoveTransactionResponse closeTransaction(@RequestPayload RemoveTransactionRequest removeTransactionRequest) {
@@ -117,6 +133,7 @@ public class SoapPhase {
         return removeTransactionResponse;
     }
 
+    //method corresponds to get the transaction details based on the amount of transaction
     @PayloadRoot(namespace=url,localPart = "filterByAmountRequest")
     @ResponsePayload
     public FilterByAmountResponse filterAmount(@RequestPayload FilterByAmountRequest filterByAmountRequest){
@@ -141,6 +158,7 @@ public class SoapPhase {
         return filterByAmountResponse;
     }
 
+    //method corresponds to update the transaction remarks
     @PayloadRoot(namespace = url,localPart = "updateTransactionRemarksRequest")
     @ResponsePayload
     public UpdateTransactionRemarksResponse updateRemarks(@RequestPayload UpdateTransactionRemarksRequest updateTransactionRemarksRequest){
