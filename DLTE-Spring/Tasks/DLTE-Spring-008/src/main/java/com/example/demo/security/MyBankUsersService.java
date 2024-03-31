@@ -8,6 +8,25 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+
+//one of the output for security task
+//{
+//        "username": "mahesh",
+//        "password": "$2a$10$bN8ZIvgm.UEsxU3tWGSDp.rZtNeQKQQo/dvn6otLyRESEN3yVE/Da",
+//        "role": "customer",
+//        "address": "bangalore",
+//        "contact": 9980342382,
+//        "email": "pranav@gmail.com",
+//        "enabled": true,
+//        "authorities": [
+//        {
+//        "authority": "customer"
+//        }
+//        ],
+//        "accountNonExpired": true,
+//        "accountNonLocked": true,
+//        "credentialsNonExpired": true
+//        }
 @Service
 public class MyBankUsersService implements UserDetailsService {
 

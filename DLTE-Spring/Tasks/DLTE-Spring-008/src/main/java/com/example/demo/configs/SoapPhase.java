@@ -19,6 +19,8 @@ import java.util.Iterator;
 import java.util.List;
 
 //http://localhost:8082/transactionsrepo/transactions.wsdl
+
+
 // Endpoint configuration for SOAP web services
 @Endpoint
 public class SoapPhase {
