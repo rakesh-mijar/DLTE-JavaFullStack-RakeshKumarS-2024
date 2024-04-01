@@ -6,6 +6,8 @@ creating new project
 >>change the versions refer git,check project structure,settins also.
 >>mvn dependecy tree---check the dependency tree
 >>continue
+
+>>here unlike jpa table we create rowmapper is also present for accesing resultSet...
 ---------------------
 
 
@@ -13,10 +15,17 @@ creating new project
 deployment of spring in jboss server
 ------------------------------------
 >>>in pom.xml
->include the dependency webflux-2.7.10---spring-boot-starter-webflux
->remove the tomcat dependency and add within the exclusions
+>include the dependency webflux-2.7.10---spring-boot-starter-webflux----checkDLTE-Spring-006-JDBC/pom.xml(razak's git)
+>remove the tomcat dependency and add within the exclusions tag
 >servlet 4.0.1 version dependency----check git
 
->clean and install----------war file is generated in the folder structure
+>clean and install----------war file is generated in the folder structure(in the target folder)
 >in standalone.xml check the port number it should match with port number specified in application.properties
->run the standalone batch file----go to browser localhost:/8087/name of war file/name given in mapping...then check
+>run the standalone batch file----go to browser localhost:/8087/name of war file/name given in mapping(like.../demo/)...then check
+
+
+
+-------
+for soap webservces
+>similar upto last but one step
+>then run he standalone batch file----localhost:/8087/name of war file/name given given soap 

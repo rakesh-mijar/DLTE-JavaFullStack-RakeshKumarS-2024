@@ -12,7 +12,7 @@ soap web services
 		>creating the entity with element names similar as given in entity class and should be in sequence
 		>create xsd for status: returns status and message
 		>create xsd for operations: name not same as the method response and request elements
-		>in response xsd we return status and object ---- tns: target name space is written here bcz complextypes are defined under that target name space(check at top) maxOccur bcz 		we recieve a multiple objects.
+		>in response xsd we return status and object ---- tns: target name space is written here bcz complextypes are defined under that target name space(check at top) maxOccur bcz we recieve a multiple objects.
 		>add jaxb2-maven plugin in pom.xml----------rename the schema files same as the <schema files>---</schema files>
 		>extra packages will be generated
 		>@RequestPayload---request parameter
@@ -22,3 +22,22 @@ soap web services
 		>BeanUtils.copyProperties();---------can copy the properties from previous one
 		>run the file....then....(.wsdl file is generated in edge)
 		>open soap ui and paste the url generated.
+localhost:8082/LoansPort/loansrepo/loans.wsdl
+
+>for anotther methods folloe same
+
+.create the dao
+.create xsd
+.no need reating configure
+.build--(or normal clean install build)run this file by going to the terminal path of the package----files are generated.
+.servelt endpoints
+.execute the app
+....continue same steps....
+@payloadRoot() is equivalent to @webmethod
+---------------------
+
+>here included another method
+.calling the procedure to delete the loan(close the loan)
+.same methods continued..
+
+--------------------------

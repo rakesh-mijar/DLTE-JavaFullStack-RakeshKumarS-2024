@@ -2,7 +2,9 @@ C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project2
 C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project2\src\main\java\connections\Database.java
 C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project2\src\main\java\implementations\App.java
 C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project2\src\main\java\backend\exceptions\UserAlreadyExistsException.java
+C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project2\src\main\java\backend\exceptions\ValidationException.java
 C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project2\src\main\java\backend\validation\BackendValidation.java
 C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project2\src\main\java\Entities\Backend\EmployeeAddress.java
+C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project2\src\main\java\backend\exceptions\InsertionException.java
 C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project2\src\main\java\Entities\Backend\EmployeeDetails.java
 C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project2\src\main\java\interfaces\EmployeeInterface.java

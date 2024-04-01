@@ -7,8 +7,8 @@ import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
-@WebService
-@SOAPBinding(style=SOAPBinding.Style.RPC)
+@WebService//inicates that webservice endpoint
+@SOAPBinding(style=SOAPBinding.Style.DOCUMENT)//RPC:use the Remote Procedure Call style for its SOAP messaging, allowing Java methods to be invoked remotely via SOAP requests.
 public class UserSoap {
     private UserServices services;
     public UserSoap(){

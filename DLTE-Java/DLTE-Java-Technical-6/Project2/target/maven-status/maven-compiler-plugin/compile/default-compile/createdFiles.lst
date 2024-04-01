@@ -1,8 +1,10 @@
 Entities\Backend\EmployeeDetails.class
+backend\exceptions\ValidationException.class
 backend\exceptions\ConnectionFailureException.class
 backend\validation\BackendValidation.class
 connections\Database.class
 Entities\Backend\EmployeeAddress.class
 interfaces\EmployeeInterface.class
+backend\exceptions\InsertionException.class
 backend\exceptions\UserAlreadyExistsException.class
 implementations\App.class

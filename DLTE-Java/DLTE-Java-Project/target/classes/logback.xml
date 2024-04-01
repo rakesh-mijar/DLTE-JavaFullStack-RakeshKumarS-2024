@@ -3,7 +3,7 @@
     <!-- Define appenders -->
     <appender name="myAccount" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern> [%thread] %highlight(%-5level) - %highlight(%msg) -- %logger{36} %n</pattern>
+            <pattern>%d{yyyy-MM-dd ss.SSS:mm:HH}  [%thread] %highlight(%-5level) - %highlight(%msg) -- %logger{36} %n</pattern>
         </encoder>
     </appender>
 

@@ -1,4 +1,4 @@
-package org.example;
+package org.example;//package org.example;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -40,3 +40,5 @@ public class UserSoap {
     }
 
 }
+
+

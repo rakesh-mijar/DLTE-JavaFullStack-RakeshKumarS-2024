@@ -1,0 +1,414 @@
+[33mcommit abd19a547fef7cb4fcfbaf06f1de12e3a75528b5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Fri Mar 22 16:26:58 2024 +0530
+
+    Java Updated
+
+[33mcommit e111f81ac55947a5a4e68976a71729215e64c1e5[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Fri Mar 22 14:32:30 2024 +0530
+
+    Notes Updated
+
+[33mcommit d90fbc901317c0873fcf3e6cd4aedadbd02fe371[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Fri Mar 22 14:01:07 2024 +0530
+
+    Task-1068 Spring with JPA - Account Task Completed
+
+[33mcommit 4084ef1da8a9b3370ba6ac9e44b26f0e554bd9d3[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Thu Mar 21 20:31:39 2024 +0530
+
+    Task-986 Testing SOAP API Services Task Completed
+
+[33mcommit 83e23f492093725cc1983e59e96523eac2d29460[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Thu Mar 21 09:38:02 2024 +0530
+
+    Task-1066 Spring Boot Rest Controller Mapping Task Completed
+
+[33mcommit 6262e1f8e8cdf1ad704caee0f4e61a55a9ab410c[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Wed Mar 20 22:25:12 2024 +0530
+
+    Task-1066 Spring Boot AutoWiring Completed
+
+[33mcommit 46d773f7c09eef56b5dd440c62b3156b0c0ae9ef[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Wed Mar 20 19:25:29 2024 +0530
+
+    Task-985 Testing Rest API mapping task is completed
+
+[33mcommit 3c560099c76edcfe9d98a82e2bea3489a82c584e[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Wed Mar 20 19:23:20 2024 +0530
+
+    Task-985 Testing Rest API mapping task is completed
+
+[33mcommit d109cade23385fdffa421623b4e2df9a3c802eea[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Tue Mar 19 07:51:47 2024 +0530
+
+    - Task-#913 Completed
+
+[33mcommit fa21824b31bb84fd5103b69cde030864f91edab7[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Mon Mar 18 06:40:57 2024 +0530
+
+    Building SOAP Read Service with DAO- Task-#912 Completed
+
+[33mcommit ec45e4d22279490ed6f36ca8fe49b1a8271f020a[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sun Mar 17 15:35:05 2024 +0530
+
+    JNDIA Data source based Update- Task #948-completed
+
+[33mcommit 44d9ec65f91e7d54a44c5db633ae83277e0501a2[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sun Mar 17 13:33:07 2024 +0530
+
+    Perform JAXB parsing on Transaction POJO- Task #947-completed
+
+[33mcommit ba9cc0e4ddf0a4890be2bf0de27bf58d5e2d7d5d[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sun Mar 17 10:49:16 2024 +0530
+
+    updated
+
+[33mcommit 792d1c1238aa06ec161b23e6dc6f9da0bde5139c[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sun Mar 17 10:46:21 2024 +0530
+
+    Building Restful Webservices for DAO Layer- Task #911-completed
+
+[33mcommit f0d9b6b46b93de6575f6dfa1405eb69ee08141fb[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Fri Mar 15 15:41:33 2024 +0530
+
+    Rest Get mapping of Transactions Task-#910 is completed
+
+[33mcommit 31abca9a27bfb3fcc479cf1f2e2f533b740517d8[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Fri Mar 15 14:39:56 2024 +0530
+
+    DAO task is completed
+
+[33mcommit 948dcbf9c41efcbdbc61cb3cd0620d3dce501fd9[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Fri Mar 15 09:48:04 2024 +0530
+
+    Rest Get mapping of Transactions-Task-#910-completed
+
+[33mcommit 17d3bfc5297ab217a8102492f8d445cde301d95a[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Thu Mar 14 09:20:04 2024 +0530
+
+    Console Application Task Done
+
+[33mcommit 20bdd7b56973a75c2d40f3664caadc63065d1e49[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Wed Mar 13 21:42:32 2024 +0530
+
+    Task 851- Rest Webservice Transaction Module complted
+
+[33mcommit 62eb78ce5272a48f839c240edbaa25a0f658150e[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Tue Mar 12 22:07:10 2024 +0530
+
+    Task 850 SIP and Income tax based on slabs complted
+
+[33mcommit 5e1ad2d886e834709c62484e5679d2ca79bbff22[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Tue Mar 12 02:25:38 2024 +0530
+
+    Review Task Updated
+
+[33mcommit 5bdb4de722a0b4788bf0a1773aac22a1b070a1a4[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sun Mar 10 14:14:58 2024 +0530
+
+    Task-671 Testing Dynamic Loan Entity Task Completed
+
+[33mcommit 6f574010e40762bbc68d3fda3d4284919a2f8ffa[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sun Mar 10 12:13:23 2024 +0530
+
+    Task-670 Implementation Transaction Operation by forking git Completed
+
+[33mcommit 4599f866c6c56f5e1e19f0da6df994f1d679f876[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sun Mar 10 11:22:54 2024 +0530
+
+    Task-672 DB Design-Normalization task completed
+
+[33mcommit 5803aad3bc7a914ab83fde968be24a91932c24ce[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sun Mar 10 11:20:04 2024 +0530
+
+    Task-672 DB Design-Normalization task completed
+
+[33mcommit 78234226e12c7ff5364678bf7b202cd39c3019f4[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sun Mar 10 11:18:32 2024 +0530
+
+    Task-672 DB Design-Normalization task completed
+
+[33mcommit dbad94fd3a915819b4a5730df5f9379326736c31[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sun Mar 10 09:28:00 2024 +0530
+
+    Task-556 Transaction Analysis using Dynamic storage Task completed
+
+[33mcommit d922dd3e17d2c1cd52313477d00b700f57ef7921[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sat Mar 9 20:08:57 2024 +0530
+
+    Task-787 Lambda implementation over Loan product Task completed
+
+[33mcommit c347d6fb8f6d3ac57dcf15764437973b04cf4e12[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sat Mar 9 18:06:36 2024 +0530
+
+    Task-666 Loan Product Entity Task Completed
+
+[33mcommit 17ba0e8ce925a1471f4cea32712d407b09968844[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sat Mar 9 00:56:15 2024 +0530
+
+    Task-667 Completed
+
+[33mcommit 84398da8d268523231ae8beaf22193f38df45f46[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Fri Mar 8 23:33:03 2024 +0530
+
+    Task-667 Updated
+
+[33mcommit 0c154f421b72ff0e44b23ecc3bd196054f931065[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Fri Mar 8 21:41:30 2024 +0530
+
+    Task-445-Increasing customer experience in mobile banking -exception handling updated
+
+[33mcommit c8682559b6a80e6a07fd2b1423e0c4c4110dbc3b[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Fri Mar 8 19:35:44 2024 +0530
+
+    Task-516-Concurrent Transaction Analysis Completed
+
+[33mcommit e807caeb3b8807ec25a6cf0f3e58860f693067bf[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Fri Mar 8 19:32:50 2024 +0530
+
+    Task-668-Concurrency Analysis Completed
+
+[33mcommit f42374aa2c191641fd6a67b392c1cccd88522387[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Fri Mar 8 17:39:16 2024 +0530
+
+    Task-668-Concurrency Analysis Completed
+
+[33mcommit 0c6e3225240951674ee8d4cf6808cbe6f6090a64[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Fri Mar 8 16:13:30 2024 +0530
+
+    Task-668-Concurrency Analysis Completed
+
+[33mcommit 7cd10b78bd459e92f47be199272753111b915f5e[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Thu Mar 7 14:50:19 2024 +0530
+
+    Task-558 Completed
+
+[33mcommit db1ef5dacc80c83ef359e3282a122c8073a92f33[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Thu Mar 7 14:45:55 2024 +0530
+
+    Trigger task-558 Completed
+
+[33mcommit 26b7fca6e4da2bea11f4515abb179f0316eda476[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Wed Mar 6 22:51:31 2024 +0530
+
+    Task-#449 completed
+
+[33mcommit 8a401c848e0dd445074985458ccdb41e6e94eef5[m
+Merge: 8047d9c 3a844b1
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Tue Mar 5 21:05:06 2024 +0530
+
+    Merge branch 'main' of https://github.com/rakesh-mijar/DLTE-JavaFullStack-RakeshKumarS-2024
+
+[33mcommit 8047d9c33b0f7949f986215e928ff1379a6ff87d[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Tue Mar 5 21:04:02 2024 +0530
+
+    Task-#445 completed
+
+[33mcommit 3a844b1023851a2a167b4c67e3d66181ede125ee[m
+Author: Rakesh Kumar <96406378+rakesh-mijar@users.noreply.github.com>
+Date:   Tue Mar 5 00:47:01 2024 +0530
+
+    Create README.md
+
+[33mcommit ed5733f3ea4c17439f1384716e8fe7f646d119d0[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Mon Mar 4 22:56:02 2024 +0530
+
+    Task updated
+
+[33mcommit 833beb7d3e33921fe7fc80efd9ada22d18766206[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Mon Mar 4 20:17:36 2024 +0530
+
+    Trigger task-665 updated
+
+[33mcommit 6a65c3e039965344a06e8628495241cc0542274a[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Mon Mar 4 17:59:25 2024 +0530
+
+    Task #447-Procedure with exception task completed
+
+[33mcommit 6d2444753a5ee242ff579dfd7591c85c3bcf6e3a[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sun Mar 3 16:50:19 2024 +0530
+
+    Sql tasks updated
+
+[33mcommit 8e5b1b46b2c6abc889f69e45e4fb22f1e66531a0[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sun Mar 3 16:48:29 2024 +0530
+
+    Transaction with user privilege task is completed
+
+[33mcommit 671ada7ab3a176b44f548e7da4d76dd03ed46f33[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sun Mar 3 14:44:56 2024 +0530
+
+    User Management Task Updated
+
+[33mcommit a98f7b2a11adb102dadfaa6f23b32eb67773eac2[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sun Mar 3 12:16:06 2024 +0530
+
+    Technical Task Updated
+
+[33mcommit 230ade775cdb4b9d3fe94bb5b7a2e0530b69b340[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sun Mar 3 11:57:42 2024 +0530
+
+    Technical Task Updated
+
+[33mcommit 388b824fbc109107730d8f86744fd94691ca59b4[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Tue Feb 27 23:23:21 2024 +0530
+
+    Updated
+
+[33mcommit c224550da35746caf4b2f8183a4e72273dd0ebda[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Tue Feb 27 21:08:22 2024 +0530
+
+    Updated
+
+[33mcommit 3d07f63505840de521ddee6fae94980d3c91cc6c[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Tue Feb 27 20:49:19 2024 +0530
+
+    Loan Product task is completed
+
+[33mcommit 3260abb17946d56ca90de7070a7935db406995ee[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Sun Feb 25 01:10:24 2024 +0530
+
+    Implement Mobile Banking Task is Completed
+
+[33mcommit 71315ebe6bf14474a10b8a29cb01a35d04757c23[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Thu Feb 22 21:20:28 2024 +0530
+
+    Transaction Oracle table with Analysis is Updated
+
+[33mcommit 0704aa1c8e2cbc9e96138886ffb100695d7ef256[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Thu Feb 22 07:44:23 2024 +0530
+
+    Transaction analysis task is updated
+
+[33mcommit 504a7b58cc2abf44d4838a8bbbd44e8426957954[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Wed Feb 21 22:44:01 2024 +0530
+
+    Internet banking and personal loan tasks are updated based on the review
+
+[33mcommit f9195ab9e56c55ba639a478c4f6106e4db22c04b[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Wed Feb 21 21:07:52 2024 +0530
+
+    My bank bonds task is updated
+
+[33mcommit 691d14adc4381ffb28a6ce7a08469f67baa4e4f1[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Wed Feb 21 08:47:38 2024 +0530
+
+    car loan validation task is updated
+
+[33mcommit d05ceb84cbc5dd93ee28ed65c87ecb5f38ddba2a[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Tue Feb 20 23:10:13 2024 +0530
+
+    Command Line Arguments Task is Updated
+
+[33mcommit 55f667d4e8f7526a39614166fa806a26c87d467d[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Tue Feb 20 22:51:17 2024 +0530
+
+    Credit card analysis task is updated
+
+[33mcommit c544a1b16e7befade420cb83bae0df63d14c7177[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Tue Feb 20 21:00:06 2024 +0530
+
+    Tax pay based on slabs is updated
+
+[33mcommit 84949329157855fb93d02f408f348d6113ae61b5[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Tue Feb 20 16:48:42 2024 +0530
+
+    Minimum balance task updated
+
+[33mcommit 217bbf69e4817af57c833072211fe51573bd59f2[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Tue Feb 20 08:15:12 2024 +0530
+
+    Debit Transactions task done
+
+[33mcommit 63f12c18a471930ef2d85a9c1777f48a2594941f[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Mon Feb 19 23:54:39 2024 +0530
+
+    SIP Calculator Updated
+
+[33mcommit 393b9d1228c5c6eaa8f55a175ce2e627a8fef4dd[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Mon Feb 19 23:07:16 2024 +0530
+
+    SIP Calculator Done
+
+[33mcommit 4f18a882bf5e278467f68e0f0b1f50f3d14668cc[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Mon Feb 19 21:36:07 2024 +0530
+
+    Command Line Interactions like Mobile Banking,Personal Loan,FD calculation tasks are done
+
+[33mcommit 5069bd36235dbc2418993f9f345f96d4625cbec3[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Mon Feb 19 06:46:00 2024 +0530
+
+    report added
+
+[33mcommit 99d188630537cc854732b7856b420c1e69cd3cef[m
+Author: rakesh-mijar <rakeshkumarmijar@gmail.com>
+Date:   Fri Feb 16 15:40:38 2024 +0530
+
+    Java project repository is created

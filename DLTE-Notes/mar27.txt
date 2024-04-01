@@ -1,0 +1,77 @@
+//logs dosnot change color
+//in testing getting some error
+
+
+
+
+
+CREATE INDEX index_empid ON employee_address(empid);
+
+Natural join can join tables based on the common columns in the tables being joined. A natural join returns all rows by matching values in common columns having same name and data type of columns and that column should be present in both tables.
+
+Both table must have at list one common column with same column name and same data type.
+
+inner join=join
+full outer join=full join
+left outer join=left join
+right outer join=right join
+natural join
+
+
+It is also known as CARTESIAN JOIN, which returns the Cartesian product of two or more joined tables. The CROSS JOIN produces a table that merges each row from the first table with each second table row. It is not required to include any condition in CROSS JOIN.
+
+deploying the soap webservice into jboss server
+--------------------------------------------------
+>similar as spring----check back
+
+
+
+security
+-------------
+>check for the dependency(spring security) added
+>give the localhost:/8082/..  in the web then login page appears.
+>discussed this by-----> creating a new class security
+>levels
+1->random password (user)----security filter chain method
+2->inmemory authentication----Inmemoryuserdetailsmanager method
+3->userdetails(object)-----(check notes for working design)
+	>steps
+	.create the table(here fullname-varchar,nn..username-varchar,nn,pk..password-varchar,nn..contact-number,nn) 
+	.create the entity class with the above attributes...there implement UserDetails and override the methods
+	.create the service layer having methods for signingup....there implement UserDetailsservice  and override the method loadByUsername.
+	.create another class where rest services are written.
+	.authenticated (check this commentes as 3rd layer) inside securityfilterchain.
+	.
+
+--------------------
+javax.validations
+------------------------
+@digit
+@notnull
+@size
+@pattern
+@future
+@past
+@decimalmin
+@decimalmax
+@min
+@max
+
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-validation</artifactId>
+</dependency>
+
+
+>>generate the files structured
+add the dependency
+application.properties file enabled
+run
+
+
+
+
+
+
+

@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-@WebServlet("/rest/date/*")
+@WebServlet("/rest/date")
 public class FindAllByDateAndUsername extends HttpServlet {
     private UserServices userServices;
     private ResourceBundle resourceBundle;

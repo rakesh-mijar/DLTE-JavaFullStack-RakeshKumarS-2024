@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/findByUsername")
+@WebServlet("/findByUsername/")
 public class FindByUsername extends HttpServlet {
 
     private StorageTarget storageTarget;

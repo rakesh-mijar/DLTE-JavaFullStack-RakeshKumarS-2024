@@ -1,0 +1,7 @@
+01:08:25.247 [31m[main][0;39m WARN  implementations.App - [31mFailed to insert the employee Entities.Backend.EmployeeDetails@67207d8a Employee already present[0;39m  
+01:08:38.813 [31m[main][0;39m WARN  implementations.App - [31mFailed to insert the employee Entities.Backend.EmployeeDetails@67207d8a Employee already present[0;39m  
+01:12:05.791 [31m[main][0;39m WARN  implementations.App - [31mFailed to insert the employee Entities.Backend.EmployeeDetails@67207d8a Employee already present[0;39m  
+01:18:48.242 [31m[pool-1-thread-7][0;39m WARN  implementations.App - [31mFailed to insert the employee Entities.Backend.EmployeeDetails@4c87c98f Employee already present[0;39m  
+01:19:01.826 [31m[pool-1-thread-7][0;39m WARN  implementations.App - [31mFailed to insert the employee Entities.Backend.EmployeeDetails@3a5d4df2 Employee already present[0;39m  
+01:19:08.503 [31m[pool-1-thread-7][0;39m WARN  implementations.App - [31mFailed to insert the employee Entities.Backend.EmployeeDetails@a998c67 Employee already present[0;39m  
+01:21:15.496 [31m[pool-1-thread-8][0;39m WARN  implementations.App - [31mFailed to insert the employee Entities.Backend.EmployeeDetails@1a947823 Employee already present[0;39m  

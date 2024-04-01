@@ -1,0 +1,416 @@
+Git
+
++Local(git-scm)              remote(github)
+local repor----------------->remote repo
+
+config:
+
+config user.name
+config user.mail
+
+##for creating a repo for the first time
+1.local repo
+2.assign remote
+3.add
+4.commit "version"
+5.push
+
+##to pull the data
+1.initialize local repo
+2.assign remote repo
+3.pull
+
+##clone
+
+##fork
+
+git config --global user.name
+git --version
+git init
+git status
+git add .
+git commit -m "Java project repository is created"
+git config --global user.name rakesh-mijar
+git config --global user.email rakeshkumarmijar@gmail.com
+
+
+git remote add origin https://github.com/rakesh-mijar/DLTE-JavaFullStack-RakeshKumar-2024.git
+git push origin master
+
+git push -u origin main
+
+token -- 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
+git push origin master
+
+------delete everything in local file---
+git clone <path from remote git copy and paste here>
+
+git pull origin master
+
+if you delete the remote repository then go to git in settings below in the danger zone click on delete the repository
+
+
+Programming:
+->data 
+ 	how it is stored(in variables,objects,arrays,lists..), access,
+
+	>variables
+		-if it is created within a blocks(if,switch,for..) then it is to be initialized
+		-if it is not------------------------------------not initialized
+		-datatype var_name;
+	>objects
+		-Classname object_name = new Classname(); //non-literal way - compile time storage
+		-we can create a object without new and constructor also(Character bankType = 'S') //literal way -supported by wrapper classes(Integer, Boolean,Character,...8,String,Object)-runtime storage--beneficial for type casting and type parsing and all
+	>scopes
+		-where is the var or objects
+		-local scope--
+		-class level(global)--
+	>modifiers	for data and operations:	
+		-static
+		-non static
+		-default
+		-private
+		-protetcted
+		-public
+		-abstract	
+
+
+
+> in a java program there can be multiple classes but only one public class(access modifier specified class)
+> we can have multiple main methods in a single file and file name need to be same as the class name always, it executes even in other case.
+> we can create multiple main methods in a  single class but not as a exeution point(no static)
+> overloading -same function name but differnt parameters - when we have multiple main methods in a single class then it can be in terms of overloading.
+> we can call static method from a static method with class name and method itself.
+> static blocks exceute before the main method execution-inside the static block we can also the paramters also.
+
+>in web 1.0 we can never store the data into internet.
+
+>in scanner class when we  
+gpay, insurance,emi,fd'sS
+
+----------------------------------------------------19-02-2024--------------------------------------------------------------------------
+-->operations
+   
+operators :
+Arithmetic +-*/%
+Unary      ++--   //to know last 10 transactions.
+Bitwise    >><<&|^
+Shorthand  +=-=*=/=>>=<<=
+
+relational   <>>=<=!=
+logical       && ||
+
+
+
+in if we can with all relational& logical operators but not in switch(only ==,|| supported)
+in if we can deal with all data types but in switch not posible
+
+control statements: based on the user requirements it provides solutions. 
+
+Looping statement:--bank employee providing kyc doc until the end of day,
+			--password checking -limits for 3 or 5times
+			--to avoid space complexity
+			entry--while->mini statements, bank employee providing kyc doc until the end of day(check the cond then provide the kyc doc),
+			exit--do while->setting the limit for password(enter password and check for correctness upto the limit), pin validation
+			entry--for-> iterate through the range,based on index-helps in searching the position.
+			--for each->depends on storage logic, iterates throughout & not in range,not able to find the index positions-for retrieval
+			--in for each--it creates a reference to the actual array and insertion is or any changes is not replicated in the actual array.--hence not used for searching and all.
+
+
+
+
+Type conversion:-basically in web application inputs are recieved in the form of string which is to be converted to different datatypes
+  
+->Type parsing: conversion from string to other types uing respective wrapper class parse method.
+  
+
+
+
+
+->Type casting: casting between any two data types
+		    eg: int accType = 'S'; //implicit type conversion---low size dtype to larger size dtype
+		    eg: char tranactionType = 'd';--------->int transType = transactionType; output would be ASCII value
+			
+		    //explicit type conversion
+		    double interstRate=7.2; int depositedAmount = 24500,maturityAmount=0;
+		    maturittyAmount = (int)(depositedAmount*interestRate)/100;
+		    here calc involves double dtype so the result will be in double and here we have converted it to into int---->res is int value
+
+
+--->default dtype of whole numbers - int
+--------------------floating ------- double
+--------input from keyboard is taken as string----------
+
+------strings--------------
+-string is a class
+-String myPortfolio="Gold.JSW";-----literl way of object creation
+-String myStocks = new String("Wipro,Reliance,HP,Infosys"); //non-literal
+-strings are immutable classes-without assigning no changes are reflected in strings
+
+//storage logic : CRUD
+myStocks.concat("Microsoft")----no output
+myStocks = myStocks.concat(" Microsoft")-----output is W..,R..,HP,IN..,Microsoft)
+
+//read
+sysout(myPortfolio.chaarAt(0));
+sysout(myStocks.substring(10,14));
+
+//trim
+
+//contains
+sysout(myStocks.contains("Reliance")
+
+
+
+//update
+myStocks = myStocks.replace("HP","BP")
+sysout(myStocks);
+                          
+//Regular Expressions
+-data validation
+Pattern>>compile,match
+Matcher>>matches
+
+^ >> start
+$ >> end
+
+[0-9] >> numbers
+[a-zA-Z] >> alphabets
+?= >> Grouping
+{start,limit} >> length of the string
+
+
+------------------arrays------------------------------------------
+->storage logic:temporary & fixed size,type spcific
+->amazon-cart(array),wishlist(dynamic array)
+->to maintain the records, maintained unly single label with indexing.
+->types:single,multi-,jagged
+->declaration:
+		type[] var/obj = {v1,v2,v3,....};
+		type[] var/obj = new type[size]; //default value in all indices
+->operations:
+CRUD
+Search
+Sort
+Analysis
+
+Methods:
+	avoids space complexity by distributed code of grouping statement based on nature
+	executed when make a call and completes its execution.
+types:
+	in-built methods
+	user defined
+category:
+	param with return:     (type parsing)
+	param without return:  (println)
+	no param without param: (finalize-removes all the memory occupied by the variables)
+	no param with return:   (scanner methods,user defined func)
+
+->we cannot append to static array bcz it's temporary
+->for each performs the task on reference to the actual data(i.e pointers are not used in java)-------------so use for,while or do-while
+->deletion is not possible in java.
+->Object is a parent class to all thr classes.
+-wait,notify,getclass,
+
+
+
+Data validation before Car Loan application
+
+Personal details: name, aadhaar, pan, address, mobile, email
+Income: salaried, self employed
+
+razaksrmd@mybank.com
+dotpos-atrate  greater than 3
+
+
+if(args.length == 0){
+sout(no)
+return
+}
+for(string feature:args){
+suggest(feature);
+}}
+public static void suggested(string feature){
+switch(feature.tolowercase()){
+case "health":
+sout(xyz")
+break
+default...
+
+----------------------20-feb-2024------------------------]
+Class:  purpose of class is for encapsulation...to group all the properties together./members/attributes.
+->encapsulation: if a class contains both properties and methods(but not private properties & public methods) - hiding the sensitive data.
+->mvn repository we have the dependencies
+
+OOPS Concepts----->provide solution to the problem that the application has---->objective/requirements/problem oriented programming.
+
+-->reusability and secure-----prime reasons for object oriented programming 
+-->constructor???---the operation privilege ,we can initialize the objects using constructors.
+-->to set the values ---we have setters and constructors.
+
+Class and Object:
+Encapsulation
+
+CATIA-simulation software used by mechanical engineers
+
+
+-------------------database------------------------------
+two storage unit- array------size limitation,in attributes we can find duplicates.
+		  string---------
+          |
+	  |
+	  |so we opt for database(class==tables.columns==array objects)
+	 \/
+database
+->NOSQL
+  ->Firebase
+  ->MongoDB
+->SQL
+  ->oracle
+    ->SQL Developer  >> UI
+    ->sqlplus        >> cii
+	Tables: columns and rows
+	Data types: varchar,number,int,bigint,text,double,float,blob,date
+  ->PostgreSQL
+  ->MySQL
+  ->MS SQL
+
+-->SQL
+	->Data definition Language(DDL):create,drop,alter
+		databases,tables,views,types,users,procedure,triggers,sequence
+	->Data control language(DCL): Grant,Revoke, >>users
+	->Data Manipulation Language(DML): insert,update,delete,truncate
+	->Data Query Language(DQL): select >> joins
+	->Transaction Control language >> commit,rollback
+
+procedures
+triggers
+er-diagrams:normalization
+
+
+
+
+
+private is mostly used for maintaing encapsulation,security,controlled access,flexibility----data hiding-----getter and setter methods are used for accessing
+
+
+-----------------------21/2/2024-----------------------------------------------------------------
+Inheritance
+----------------
+->object reusability & security
+->single level
+->multiple
+->hybrid
+->multi-level
+->hierarchial
+->derivedClass extends baseClass
+->at a time only one parent class is derived----(multiple inheritance is avoided in java ---to avoid ambiguity-----in c++ virtual class which avoids ambiguity but not in java)
+->hierarchial-----same base class is derived to multiple sub claseese --ex:google, bank(having acc no)->sb account,credit cards---further sub clases
+->multi-level inheritance-----
+->hybrid inheritance-----combination of other two inheritance
+->inheritance can also happen between interface not only in classes.
+->interface contains methods and properties-------derivedInterface extends baseInterface-------derivedClass implements baseInterface
+->interface contains only abstract methods with the properties---supports multiple inheritance bcz it contains virtual class which removes ambiguity by use of overriding.
+->inheritance scope is within the package because access modifier is protected so if out of package to be accessed then inherit the classes.
+->whenevr an object is created in derived class it checks if there is any default constructor in parent, if yes then it executes it first and then the derivedClass.
+interface dosn,y
+-------------------------
+Interface
+-------------------------
+->interface donot have constructor cannot create object so we have to inherit use the word implements.
+->construct cannot be overriden.
+->interface within the package cannot be access so first we implement it for ...
+->in interface methods should be default or abstract (how methods are different in interface than class)
+->in interface data members are by default final--so we cannot change it(how data-members are different in interface than class?)
+->in interface we canot change the size of array or any datamember-becaus is final so we have to initializa and not just declare
+->different inheritence
+->in interface overloading is possible and overriding is not
+->interfaces actually have abstract methods for ex in bank(crud operations)-deposit,withdraw,ministatement--which is different for different bank----group the behaviour and vendor inherits from the main function..
+->abstract methods ??
+->when we are inherting class we need not override the methods but when we are overriding interface and if there is abstract methods then overriding is mandate.
+->
+->temporary var when copied to another it just creates a reference and update in the initial var doesnot change
+but interms of object when copied to another it just creates a exact copy and update in the initial var changes the assigned var also.
+
+->clonable is an interface with no abstract methods hence called marked interface.
+
+->if there are multiple inheritance overriding of methods happaen of the first parent class specified(fifo)-->
+
+->hybrid version of both is required not only abstract mathods---------------drawbacks of interface
+->interface allows only two modifiers(static and default)                              |
+
+										       |
+
+										abstractclass came into existence-----behaves like 	
+
+										interface,donot have construcor
+
+----------------------------
+abstract class
+----------------------------
+->abstract class cannot be instantiated
+
+-----------
+abstraction
+--------------
+
+--------------
+polymorphism
+--------------
+
+--------------
+inner class
+----------------
+->classes may be the member of another class
+->1.static
+2.non static
+3.local
+4.anonymous
+
+----------
+modifiers:
+-----------
+1.public: 
+2.private:not accessible within the package
+3.protected:inheritance required when tried to access outside the package.---savingsaccount-within the package just create object to access.
+4.default:package scope
+5.abstract:can be for method--shouldnt have def only declaration
+		      class---cannot instantiate directly we have to inherit it.
+6.static:infront of datamemebers,methods,classes
+7.final:
+
+standalone classes:public,final,abstract,default-----need not be member of any other classes
+member classes: private,protected,static----should be a memebr of any other class
+
+----------------------------------------------------------------
+----------------
+static
+---------------
+->
+
+
+-------------------------------------
+
+		Standup-discussions:
+---------------------------------------
+->access specifiers:public-
+
+->views changes are immediately visible.
+->public static void main---main is the method where interpreter starts execution with string args as paramter others are just method.
+->maven-lombok location-----C:\Users\xxshetur\.m2\repository\org\projectlombok\lombok
+->database queries
+->scope and access the variables
+->with and without maven pom.xml
+->when we click the run button--edit configurtions-----when we build the target folder is generated--javac compiler compiles  the whole project in target folder and run---to execute specific class or task
+->exception handling
+--------------------------------------
+
+22/2/2024----------------------------------------
+
+
+1)final
+error vs exception
+
+--exceptio handlimg
+-compile time exceptions--throws
+..............

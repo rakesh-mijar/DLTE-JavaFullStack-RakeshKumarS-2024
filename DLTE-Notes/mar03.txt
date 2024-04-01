@@ -52,8 +52,13 @@ Standup questions:
 
 JBoss application server is an open-source platform, developed by Red Hat, used for implementing Java applications and a wide variety of other software applications. 
 While JBoss includes features for serving web applications, such as HTTP and servlet support,
+
 A web server primarily handles static content (such as HTML files, images, and CSS) and responds to HTTP requests from clients (usually web browsers).
+In web server, HTML and HTTP protocols are used.
+
 An application server is more versatile and handles dynamic content. It executes business logic, interacts with databases, and generates dynamic responses.(manages servlets and jsp)
+While in this, GUI as well as HTTP and RPC/RMI protocols are used.
+
 
 >>>Explain the life cycle of servlets with an example.
 

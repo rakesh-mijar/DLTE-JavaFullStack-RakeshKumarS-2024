@@ -1,0 +1,19 @@
+Mar 13, 2024 12:00:33 AM org.database.EmployeeDatabase readEmployeeDetails
+SEVERE: employee.record.insert.errorORA-00942: table or view does not exist
+
+Mar 13, 2024 12:08:08 AM org.database.EmployeeDatabase readEmployeeDetails
+SEVERE: employee.record.insert.errorORA-00942: table or view does not exist
+
+Mar 13, 2024 12:42:33 AM org.database.EmployeeDatabase readEmployeeDetails
+SEVERE: employee.record.insert.errorORA-00001: unique constraint (DEMO.SYS_C007457) violated
+
+Mar 13, 2024 12:46:24 AM org.database.EmployeeDatabase readEmployeeDetails
+SEVERE: employee.record.insert.errorORA-00001: unique constraint (DEMO.SYS_C007457) violated
+
+Mar 13, 2024 12:48:06 AM org.database.EmployeeDatabase readEmployeeDetails
+SEVERE: employee.record.insert.errorORA-00001: unique constraint (DEMO.SYS_C007457) violated
+
+Mar 13, 2024 12:49:53 AM org.database.EmployeeDatabase readEmployeeDetails
+INFO: employee.record.inserted
+Mar 13, 2024 10:49:31 AM org.database.EmployeeDatabase readEmployeeDetails
+INFO: employee.record.inserted

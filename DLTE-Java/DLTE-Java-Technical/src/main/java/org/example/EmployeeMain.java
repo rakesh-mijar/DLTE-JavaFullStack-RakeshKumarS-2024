@@ -1,6 +1,8 @@
 package org.example;
 
-public class EmployeeMain
+import java.io.Serializable;
+
+public class EmployeeMain implements Serializable
 {
     private String firstName;
     private String middleName;

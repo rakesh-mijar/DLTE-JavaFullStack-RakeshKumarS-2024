@@ -1,0 +1,137 @@
+standup
+----------
+1.if one rest service is developed in java and one more in .net can we interact them both?
+
+Yes, REST services developed in Java and .NET can interact with each other. RESTful APIs are designed to be language-agnostic, 
+meaning that they can communicate regardless of the programming language or framework used to implement them. 
+both services adhere to the HTTP protocol and follow RESTful principles, they can exchange data and communicate effectively.
+REST services communicate over HTTP using standard methods such as GET, POST, PUT, DELETE, etc. This communication happens through HTTP requests and responses, which are language-agnostic
+can send through xml or json which can be converted through jaxb
+
+2.what is proxy how is it related to frontend and webservice. Is it necessary to always use proxy.
+
+A proxy server acts as an intermediary between clients and servers.
+forwarding requests from clients to servers and returning responses from servers to clients.
+Caching: Proxy servers can cache frequently requested web pages.
+
+In the context of frontend and web services, a proxy server can be used to handle client requests to backend web services.
+Frontend to Web Service::a proxy server can be used to forward HTTP requests from the frontend to the backend service,or routing requests to different backend servers
+Web Service to Web Service::In a distributed system where multiple web services communicate with each other, a proxy server can be used to route requests between services. This can help 				improve security by isolating internal services from external clients and providing a centralized point for managing communication between services.
+
+It's not always necessary to use a proxy server, but it can be beneficial in certain scenarios, such as improving performance, enhancing security, or simplifying network architecture.
+
+In this communication flow, there is no need for a proxy server between the web service and the frontend application. The HTTP requests and responses are exchanged directly between the two components over the network.
+
+3.JDBC Template
+-----------------
+
+powerful mechanism for interacting with a database using JDBC.
+It simplifies the process of executing SQL queries, and mapping results to Java objects.
+
+Autowiring:  This annotation instructs Spring to inject an instance of JdbcTemplate into the jdbcTemplate field of the TransactionService class. This allows the TransactionService to use the JdbcTemplate to execute SQL queries against the database without needing to manually create an instance of JdbcTemplate or manage its lifecycle
+
+update()--->insert,update,delete,execute(),query()
+
+
+JDBC VS JPA
+-----------
+1. in jpa orm is used with many repositories like crud repository,and other repository
+2. mapping is through resultset mapper in jdbc but jpa it is done 
+
+4.beans
+----------------
+
+Beans are essentially Java objects that perform specific tasks within an application. They can be POJOs (Plain Old Java Objects) or objects instantiated from special classes provided by Spring.
+One of the key features of Spring is dependency injection (DI), which allows beans to depend on other beans. The container injects dependencies into a bean either through constructor injection, setter injection, or field injection.
+a "bean" is a Java object that is managed by the Spring IoC (Inversion of Control) container
+
+5.is there a possibility that we can make a rest service call to soap and vice versa?
+------------------------------------------------------------------------
+When making a REST service call to a SOAP service,(using xml)
+
+> you typically need to construct a SOAP request message using XML
+> send it to the SOAP service endpoint via an HTTP POST request.
+> The SOAP service processes the request, executes the operation specified in the request, and returns a SOAP response message. You then need to parse the SOAP response to extract the relevant data.
+
+When making a rest service call to a soap service(using json)
+
+When rest is taking only json services.
+
+>json content--->soap---->using Gson json is converted to java object---->java object can be converted to xml using jaxb dependencies(marshalling)----response is xml----converted to java object using(unmarshalling)------java object can be converted to json usin Gson
+
+-------------------
+29/3/2024
+
+top down and bottom up approaches:
+
+Top-down Web services development
+---------------------------------------
+
+> involves creating a WSDL and then creating the Web service using the WSDL file. 
+
+> In top-down approach, first you design the implementation of the Web service by creating a WSDL file. You can then create the Web service skeleton Java classes from the wsdl, and add the      
+required code.
+
+>Top down approach is also called as contract first or WSDL first approach, Most common in production scenarios.
+
+>Users will be responsible for developing their own clients using different frameworks, based on a published WSDL. 
+
+>The service contract is defined independently of the implementation, promoting modularity and reusability.
+
+bottom-up approach
+--------------------
+> first you write the java classes for the web service and then create the WSDL file and publish the web service.
+
+> Although bottom-up Web service development may be faster and easier, the top-down approach is the recommended way of creating a Web service.
+
+>ex::Situations which need quick and faster completion may prefer Java approach,code reused
+
+
+In REST Services(dlte-spring-003)
+--------------------
+>URI Resource Identification: A RESTful web service should have a set of resources that can be used to select targets of interactions with clients. These resources can be identified by URI (Uniform Resource Identifiers). 
+
+>Uniform Interface: Resources should have a uniform or fixed set of operations, such as PUT, GET, POST, and DELETE operations. This is a key principle that differentiates between a REST web service and a non-REST web service.
+
+>The Code-First Approach involves writing the business logic first and then using frameworks to expose this logic as RESTful endpoints.
+
+>For example, in Java with Spring Boot, the @RestController annotation is used to define a class as a REST controller, and @RequestMapping is used to map HTTP requests to specific methods.
+
+>Developers start by implementing business logic (the Loan class) and then use Spring Boot annotations to expose this logic as REST endpoints.
+
+
+
+
+stereotypes 
+------------
+
+@Component:
+
+This annotation indicates that a class is a Spring-managed component.
+Spring scans for classes annotated with @Component during component scanning and registers them as beans in the application context.
+
+@Controller:
+
+@Controller is used to annotate classes in the presentation layer, specifically those that handle HTTP requests and responses.
+Typically used in Spring MVC applications to define controllers that handle web requests.
+It combines @Component and provides additional functionality specific to web applications.
+
+@Service:
+
+@Service is used to annotate classes that contain business logic or perform service tasks.
+It's a specialization of @Component and is intended to be used in the service layer of the application.
+Service classes annotated with @Service are typically used to encapsulate business logic and interact with DAOs or repositories.
+@Repository:
+
+@Repository is used to annotate classes that access the database or perform CRUD operations.
+It's a specialization of @Component and is intended to be used in the persistence layer of the application.
+Classes annotated with @Repository are often used to interact with databases using Spring Data or other ORM frameworks.
+@Configuration:
+
+@Configuration is used to indicate that a class declares one or more @Bean methods and may be processed by the Spring container to generate bean definitions and service requests for those beans at runtime.
+It's typically used in combination with @Bean methods to define beans and their dependencies explicitly.
+@RestController:
+
+@RestController is a specialized version of @Controller used in RESTful web services.
+It combines @Controller and @ResponseBody, indicating that the return value of methods should be serialized directly into the HTTP response body.
+Controllers annotated with @RestController are commonly used to build RESTful APIs.

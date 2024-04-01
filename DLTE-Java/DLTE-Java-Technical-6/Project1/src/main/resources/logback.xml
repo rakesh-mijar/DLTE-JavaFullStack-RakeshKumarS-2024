@@ -8,9 +8,38 @@
 <!--    </appender>-->
 
     <!-- Define file appender -->
-    <appender name="myLogs" class="ch.qos.logback.core.FileAppender">
-<!--        <file>C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project1\src\main\app.log</file> &lt;!&ndash; Define log file name and path &ndash;&gt;-->
-        <file>C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project2\src\main\app2.log</file>
+<!--    <appender name="myLogs" class="ch.qos.logback.core.FileAppender">-->
+<!--&lt;!&ndash;        <file>C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project1\src\main\app.log</file> &lt;!&ndash; Define log file name and path &ndash;&gt;&ndash;&gt;-->
+<!--        <file>C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project2\src\main\app2.log</file>-->
+<!--        <encoder>-->
+<!--            <pattern>%d{HH:mm:ss.SSS} %highlight([%thread]) %-5level %logger{36} - %highlight(%msg) %n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+<!--    <appender name="myLogs" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+
+<!--        <file>C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project2\src\main\appp.log</file> &lt;!&ndash; Define log file name and path &ndash;&gt;-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">-->
+<!--            <fileNamePattern>C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project2\src\main\logs\appp-%d{yyyy-MM-dd}.%i.log</fileNamePattern>-->
+<!--            <maxFileSize>1KB</maxFileSize> &lt;!&ndash; Define the maximum file size(once the log file reaches 5 kilobytes in size, it will be rolled over to a new file.) &ndash;&gt;-->
+<!--            <totalSizeCap>6KB</totalSizeCap> &lt;!&ndash; Total size cap for all log files( once the total size of all log files exceeds 6KB, the oldest log files will be deleted to make room for new ones.) &ndash;&gt;-->
+<!--            <maxHistory>1</maxHistory> &lt;!&ndash; Keep up to 30 days of logs(up to 1 historical log files will be retained. Older log files beyond this limit will be deleted.) &ndash;&gt;-->
+<!--        </rollingPolicy>-->
+
+<!--        <encoder>-->
+<!--            <pattern>%d{HH:mm:ss.SSS} %highlight([%thread]) %-5level %logger{36} - %highlight(%msg)  %n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+    <!-- Define archive appender -->
+    <appender name="myLogsArchive" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-6\Project2\src\main\logs\aapp.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>C:/Users/xxshetur/Documents/Technical-Review/archiveLogs/archive/aapp-%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <maxFileSize>5KB</maxFileSize> <!-- Define the maximum file size -->
+            <totalSizeCap>6KB</totalSizeCap> <!-- Total size cap for all log files -->
+            <maxHistory>1</maxHistory> <!-- Keep up to 30 days of logs -->
+        </rollingPolicy>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} %highlight([%thread]) %-5level %logger{36} - %highlight(%msg) %n</pattern>
         </encoder>

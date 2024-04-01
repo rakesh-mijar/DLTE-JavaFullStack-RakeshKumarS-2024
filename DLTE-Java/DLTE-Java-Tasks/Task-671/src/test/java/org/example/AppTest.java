@@ -36,7 +36,7 @@ public class AppTest
         assertEquals("closed",loanMain.loan.get(0).getLoanStatus());//Test failed because actual loan status is open....check only closed loans
         assertEquals("open",loanMain.loan.get(0).getLoanStatus());//check available loans
     }
-  
+
     @Test(expected = ArrayIndexOutOfBoundsException.class)   //Test failed because no exception found here
     public void testExecution() throws IOException, ClassNotFoundException {
         testAddNewLoan();

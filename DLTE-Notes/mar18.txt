@@ -11,7 +11,6 @@ servelts,different from standalone program,how is servlet different from webserv
 spring
 ==================
 dependency used in spring(spring context-5.3.19)
-------------------------
 
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 <dependency>
@@ -21,8 +20,33 @@ dependency used in spring(spring context-5.3.19)
 </dependency>
 
 
+
+------->Dependency Injection:---------It is a technique where one object supplies the dependencies of another object rather than the object creating its dependencies itself.In a Spring 				application,dependencies are typically injected into classes either through constructors, setter methods, or directly into fields using annotations like 				@Autowired,@Injects.
+
+1.constructors:
+
+	primitive and String-based values
+	Dependent object (contained object)
+	Collection values etc.
+
+2.setters:
+	primitive and String-based values
+	Dependent object (contained object)
+	SCollection values etc.
+
+->Inversion of Control:: refers to the design principle where the control of object creation and management is inverted or delegated to a container or framework.In the context of Spring, the IoC container manages the lifecycle of Java objects (beans) and their dependencies. It creates objects, injects dependencies, and manages their configurations, thereby promoting loose coupling between components.
+
+There are two types of IoC containers. They are:
+
+BeanFactory----The XmlBeanFactory is the implementation class for the BeanFactory interface. To use the BeanFactory, we need to create the instance of XmlBeanFactory 
+
+ApplicationContext--The ClassPathXmlApplicationContext class is the implementation class of ApplicationContext interface. We need to instantiate the ClassPathXmlApplicationContext class to use the ApplicationContext as given below:
+
+
+------------------------
+
 IOC->DI----------------------->CONTAINER(with beans)-------->
-           configuration					POJO's(Like Account class)													<----------------------			    -------->
+           configuration	provides many services		POJO's(Like Account class)													<----------------------			    -------->
   
 Account 
 

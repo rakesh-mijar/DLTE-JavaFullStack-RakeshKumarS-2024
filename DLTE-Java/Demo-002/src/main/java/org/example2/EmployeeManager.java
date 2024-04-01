@@ -1,6 +1,9 @@
 package org.example2;
 
 
+        import org.example3.EmployeeAddress;
+        import org.example3.EmployeeMain;
+
         import java.io.*;
         import java.util.ArrayList;
         import java.util.Scanner;
@@ -91,7 +94,7 @@ public class EmployeeManager {
         ArrayList<EmployeeAddress> existingAddresses = readAddressesFromFile();
         existingEmployees.addAll(employees);
         existingAddresses.addAll(addresses);
-        try (FileOutputStream fileOutputStream = new FileOutputStream(FILE_PATH);
+        try (FileOutputStream fileOutputStream = new FileOutputStream(FILE_PATH,true);
              ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
             objectOutputStream.writeObject(existingEmployees);
             objectOutputStream.writeObject(existingAddresses);

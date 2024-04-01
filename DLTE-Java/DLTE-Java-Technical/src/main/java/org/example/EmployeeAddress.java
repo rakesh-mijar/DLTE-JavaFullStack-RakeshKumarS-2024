@@ -1,6 +1,8 @@
 package org.example;
 
-public class EmployeeAddress{
+import java.io.Serializable;
+
+public class EmployeeAddress implements Serializable{
     private String permStreet;
     private String permState;
     private String permCountry;

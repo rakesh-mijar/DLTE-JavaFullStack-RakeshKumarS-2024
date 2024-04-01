@@ -33,7 +33,6 @@ public class CreateAccount extends HttpServlet {
         Gson gson=new Gson();
         User user=gson.fromJson(req.getReader(), User.class);
         userServices.callSave(user);
-
         resp.setStatus(HttpServletResponse.SC_OK);
         resp.getWriter().println(user.getUsername()+" has added to the records");
     }

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="09d14f20-7154-49b2-b1c4-0b03b403bcc0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../DLTE-Database/Database.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../DLTE-Database/Database.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-001/src/main/java/branches/blocks/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-001/src/main/java/branches/blocks/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-001/target/classes/META-INF/DLTE-Java-001.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-003/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-003/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-003/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-003/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-003/src/main/java/store/oops/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-003/src/main/java/store/oops/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-003/target/test-classes/store/oops/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-003/target/test-classes/store/oops/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-005/DLTE-JAVA-005.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/FileStorageTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/FileStorageTarget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/StorageTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/StorageTarget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/UserFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/UserFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/java/org/example/UserServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/resources/user.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/src/main/resources/user.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/src/user.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/src/user.doc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/FileStorageTarget.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/FileStorageTarget.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/StorageTarget.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/StorageTarget.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/UserFileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/UserFileRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/UserServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/org/example/UserServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/user.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/target/classes/user.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/user-logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/user-logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Project/user.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Project/user.doc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/Technical-Review.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/src/main/java/org/example/EmployeeDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/src/main/java/org/example/EmployeeMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Rechnical/src/test/java/org/example/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/src/main/java/org/example/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/src/main/java/org/example/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/src/main/java/org/example/EmployeeDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/src/main/java/org/example/EmployeeDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/target/classes/org/example/Demo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/target/classes/org/example/EmployeeAddress.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/target/classes/org/example/EmployeeAddress.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/target/classes/org/example/EmployeeDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/target/classes/org/example/EmployeeDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/target/classes/org/example/EmployeeMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/target/classes/org/example/EmployeeMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java-Technical/target/test-classes/org/example/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DLTE-Java-Technical/target/test-classes/org/example/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLTE-Java004/DLTE-Java004.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\DLTE-JavaFullStack-RakeshKumarS-2024\DLTE-Java\DLTE-Java-Technical-2\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="2dHYHvkYzvqXSwBHMCpd2TgLcg6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="09d14f20-7154-49b2-b1c4-0b03b403bcc0" name="Default Changelist" comment="" />
+      <created>1709666386189</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709666386189</updated>
+      <workItem from="1709666644196" duration="258000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1709666858816">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1709666858816" />
+    <state x="209" y="117" key="new project wizard" timestamp="1709666888650">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="209" y="117" key="new project wizard/0.0.1536.816@0.0.1536.816" timestamp="1709666888650" />
+  </component>
+</project>

@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/transaction")
 public class TransactionAPI {
-    
+
     //injecting the instance of tranaction services to call the methods defined
     @Autowired
     TransactionService transactionService;

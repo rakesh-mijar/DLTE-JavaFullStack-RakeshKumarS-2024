@@ -32,6 +32,10 @@ public class TransactionSecurity {
         httpSecurity.csrf().disable();
 
         httpSecurity.authorizeRequests().antMatchers("/profile/register").permitAll();
+
+        httpSecurity.authorizeRequests().antMatchers("/profile/register").permitAll();
+
+
         httpSecurity.authorizeRequests().anyRequest().authenticated();
 
 

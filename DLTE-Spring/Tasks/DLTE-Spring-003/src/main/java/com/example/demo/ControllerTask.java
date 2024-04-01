@@ -15,7 +15,7 @@ public class ControllerTask {
             new Loan(1234566667L,10000.0,new Date("12/02/2023"),"HomeLoan","Suresh"),
             new Loan(7654322344L,45000.0,new Date("25/12/2023"),"PersonalLoan","Mahesh"),
             new Loan(9876345632L,87000.0,new Date("06/10/2024"),"HomeLoan","Razi"),
-            new Loan(987652344*3L,42000.0,new Date("05/03/2023"),"PersonalLoan","David")
+            new Loan(9876523443L,42000.0,new Date("05/03/2023"),"PersonalLoan","David")
     ).collect(Collectors.toList());
 
     //GetMapping: to retrieve all the loan list items

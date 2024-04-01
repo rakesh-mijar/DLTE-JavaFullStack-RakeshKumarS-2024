@@ -1,6 +1,8 @@
 package org.example;
 
-import org.readwrite.EmployeeManager;
+
+import org.example2.EmployeeManager;
+
 import java.util.ResourceBundle;
 import java.util.InputMismatchException;
 import java.util.Scanner;
