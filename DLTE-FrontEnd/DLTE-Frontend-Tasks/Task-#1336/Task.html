@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       body {
+            margin: 0;
+            padding: 0;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-image: url('files/logo.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .products img, .products video {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 5px;
+        }
+
+        .products:hover {
+            background-color: lightcoral;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column; /* Set flex direction to column */
+            align-items: center; /* Center horizontally */
+        }
+
+        .products {
+            margin: 20px;
+            text-align: center; /* Center text horizontally */
+            background-color: rgb(23, 178, 137);
+            border-radius: 40px;
+            padding: 40px; 
+            box-shadow: 2px 3px 2px 3px black;
+            transition: background-color 0.2s; /* Smooth transition */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 10vh;
+            color: black;
+            text-shadow: 2px 2px 6px white;
+            margin-top: 50px; /* Add margin from the top */
+        }
+
+        .features {
+            margin-top: 20px; /* Add margin between product and features */
+        }
+
+        .deposit-features, .available-loans {
+            text-align: left; /* Align text to the left */
+            margin-left: 40px; /* Indent text */
+        }
+    </style>
+    <title>MyBank - Products</title>
+</head>
+<body>
+    <h1>My Bank Products</h1>
+    <div class="main">
+       
+        <div class="products">
+            <h2>Loans</h2>
+            <img src="files/one.jpg" alt="Loans Image">
+            <div class="features">
+                <h3>Features:</h3>
+                <div class="available-loans">
+                    <h4>Available Cards:</h4>
+                    <ul>
+                        <li>Credit Card</li>
+                        <li>Debit Card</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="products">
+            <h2>Deposits</h2>
+            <img src="files/two.jpg" width="200px" alt="Deposits Image">
+            <div class="features">
+                <h3>Features:</h3>
+                <div class="deposit-features">
+                    <h4>Internet Banking Features:</h4>
+            <ul>
+                <li>24/7 access to account</li>
+                <li>Online bill payment</li>
+            </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="products">
+            <h2>Insurance</h2>
+            <img src="files/three.jpg" width="200px" alt="Insurance Image">
+            <div class="features">
+                <h3>Features:</h3>
+                <div class="insurance-features">
+                    <h4>Insurance Features:</h4>
+                    <ul>
+                        <li>Wide coverage options</li>
+                        <li>Quick claim settlement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>
+
