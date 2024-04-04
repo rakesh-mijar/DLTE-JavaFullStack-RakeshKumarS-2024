@@ -24,7 +24,7 @@ import static org.mockito.Mockito.when;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
-class EndpointTesting {
+public class EndpointTesting {
 
     @MockBean
     private TransactionsService transactionsService;
@@ -52,7 +52,7 @@ class EndpointTesting {
         NewTransactionResponse newTransactionResponse=soapPhase.addNewLoan(newTransactionRequest);
 
         //test case failed because there is a response(transaction2) and not nul
-        // assertNull(newTransactionResponse.getTransactions());
+       // assertNull(newTransactionResponse.getTransactions());
 
         //test case passed because the expected id and the actual id provided are same
         //assertEquals(1235455L,newTransactionResponse.getTransactions().getTransactionId());
@@ -195,3 +195,6 @@ class EndpointTesting {
 
 
 }
+
+
+
