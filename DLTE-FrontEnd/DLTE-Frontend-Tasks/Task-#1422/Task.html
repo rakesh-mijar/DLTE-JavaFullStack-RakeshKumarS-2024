@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+      body {
+        background-color: #f0f0f0;
+      }
+      .navbar {
+        background-color: #2C3E50;
+      }
+    </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <div class="container">
+      <img src="files/logo.png" width="100px" height="50px" class="me-2"/>
+      <a class="navbar-brand me-auto" href="#">My Bank</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#new-cheque-request">New Cheque Book Request</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#cheque-details">Cheque Book Details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#recent-schemes">Recent Schemes</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Recent Schemes Carousel -->
+  <section id="recent-schemes" class="container mt-5">
+    <h2 class="text-tertiary">Recent Schemes</h2>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="files/one.jpg" class="d-block w-100" alt="Scheme 1" style="width: 600px; height: 300px;">
+        </div>
+        <div class="carousel-item">
+          <img src="files/two.jpg" class="d-block w-100" alt="Scheme 2" style="width: 600px; height: 300px;">
+        </div>
+        <div class="carousel-item">
+            <img src="files/three.jpg" class="d-block w-100" alt="Scheme 2" style="width: 600px; height: 300px;">
+          </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev" >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- New Cheque Book Request -->
+  <section id="new-cheque-request" class="container mt-5">
+    <h2 class="text-secondary">New Cheque Book Request</h2>
+    <form>
+      <div class="mb-3">
+        <label for="accountNumber" class="form-label">Account Number</label>
+        <input type="text" class="form-control" id="accountNumber" placeholder="Enter Account Number">
+      </div>
+      <div class="mb-3">
+        <label for="accountHolder" class="form-label">Account Holder</label>
+        <input type="text" class="form-control" id="accountHolder" placeholder="Enter Account Holder">
+      </div>
+      <div class="mb-3">
+        <label for="chequeBookType" class="form-label">Cheque Book Type</label>
+        <select class="form-select" id="chequeBookType">
+          <option selected>Select Cheque Book Type</option>
+          <option value="personal">Savings</option>
+          <option value="corporate">Salary</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </section>
+
+
+   
+
+   <!-- Cheque Book Details -->
+<section id="cheque-details" class="container mt-5">
+    <h2 class="text-secondary">Cheque Book Details</h2>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Account Number</th>
+            <th scope="col">Account Holder</th>
+            <th scope="col">Cheque Book Type</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2211334411</td>
+            <td>Rakesh Kumar</td>
+            <td>Savings</td>
+            <td>
+              <button type="button" class="btn btn-success">Approve</button>
+              <button type="button" class="btn btn-danger">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
