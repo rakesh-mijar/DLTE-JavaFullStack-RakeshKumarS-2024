@@ -2,6 +2,7 @@ package com.example.backend.soap.services;
 
 import com.project.dao.exceptions.AccountNotFoundException;
 import com.project.dao.exceptions.CustomerNotFoundException;
+import com.project.dao.exceptions.ServerException;
 import com.project.dao.remotes.AccountRepository;
 import com.project.dao.services.AccountsServices;
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import services.accounts.*;
 
 import javax.servlet.http.HttpServletResponse;
+import java.sql.SQLSyntaxErrorException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -68,9 +70,16 @@ public class SoapPhase {
             filterByStatusResponse.setServiceStatus(serviceStatus);
         }catch ( AccountNotFoundException e) {
             logger.warn("failure.fetch");
-            serviceStatus.setStatus(HttpServletResponse.SC_BAD_REQUEST);//400
+            serviceStatus.setStatus(HttpServletResponse.SC_NOT_FOUND);//404
             serviceStatus.setMessage(e.getMessage());
             filterByStatusResponse.setServiceStatus(serviceStatus);
+        }catch (ServerException | java.rmi.ServerException e) {
+            logger.warn("failure.fetch");
+            serviceStatus.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);//500
+            serviceStatus.setMessage(e.getMessage());
+            filterByStatusResponse.setServiceStatus(serviceStatus);
+        } catch (SQLSyntaxErrorException e) {
+            e.printStackTrace();
         }
 
         return filterByStatusResponse;
