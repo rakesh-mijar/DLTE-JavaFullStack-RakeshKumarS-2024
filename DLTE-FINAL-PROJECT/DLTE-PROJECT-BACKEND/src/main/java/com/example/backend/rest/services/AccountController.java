@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.server.ResponseStatusException;
 import services.accounts.ServiceStatus;
 
@@ -19,6 +20,7 @@ import javax.validation.Valid;
 import java.rmi.ServerException;
 import java.sql.SQLSyntaxErrorException;
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.ResourceBundle;
 @RestController
@@ -29,7 +31,7 @@ public class AccountController {
     private AccountRepository accountService;
 
 
-    @PutMapping("/close-account")
+    @PutMapping("/closeAccounts")
     public ResponseEntity<Object> closeAccountService(@Valid @RequestBody Accounts account) {
         try {
             Accounts updatedAccount = accountService.UpdateAccountService(account);
@@ -38,7 +40,7 @@ public class AccountController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(accountException.getMessage());
         }catch ( CustomerNotFoundException customerException){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(customerException.getMessage());
-    }catch (ServerException ex) {
+    }catch (ServerException  |MethodArgumentTypeMismatchException ex) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
         }
     }

@@ -58,103 +58,142 @@ public class AccountsServices implements AccountRepository {
 
     @Override
     public Accounts UpdateAccountService(Accounts accounts) throws ServerException {
-        CallableStatementCreator creator = con -> {
-            CallableStatement statement = con.prepareCall("{call close_account_service5(?,?,?,?,?,?,?)}");
-            statement.setLong(1, accounts.getAccountId()); // returns the account ID
-            statement.registerOutParameter(2, Types.NUMERIC); // p_account_number
-            statement.registerOutParameter(3, Types.NUMERIC); // p_customer_id
-            statement.registerOutParameter(4, Types.VARCHAR); // p_account_type
-            statement.registerOutParameter(5, Types.VARCHAR); // p_account_status
-            statement.registerOutParameter(6, Types.NUMERIC); // p_account_balance
-            statement.registerOutParameter(7, Types.VARCHAR); // p_result
-            return statement;
-        };
+            CallableStatementCreator creator = con -> {
+                CallableStatement statement = con.prepareCall("{call close_account_service5(?,?,?,?,?,?,?)}");
+                statement.setLong(1, accounts.getAccountId()); // returns the account ID
+                statement.registerOutParameter(2, Types.NUMERIC); // p_account_number
+                statement.registerOutParameter(3, Types.NUMERIC); // p_customer_id
+                statement.registerOutParameter(4, Types.VARCHAR); // p_account_type
+                statement.registerOutParameter(5, Types.VARCHAR); // p_account_status
+                statement.registerOutParameter(6, Types.NUMERIC); // p_account_balance
+                statement.registerOutParameter(7, Types.VARCHAR); // p_result
+                return statement;
+            };
 
-        try {
-            Map<String, Object> returnedExecution = jdbcTemplate.call(creator, Arrays.asList(
-                    new SqlParameter[]{
-                            new SqlParameter(Types.NUMERIC),
-                            new SqlOutParameter("p_account_number", Types.NUMERIC),
-                            new SqlOutParameter("p_customer_id", Types.NUMERIC),
-                            new SqlOutParameter("p_account_type", Types.VARCHAR),
-                            new SqlOutParameter("p_account_status", Types.VARCHAR),
-                            new SqlOutParameter("p_account_balance", Types.NUMERIC),
-                            new SqlOutParameter("p_result", Types.VARCHAR),
-                    }
-            ));
+            try {
+                Map<String, Object> returnedExecution = jdbcTemplate.call(creator, Arrays.asList(
+                        new SqlParameter[]{
+                                new SqlParameter(Types.NUMERIC),
+                                new SqlOutParameter("p_account_number", Types.NUMERIC),
+                                new SqlOutParameter("p_customer_id", Types.NUMERIC),
+                                new SqlOutParameter("p_account_type", Types.VARCHAR),
+                                new SqlOutParameter("p_account_status", Types.VARCHAR),
+                                new SqlOutParameter("p_account_balance", Types.NUMERIC),
+                                new SqlOutParameter("p_result", Types.VARCHAR),
+                        }
+                ));
 
-            String result = returnedExecution.get("p_result").toString();
-            if (result.equals("SQLSUCESS")) {
-                // Success case
-                long accountId = accounts.getAccountId();
-                long accountNumber = ((Number) returnedExecution.get("p_account_number")).longValue();
-                long customerId = ((Number) returnedExecution.get("p_customer_id")).longValue();
-                String accountType = (String) returnedExecution.get("p_account_type");
-                String accountStatus = (String) returnedExecution.get("p_account_status");
-                double accountBalance = ((Number) returnedExecution.get("p_account_balance")).doubleValue();
-                logger.info(resourceBundle.getString("account.close.service"));
+                String result = returnedExecution.get("p_result").toString();
+                if (result.equals("SQLSUCESS")) {
+                    // Success case
+                    long accountId = accounts.getAccountId();
+                    long accountNumber = ((Number) returnedExecution.get("p_account_number")).longValue();
+                    long customerId = ((Number) returnedExecution.get("p_customer_id")).longValue();
+                    String accountType = (String) returnedExecution.get("p_account_type");
+                    String accountStatus = (String) returnedExecution.get("p_account_status");
+                    double accountBalance = ((Number) returnedExecution.get("p_account_balance")).doubleValue();
+                    logger.info(resourceBundle.getString("account.close.service"));
 
-                Accounts accounts1=new Accounts();
-                accounts1.setAccountId(accountId);
-                accounts1.setAccountNumber(accountNumber);
-                accounts1.setCustomerId(customerId);
-                accounts1.setAccountType(accountType);
-                accounts1.setAccountStatus(accountStatus);
-                accounts1.setAccountBalance(accountBalance);
+                    Accounts accounts1=new Accounts();
+                    accounts1.setAccountId(accountId);
+                    accounts1.setAccountNumber(accountNumber);
+                    accounts1.setCustomerId(customerId);
+                    accounts1.setAccountType(accountType);
+                    accounts1.setAccountStatus(accountStatus);
+                    accounts1.setAccountBalance(accountBalance);
 
-                return accounts1;
-                //return new Accounts(accountId, accountNumber, customerId, accountType, accountStatus, accountBalance);
-            } else if (result.equals("SQLERR-001")) {
-                logger.info(resourceBundle.getString("no.active.accounts"));
-                throw new AccountNotFoundException(resourceBundle.getString("no.active.accounts"));
-            } else if (result.equals("SQLERR-002")) {
-                logger.info(resourceBundle.getString("no.customer.id"));
-                throw new CustomerNotFoundException(resourceBundle.getString("no.customer.id"));
-            } else if (result.equals("SQLERR-003")) {
-                logger.info(resourceBundle.getString("inactive.customer"));
-                throw new CustomerNotFoundException(resourceBundle.getString("inactive.customer"));
-            } else if (result.equals("SQLERR-004")) {
-                throw new ServerException(resourceBundle.getString("no.data"));
+                    return accounts1;
+                    //return new Accounts(accountId, accountNumber, customerId, accountType, accountStatus, accountBalance);
+                } else if (result.equals("SQLERR-001")) {
+                    logger.info(resourceBundle.getString("no.active.accounts"));
+                    throw new AccountNotFoundException(resourceBundle.getString("no.active.accounts"));
+                } else if (result.equals("SQLERR-002")) {
+                    logger.info(resourceBundle.getString("no.customer.id"));
+                    throw new CustomerNotFoundException(resourceBundle.getString("no.customer.id"));
+                } else if (result.equals("SQLERR-003")) {
+                    logger.info(resourceBundle.getString("inactive.customer"));
+                    throw new CustomerNotFoundException(resourceBundle.getString("inactive.customer"));
+                } else if (result.equals("SQLERR-004")) {
+                    throw new ServerException("Account or Customer not found.");
+                }
+            } catch (DataAccessException e) {
+                throw new ServerException("Database access error: " + e.getMessage());
             }
-        } catch (DataAccessException e) {
-            throw new ServerException(resourceBundle.getString("no.connection.established")+ e.getMessage());
+            return null;
         }
-        return null;
-    }
 
 
-        //method corresponds to closing the account service based on the account id but it is performed only for active customers and close services possible for active accounts
+//    //method corresponds to closing the account service based on the account id but it is performed only for active customers and close services possible for active accounts
 //    @Override
 //    public Accounts UpdateAccountService(Accounts accounts) throws ServerException {
-//        Accounts updatedAccount = null;
-//        String procedureCall = "{call CLOSE_ACCOUNT_SERVICE6(?)}";
-//        try {
-//            int ack = jdbcTemplate.update(procedureCall, accounts.getAccountId());
-//            if (ack != 0) {
-//                updatedAccount = jdbcTemplate.queryForObject("SELECT * FROM mybank_app_account WHERE account_id=?",
-//                        new Object[]{accounts.getAccountId()},
-//                        new AccountsMapper());
-//            }
-//            //else {
-////                throw new AccountNotFoundException("Account not found or already inactive.");
-////            }
-//        } catch (DataAccessException e) {
-//            String errorMessage = e.getMessage();
-//            if (errorMessage.contains("-20001")) {
-//                throw new AccountNotFoundException(resourceBundle.getString("inactive.account"));
-//            } else if (errorMessage.contains("-20002")) {
-//                throw new CustomerNotFoundException(resourceBundle.getString("no.customer.id"));
-//            } else if (errorMessage.contains("-20003")) {
-//                throw new CustomerNotFoundException(resourceBundle.getString("inactive.customer"));
-//            } else if (errorMessage.contains("-20004")) {
-//                throw new AccountNotFoundException(resourceBundle.getString("no.account.id"));
-//            } else {
-//                throw new ServerException(resourceBundle.getString("no.connection.established") + errorMessage);
-//            }
-//        }
-//        return updatedAccount;
+//        CallableStatementCreator creator = con -> {
+//            CallableStatement statement = con.prepareCall("{call close_account_service5(?,?,?,?,?,?,?)}");
+//            statement.setLong(1, accounts.getAccountId()); // returns the account ID
+//            statement.registerOutParameter(2, Types.NUMERIC); // p_account_number
+//            statement.registerOutParameter(3, Types.NUMERIC); // p_customer_id
+//            statement.registerOutParameter(4, Types.VARCHAR); // p_account_type
+//            statement.registerOutParameter(5, Types.VARCHAR); // p_account_status
+//            statement.registerOutParameter(6, Types.NUMERIC); // p_account_balance
+//            statement.registerOutParameter(7, Types.VARCHAR); // p_result
+//            return statement;
+//        };
 //
+//        try {
+//            Map<String, Object> returnedExecution = jdbcTemplate.call(creator, Arrays.asList(
+//                    new SqlParameter[]{
+//                            new SqlParameter(Types.NUMERIC),
+//                            new SqlOutParameter("account_number", Types.NUMERIC),
+//                            new SqlOutParameter("customer_id", Types.NUMERIC),
+//                            new SqlOutParameter("account_type", Types.VARCHAR),
+//                            new SqlOutParameter("account_status", Types.VARCHAR),
+//                            new SqlOutParameter("account_balance", Types.NUMERIC),
+//                            new SqlOutParameter("result", Types.VARCHAR),
+//                    }
+//            ));
+//
+//            String result = returnedExecution.get("result").toString();
+//            if (result.equals("SQLSUCESS")) {
+//                // Success case
+//                long accountId = accounts.getAccountId();
+//                long accountNumber = ((Number) returnedExecution.get("account_number")).longValue();
+//                long customerId = ((Number) returnedExecution.get("customer_id")).longValue();
+//                String accountType = (String) returnedExecution.get("account_type");
+//                String accountStatus = (String) returnedExecution.get("account_status");
+//                double accountBalance = ((Number) returnedExecution.get("account_balance")).doubleValue();
+//                logger.info(resourceBundle.getString("account.close.service"));
+//
+//                Accounts accounts1=new Accounts();
+//                accounts1.setAccountId(accountId);
+//                accounts1.setAccountNumber(accountNumber);
+//                accounts1.setCustomerId(customerId);
+//                accounts1.setAccountType(accountType);
+//                accounts1.setAccountStatus(accountStatus);
+//                accounts1.setAccountBalance(accountBalance);
+//
+//                return accounts1;
+//            } else if (result.equals("SQLERR-001")) {
+//                logger.info(resourceBundle.getString("no.active.accounts"));
+//                throw new AccountNotFoundException(resourceBundle.getString("no.active.accounts"));
+//            } else if (result.equals("SQLERR-002")) {
+//                logger.info(resourceBundle.getString("no.customer.id"));
+//                throw new CustomerNotFoundException(resourceBundle.getString("no.customer.id"));
+//            } else if (result.equals("SQLERR-003")) {
+//                logger.info(resourceBundle.getString("inactive.customer"));
+//                throw new CustomerNotFoundException(resourceBundle.getString("inactive.customer"));
+//            } else if (result.equals("SQLERR-004")) {
+//                throw new ServerException(resourceBundle.getString("no.data"));
+//            }
+//        } catch (DataAccessException e) {
+//            throw new ServerException(resourceBundle.getString("no.connection.established")+ e.getMessage());
+//        }
+//        return null;
 //    }
+
+
+
+
+
+
 
 
     // Method to check if customer exists
