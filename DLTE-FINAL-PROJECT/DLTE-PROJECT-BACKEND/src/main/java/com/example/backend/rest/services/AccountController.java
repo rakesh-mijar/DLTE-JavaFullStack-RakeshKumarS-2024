@@ -3,7 +3,10 @@ package com.example.backend.rest.services;
 import com.project.dao.entities.Accounts;
 import com.project.dao.exceptions.AccountNotFoundException;
 import com.project.dao.exceptions.CustomerNotFoundException;
+import com.project.dao.exceptions.NoDataFoundException;
 import com.project.dao.remotes.AccountRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
@@ -27,21 +30,27 @@ import java.util.ResourceBundle;
 @RequestMapping("/accounts")
 public class AccountController {
 
+    //http://localhost:8082/accounts/closeAccounts
+
     @Autowired
     private AccountRepository accountService;
 
+    Logger logger= LoggerFactory.getLogger(AccountController.class);
 
     @PutMapping("/closeAccounts")
     public ResponseEntity<Object> closeAccountService(@Valid @RequestBody Accounts account) {
         try {
             Accounts updatedAccount = accountService.UpdateAccountService(account);
+            logger.info("Account Closed Succesfully");
             return ResponseEntity.ok(updatedAccount);
         } catch (AccountNotFoundException accountException) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(accountException.getMessage());
         }catch ( CustomerNotFoundException customerException){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(customerException.getMessage());
-    }catch (ServerException  |MethodArgumentTypeMismatchException ex) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
+        }catch (ServerException  |MethodArgumentTypeMismatchException serverException) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(serverException.getMessage());
+        }catch (NoDataFoundException dataException){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(dataException.getMessage());
         }
     }
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -55,7 +64,5 @@ public class AccountController {
         });
         return errors;
     }
-
-
 
 }

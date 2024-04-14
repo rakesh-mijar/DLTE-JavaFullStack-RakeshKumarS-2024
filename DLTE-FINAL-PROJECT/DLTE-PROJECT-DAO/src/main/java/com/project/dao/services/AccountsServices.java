@@ -4,6 +4,7 @@ import com.project.dao.entities.Accounts;
 import com.project.dao.entities.Customers;
 import com.project.dao.exceptions.AccountNotFoundException;
 import com.project.dao.exceptions.CustomerNotFoundException;
+import com.project.dao.exceptions.NoDataFoundException;
 import com.project.dao.remotes.AccountRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,8 +59,46 @@ public class AccountsServices implements AccountRepository {
 
     @Override
     public Accounts UpdateAccountService(Accounts accounts) throws ServerException {
-            CallableStatementCreator creator = con -> {
-                CallableStatement statement = con.prepareCall("{call close_account_service5(?,?,?,?,?,?,?)}");
+        try{
+        Accounts fetchedAccount = jdbcTemplate.queryForObject(
+                "SELECT * FROM MYBANK_APP_ACCOUNT WHERE ACCOUNT_ID = ?",
+                new Object[]{accounts.getAccountId()},
+                new AccountsMapper());
+//                new Object[]{accounts.getAccountId()},
+//                (resultSet, rowNum) -> {
+//                    Accounts account = new Accounts();
+//                    account.setAccountId(resultSet.getLong("ACCOUNT_ID"));
+//                    account.setAccountNumber(resultSet.getLong("ACCOUNT_NUMBER"));
+//                    account.setCustomerId(resultSet.getLong("CUSTOMER_ID"));
+//                    account.setAccountType(resultSet.getString("ACCOUNT_TYPE"));
+//                    account.setAccountStatus(resultSet.getString("ACCOUNT_STATUS"));
+//                    account.setAccountBalance(resultSet.getDouble("ACCOUNT_BALANCE"));
+//                    return account;
+//                });
+
+        // Compare the fetched account details with the provided accounts object
+        if (!isSameAccount(accounts, fetchedAccount)) {
+            // If account number is incorrect
+            if (!Objects.equals(accounts.getAccountNumber(), fetchedAccount.getAccountNumber())) {
+                throw new NoDataFoundException(resourceBundle.getString("invalid.account"));
+            }
+            // If customer ID is incorrect
+            if (!Objects.equals(accounts.getCustomerId(), fetchedAccount.getCustomerId())) {
+                throw new NoDataFoundException(resourceBundle.getString("invalid.customer"));
+            }
+            // If account type is incorrect
+            if (!Objects.equals(accounts.getAccountType(), fetchedAccount.getAccountType())) {
+                throw new NoDataFoundException(resourceBundle.getString("invalid.type"));
+            }
+            // If account balance is incorrect
+            if (Double.compare(accounts.getAccountBalance(), fetchedAccount.getAccountBalance()) != 0) {
+                throw new NoDataFoundException(resourceBundle.getString("invalid.balance"));
+            }
+        }
+
+        //used lambda expressions
+        CallableStatementCreator creator = con -> {
+                CallableStatement statement = con.prepareCall("{call close_account_service(?,?,?,?,?,?,?)}");
                 statement.setLong(1, accounts.getAccountId()); // returns the account ID
                 statement.registerOutParameter(2, Types.NUMERIC); // p_account_number
                 statement.registerOutParameter(3, Types.NUMERIC); // p_customer_id
@@ -70,7 +109,7 @@ public class AccountsServices implements AccountRepository {
                 return statement;
             };
 
-            try {
+            //try {
                 Map<String, Object> returnedExecution = jdbcTemplate.call(creator, Arrays.asList(
                         new SqlParameter[]{
                                 new SqlParameter(Types.NUMERIC),
@@ -122,7 +161,20 @@ public class AccountsServices implements AccountRepository {
             return null;
         }
 
+    // Method to compare the fetched account details with the provided accounts object
+    private boolean isSameAccount(Accounts providedAccount, Accounts fetchedAccount) {
+        // Check if any of the accounts is null
+        if (providedAccount == null || fetchedAccount == null) {
+            return false;
+        }
 
+        // Compare each attribute of the providedAccount with the corresponding attribute of fetchedAccount
+        return Objects.equals(providedAccount.getAccountNumber(), fetchedAccount.getAccountNumber())
+                && Objects.equals(providedAccount.getCustomerId(), fetchedAccount.getCustomerId())
+                && Objects.equals(providedAccount.getAccountType(), fetchedAccount.getAccountType())
+                && Double.compare(providedAccount.getAccountBalance(), fetchedAccount.getAccountBalance()) == 0;
+
+    }
 //    //method corresponds to closing the account service based on the account id but it is performed only for active customers and close services possible for active accounts
 //    @Override
 //    public Accounts UpdateAccountService(Accounts accounts) throws ServerException {
@@ -188,10 +240,6 @@ public class AccountsServices implements AccountRepository {
 //        }
 //        return null;
 //    }
-
-
-
-
 
 
 

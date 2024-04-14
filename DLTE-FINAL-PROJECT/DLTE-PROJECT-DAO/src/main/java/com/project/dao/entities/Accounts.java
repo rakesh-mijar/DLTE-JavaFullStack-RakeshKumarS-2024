@@ -1,5 +1,7 @@
 package com.project.dao.entities;
 
+import org.hibernate.validator.constraints.Range;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -10,6 +12,7 @@ public class Accounts {
     @NotNull(message="{account.id.null}")
     @Digits(message = "{account.id.digits}", integer = 10, fraction =0 )
     private Long accountId;
+    @Range(min = 100000000000L, max = 999999999999L,message = "{account.number.limit}")
     @NotNull(message="{account.number.null}")
     @Digits(integer=12,fraction=0,message="{account.number.limit}")
     private Long accountNumber;

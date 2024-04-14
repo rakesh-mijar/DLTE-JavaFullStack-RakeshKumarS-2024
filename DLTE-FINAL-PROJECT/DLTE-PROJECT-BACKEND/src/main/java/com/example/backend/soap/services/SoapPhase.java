@@ -33,11 +33,12 @@ public class SoapPhase {
 
     private Logger logger= LoggerFactory.getLogger(SoapPhase.class);
 
+    //http://localhost:8082/accountsrepo/accounts.wsdl
 
     @Autowired
     public AccountRepository accountsServices;
 
-
+    //lambda expression to filter the account details of customer based on customer id
     @PayloadRoot(namespace = url, localPart = "filterByStatusRequest")
     @ResponsePayload
     public FilterByStatusResponse filterByStatus(@RequestPayload FilterByStatusRequest filterByStatusRequest) throws CustomerNotFoundException {
@@ -86,6 +87,58 @@ public class SoapPhase {
     }
 
 
+//    //method reference to filter the account details of customer based on customer id
+//    @PayloadRoot(namespace = url, localPart = "filterByStatusRequest")
+//    @ResponsePayload
+//    public FilterByStatusResponse filterByStatus(@RequestPayload FilterByStatusRequest filterByStatusRequest) throws CustomerNotFoundException {
+//        FilterByStatusResponse filterByStatusResponse = new FilterByStatusResponse();
+//        ServiceStatus serviceStatus = new ServiceStatus();
+//
+//
+//        try {
+//            List<com.project.dao.entities.Accounts> fromDao = accountsServices.filterByCustomerStatus(filterByStatusRequest.getCustomerId());
+//
+//            List<Accounts> actualAccounts = accountsServices.filterByCustomerStatus(filterByStatusRequest.getCustomerId()).stream()
+//                    .map(this::convertToAccounts) // Method reference
+//                    .collect(Collectors.toList());
+//
+//            logger.info("success.fetch");
+//            serviceStatus.setStatus(HttpServletResponse.SC_OK );
+//            serviceStatus.setMessage(resourceBundle.getString("account.fetch.success"));
+//            filterByStatusResponse.setServiceStatus(serviceStatus);
+//            filterByStatusResponse.getAccounts().addAll(actualAccounts);
+//
+//        } catch ( CustomerNotFoundException e) {
+//            logger.warn("failure.fetch");
+//            serviceStatus.setStatus(HttpServletResponse.SC_NO_CONTENT);//204
+//            serviceStatus.setMessage(e.getMessage());
+//            filterByStatusResponse.setServiceStatus(serviceStatus);
+//        }catch ( AccountNotFoundException e) {
+//            logger.warn("failure.fetch");
+//            serviceStatus.setStatus(HttpServletResponse.SC_NOT_FOUND);//404
+//            serviceStatus.setMessage(e.getMessage());
+//            filterByStatusResponse.setServiceStatus(serviceStatus);
+//        }catch (ServerException | java.rmi.ServerException e) {
+//            logger.warn("failure.fetch");
+//            serviceStatus.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);//500
+//            serviceStatus.setMessage(e.getMessage());
+//            filterByStatusResponse.setServiceStatus(serviceStatus);
+//        } catch (SQLSyntaxErrorException e) {
+//            e.printStackTrace();
+//        }
+//
+//        return filterByStatusResponse;
+//    }
+//
+//    private Accounts convertToAccounts(com.project.dao.entities.Accounts account) {
+//        Accounts currentAccount = new Accounts();
+//        BeanUtils.copyProperties(account, currentAccount);
+//        return currentAccount;
+//    }
+
+
+
+    //filter the account details of customer based on customer id without any java 8 features
 //    @PayloadRoot(namespace = url, localPart = "filterByIdRequest")
 //    @ResponsePayload
 //    public FilterByIdResponse filterByIdRequest(@RequestPayload FilterByIdRequest filterByIdRequest) {
