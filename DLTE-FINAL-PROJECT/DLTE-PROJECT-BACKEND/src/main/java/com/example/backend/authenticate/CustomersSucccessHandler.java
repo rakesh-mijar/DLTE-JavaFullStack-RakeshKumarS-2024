@@ -1,5 +1,7 @@
 package com.example.backend.authenticate;
 
+import com.project.dao.security.MyBankCustomers;
+import com.project.dao.security.MyBankCustomersService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,18 +13,19 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 @Component
 public class CustomersSucccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     @Autowired
     MyBankCustomersService myBankCustomersService;
-
+    ResourceBundle resourceBundle=ResourceBundle.getBundle("application");
     Logger logger= LoggerFactory.getLogger(CustomersSucccessHandler.class);
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         MyBankCustomers myBankCustomers= (MyBankCustomers) authentication.getPrincipal();
-        if(myBankCustomers.getCustomerStatus()!="Inactive"){
+        if(!myBankCustomers.getCustomerStatus().equals("Inactive")){
             if(myBankCustomers.getAttempts() >1){
                 myBankCustomers.setAttempts(1);
                 myBankCustomersService.updateAttempts(myBankCustomers);

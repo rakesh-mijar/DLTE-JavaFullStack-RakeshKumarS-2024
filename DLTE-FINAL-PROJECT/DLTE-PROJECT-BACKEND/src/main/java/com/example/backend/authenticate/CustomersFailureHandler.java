@@ -1,5 +1,7 @@
 package com.example.backend.authenticate;
 
+import com.project.dao.security.MyBankCustomers;
+import com.project.dao.security.MyBankCustomersService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +16,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 @Component
 public class CustomersFailureHandler extends SimpleUrlAuthenticationFailureHandler{
     @Autowired
     MyBankCustomersService myBankCustomersService;
 
+    ResourceBundle resourceBundle=ResourceBundle.getBundle("application");
     Logger logger= LoggerFactory.getLogger(CustomersFailureHandler.class);
 
     @Override
@@ -31,16 +35,16 @@ public class CustomersFailureHandler extends SimpleUrlAuthenticationFailureHandl
                if(myBankCustomers.getAttempts()<myBankCustomers.getMaxAttempt()){
                    myBankCustomers.setAttempts(myBankCustomers.getAttempts()+1);
                    myBankCustomersService.updateAttempts(myBankCustomers);
-                   logger.warn("Invalid credentials and attempts taken");
+                   logger.warn(resourceBundle.getString("invalid.credits"));
                    exception=new LockedException("Attempts are taken");
                }
                else{
                    myBankCustomersService.updateStatus(myBankCustomers);
-                   exception=new LockedException("Max Attempts reached account is suspended");
+                   exception=new LockedException(resourceBundle.getString("max.reached"));
                }
            }
            else{
-               logger.warn("Account suspended contact admin to redeem");
+               logger.warn(resourceBundle.getString("account.suspended"));
            }
        }
         super.setDefaultFailureUrl("/login?error=true");

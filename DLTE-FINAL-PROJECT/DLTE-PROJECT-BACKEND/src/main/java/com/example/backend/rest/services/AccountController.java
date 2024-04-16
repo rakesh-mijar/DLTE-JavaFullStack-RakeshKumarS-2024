@@ -5,12 +5,18 @@ import com.project.dao.exceptions.AccountNotFoundException;
 import com.project.dao.exceptions.CustomerNotFoundException;
 import com.project.dao.exceptions.NoDataFoundException;
 import com.project.dao.remotes.AccountRepository;
+import com.project.dao.security.MyBankCustomersService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
@@ -30,27 +36,56 @@ import java.util.ResourceBundle;
 @RequestMapping("/accounts")
 public class AccountController {
 
+    //http://localhost:7001/backend-0.0.1-SNAPSHOT/v3/api-docs
     //http://localhost:8082/accounts/closeAccounts
 
     @Autowired
     private AccountRepository accountService;
 
+    @Autowired
+    private MyBankCustomersService myBankCustomersService;
+
+    ResourceBundle resourceBundle=ResourceBundle.getBundle("application");
     Logger logger= LoggerFactory.getLogger(AccountController.class);
 
+    @Operation(summary = "Closing the account service")
     @PutMapping("/closeAccounts")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Account closed successfully"),
+            @ApiResponse(responseCode = "404", description = "Account or Customer Not found"),
+            @ApiResponse(responseCode = "403", description = "Customer is inactive"),
+            @ApiResponse(responseCode = "500", description = "Internal server error"),
+            @ApiResponse(responseCode = "400",description = "Bad Request"),
+            @ApiResponse(responseCode = "422",description = "Entered details does not match with data in DB")
+    })
     public ResponseEntity<Object> closeAccountService(@Valid @RequestBody Accounts account) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+
+        // method to fetch the owner's username from the account object
+        String accountOwnerUsername = myBankCustomersService.getAccountOwnerUsername(account.getAccountId());
+
+        // Check if the authenticated user matches the owner of the account
+        if (!username.equals(accountOwnerUsername)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(resourceBundle.getString("access.denied"));
+        }
+
         try {
             Accounts updatedAccount = accountService.UpdateAccountService(account);
-            logger.info("Account Closed Succesfully");
+            logger.warn(resourceBundle.getString("account.close.service"));
             return ResponseEntity.ok(updatedAccount);
         } catch (AccountNotFoundException accountException) {
+            logger.warn(resourceBundle.getString("no.active.accounts"));
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(accountException.getMessage());
         }catch ( CustomerNotFoundException customerException){
+            logger.warn(resourceBundle.getString("no.customer.id"));
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(customerException.getMessage());
-        }catch (ServerException  |MethodArgumentTypeMismatchException serverException) {
+        }catch (ServerException  | DataAccessException serverException) {
+            logger.warn(resourceBundle.getString("no.data"));
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(serverException.getMessage());
         }catch (NoDataFoundException dataException){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(dataException.getMessage());
+            logger.warn(resourceBundle.getString("data.error"));
+            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(dataException.getMessage());
         }
     }
     @ResponseStatus(HttpStatus.BAD_REQUEST)

@@ -144,19 +144,21 @@ public class AccountsServices implements AccountRepository {
                     return accounts1;
                     //return new Accounts(accountId, accountNumber, customerId, accountType, accountStatus, accountBalance);
                 } else if (result.equals("SQLERR-001")) {
-                    logger.info(resourceBundle.getString("no.active.accounts"));
+                    logger.warn(resourceBundle.getString("no.active.accounts"));
                     throw new AccountNotFoundException(resourceBundle.getString("no.active.accounts"));
                 } else if (result.equals("SQLERR-002")) {
-                    logger.info(resourceBundle.getString("no.customer.id"));
+                    logger.warn(resourceBundle.getString("no.customer.id"));
                     throw new CustomerNotFoundException(resourceBundle.getString("no.customer.id"));
                 } else if (result.equals("SQLERR-003")) {
-                    logger.info(resourceBundle.getString("inactive.customer"));
+                    logger.warn(resourceBundle.getString("inactive.customer"));
                     throw new CustomerNotFoundException(resourceBundle.getString("inactive.customer"));
                 } else if (result.equals("SQLERR-004")) {
-                    throw new ServerException("Account or Customer not found.");
+                    logger.warn(resourceBundle.getString("no.data"));
+                    throw new ServerException(resourceBundle.getString("no.data"));
                 }
             } catch (DataAccessException e) {
-                throw new ServerException("Database access error: " + e.getMessage());
+                 logger.warn(resourceBundle.getString("data.error"));
+                throw new ServerException(resourceBundle.getString("data.error"));
             }
             return null;
         }

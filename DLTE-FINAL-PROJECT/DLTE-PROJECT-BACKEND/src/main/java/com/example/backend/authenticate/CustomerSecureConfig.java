@@ -1,5 +1,6 @@
 package com.example.backend.authenticate;
 
+import com.project.dao.security.MyBankCustomersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,6 +36,8 @@ public class CustomerSecureConfig{
         httpSecurity.formLogin().usernameParameter("username").failureHandler(customersFailureHandler).successHandler(customersSucccessHandler);
         httpSecurity.csrf().disable();
         httpSecurity.authorizeRequests().antMatchers("/profile/register").permitAll();
+        httpSecurity.authorizeRequests().antMatchers("/v3/api-docs").permitAll();
+//        httpSecurity.authorizeRequests().antMatchers("/accounts/closeAccounts").permitAll();
         httpSecurity.authorizeRequests().anyRequest().authenticated();
 
         AuthenticationManagerBuilder builder = httpSecurity.getSharedObject(AuthenticationManagerBuilder.class);
