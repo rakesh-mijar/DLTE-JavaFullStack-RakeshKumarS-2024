@@ -1,7 +1,5 @@
-package Entitties.Console.data;
+package entities;
 
-
-import Entities.Backend.EmployeeAddress;
 
 public class EmployeeDetails {
     private String firstName;
@@ -9,7 +7,7 @@ public class EmployeeDetails {
     private String lastName;
     private Long empMobileNumber=0L;
     private Integer empId;
-    private Entities.Backend.EmployeeAddress tempAddress;
+    private EmployeeAddress tempAddress;
     private EmployeeAddress permAddress;
 
 
