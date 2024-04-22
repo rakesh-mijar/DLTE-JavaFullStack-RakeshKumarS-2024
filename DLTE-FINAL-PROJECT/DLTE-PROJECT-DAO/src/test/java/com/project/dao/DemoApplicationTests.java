@@ -1,6 +1,7 @@
 //package com.project.dao;
 //
 //import com.project.dao.entities.Accounts;
+//import com.project.dao.exceptions.CustomerNotFoundException;
 //import com.project.dao.services.AccountsServices;
 //import org.junit.jupiter.api.Test;
 //import org.junit.jupiter.api.extension.ExtendWith;
@@ -8,7 +9,7 @@
 //import org.mockito.Mock;
 //import org.mockito.junit.jupiter.MockitoExtension;
 //
-//import static org.junit.jupiter.api.Assertions.assertThrows;
+//import static org.junit.jupiter.api.Assertions.*;
 //import static org.mockito.Mockito.*;
 //
 //import org.springframework.dao.DataAccessException;
@@ -21,7 +22,6 @@
 //import java.util.ArrayList;
 //import java.util.List;
 //
-//import static org.junit.jupiter.api.Assertions.assertEquals;
 //import static org.mockito.ArgumentMatchers.any;
 //import static org.mockito.Mockito.when;
 //
@@ -98,22 +98,59 @@
 //        when(jdbcTemplate.queryForObject(anyString(), eq(Integer.class), any(Long.class))).thenReturn(1);
 //
 //        // Call the method to be tested
-//        List<Accounts> result = accountsServices.filterByCustomerStatus(1L);
+//        List<Accounts> result = accountsServices.filterByCustomerStatus(2L);
 //
+////        System.out.println(result);
 //        // Assertions
 //        assertEquals("Active", result.get(0).getAccountStatus());//pass
 //    }
 //
+//
+//
+//
+//    //test case to mock AccountNotActive exceptions for the customers
 //    @Test
-//    //test case fails because expected AccountNotFoundException but was NullpointerExcetion
-//    void testFilterByCustomerStatusNoAccountsFound() {
+//    void testFilterByCustomerStatusNoActiveAccounts() {
 //        // Stubbing jdbcTemplate.query() method to return an empty list
 //        when(jdbcTemplate.query(anyString(), any(Object[].class), any(AccountsServices.AccountsMapper.class)))
 //                .thenReturn(new ArrayList<>());
 //
+//        // Stubbing jdbcTemplate.queryForObject() method to return 1
+//        when(jdbcTemplate.queryForObject(anyString(), eq(Integer.class), any(Long.class))).thenReturn(1);//returning 1 indicating that customer is existing but assert account not found
+//
 //        // Call the method to be tested and assert that it throws AccountNotFoundException
-//        assertThrows(AccountNotFoundException.class, () -> accountsServices.filterByCustomerStatus(1L));
+//        assertThrows(com.project.dao.exceptions.AccountNotFoundException.class, () -> accountsServices.filterByCustomerStatus(1L));
 //    }
+//
+//    //test case to mock customer not found exception
+//    @Test
+//    void testFilterByCustomerStatusCustomerNotFound() {
+//        // Stubbing jdbcTemplate.queryForObject() method to return 0
+//        when(jdbcTemplate.queryForObject(anyString(), eq(Integer.class), any(Long.class))).thenReturn(0);//returning 0 indicating that customer is itself not there and assert customer not found exception
+//
+//        // Call the method to be tested and assert that it throws CustomerNotFoundException
+//        assertThrows(CustomerNotFoundException.class, () -> accountsServices.filterByCustomerStatus(1L));
+//    }
+//
+//    //additional test cases for account not found exception
+//    //uncomment--->  //return Collections.emptyList();   for running test case testFilterByCustomerStatusNoAccountsFound()
+////    @Test
+////    void testFilterByCustomerStatusNoAccountsFound() throws ServerException, CustomerNotFoundException, SQLSyntaxErrorException {
+////        // Stubbing jdbcTemplate.query() method to return an empty list
+////        when(jdbcTemplate.query(anyString(), any(Object[].class), any(AccountsServices.AccountsMapper.class)))
+////                .thenReturn(new ArrayList<>());
+////
+////        // Stubbing jdbcTemplate.queryForObject() method to return 1
+////        when(jdbcTemplate.queryForObject(anyString(), eq(Integer.class), any(Long.class))).thenReturn(1);
+////
+////        // Call the method to be tested
+////        List<Accounts> result = accountsServices.filterByCustomerStatus(1L);
+////
+////        // Assertions
+////        assertNull(result);
+////        assertTrue(result.isEmpty());
+////    }
+//
 //}
 //
 //

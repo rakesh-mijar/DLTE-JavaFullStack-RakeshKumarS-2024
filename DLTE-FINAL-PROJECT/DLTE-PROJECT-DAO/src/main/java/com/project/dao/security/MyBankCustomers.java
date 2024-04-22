@@ -111,4 +111,19 @@ public class MyBankCustomers implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "MyBankCustomers{" +
+                "customerId=" + customerId +
+                ", customerName='" + customerName + '\'' +
+                ", customerAddress='" + customerAddress + '\'' +
+                ", customerStatus='" + customerStatus + '\'' +
+                ", customerContact=" + customerContact +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", maxAttempt=" + maxAttempt +
+                ", attempts=" + attempts +
+                '}';
+    }
 }

@@ -13,7 +13,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 @Service
 public class MyBankCustomersService implements UserDetailsService {
@@ -33,9 +35,30 @@ public class MyBankCustomersService implements UserDetailsService {
         return myBankCustomers;
     }
 
-    public MyBankCustomers findByUsername(String username){
-        MyBankCustomers myBankCustomers=jdbcTemplate.queryForObject("select * from mybank_app_customer where username=?",new Object[]{username},new BeanPropertyRowMapper<>(MyBankCustomers.class));
-        return myBankCustomers;
+//    public MyBankCustomers findByUsername(String username){
+//        MyBankCustomers myBankCustomers=jdbcTemplate.queryForObject("select * from mybank_app_customer where username=?",new Object[]{username},new BeanPropertyRowMapper<>(MyBankCustomers.class));
+//        return myBankCustomers;
+//    }
+
+    public MyBankCustomers findByUsername(String username) {
+        List<MyBankCustomers> customerList = jdbcTemplate.query(
+                "SELECT * FROM mybank_app_customer",
+                new BeanPropertyRowMapper<>(MyBankCustomers.class));
+        return filterByUserName(customerList,username);
+
+    }
+
+    public MyBankCustomers filterByUserName( List<MyBankCustomers> customerList,String username){
+        // Filter the list based on the provided username
+        List<MyBankCustomers> filteredCustomers = customerList.stream()
+                .filter(customer -> customer.getUsername().equals(username))
+                .collect(Collectors.toList());
+        //filteredCustomers.forEach(System.out::println);
+        if (!filteredCustomers.isEmpty()) {
+            return filteredCustomers.get(0); // Return the first matching customer
+        } else {
+            return null; // Return null if no customer found
+        }
     }
 
     public void updateAttempts(MyBankCustomers myBankCustomers){
