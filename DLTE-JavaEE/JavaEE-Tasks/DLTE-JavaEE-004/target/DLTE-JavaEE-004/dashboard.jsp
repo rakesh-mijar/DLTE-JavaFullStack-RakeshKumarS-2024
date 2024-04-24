@@ -30,7 +30,7 @@
         String username = (String) session.getAttribute("username");
         User user=  userServices.callFindById(username);
 %>
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgb(165, 138, 190);">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:green;">
     <div class="container-fluid justify-content-between">
         <a class="navbar-brand" href="#">MYBANK</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,10 +43,10 @@
                     <p class="text-light display-6">Hi, <%=session.getAttribute("username")%></p>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="btn btn-outline-light rounded-5 me-2" href="#">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="newaccount.jsp">Create Account</a>
+                    <a class="btn btn-outline-light rounded-5 me-2" href="newaccount.jsp">Create Account</a>
                 </li>
                 <li class="nav-item active">
                     <a href="logout" class="btn btn-outline-light rounded-5 me-2"><span class="bi bi-door-open"></span> Logout</a>
