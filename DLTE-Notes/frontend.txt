@@ -1,0 +1,32 @@
+frontend
+-------------
+>for method stylles 
+>in line attriburtes for this is not usefULL FOR SIZE
+
+>self closing tag( no body)
+.<br />
+.<source />
+.<input />
+.<img/>
+.<link />
+
+>grouping components
+.div
+.section
+.article
+
+>selectors  in internal style
+.bassed on element name (just class name)
+.using id name( starts with #id_name)
+.using class name(starts with .class_name)
+
+>alignment
+.align
+.justify----space-evenly
+	|----space around
+
+>media controls
+.audio
+.video
+.controls are used to have buttons(play,pause..)
+.

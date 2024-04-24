@@ -9,6 +9,14 @@ public class EmployeeDetails {
     private EmployeeAddress tempAddress;
     private EmployeeAddress permAddress;
 
+    public EmployeeDetails(String firstName, String middleName, String lastName, Long empMobileNumber, Integer empId) {
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.empMobileNumber = empMobileNumber;
+        this.empId = empId;
+    }
+
     public EmployeeDetails(String firstName, String middleName, String lastName, Long empMobileNumber, Integer empId, EmployeeAddress tempAddress, EmployeeAddress permAddress) {
         this.firstName = firstName;
         this.middleName = middleName;

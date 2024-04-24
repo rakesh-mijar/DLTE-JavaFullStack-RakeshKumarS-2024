@@ -1,0 +1,35 @@
+sqlplus sys as sysdba;
+1234
+
+system
+1234
+
+ALTER SESSION SET CURRENT_SCHEMA = my_schema;
+create user rakesh identified by 1234;
+
+grant all PRIVILEGES on employee_details to rakesh;
+grant all PRIVILEGES on address_details to rakesh;
+
+
+Java's generics are implemented using type erasure, which means that generic type information is erased at compile time and is not available at runtime. This presents a challenge when trying to work with generic types dynamically, such as when deserializing JSON into generic types using libraries like Gson.
+
+To overcome this limitation, the Gson library provides a mechanism to capture the generic type information using the TypeToken class. Here's how it works:
+
+new TypeToken<List<Entities.Backend.EmployeeDetails>>() {} creates an anonymous subclass of TypeToken with the specific generic type List<Entities.Backend.EmployeeDetails>.
+The empty curly braces {} indicate an anonymous class declaration. This is necessary because you can't directly instantiate TypeToken with a generic type due to type erasure.
+
+getType() method is called on the TypeToken object to obtain a Type object representing the generic type List<Entities.Backend.EmployeeDetails>.
+This Type object retains the generic type information, allowing Gson to deserialize JSON data into the correct generic type at runtime.
+
+
+
+
+
+TypeToken to capture the generic type information of List<Entities.Backend.EmployeeDetails>
+
+con.setDoOutput(true);: Sets the HttpURLConnection to allow output (i.e., to send data).
+-----------
+------------
+
+
+

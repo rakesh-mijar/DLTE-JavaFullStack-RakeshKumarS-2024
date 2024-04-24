@@ -9,15 +9,15 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.Pattern;
 
 public class Accounts {
-    @NotNull(message="{account.id.null}")
-    @Digits(message = "{account.id.digits}", integer = 10, fraction =0 )
+//    @NotNull(message="{account.id.null}")
+//    @Digits(message = "{account.id.digits}", integer = 10, fraction =0 )
     private Long accountId;
     @Range(min = 100000000000L, max = 999999999999L,message = "{account.number.limit}")
     @NotNull(message="{account.number.null}")
     @Digits(integer=12,fraction=0,message="{account.number.limit}")
     private Long accountNumber;
-    @NotNull(message="{customer.id.null}")
-    @Digits(message = "{customer.id.digits}", integer = 10, fraction =0 )
+//    @NotNull(message="{customer.id.null}")
+//    @Digits(message = "{customer.id.digits}", integer = 10, fraction =0 )
     private  Long customerId;
     @NotNull(message="{account.type.null}")
     @Pattern(regexp = "^[a-zA-Z]+$", message = "{account.type.invalid}")
@@ -30,14 +30,21 @@ public class Accounts {
     @Digits(integer=10,fraction=0,message="{account.balance.limit}")
     private  Double accountBalance;
 
-    public Accounts(Long accountId, Long accountNumber, Long customerId, String accountType, String accountStatus, Double accountBalance) {
-        this.accountId = accountId;
-        this.accountNumber = accountNumber;
-        this.customerId = customerId;
-        this.accountType = accountType;
-        this.accountStatus = accountStatus;
-        this.accountBalance = accountBalance;
-    }
+//    public Accounts(Long accountId, Long accountNumber, Long customerId, String accountType, String accountStatus, Double accountBalance) {
+//        this.accountId = accountId;
+//        this.accountNumber = accountNumber;
+//        this.customerId = customerId;
+//        this.accountType = accountType;
+//        this.accountStatus = accountStatus;
+//        this.accountBalance = accountBalance;
+//    }
+
+//    public Accounts(@Range(min = 100000000000L, max = 999999999999L, message = "{account.number.limit}") @NotNull(message = "{account.number.null}") @Digits(integer = 12, fraction = 0, message = "{account.number.limit}") Long accountNumber, @NotNull(message = "{account.type.null}") @Pattern(regexp = "^[a-zA-Z]+$", message = "{account.type.invalid}") String accountType, @NotNull(message = "{account.status.null}") @NotBlank(message = "{account.status.null}") @Pattern(regexp = "^(?i)(active|inactive)$", message = "{account.status.invalid}") String accountStatus, @NotNull(message = "{account.balance.null}") @Digits(integer = 10, fraction = 0, message = "{account.balance.limit}") Double accountBalance) {
+//        this.accountNumber = accountNumber;
+//        this.accountType = accountType;
+//        this.accountStatus = accountStatus;
+//        this.accountBalance = accountBalance;
+//    }
 
     public Long getAccountId() {
         return accountId;

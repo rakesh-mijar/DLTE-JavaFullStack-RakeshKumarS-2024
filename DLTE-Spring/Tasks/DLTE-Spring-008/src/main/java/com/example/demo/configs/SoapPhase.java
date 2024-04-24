@@ -24,15 +24,15 @@ import java.util.List;
 // Endpoint configuration for SOAP web services
 @Endpoint
 public class SoapPhase {
-    // Namespace URL for SOAP requests
+
     private final String url="http://transactions.services";
 
-    // Injecting TransactionsService for handling transactions
+    // Injecting TransactionsService
     @Autowired
     private TransactionsService transactionService;
 
     //method corresponds tot the creating new transaction
-    @PreAuthorize("hasAuthority('admin')")
+//    @PreAuthorize("hasAuthority('admin')")
     @PayloadRoot(namespace = url,localPart="newTransactionRequest")
     @ResponsePayload
     public NewTransactionResponse addNewLoan(@RequestPayload NewTransactionRequest newTransactionRequest){
@@ -63,7 +63,7 @@ public class SoapPhase {
     }
 
     //method corresponds to get the transaction details based on the sender name
-    @PreAuthorize("hasAuthority('customer')")
+//    @PreAuthorize("hasAuthority('customer')")
     @PayloadRoot(namespace=url,localPart = "filterBySenderRequest")
     @ResponsePayload
     public FilterBySenderResponse filterSender(@RequestPayload FilterBySenderRequest filterBySenderRequest){
@@ -92,7 +92,7 @@ public class SoapPhase {
     }
 
     //method corresponds to get the transaction details based on the receiver name
-    @PreAuthorize("hasAuthority('customer')")
+//    @PreAuthorize("hasAuthority('customer')")
     @PayloadRoot(namespace=url,localPart = "filterByReceiverRequest")
    @ResponsePayload
     public FilterByReceiverResponse filterReceiver(@RequestPayload FilterByReceiverRequest filterByReceiverRequest){
@@ -121,7 +121,7 @@ public class SoapPhase {
     }
 
     //method corresponds to delete the transaction details within the specified dates
-    @PreAuthorize("hasAuthority('admin')")
+//    @PreAuthorize("hasAuthority('admin')")
     @PayloadRoot(namespace = url,localPart = "removeTransactionRequest")
     @ResponsePayload
     public RemoveTransactionResponse closeTransaction(@RequestPayload RemoveTransactionRequest removeTransactionRequest) {
@@ -141,7 +141,7 @@ public class SoapPhase {
     }
 
     //method corresponds to get the transaction details based on the amount of transaction
-    @PreAuthorize("hasAuthority('customer')")
+//    @PreAuthorize("hasAuthority('customer')")
     @PayloadRoot(namespace=url,localPart = "filterByAmountRequest")
     @ResponsePayload
     public FilterByAmountResponse filterAmount(@RequestPayload FilterByAmountRequest filterByAmountRequest){
@@ -167,7 +167,7 @@ public class SoapPhase {
     }
 
     //method corresponds to update the transaction remarks
-    @PreAuthorize("hasAnyAuthority('admin','manager')")
+//    @PreAuthorize("hasAnyAuthority('admin','manager')")
     @PayloadRoot(namespace = url,localPart = "updateTransactionRemarksRequest")
     @ResponsePayload
     public UpdateTransactionRemarksResponse updateRemarks(@RequestPayload UpdateTransactionRemarksRequest updateTransactionRemarksRequest){

@@ -1,6 +1,8 @@
 package com.example.backend.authenticate;
 
 import com.project.dao.security.MyBankCustomersService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +17,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
+import java.util.ResourceBundle;
 
 @Configuration
 public class CustomerSecureConfig{
@@ -30,6 +33,9 @@ public class CustomerSecureConfig{
     @Autowired
     CustomersSucccessHandler customersSucccessHandler;
 
+    ResourceBundle resourceBundle=ResourceBundle.getBundle("application");
+    Logger logger= LoggerFactory.getLogger(CustomersFailureHandler.class);
+
     @Bean
     PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
@@ -39,7 +45,7 @@ public class CustomerSecureConfig{
     @Bean
     public CorsConfigurationSource corsConfigurationSource(){
         CorsConfiguration configuration=new CorsConfiguration();
-        configuration.setAllowedOriginPatterns(Arrays.asList("http://127.0.0.1:5500"));
+        configuration.setAllowedOriginPatterns(Arrays.asList(resourceBundle.getString("ui.path")));
 
         configuration.addAllowedMethod("*");
         configuration.addAllowedHeader("*");
@@ -50,12 +56,13 @@ public class CustomerSecureConfig{
         return source;
     }
 
+    //for processing incoming HTTP requests and enforcing security rules
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
-        httpSecurity.httpBasic();
+        httpSecurity.httpBasic();//enables http basic authentication
         httpSecurity.formLogin().usernameParameter("username").failureHandler(customersFailureHandler).successHandler(customersSucccessHandler);
-        httpSecurity.csrf().disable();
-        httpSecurity.cors();
+        httpSecurity.csrf().disable();//Cross-Site Request Forgery
+        httpSecurity.cors();//Cross-Origin Resource Sharing (CORS) support
 
         httpSecurity.authorizeRequests().antMatchers("/profile/register").permitAll();
         httpSecurity.authorizeRequests().antMatchers("/v3/api-docs").permitAll();

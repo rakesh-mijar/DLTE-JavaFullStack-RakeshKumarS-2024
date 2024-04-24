@@ -43,7 +43,7 @@
                 $.ajax({
                     url: "http://localhost:8082/accounts/closeAccounts",
                     type: "PUT",
-                    dataType: "json", 
+                    dataType: "text", 
                     beforeSend: function (handler) {
                         handler.setRequestHeader("Authorization", "Basic " + btoa("rakesh:rakesh"));
                     },

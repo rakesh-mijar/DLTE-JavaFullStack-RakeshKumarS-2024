@@ -4,12 +4,18 @@ import com.project.dao.exceptions.AccountNotFoundException;
 import com.project.dao.exceptions.CustomerNotFoundException;
 import com.project.dao.exceptions.ServerException;
 import com.project.dao.remotes.AccountRepository;
+import com.project.dao.security.MyBankCustomers;
+import com.project.dao.security.MyBankCustomersService;
 import com.project.dao.services.AccountsServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -34,6 +40,8 @@ public class SoapPhase {
     private Logger logger= LoggerFactory.getLogger(SoapPhase.class);
 
     //http://localhost:8082/accountsrepo/accounts.wsdl
+    @Autowired
+    private MyBankCustomersService myBankCustomersService;
 
     @Autowired
     public AccountRepository accountsServices;
@@ -41,29 +49,42 @@ public class SoapPhase {
     //lambda expression to filter the account details of customer based on customer id
     @PayloadRoot(namespace = url, localPart = "filterByStatusRequest")
     @ResponsePayload
-    public FilterByStatusResponse filterByStatus(@RequestPayload FilterByStatusRequest filterByStatusRequest) throws CustomerNotFoundException {
+    public FilterByStatusResponse filterByStatus() throws CustomerNotFoundException {
+
         FilterByStatusResponse filterByStatusResponse = new FilterByStatusResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
 
+        Authentication authentication=SecurityContextHolder.getContext().getAuthentication();
+        String username=authentication.getName();
+
+        MyBankCustomers myBankCustomer=myBankCustomersService.findByUsername(username);
+
 
         try {
-            List<com.project.dao.entities.Accounts> fromDao = accountsServices.filterByCustomerStatus(filterByStatusRequest.getCustomerId());
+            //if(myBankCustomers.getCustomerId()==filterByStatusRequest.getCustomerId()) {
+                List<com.project.dao.entities.Accounts> fromDao = accountsServices.filterByCustomerStatus(myBankCustomer.getCustomerId());
 
-            //lambda expression to filter the account details of customer based on customer id
-            List<services.accounts.Accounts> actualAccounts = fromDao.stream()
-                    .map(account -> {
-                        services.accounts.Accounts currentAccount = new services.accounts.Accounts();
-                        BeanUtils.copyProperties(account, currentAccount);
-                        return currentAccount;
-                    })
-                    .collect(Collectors.toList());
+                //lambda expression to filter the account details of customer based on customer id
+                List<services.accounts.Accounts> actualAccounts = fromDao.stream()
+                        .map(account -> {
+                            services.accounts.Accounts currentAccount = new services.accounts.Accounts();
+                            BeanUtils.copyProperties(account, currentAccount);
+                            return currentAccount;
+                        })
+                        .collect(Collectors.toList());
 
-            logger.info("success.fetch");
-            serviceStatus.setStatus(HttpServletResponse.SC_OK );
-            serviceStatus.setMessage(resourceBundle.getString("account.fetch.success"));
-            filterByStatusResponse.setServiceStatus(serviceStatus);
-            filterByStatusResponse.getAccounts().addAll(actualAccounts);
-
+                logger.info("success.fetch");
+                serviceStatus.setStatus(HttpServletResponse.SC_OK);
+                serviceStatus.setMessage(resourceBundle.getString("account.fetch.success"));
+                filterByStatusResponse.setServiceStatus(serviceStatus);
+                filterByStatusResponse.getAccounts().addAll(actualAccounts);
+           // }
+//            else{
+//                logger.info("failure.fetch");
+//                serviceStatus.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+//                serviceStatus.setMessage(resourceBundle.getString("authorization.error"));
+//                filterByStatusResponse.setServiceStatus(serviceStatus);
+//            }
         } catch ( CustomerNotFoundException e) {
             logger.warn("failure.fetch");
             serviceStatus.setStatus(HttpServletResponse.SC_NO_CONTENT);//204
@@ -85,85 +106,13 @@ public class SoapPhase {
 
         return filterByStatusResponse;
     }
-
-
-//    //method reference to filter the account details of customer based on customer id
-//    @PayloadRoot(namespace = url, localPart = "filterByStatusRequest")
-//    @ResponsePayload
-//    public FilterByStatusResponse filterByStatus(@RequestPayload FilterByStatusRequest filterByStatusRequest) throws CustomerNotFoundException {
-//        FilterByStatusResponse filterByStatusResponse = new FilterByStatusResponse();
-//        ServiceStatus serviceStatus = new ServiceStatus();
+    //    List<Account> received = accountService.filterByStatus(filterByStatusRequest.getCustomerId());
+//    List<services.account.Account> returnAccount = new ArrayList<>();
 //
-//
-//        try {
-//            List<com.project.dao.entities.Accounts> fromDao = accountsServices.filterByCustomerStatus(filterByStatusRequest.getCustomerId());
-//
-//            List<Accounts> actualAccounts = accountsServices.filterByCustomerStatus(filterByStatusRequest.getCustomerId()).stream()
-//                    .map(this::convertToAccounts) // Method reference
-//                    .collect(Collectors.toList());
-//
-//            logger.info("success.fetch");
-//            serviceStatus.setStatus(HttpServletResponse.SC_OK );
-//            serviceStatus.setMessage(resourceBundle.getString("account.fetch.success"));
-//            filterByStatusResponse.setServiceStatus(serviceStatus);
-//            filterByStatusResponse.getAccounts().addAll(actualAccounts);
-//
-//        } catch ( CustomerNotFoundException e) {
-//            logger.warn("failure.fetch");
-//            serviceStatus.setStatus(HttpServletResponse.SC_NO_CONTENT);//204
-//            serviceStatus.setMessage(e.getMessage());
-//            filterByStatusResponse.setServiceStatus(serviceStatus);
-//        }catch ( AccountNotFoundException e) {
-//            logger.warn("failure.fetch");
-//            serviceStatus.setStatus(HttpServletResponse.SC_NOT_FOUND);//404
-//            serviceStatus.setMessage(e.getMessage());
-//            filterByStatusResponse.setServiceStatus(serviceStatus);
-//        }catch (ServerException | java.rmi.ServerException e) {
-//            logger.warn("failure.fetch");
-//            serviceStatus.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);//500
-//            serviceStatus.setMessage(e.getMessage());
-//            filterByStatusResponse.setServiceStatus(serviceStatus);
-//        } catch (SQLSyntaxErrorException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return filterByStatusResponse;
-//    }
-//
-//    private Accounts convertToAccounts(com.project.dao.entities.Accounts account) {
-//        Accounts currentAccount = new Accounts();
+//for (Account account : received) {
+//        services.account.Account currentAccount = new services.account.Account();
 //        BeanUtils.copyProperties(account, currentAccount);
-//        return currentAccount;
-//    }
-
-
-
-    //filter the account details of customer based on customer id without any java 8 features
-//    @PayloadRoot(namespace = url, localPart = "filterByIdRequest")
-//    @ResponsePayload
-//    public FilterByIdResponse filterByIdRequest(@RequestPayload FilterByIdRequest filterByIdRequest) {
-//        FilterByIdResponse filterByIdResponse = new FilterByIdResponse();
-//        ServiceStatus serviceStatus = new ServiceStatus();
-//
-//        com.project.dao.entities.Customers fromDao = accountsServices.filterById(filterByIdRequest.getCustomerId());
-//
-//        if (fromDao != null) {
-//            services.accounts.Customers actualCustomer = new services.accounts.Customers();
-//            BeanUtils.copyProperties(fromDao, actualCustomer);
-//
-//            serviceStatus.setStatus("SUCCESS");
-//            serviceStatus.setMessage("customers.fetch");
-//
-//            filterByIdResponse.setServiceStatus(serviceStatus);
-//            filterByIdResponse.getCustomers().add(actualCustomer);
-//        } else {
-//            serviceStatus.setStatus("FAILURE");
-//            serviceStatus.setMessage("customer.fetch.null");
-//
-//            filterByIdResponse.setServiceStatus(serviceStatus);
+//        returnAccount.add(currentAccount);
 //        }
-//
-//        return filterByIdResponse;
-//    }
 }
 

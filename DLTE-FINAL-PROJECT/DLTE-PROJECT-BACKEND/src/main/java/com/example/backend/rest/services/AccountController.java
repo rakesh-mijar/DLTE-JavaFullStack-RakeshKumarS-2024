@@ -1,10 +1,15 @@
 package com.example.backend.rest.services;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.project.dao.entities.Accounts;
 import com.project.dao.exceptions.AccountNotFoundException;
 import com.project.dao.exceptions.CustomerNotFoundException;
 import com.project.dao.exceptions.NoDataFoundException;
 import com.project.dao.remotes.AccountRepository;
+import com.project.dao.security.MyBankCustomers;
 import com.project.dao.security.MyBankCustomersService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -59,21 +64,37 @@ public class AccountController {
             @ApiResponse(responseCode = "422",description = "Entered details does not match with data in DB")
     })
     public ResponseEntity<Object> closeAccountService(@Valid @RequestBody Accounts account) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        String username = authentication.getName();
+//
+//        // method to fetch the owner's username from the account object
+//        String accountOwnerUsername = myBankCustomersService.getAccountOwnerUsername(account.getAccountId());
+//
+//        // Check if the authenticated user matches the owner of the account
+//        if (!username.equals(accountOwnerUsername)) {
+//            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(resourceBundle.getString("access.denied"));
+//        }
+
+        Authentication authentication=SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
+        MyBankCustomers customers=myBankCustomersService.findByUsername(username);
 
-        // method to fetch the owner's username from the account object
-        String accountOwnerUsername = myBankCustomersService.getAccountOwnerUsername(account.getAccountId());
-
-        // Check if the authenticated user matches the owner of the account
-        if (!username.equals(accountOwnerUsername)) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(resourceBundle.getString("access.denied"));
-        }
 
         try {
+            account.setCustomerId(customers.getCustomerId());
+
             Accounts updatedAccount = accountService.UpdateAccountService(account);
             logger.warn(resourceBundle.getString("account.close.service"));
-            return ResponseEntity.ok(updatedAccount);
+
+            Map<String, Object> responseMap = new HashMap<>();
+            responseMap.put("accountNumber", updatedAccount.getAccountNumber());
+            responseMap.put("accountType", updatedAccount.getAccountType());
+            responseMap.put("accountStatus", updatedAccount.getAccountStatus());
+            responseMap.put("accountBalance", updatedAccount.getAccountBalance());
+
+            return ResponseEntity.status(HttpStatus.OK).body(responseMap);
+
+            //return ResponseEntity.ok(updatedAccount);
         } catch (AccountNotFoundException accountException) {
             logger.warn(resourceBundle.getString("no.active.accounts"));
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(accountException.getMessage());

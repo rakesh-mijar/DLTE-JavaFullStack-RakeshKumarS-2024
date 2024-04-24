@@ -25,21 +25,18 @@ public class MyBankCustomersService implements UserDetailsService {
     ResourceBundle resourceBundle=ResourceBundle.getBundle("application");
     Logger logger= LoggerFactory.getLogger(MyBankCustomersService.class);
 
-
+    /*
+    This method corresponds with creating new customer i.e signing up
+     */
     public MyBankCustomers signingUp(MyBankCustomers myBankCustomers){
-
-        // Retrieve the next value from the CUSTOMERID_SEQ1 sequence
+        // Retrieve the next value from the CUSTOMERID_SEQ1 sequence and used dual since nextval is not specific to any table to be retrieved
         Long nextCustomerId = jdbcTemplate.queryForObject("SELECT CUSTOMERID_SEQ1.NEXTVAL FROM DUAL", Long.class);
 
         jdbcTemplate.update("insert into mybank_app_customer (CUSTOMER_ID,CUSTOMER_NAME,CUSTOMER_ADDRESS,CUSTOMER_STATUS,CUSTOMER_CONTACT,USERNAME,PASSWORD) values(?,?,?,?,?,?,?)", new Object[]{nextCustomerId,myBankCustomers.getCustomerName(),myBankCustomers.getCustomerAddress(),myBankCustomers.getCustomerStatus(),myBankCustomers.getCustomerContact(),myBankCustomers.getUsername(),myBankCustomers.getPassword()});
         return myBankCustomers;
     }
 
-//    public MyBankCustomers findByUsername(String username){
-//        MyBankCustomers myBankCustomers=jdbcTemplate.queryForObject("select * from mybank_app_customer where username=?",new Object[]{username},new BeanPropertyRowMapper<>(MyBankCustomers.class));
-//        return myBankCustomers;
-//    }
-
+    //This method corresponds to fetch all the customers from mybank_app_customer table
     public MyBankCustomers findByUsername(String username) {
         List<MyBankCustomers> customerList = jdbcTemplate.query(
                 "SELECT * FROM mybank_app_customer",
@@ -48,6 +45,7 @@ public class MyBankCustomersService implements UserDetailsService {
 
     }
 
+    //continuing to above method filters the user based on the specified username among all users retrieved
     public MyBankCustomers filterByUserName( List<MyBankCustomers> customerList,String username){
         // Filter the list based on the provided username
         List<MyBankCustomers> filteredCustomers = customerList.stream()
@@ -70,26 +68,25 @@ public class MyBankCustomersService implements UserDetailsService {
         logger.info(resourceBundle.getString("status.changed"));
     }
 
-    public String getAccountOwnerUsername(Long accountId) {
-        try {
-            // Query to fetch the username of the account owner based on the account ID
-            String sql = "SELECT c.USERNAME " +
-                    "FROM mybank_app_customer c " +
-                    "JOIN mybank_app_account a ON c.CUSTOMER_ID = a.CUSTOMER_ID " +
-                    "WHERE a.ACCOUNT_ID = ?";
-            String ownerUsername = jdbcTemplate.queryForObject(sql, new Object[]{accountId}, String.class);
-            return ownerUsername;
-        } catch (EmptyResultDataAccessException e) {
-            logger.warn(resourceBundle.getString("no.account") + accountId);
-            return null;
-        } catch (DataAccessException e) {
-            logger.error(resourceBundle.getString("error.fetch") + accountId, e);
-            return null;
-        }
-    }
+//    public String getAccountOwnerUsername(Long accountId) {
+//        try {
+//            // Query to fetch the username of the account owner based on the account ID
+//            String sql = "SELECT c.USERNAME " +
+//                    "FROM mybank_app_customer c " +
+//                    "JOIN mybank_app_account a ON c.CUSTOMER_ID = a.CUSTOMER_ID " +
+//                    "WHERE a.ACCOUNT_ID = ?";
+//            String ownerUsername = jdbcTemplate.queryForObject(sql, new Object[]{accountId}, String.class);
+//            return ownerUsername;
+//        } catch (EmptyResultDataAccessException e) {
+//            logger.warn(resourceBundle.getString("no.account") + accountId);
+//            return null;
+//        } catch (DataAccessException e) {
+//            logger.error(resourceBundle.getString("error.fetch") + accountId, e);
+//            return null;
+//        }
+//    }
 
-
-
+    //to  load a user based on the provided username during the authentication process.
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         MyBankCustomers myBankCustomers=findByUsername(username);

@@ -1,0 +1,147 @@
+<!--<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"-->
+<!--            targetNamespace="http://transactions.services"-->
+<!--            xmlns:tns="http://transactions.services"-->
+<!--            elementFormDefault="qualified">-->
+<!--    <xsd:complexType name="additionalType">-->
+<!--        <xsd:sequence>-->
+<!--            <xsd:element name="transactionId" type="xsd:long"/>-->
+<!--            <xsd:element name="transactionDate" type="xsd:date"/>-->
+<!--            <xsd:element name="transactionBy" type="xsd:string"/>-->
+<!--            <xsd:element name="transactionTo" type="xsd:string"/>-->
+<!--            <xsd:element name="transactionAmount" type="xsd:double"/>-->
+<!--            <xsd:element name="transactionRemarks" type="xsd:string"/>-->
+<!--        </xsd:sequence>-->
+
+<!--    </xsd:complexType>-->
+
+<!--</xsd:schema>-->
+
+<!--&lt;!&ndash;<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"&ndash;&gt;-->
+<!--&lt;!&ndash;            targetNamespace="http://transactions.services"&ndash;&gt;-->
+<!--&lt;!&ndash;            xmlns:tns="http://transactions.services"&ndash;&gt;-->
+<!--&lt;!&ndash;            elementFormDefault="qualified">&ndash;&gt;-->
+<!--&lt;!&ndash;    &lt;!&ndash;    <xsd:import namespace="http://example.com/transactions2" schemaLocation="transactions2.xsd"/>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    &lt;!&ndash;    Entity&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <xsd:complexType name="transactions">&ndash;&gt;-->
+<!--&lt;!&ndash;        <xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:element name="transactionId" type="xsd:long"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:element name="transactionDate" type="xsd:date"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:element name="transactionBy" type="xsd:string"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:element name="transactionTo" type="xsd:string"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:element name="transactionAmount" type="xsd:double"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:element name="transactionRemarks" type="xsd:string"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        </xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;    </xsd:complexType>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Status &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <xsd:complexType name="serviceStatus">&ndash;&gt;-->
+<!--&lt;!&ndash;        <xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:element name="status" type="xsd:string"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:element name="message" type="xsd:string"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        </xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;    </xsd:complexType>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash;    New Transaction&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <xsd:element name="newTransactionRequest">&ndash;&gt;-->
+<!--&lt;!&ndash;        <xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="transactions" type="tns:transactions"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;        </xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;    </xsd:element>&ndash;&gt;-->
+<!--&lt;!&ndash;    <xsd:element name="newTransactionResponse">&ndash;&gt;-->
+<!--&lt;!&ndash;        <xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="serviceStatus" type="tns:serviceStatus"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="transactions" type="tns:transactions"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;        </xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;    </xsd:element>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Filter by sender&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <xsd:element name="filterBySenderRequest">&ndash;&gt;-->
+<!--&lt;!&ndash;        <xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="sender" type="xsd:string"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;        </xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;    </xsd:element>&ndash;&gt;-->
+<!--&lt;!&ndash;    <xsd:element name="filterBySenderResponse">&ndash;&gt;-->
+<!--&lt;!&ndash;        <xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="serviceStatus" type="tns:serviceStatus"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="transactions" type="tns:transactions" maxOccurs="unbounded"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;        </xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;    </xsd:element>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Filter by receiver&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <xsd:element name="filterByReceiverRequest">&ndash;&gt;-->
+<!--&lt;!&ndash;        <xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="receiver" type="xsd:string"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;        </xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;    </xsd:element>&ndash;&gt;-->
+<!--&lt;!&ndash;    <xsd:element name="filterByReceiverResponse">&ndash;&gt;-->
+<!--&lt;!&ndash;        <xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="serviceStatus" type="tns:serviceStatus"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="transactions" type="tns:transactions" maxOccurs="unbounded"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;        </xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;    </xsd:element>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash;Filter by amount&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <xsd:element name="filterByAmountRequest">&ndash;&gt;-->
+<!--&lt;!&ndash;        <xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="amount" type="xsd:double"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;        </xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;    </xsd:element>&ndash;&gt;-->
+<!--&lt;!&ndash;    <xsd:element name="filterByAmountResponse">&ndash;&gt;-->
+<!--&lt;!&ndash;        <xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="serviceStatus" type="tns:serviceStatus"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="transactions" type="tns:transactions" maxOccurs="unbounded"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;        </xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;    </xsd:element>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash;Filter by removeTransactionBetweenDates >> start date and end date&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <xsd:element name="removeTransactionRequest">&ndash;&gt;-->
+<!--&lt;!&ndash;        <xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="date1" type="xsd:date"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="date2" type="xsd:date"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;        </xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;    </xsd:element>&ndash;&gt;-->
+<!--&lt;!&ndash;    <xsd:element name="removeTransactionResponse">&ndash;&gt;-->
+<!--&lt;!&ndash;        <xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="serviceStatus" type="tns:serviceStatus"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;        </xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;    </xsd:element>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash;Update the remarks&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <xsd:element name="updateTransactionRemarksRequest">&ndash;&gt;-->
+<!--&lt;!&ndash;        <xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="transactions" type="tns:transactions"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;        </xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;    </xsd:element>&ndash;&gt;-->
+<!--&lt;!&ndash;    <xsd:element name="updateTransactionRemarksResponse">&ndash;&gt;-->
+<!--&lt;!&ndash;        <xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;            <xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="serviceStatus" type="tns:serviceStatus"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <xsd:element name="transactions" type="tns:transactions"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </xsd:sequence>&ndash;&gt;-->
+<!--&lt;!&ndash;        </xsd:complexType>&ndash;&gt;-->
+<!--&lt;!&ndash;    </xsd:element>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;</xsd:schema>&ndash;&gt;-->

@@ -78,25 +78,21 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-security</artifactId>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.security</groupId>-->
+<!--            <artifactId>spring-security-web</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
@@ -113,8 +109,17 @@
                         </goals>
                     </execution>
                 </executions>
+<!--                <configuration>-->
+<!--                    <schemaDirectory>src/main/resources</schemaDirectory>-->
+<!--                    <schemaFiles>transactions.xsd</schemaFiles>-->
+<!--                    <outputDirectory>src/main/java</outputDirectory>-->
+<!--                    <clearOutputDir>false</clearOutputDir>-->
+<!--                </configuration>-->
                 <configuration>
+                    <!-- Specify the absolute directory containing the XSD file -->
+<!--                    <schemaDirectory>C:/Users/xxshetur/Desktop</schemaDirectory>-->
                     <schemaDirectory>src/main/resources</schemaDirectory>
+                    <!-- Specify the name of the XSD file -->
                     <schemaFiles>transactions.xsd</schemaFiles>
                     <outputDirectory>src/main/java</outputDirectory>
                     <clearOutputDir>false</clearOutputDir>

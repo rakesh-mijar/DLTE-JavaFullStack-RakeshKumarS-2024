@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import spring.console.technical.repository.EmployeeRepository;
 import technical.review.spring.entities.backend.EmployeeAddress;
 import technical.review.spring.entities.backend.EmployeeDetails;
+
 import technical.review.spring.exceptions.ValidationException;
 import technical.review.spring.interfaces.backend.EmployeeInterface;
 
@@ -119,7 +120,7 @@ public class EmployeeServices implements EmployeeRepository {
                     //   implementations.App app1 = new implementations.App();
 
                     try {
-                        URL url = new URL("http://localhost:7001/Technical-RestServices/create/");
+                        URL url = new URL(resourceBundle.getString("write.data"));
                         HttpURLConnection con = (HttpURLConnection) url.openConnection();
                         con.setRequestMethod("POST");
                         con.setRequestProperty("Content-Type", "application/json");
@@ -135,10 +136,10 @@ public class EmployeeServices implements EmployeeRepository {
 
                         int responseCode = con.getResponseCode();
                         if (responseCode == HttpURLConnection.HTTP_OK) {
-                            System.out.println("Employee record has been created successfully WEb services.");
+                            System.out.println(resourceBundle.getString("employee.create.success"));
                         } else {
                             // System.out.println("Failed to create employee record. HTTP Error: " + responseCode);
-                            System.out.println("Failed to create employee record....Wait for some time and reload and retry!!");
+                            System.out.println(resourceBundle.getString("employee.create.failure"));
                         }
                     }catch(IOException e) {
                         System.out.println(e);
@@ -243,7 +244,7 @@ public class EmployeeServices implements EmployeeRepository {
                             permAddress.getCountryName() + ", " +
                             permAddress.getPincode());
                 } else {
-                    System.out.println("Permanent Address: Not Available");
+                    System.out.println(resourceBundle.getString("no.data"));
                 }
 
                 // Print temporary address if available
@@ -254,7 +255,7 @@ public class EmployeeServices implements EmployeeRepository {
                             tempAddress.getCountryName() + ", " +
                             tempAddress.getPincode());
                 } else {
-                    System.out.println("Temporary Address: Not Available");
+                    System.out.println(resourceBundle.getString("no.data"));
                 }
 
                 System.out.println();

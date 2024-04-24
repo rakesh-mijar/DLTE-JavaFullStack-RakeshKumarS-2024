@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b42e8409-1a0c-474b-9645-539a34c3cb54" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/mybank-accounts.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/mybank-accounts.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/com/example/backend/soap/services/SoapPhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/com/example/backend/soap/services/SoapPhase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/Accounts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/Accounts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/Customers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/Customers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/FilterByIdRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/FilterByIdRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/FilterByIdResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/FilterByIdResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/FilterByStatusRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/FilterByStatusRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/FilterByStatusResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/FilterByStatusResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/ObjectFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/ServiceStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/ServiceStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/java/services/accounts/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/test/java/com/example/backend/BackendApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-BACKEND/src/test/java/com/example/backend/BackendApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-DAO/mybank-accounts.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-DAO/mybank-accounts.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-DAO/src/main/java/com/project/dao/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-DAO/src/main/java/com/project/dao/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-DAO/src/main/java/com/project/dao/remotes/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-DAO/src/main/java/com/project/dao/remotes/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-DAO/src/main/java/com/project/dao/services/AccountsServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-DAO/src/main/java/com/project/dao/services/AccountsServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-DAO/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-DAO/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-DAO/src/test/java/com/project/dao/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FINAL-PROJECT/DLTE-PROJECT-DAO/src/test/java/com/project/dao/DemoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-FrontEnd/DLTE-Frontend-Tasks/Task-#1422/Task.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-FrontEnd/DLTE-Frontend-Tasks/Task-#1422/Task.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/src/main/java/Entitties/Console/data/EmployeeAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/src/main/java/Entitties/Console/data/EmployeeAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/src/main/java/Entitties/Console/data/EmployeeDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/src/main/java/Entitties/Console/data/EmployeeDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/src/main/java/console/application/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/src/main/java/console/application/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/src/main/java/console/application/EmployeeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/src/main/java/console/application/EmployeeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/src/main/resources/employee.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/src/main/resources/employee.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/target/Console-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/target/classes/Entitties/Console/data/EmployeeAddress.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/target/classes/Entitties/Console/data/EmployeeAddress.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/target/classes/Entitties/Console/data/EmployeeDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/target/classes/Entitties/Console/data/EmployeeDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/target/classes/console/application/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/target/classes/console/application/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/target/classes/console/application/EmployeeException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/target/classes/employee.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/target/classes/employee.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/target/classes/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/target/classes/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Project1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/src/main/java/Entities/Backend/EmployeeAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/src/main/java/Entities/Backend/EmployeeAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/src/main/java/Entities/Backend/EmployeeDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/src/main/java/Entities/Backend/EmployeeDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/src/main/java/implementations/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/src/main/java/implementations/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/src/main/java/interfaces/EmployeeInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/src/main/java/interfaces/EmployeeInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/src/test/java/business/logic/AppTest2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/src/test/java/business/logic/AppTest2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/target/Database-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/target/Database-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/target/classes/Entities/Backend/EmployeeAddress.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/target/classes/Entities/Backend/EmployeeAddress.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/target/classes/Entities/Backend/EmployeeDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/target/classes/Entities/Backend/EmployeeDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/target/classes/implementations/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/target/classes/implementations/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Project2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project2/target/test-classes/business/logic/AppTest2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Notes/FINAL_PROJECT_SQL_TABLES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-Notes/FINAL_PROJECT_SQL_TABLES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Notes/mar27.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-Notes/mar27.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Notes/standup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-Notes/standup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/DLTE-Spring-007/src/main/java/com/example/demojdbc/authenticate/MyBankUserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/DLTE-Spring-007/src/main/java/com/example/demojdbc/authenticate/MyBankUserServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/DLTE-Spring-007/src/main/java/com/example/demojdbc/authenticate/MyBankUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/DLTE-Spring-007/src/main/java/com/example/demojdbc/authenticate/MyBankUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/DLTE-Spring-007/src/main/java/com/example/demojdbc/authenticate/MyBankUsersAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/DLTE-Spring-007/src/main/java/com/example/demojdbc/authenticate/MyBankUsersAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/DLTE-Spring-007/src/main/java/com/example/demojdbc/authenticate/TransactionSecureConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/DLTE-Spring-007/src/main/java/com/example/demojdbc/authenticate/TransactionSecureConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/DLTE-Spring-008/mybank-transaction.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/DLTE-Spring-008/mybank-transaction.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/DLTE-Spring-008/mybank-transaction.log.2024-03-28.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/DLTE-Spring-008/mybank-transaction.log.2024-03-29.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/DLTE-Spring-008/mybank-transaction.log.2024-03-30.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/DLTE-Spring-008/src/main/java/com/example/demo/configs/SoapServiceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/DLTE-Spring-008/src/main/java/com/example/demo/configs/SoapServiceConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/Demo-IOC2/src/main/java/org/example/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/Demo-IOC2/src/main/java/org/example/Branch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/Demo-IOC2/src/main/java/org/example/MyBankContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/Demo-IOC2/src/main/java/org/example/MyBankContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/Demo-IOC2/src/main/resources/mybank-branches.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/Demo-IOC2/src/main/resources/mybank-branches.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/Demo-IOC2/target/classes/mybank-branches.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/Demo-IOC2/target/classes/mybank-branches.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/Demo-IOC2/target/classes/org/example/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/Demo-IOC2/target/classes/org/example/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/Demo-IOC2/target/classes/org/example/Branch.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/Demo-IOC2/target/classes/org/example/Branch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/Demo-IOC2/target/classes/org/example/MyBankContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DLTE-Spring/Tasks/Demo-IOC2/target/classes/org/example/MyBankContext.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2erdGsPaX4Zh9F0eQkx5poVIoRd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="SpringDaoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Spring-1" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="technical.review.spring.SpringDaoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b42e8409-1a0c-474b-9645-539a34c3cb54" name="Default Changelist" comment="" />
+      <created>1712666537421</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712666537421</updated>
+      <workItem from="1712666540499" duration="1160000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

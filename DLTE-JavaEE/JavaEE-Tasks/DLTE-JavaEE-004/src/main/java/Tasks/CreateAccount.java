@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/create/*")
+@WebServlet("/createAccount/*")
 public class CreateAccount extends HttpServlet {
     public UserServices userServices;
 
@@ -37,4 +37,6 @@ public class CreateAccount extends HttpServlet {
         resp.getWriter().println(user.getUsername()+" has added to the records");
     }
 
-    }
+
+
+}

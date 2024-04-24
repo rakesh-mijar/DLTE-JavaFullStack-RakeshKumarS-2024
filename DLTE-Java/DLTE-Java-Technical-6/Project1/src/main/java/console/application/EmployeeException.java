@@ -1,7 +1,7 @@
 package console.application;
 
-public class EmployeeException extends RuntimeException {
-    public EmployeeException(String message){
+class NullPointerException extends RuntimeException {
+    public NullPointerException(String message){
         super(message);
     }
 

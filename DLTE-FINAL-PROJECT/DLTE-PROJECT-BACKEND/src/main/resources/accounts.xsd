@@ -38,9 +38,9 @@
     <!-- Filter by -->
     <xsd:element name="filterByStatusRequest">
         <xsd:complexType>
-            <xsd:sequence>
-                <xsd:element name="customerId" type="xsd:long"/>
-            </xsd:sequence>
+<!--            <xsd:sequence>-->
+<!--                <xsd:element name="customerId" type="xsd:long"/>-->
+<!--            </xsd:sequence>-->
         </xsd:complexType>
     </xsd:element>
     <xsd:element name="filterByStatusResponse">

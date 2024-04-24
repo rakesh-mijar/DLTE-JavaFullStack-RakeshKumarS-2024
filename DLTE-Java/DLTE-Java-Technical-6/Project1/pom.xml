@@ -6,7 +6,7 @@
 
   <groupId>org.console.application</groupId>
   <artifactId>Console</artifactId>
-  <version>2.0-SNAPSHOT</version>
+  <version>3.0-SNAPSHOT</version>
 
   <name>Console</name>
   <!-- FIXME change it to the project's website -->
@@ -36,10 +36,20 @@
       <artifactId>slf4j-api</artifactId>
       <version>2.0.7</version>
     </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.database.application</groupId>-->
+<!--      <artifactId>Database</artifactId>-->
+<!--      <version>1.0-SNAPSHOT</version>-->
+<!--    </dependency>-->
     <dependency>
-      <groupId>org.database.application</groupId>
-      <artifactId>Database</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <groupId>technical.review</groupId>
+      <artifactId>spring</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.10.1</version>
     </dependency>
   </dependencies>
 

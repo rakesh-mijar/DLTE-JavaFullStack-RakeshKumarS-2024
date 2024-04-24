@@ -1,50 +1,92 @@
 package Entities.Backend;
 
 public class EmployeeAddress {
-    private String Street;
-    private String State;
-    private String Country;
-    private int Pincode;
-
-    public EmployeeAddress(String street, String state, String country, int pincode) {
-        Street = street;
-        State = state;
-        Country = country;
-        Pincode = pincode;
-    }
+    private String streetName;
+    private String stateName;
+    private String countryName;
+    private int pincode;
+    private int empId;
+    private String flag;
 
     public EmployeeAddress() {
     }
 
-    public String getStreet() {
-        return Street;
+    public EmployeeAddress(String streetName, String stateName, String countryName, int pincode) {
+        this.streetName = streetName;
+        this.stateName = stateName;
+        this.countryName = countryName;
+        this.pincode = pincode;
     }
 
-    public void setStreet(String street) {
-        Street = street;
+    public EmployeeAddress(String streetName, String stateName, String countryName, int pincode, int empId, String flag) {
+        this.streetName = streetName;
+        this.stateName = stateName;
+        this.countryName = countryName;
+        this.pincode = pincode;
+        this.empId = empId;
+        this.flag = flag;
     }
 
-    public String getState() {
-        return State;
+    public EmployeeAddress(String street, String state, String country, int tempPincode, int empId) {
     }
 
-    public void setState(String state) {
-        State = state;
+    public String getStreetName() {
+        return streetName;
     }
 
-    public String getCountry() {
-        return Country;
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
     }
 
-    public void setCountry(String country) {
-        Country = country;
+    public String getStateName() {
+        return stateName;
+    }
+
+    public void setStateName(String stateName) {
+        this.stateName = stateName;
+    }
+
+    public String getCountryName() {
+        return countryName;
+    }
+
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
     }
 
     public int getPincode() {
-        return Pincode;
+        return pincode;
     }
 
     public void setPincode(int pincode) {
-        Pincode = pincode;
+        this.pincode = pincode;
+    }
+
+    public int getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(int empId) {
+        this.empId = empId;
+    }
+
+    public String getFlag() {
+        return flag;
+    }
+
+    public void setFlag(String flag) {
+        this.flag = flag;
+    }
+
+    @Override
+    public String toString() {
+        return "EmployeeAddress{" +
+                "streetName='" + streetName + '\'' +
+                ", stateName='" + stateName + '\'' +
+                ", countryName='" + countryName + '\'' +
+                ", pincode=" + pincode +
+                ", empId=" + empId +
+                ", flag='" + flag + '\'' +
+                '}';
     }
 }

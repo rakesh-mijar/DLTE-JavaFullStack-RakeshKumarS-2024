@@ -45,6 +45,100 @@ Beans are essentially Java objects that perform specific tasks within an applica
 One of the key features of Spring is dependency injection (DI), which allows beans to depend on other beans. The container injects dependencies into a bean either through constructor injection, setter injection, or field injection.
 a "bean" is a Java object that is managed by the Spring IoC (Inversion of Control) container
 
+
+stereotypes 
+------------
+
+@Component:
+
+This annotation indicates that a class is a Spring-managed component.
+Spring scans for classes annotated with @Component during component scanning and registers them as beans in the application context.
+
+@Controller:
+
+@Controller is used to annotate classes in the presentation layer, specifically those that handle HTTP requests and responses.
+Typically used in Spring MVC applications to define controllers that handle web requests.
+It combines @Component and provides additional functionality specific to web applications.
+
+@Service:
+
+@Service is used to annotate classes that contain business logic or perform service tasks.
+It's a specialization of @Component and is intended to be used in the service layer of the application.
+Service classes annotated with @Service are typically used to encapsulate business logic and interact with DAOs or repositories.
+@Repository:
+
+@Repository is used to annotate classes that access the database or perform CRUD operations.
+It's a specialization of @Component and is intended to be used in the persistence layer of the application.
+Classes annotated with @Repository are often used to interact with databases using Spring Data or other ORM frameworks.
+@Configuration:
+
+@Configuration is used to indicate that a class declares one or more @Bean methods and may be processed by the Spring container to generate bean definitions and service requests for those beans at runtime.
+It's typically used in combination with @Bean methods to define beans and their dependencies explicitly.
+@RestController:
+
+@RestController is a specialized version of @Controller used in RESTful web services.
+It combines @Controller and @ResponseBody, indicating that the return value of methods should be serialized directly into the HTTP response body.
+Controllers annotated with @RestController are commonly used to build RESTful APIs.
+
+
+05/04/2024
+-----------
+
+How the objects are getting created in xml and java configuration(also with and without spring)
+
+Bean Declaration: in xml
+------------------------
+Objects are declared using the <bean> tag, where you specify the class of the object, its dependencies, and other configurations.
+
+Dependency Injection: Dependencies are injected using <property> or <constructor-arg> tags within the <bean> declaration.
+
+java configuration with spring  ---spring task
+----------
+Create a configuration class annotated with @Configuration.
+
+This class is annotated with @Configuration to indicate that it contains bean definitions and configuration for the application.
+
+Methods annotated with @Bean are used to define beans. These methods return instances of the beans they define.
+
+java configuration without spring
+------------
+creating an object and set the valuse using getters and setters.
+
+Component Scanning: Spring can automatically detect classes annotated with @Component using component scanning. These annotated classes are automatically registered as beans in the Spring application context.
+
+
+BeanFactory and ApplicationContext are both core interfaces in the Spring Framework that facilitate the creation and management of beans. 
+
+Bean Id:
+
+The bean id is a unique identifier for a bean within the Spring IoC container.
+It is specified using the id attribute in XML configuration or the @Bean annotation's name attribute in Java configuration.
+The bean id is used primarily for internal purposes within the container to identify and reference beans.
+
+
+Class Level Annotations:
+@Component: Indicates that a class is a component. Spring will automatically detect and register this class as a Spring bean.
+
+@Controller: Indicates that a class serves the role of a controller in a Spring MVC application.
+
+@Service: Indicates that a class is a service component in the business layer.
+
+@Repository: Indicates that a class is a data repository or DAO (Data Access Object).
+
+------------------------
+
+Method Level Annotations:
+@Bean: Indicates that a method produces a bean to be managed by the Spring container. This annotation is used within @Configuration classes.
+
+@RequestMapping: Maps HTTP requests to handler methods in Spring MVC controllers. It can be applied at both class and method levels.
+
+@PostMapping, @GetMapping, @PutMapping, @DeleteMapping: These annotations are shortcuts for @RequestMapping(method = RequestMethod.POST), @RequestMapping(method = RequestMethod.GET), @RequestMapping(method = RequestMethod.PUT), and @RequestMapping(method = RequestMethod.DELETE) respectively.
+
+
+
+
+
+
 5.is there a possibility that we can make a rest service call to soap and vice versa?
 ------------------------------------------------------------------------
 When making a REST service call to a SOAP service,(using xml)
@@ -102,36 +196,3 @@ In REST Services(dlte-spring-003)
 
 
 
-stereotypes 
-------------
-
-@Component:
-
-This annotation indicates that a class is a Spring-managed component.
-Spring scans for classes annotated with @Component during component scanning and registers them as beans in the application context.
-
-@Controller:
-
-@Controller is used to annotate classes in the presentation layer, specifically those that handle HTTP requests and responses.
-Typically used in Spring MVC applications to define controllers that handle web requests.
-It combines @Component and provides additional functionality specific to web applications.
-
-@Service:
-
-@Service is used to annotate classes that contain business logic or perform service tasks.
-It's a specialization of @Component and is intended to be used in the service layer of the application.
-Service classes annotated with @Service are typically used to encapsulate business logic and interact with DAOs or repositories.
-@Repository:
-
-@Repository is used to annotate classes that access the database or perform CRUD operations.
-It's a specialization of @Component and is intended to be used in the persistence layer of the application.
-Classes annotated with @Repository are often used to interact with databases using Spring Data or other ORM frameworks.
-@Configuration:
-
-@Configuration is used to indicate that a class declares one or more @Bean methods and may be processed by the Spring container to generate bean definitions and service requests for those beans at runtime.
-It's typically used in combination with @Bean methods to define beans and their dependencies explicitly.
-@RestController:
-
-@RestController is a specialized version of @Controller used in RESTful web services.
-It combines @Controller and @ResponseBody, indicating that the return value of methods should be serialized directly into the HTTP response body.
-Controllers annotated with @RestController are commonly used to build RESTful APIs.

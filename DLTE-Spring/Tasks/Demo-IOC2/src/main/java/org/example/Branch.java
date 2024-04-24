@@ -1,5 +1,8 @@
 package org.example;
 
+import org.springframework.stereotype.Component;
+
+@Component("myBean")
 public class Branch {
     private String branchName;
     private String ifsCode;
