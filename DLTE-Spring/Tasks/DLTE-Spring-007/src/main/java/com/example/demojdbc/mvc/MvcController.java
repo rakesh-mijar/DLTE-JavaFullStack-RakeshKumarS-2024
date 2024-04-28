@@ -9,42 +9,94 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.SimpleFormatter;
 
 @Controller
-@RequestMapping("/ui")
+@RequestMapping("/ui/transactions")
 public class MvcController {
     @Autowired
     TransactionService transactionService;
-    ResourceBundle resourceBundle=ResourceBundle.getBundle("application");
-    Logger logger= LoggerFactory.getLogger(MvcController.class);
 
-    @GetMapping("/newTransaction")
-    public String submit(Model model){
+
+    @GetMapping("/new")
+    public String show(Model model){
         TransactionNew transactionNew=new TransactionNew();
         model.addAttribute("transactionNew",new TransactionNew());
-        return "newTransaction.html";
+        return "newTransaction";
     }
     @GetMapping("/")
     public String index(){
-        return "index.html";
-    }
-    @RequestMapping(value="/submit",method = RequestMethod.POST)
-    public String newTransaction(TransactionNew transactionNew, BindingResult bindingResult,Model model){
-        try{
-            if(!bindingResult.hasErrors()){
-                transactionNew = transactionService.apiSave(transactionNew);
-                model.addAttribute("status",transactionNew.getTransactionId()+" has inserted");
-            }
-        }catch(TransactionException transactionException){
-            logger.warn(transactionException.toString());
-            model.addAttribute("error",transactionException.toString());
-        }
-        return "newTransaction.html";
+        return "index";
     }
 
+    @GetMapping("/display")
+    public String display(Model model){
+        model.addAttribute("transactionNew",new TransactionNew());
+        return "index";
+    }
+    @RequestMapping(value="/new",method = RequestMethod.POST)
+    public String newTransaction(@Valid  @ModelAttribute TransactionNew transactionNew, BindingResult bindingResult, Model model){
+        model.addAttribute("transactionNew",transactionNew);
+        if(!bindingResult.hasErrors()){
+                TransactionNew transaction1= transactionService.apiSave(transactionNew);
+                model.addAttribute("status",transactionNew.getTransactionId()+" has inserted");
+                model.addAttribute("transactionNew",transaction1);
+                return "index";
+            }else{
+            model.addAttribute("status","Transaction Failed!!");
+            return "newTransaction";
+        }
+    }
+
+    @GetMapping("/search")
+    public String searchTransac(Model model){
+        TransactionNew transactionNew=new TransactionNew();
+        model.addAttribute("transactionNew",new TransactionNew());
+        return "filterBy";
+    }
+
+    @GetMapping("/tasks")
+    public String search(@RequestParam("filterBy") String filterBy,@RequestParam("search") String searchTerm,Model model){
+        List<TransactionNew> transactionNewList=null;
+        switch (filterBy){
+            case "filterBySender":transactionNewList=transactionService.apiFindBySender(searchTerm);
+                                    break;
+            case "filterByReceiver":transactionNewList=transactionService.apiFindByReciever(searchTerm);
+                                    break;
+            case "filterByAmount":transactionNewList=transactionService.apiFindByAmount(Double.parseDouble(searchTerm));
+                                    break;
+        }
+        model.addAttribute("transactions",transactionNewList);
+        return "filterBy";
+    }
+
+    @GetMapping("/previous")
+    public String deleteDisplay(Model model){
+        model.addAttribute("transactionNew",new TransactionNew());
+        return "delete";
+    }
+    @GetMapping("/delete")
+    public String delete(@RequestParam("startDate") String start,@RequestParam("endDate") String end, Model model){
+        SimpleDateFormat dateFormat=new SimpleDateFormat("MM/dd/yyyy");
+        Date startDate,endDate;
+
+        try {
+            startDate = (Date) dateFormat.parse(start);
+            endDate = (Date) dateFormat.parse(end);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return "redirect:/transactions/error";
+        }
+//        String delete=transactionService.//deleteTransaction(startDate,endDate);
+//        model.addAttribute("messageDelete",delete);
+        return "index";
+    }
 }

@@ -38,7 +38,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="view btn btn-outline-secondary rounded-5 me-2"  th:href="@{'/ui/newTransaction'}" target="pageFrame">New Transaction</a>
+                    <a class="view btn btn-outline-secondary rounded-5 me-2"  th:href="@{'/ui/transactions/new'}" target="pageFrame">New Transaction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="view btn btn-outline-secondary rounded-5 me-2" th:href="@{'/ui/transactions/search'}" target="pageFrame">Search</a>
                 </li>
                 <li class="nav-item">
                     <button class="logout btn btn-outline-primary rounded-5 me-2"><span class="bi bi-box-arrow-right"></span> Logout</button>

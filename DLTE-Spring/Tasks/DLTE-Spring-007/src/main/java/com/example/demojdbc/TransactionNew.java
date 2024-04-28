@@ -1,16 +1,29 @@
 package com.example.demojdbc;
 
-import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
+import java.util.Date;
+import javax.validation.constraints.*;
+@Component
 public class TransactionNew {
+    @NotNull(message = "{id.not.null}")
+    @Digits(integer = 5,fraction = 0)
     private  Long transactionId;
+    @NotNull(message="{date.not.null}")
     private Date transactionDate;
+    @NotBlank(message = "{name.not.null}")
     private String transactionBy;
+    @NotBlank(message = "{name.not.null}")
     private String transactionTo;
+    @NotNull(message = "{amount.not.null")
+    @DecimalMin(value = "0.1",message = "{amount.not.zero}")
     private Double transactionAmount;
+    @NotBlank(message = "{remarks.not.null}")
     private String transactionRemarks;
 
-    public TransactionNew(Long transactionId, Date transactionDate, String transactionBy, String transactionTo, Double transactionAmount, String transactionRemarks) {
+
+    public TransactionNew(@NotNull(message = "{id.not.null}") @Digits(integer = 5, fraction = 0) Long transactionId, @NotNull(message = "{date.not.null}") Date transactionDate, @NotBlank(message = "{name.not.null}") String transactionBy, @NotBlank(message = "{name.not.null}") String transactionTo, @NotNull(message = "{amount.not.null") @DecimalMin(value = "0.1", message = "{amount.not.zero}") Double transactionAmount, @NotBlank(message = "{remarks.not.null}") String transactionRemarks) {
         this.transactionId = transactionId;
         this.transactionDate = transactionDate;
         this.transactionBy = transactionBy;
@@ -65,18 +78,6 @@ public class TransactionNew {
 
     public void setTransactionRemarks(String transactionRemarks) {
         this.transactionRemarks = transactionRemarks;
-    }
-
-    @Override
-    public String toString() {
-        return "TransactionNew{" +
-                "transactionId=" + transactionId +
-                ", transactionDate=" + transactionDate +
-                ", transactionBy='" + transactionBy + '\'' +
-                ", transactionTo='" + transactionTo + '\'' +
-                ", transactionAmount=" + transactionAmount +
-                ", transactionRemarks='" + transactionRemarks + '\'' +
-                '}';
     }
 
     public TransactionNew() {
