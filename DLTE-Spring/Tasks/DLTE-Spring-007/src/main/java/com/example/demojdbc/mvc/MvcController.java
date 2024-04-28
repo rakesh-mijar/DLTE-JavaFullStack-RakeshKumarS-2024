@@ -47,8 +47,8 @@ public class MvcController {
         model.addAttribute("transactionNew",transactionNew);
         if(!bindingResult.hasErrors()){
                 TransactionNew transaction1= transactionService.apiSave(transactionNew);
-                model.addAttribute("status",transactionNew.getTransactionId()+" has inserted");
-                model.addAttribute("transactionNew",transaction1);
+                model.addAttribute("status","New Transaction has been inserted");
+//                model.addAttribute("transactionNew",transaction1);
                 return "index";
             }else{
             model.addAttribute("status","Transaction Failed!!");
