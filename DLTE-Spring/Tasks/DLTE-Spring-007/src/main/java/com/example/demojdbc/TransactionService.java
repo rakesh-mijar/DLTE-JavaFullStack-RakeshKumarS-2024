@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.smartcardio.CardException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -54,6 +55,16 @@ public class TransactionService {
         return jdbcTemplate.query("select * from mybank_transaction where transaction_amount=?",
                 new Object[]{amount},
                 new BeanPropertyRowMapper<>(TransactionNew.class));
+    }
+
+    public String deleteTransaction(Date startDate, Date endDate){
+        int acknowledge= jdbcTemplate.update("delete from mybank_transaction where transaction_date between ? and ?",
+                new Object[]{startDate,endDate}
+        );
+        if(acknowledge!=0)
+            return "Transaction deleted";
+        else
+            return "Failed to delete transaction";
     }
 
     /*RowMapper interface. It is used to map rows from the database result set

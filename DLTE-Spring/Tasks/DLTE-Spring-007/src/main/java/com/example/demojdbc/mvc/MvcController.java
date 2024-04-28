@@ -89,14 +89,14 @@ public class MvcController {
         Date startDate,endDate;
 
         try {
-            startDate = (Date) dateFormat.parse(start);
-            endDate = (Date) dateFormat.parse(end);
+            startDate = dateFormat.parse(start);
+            endDate = dateFormat.parse(end);
         } catch (ParseException e) {
             e.printStackTrace();
             return "redirect:/transactions/error";
         }
-//        String delete=transactionService.//deleteTransaction(startDate,endDate);
-//        model.addAttribute("messageDelete",delete);
+        String delete=transactionService.deleteTransaction(startDate,endDate);
+        model.addAttribute("status",delete);
         return "index";
     }
 }
