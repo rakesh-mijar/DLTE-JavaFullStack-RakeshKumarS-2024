@@ -1,6 +1,7 @@
 package com.project.dao.security;
 
 
+import com.project.dao.entities.Accounts;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class MyBankCustomersService implements UserDetailsService {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-    ResourceBundle resourceBundle=ResourceBundle.getBundle("application");
+    ResourceBundle resourceBundle=ResourceBundle.getBundle("accounts");
     Logger logger= LoggerFactory.getLogger(MyBankCustomersService.class);
 
     /*
@@ -68,23 +69,7 @@ public class MyBankCustomersService implements UserDetailsService {
         logger.info(resourceBundle.getString("status.changed"));
     }
 
-//    public String getAccountOwnerUsername(Long accountId) {
-//        try {
-//            // Query to fetch the username of the account owner based on the account ID
-//            String sql = "SELECT c.USERNAME " +
-//                    "FROM mybank_app_customer c " +
-//                    "JOIN mybank_app_account a ON c.CUSTOMER_ID = a.CUSTOMER_ID " +
-//                    "WHERE a.ACCOUNT_ID = ?";
-//            String ownerUsername = jdbcTemplate.queryForObject(sql, new Object[]{accountId}, String.class);
-//            return ownerUsername;
-//        } catch (EmptyResultDataAccessException e) {
-//            logger.warn(resourceBundle.getString("no.account") + accountId);
-//            return null;
-//        } catch (DataAccessException e) {
-//            logger.error(resourceBundle.getString("error.fetch") + accountId, e);
-//            return null;
-//        }
-//    }
+
 
     //to  load a user based on the provided username during the authentication process.
     @Override
@@ -94,4 +79,35 @@ public class MyBankCustomersService implements UserDetailsService {
             throw new UsernameNotFoundException(username);
         return myBankCustomers;
     }
+
+//
+//    public List<Accounts> findByAccountNumber(Long customerId) {
+//        List<Accounts> customerList = jdbcTemplate.query(
+//                "SELECT * FROM mybank_app_account",
+//                new BeanPropertyRowMapper<>(Accounts.class));
+//        return filterByAccountNumber(customerList,customerId);
+//
+//    }
+//
+//    //continuing to above method filters the user based on the specified username among all users retrieved
+//    public List<Accounts> filterByAccountNumber( List<Accounts> customerList,Long customerId){
+//        // Filter the list based on the provided username
+//        List<Accounts> filteredCustomers = customerList.stream()
+//                .filter(customer -> customer.getCustomerId().equals(customerId))
+//                .collect(Collectors.toList());
+//        //filteredCustomers.forEach(System.out::println);
+//        if (!filteredCustomers.isEmpty()) {
+//            return filteredCustomers; // Return the first matching customer
+//        } else {
+//            return null; // Return null if no customer found
+//        }
+//    }
+public List<Accounts> findByAccountNumber(Long customerId) {
+    List<Accounts> accountList = jdbcTemplate.query(
+            "SELECT * FROM mybank_app_account WHERE customerId = ?",
+            new Object[]{customerId},
+            new BeanPropertyRowMapper<>(Accounts.class));
+    return accountList;
+}
+
 }

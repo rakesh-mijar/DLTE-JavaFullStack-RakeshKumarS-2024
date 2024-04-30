@@ -58,7 +58,7 @@
 //
 //        // Stub the jdbcTemplate.queryForObject() method to return the fetchedAccount
 //        when(jdbcTemplate.queryForObject(
-//                eq("SELECT * FROM MYBANK_APP_ACCOUNT WHERE ACCOUNT_ID = ?"),
+//                eq("SELECT * FROM MYBANK_APP_ACCOUNT WHERE ACCOUNT_NUMBER = ?"),
 //                any(Object[].class),
 //                any(AccountsServices.AccountsMapper.class)))
 //                .thenReturn(fetchedAccount);
@@ -108,7 +108,7 @@
 //
 //        // Stub the jdbcTemplate.queryForObject() method to return the fetchedAccount
 //        when(jdbcTemplate.queryForObject(
-//                eq("SELECT * FROM MYBANK_APP_ACCOUNT WHERE ACCOUNT_ID = ?"),
+//                eq("SELECT * FROM MYBANK_APP_ACCOUNT WHERE ACCOUNT_NUMBER = ?"),
 //                any(Object[].class),
 //                any(AccountsServices.AccountsMapper.class)))
 //                .thenReturn(fetchedAccount);

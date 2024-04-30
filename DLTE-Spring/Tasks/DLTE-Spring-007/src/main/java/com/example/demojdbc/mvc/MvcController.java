@@ -32,6 +32,7 @@ public class MvcController {
         model.addAttribute("transactionNew",new TransactionNew());
         return "newTransaction";
     }
+
     @GetMapping("/")
     public String index(){
         return "index";
@@ -42,6 +43,7 @@ public class MvcController {
         model.addAttribute("transactionNew",new TransactionNew());
         return "index";
     }
+
     @RequestMapping(value="/new",method = RequestMethod.POST)
     public String newTransaction(@Valid  @ModelAttribute TransactionNew transactionNew, BindingResult bindingResult, Model model){
         model.addAttribute("transactionNew",transactionNew);
@@ -63,33 +65,33 @@ public class MvcController {
         return "filterBy";
     }
 
-    @GetMapping("/tasks")
-    public String search(@RequestParam("filterBy") String filterBy,@RequestParam("search") String searchTerm,Model model){
-        List<TransactionNew> transactionNewList=null;
-        switch (filterBy){
-            case "filterBySender":transactionNewList=transactionService.apiFindBySender(searchTerm);
-                                    break;
-            case "filterByReceiver":transactionNewList=transactionService.apiFindByReciever(searchTerm);
-                                    break;
-            case "filterByAmount":transactionNewList=transactionService.apiFindByAmount(Double.parseDouble(searchTerm));
-                                    break;
-        }
-        model.addAttribute("transactions",transactionNewList);
-        return "filterBy";
-    }
+//    @GetMapping("/tasks")
+//    public String search(@RequestParam("filterBy") String filterBy,@RequestParam("search") String searchTerm,Model model){
+//        List<TransactionNew> transactionNewList=null;
+//        switch (filterBy){
+//            case "filterBySender":transactionNewList=transactionService.apiFindBySender(searchTerm);
+//                                    break;
+//            case "filterByReceiver":transactionNewList=transactionService.apiFindByReciever(searchTerm);
+//                                    break;
+//            case "filterByAmount":transactionNewList=transactionService.apiFindByAmount(Double.parseDouble(searchTerm));
+//                                    break;
+//        }
+//        model.addAttribute("transactions",transactionNewList);
+//        return "filterBy";
+//    }
 
     @GetMapping("/previous")
     public String deleteDisplay(Model model){
         model.addAttribute("transactionNew",new TransactionNew());
-        return "delete";
+        return "deleteTransactions";
     }
-    @GetMapping("/delete")
+    @GetMapping("/deleteTransactions")
     public String delete(@RequestParam("startDate") String start,@RequestParam("endDate") String end, Model model){
-        SimpleDateFormat dateFormat=new SimpleDateFormat("MM/dd/yyyy");
+        SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy/mm/dd");
         Date startDate,endDate;
 
         try {
-            startDate = dateFormat.parse(start);
+            startDate = (Date) dateFormat.parse(start);
             endDate = dateFormat.parse(end);
         } catch (ParseException e) {
             e.printStackTrace();

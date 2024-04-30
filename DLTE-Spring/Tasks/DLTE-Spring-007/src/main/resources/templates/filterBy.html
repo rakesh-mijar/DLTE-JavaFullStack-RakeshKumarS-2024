@@ -25,13 +25,13 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        form {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        /*form {*/
+        /*    display: flex;*/
+        /*    align-items: center;*/
+        /*    justify-content: space-between;*/
+        /*    max-width: 600px;*/
+        /*    margin: 0 auto;*/
+        /*}*/
 
         label {
             font-weight: bold;
@@ -71,6 +71,8 @@
     </style>
 </head>
 <body>
+<div th:replace="index::collapse">
+</div>
 <form th:action="@{/ui/transactions/tasks}" method="get">
     <label>Filter By:</label>
     <select id="filterBy" name="filterBy">

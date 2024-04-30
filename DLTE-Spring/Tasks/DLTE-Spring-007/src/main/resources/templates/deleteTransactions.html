@@ -10,6 +10,8 @@
     <title>Delete Page</title>
 </head>
 <body>
+<div th:replace="index::collapse">
+</div>
 <form th:action="@{/ui/transactions/delete}" th:object="${transactionNew}" method="delete">
     <input type="text" name="startDate" placeholder="Transaction Start Date"/>
     <input type="text" name="endDate" placeholder="Transaction End Date"/>

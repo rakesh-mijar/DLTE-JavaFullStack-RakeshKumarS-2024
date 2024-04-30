@@ -14,7 +14,7 @@ public class AccountsConfig {
     public MessageSource messageSource() {
         //is a Spring class used for resolving messages from resource bundles
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-        messageSource.setBasename("application");
+        messageSource.setBasename("accounts");
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }

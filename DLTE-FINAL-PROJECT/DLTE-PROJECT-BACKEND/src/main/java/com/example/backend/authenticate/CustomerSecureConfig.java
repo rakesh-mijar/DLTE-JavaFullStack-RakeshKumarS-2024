@@ -33,7 +33,7 @@ public class CustomerSecureConfig{
     @Autowired
     CustomersSucccessHandler customersSucccessHandler;
 
-    ResourceBundle resourceBundle=ResourceBundle.getBundle("application");
+    ResourceBundle resourceBundle=ResourceBundle.getBundle("accounts");
     Logger logger= LoggerFactory.getLogger(CustomersFailureHandler.class);
 
     @Bean
@@ -60,14 +60,25 @@ public class CustomerSecureConfig{
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
         httpSecurity.httpBasic();//enables http basic authentication
-        httpSecurity.formLogin().usernameParameter("username").failureHandler(customersFailureHandler).successHandler(customersSucccessHandler);
-        httpSecurity.csrf().disable();//Cross-Site Request Forgery
+        //httpSecurity.formLogin().usernameParameter("username").failureHandler(customersFailureHandler).successHandler(customersSucccessHandler);
+        //httpSecurity.csrf().disable();//Cross-Site Request Forgery
         httpSecurity.cors();//Cross-Origin Resource Sharing (CORS) support
 
+
+        httpSecurity.formLogin().loginPage("/customer/").
+                usernameParameter("username").
+                failureHandler(customersFailureHandler).
+                successHandler(customersSucccessHandler);
+        httpSecurity.csrf().disable();
+        httpSecurity.logout().permitAll();
+        httpSecurity.authorizeRequests().antMatchers("/images/**").permitAll();
+        httpSecurity.authorizeRequests().antMatchers("/css/**").permitAll();
         httpSecurity.authorizeRequests().antMatchers("/profile/register").permitAll();
         httpSecurity.authorizeRequests().antMatchers("/v3/api-docs").permitAll();
-//        httpSecurity.authorizeRequests().antMatchers("/accounts/closeAccounts").permitAll();
+        httpSecurity.authorizeRequests().antMatchers("/customer/**").permitAll();
+
         httpSecurity.authorizeRequests().anyRequest().authenticated();
+
 
         AuthenticationManagerBuilder builder = httpSecurity.getSharedObject(AuthenticationManagerBuilder.class);
         builder.userDetailsService(myBankCustomersService);

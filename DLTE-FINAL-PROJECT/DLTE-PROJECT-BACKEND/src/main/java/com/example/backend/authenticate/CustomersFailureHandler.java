@@ -23,7 +23,7 @@ public class CustomersFailureHandler extends SimpleUrlAuthenticationFailureHandl
     @Autowired
     MyBankCustomersService myBankCustomersService;
 
-    ResourceBundle resourceBundle=ResourceBundle.getBundle("application");
+    ResourceBundle resourceBundle=ResourceBundle.getBundle("accounts");
     Logger logger= LoggerFactory.getLogger(CustomersFailureHandler.class);
 
     @Override
@@ -37,17 +37,27 @@ public class CustomersFailureHandler extends SimpleUrlAuthenticationFailureHandl
                    myBankCustomersService.updateAttempts(myBankCustomers);
                    logger.warn(resourceBundle.getString("invalid.credits"));
                    exception=new LockedException("Attempts are taken");
+                   String err = myBankCustomers.getAttempts()+" "+exception.getMessage();
+                   logger.warn(err);
+                   super.setDefaultFailureUrl("/customer/?error="+err);
                }
                else{
                    myBankCustomersService.updateStatus(myBankCustomers);
                    exception=new LockedException(resourceBundle.getString("max.reached"));
+                   super.setDefaultFailureUrl("/customer/?error="+exception.getMessage());
                }
            }
            else{
                logger.warn(resourceBundle.getString("account.suspended"));
+               exception=new LockedException(resourceBundle.getString("max.reached"));
+               super.setDefaultFailureUrl("/customer/?error="+exception.getMessage());
            }
+       }else{
+           logger.warn(resourceBundle.getString("no.customer"));
+           exception=new LockedException(resourceBundle.getString("no.customer"));
+           super.setDefaultFailureUrl("/customer/?error="+exception);
        }
-        super.setDefaultFailureUrl("/login?error=true");
+//        super.setDefaultFailureUrl("/login?error=true");
         super.onAuthenticationFailure(request, response, exception);
     }
 }

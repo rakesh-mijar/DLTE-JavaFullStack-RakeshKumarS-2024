@@ -34,7 +34,7 @@ import java.util.stream.Collectors;
 @Endpoint
 @ComponentScan("com.project.dao")
 public class SoapPhase {
-    ResourceBundle resourceBundle=ResourceBundle.getBundle("application");
+    ResourceBundle resourceBundle=ResourceBundle.getBundle("accounts");
     private final String url="http://accounts.services";
 
     private Logger logger= LoggerFactory.getLogger(SoapPhase.class);
@@ -49,7 +49,7 @@ public class SoapPhase {
     //lambda expression to filter the account details of customer based on customer id
     @PayloadRoot(namespace = url, localPart = "filterByStatusRequest")
     @ResponsePayload
-    public FilterByStatusResponse filterByStatus() throws CustomerNotFoundException {
+    public FilterByStatusResponse filterByStatus(@RequestPayload FilterByStatusRequest filterByStatusRequest) throws CustomerNotFoundException {
 
         FilterByStatusResponse filterByStatusResponse = new FilterByStatusResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
