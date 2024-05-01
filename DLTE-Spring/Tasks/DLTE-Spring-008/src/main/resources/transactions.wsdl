@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://transactions.services" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://transactions.services" targetNamespace="http://transactions.services">
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://transactions.services"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://transactions.services"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://transactions.services">
     <wsdl:types>
-        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <xsd:import namespace="http://transactions.services" schemaLocation="transactions.xsd"/>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+            <xsd:import namespace="http://transactions.services" schemaLocation="transactions2.xsd"/>
         </xsd:schema>
+<!--        <xsd:schema targetNamespace="http://transactions.services">-->
+<!--            <xsd:include schemaLocation="transactions.xsd"/>-->
+<!--        </xsd:schema>-->
     </wsdl:types>
+
     <wsdl:message name="filterByAmountRequest">
         <wsdl:part element="tns:filterByAmountRequest" name="filterByAmountRequest">
         </wsdl:part>

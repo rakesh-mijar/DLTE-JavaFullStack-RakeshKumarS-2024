@@ -164,8 +164,8 @@ public class AccountsServices implements AccountRepository {
 
                 return accounts1;
             } else if (result.equals("SQLERR-001")) {
-                logger.warn(resourceBundle.getString("no.active.accounts"));
-                throw new AccountNotFoundException(resourceBundle.getString("no.active.accounts"));
+                logger.warn(resourceBundle.getString("inactive.account"));
+                throw new AccountNotFoundException(resourceBundle.getString("inactive.account"));
             } else if (result.equals("SQLERR-002")) {
                 logger.warn(resourceBundle.getString("no.customer.id"));
                 throw new CustomerNotFoundException(resourceBundle.getString("no.customer.id"));

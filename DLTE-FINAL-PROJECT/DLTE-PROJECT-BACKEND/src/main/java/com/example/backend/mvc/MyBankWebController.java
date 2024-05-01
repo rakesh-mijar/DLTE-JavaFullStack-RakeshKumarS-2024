@@ -36,5 +36,14 @@ public class MyBankWebController {
         public String view(){
                 return "viewAccounts";
         }
+        @GetMapping("/update")
+        public String update(){
+                return "updateAccounts";
+        }
+
+        @GetMapping("/error")
+        public String error(){
+                return "errorpage";
+        }
 }
 

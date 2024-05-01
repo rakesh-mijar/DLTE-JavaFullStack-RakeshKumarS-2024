@@ -11,8 +11,8 @@
     <div class="container">
         <h1>Fetch Account Details</h1>
         <label for="customerId" class="form-label">Enter Customer ID:</label>
-        <input type="text" id="customerId" class="form-control">
-        <button id="fetchAccounts" class="btn btn-primary mt-3">Fetch Accounts</button>
+        <!-- <input type="text" id="customerId" class="form-control"> -->
+         <button id="fetchAccounts" class="btn btn-primary mt-3">Fetch Accounts</button> 
         <div id="accountDetails" class="mt-3"></div>
         <div id="errorMessage" class="alert alert-danger mt-3 d-none"></div>
     </div>
@@ -29,7 +29,7 @@
             <soapenv:Header/>
             <soapenv:Body>
                 <acc:filterByStatusRequest>
-                    <acc:customerId>${customerId}</acc:customerId>
+                    
                 </acc:filterByStatusRequest>
             </soapenv:Body>
             </soapenv:Envelope>`;
@@ -40,7 +40,7 @@
                 type: "POST",
                 dataType:"xml",
                 beforeSend:function(handler){
-                    handler.setRequestHeader("Authorization","Basic " + btoa("rakesh:rakesh"))
+                    handler.setRequestHeader("Authorization","Basic " + btoa("suresh:rakesh"))
                     handler.setRequestHeader("SOAPAction","filterByStatusRequest")
                 },
                 contentType:"text/xml;charset=utf-8",

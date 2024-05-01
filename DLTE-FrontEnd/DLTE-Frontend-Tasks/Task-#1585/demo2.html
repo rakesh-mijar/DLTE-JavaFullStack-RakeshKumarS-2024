@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        /* Customize your styles here */
+        .navbar {
+            background-color: #ffffff; /* White background for the top strip */
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .bg-custom {
+            background-color: #182052; /* Coral color */
+        }
+        .logout-btn {
+            color: #ffffff;
+            background-color: #182052;
+            border-color: #182052;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <!-- <a class="navbar-brand" href="#" > -->
+        <a class="navbar-brand" href="#" style="font-size: 28px; font-weight: 750; font-family: 'Montserrat', sans-serif;">
+
+            <img src="/images/logo.png" alt="" width="40" height="34" class="d-inline-block align-text-top" >
+            <i class="fa fa-globe"></i>&nbsp; My Bank
+        </a>
+        <!-- Profile Avatar and Logout Button -->
+        <div class="ml-auto d-flex align-items-center">
+            <img src="profile.jpg" alt="Profile Avatar" width="40" height="34" class="profile-avatar mr-2">
+            <a th:href="@{'/logout'}" class="logout-btn btn btn-outline-light rounded-5"><span class="bi bi-door-open"></span> Logout</a>
+        </div>
+    </div>
+</nav>
+
+
+<nav class="navbar navbar-bottom navbar-expand-lg navbar-dark bg-custom">
+    <div class="container">
+        <!-- Navbar Toggler (Mobile) -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto" style="font-size: 20px; font-weight: 400; font-family: 'Poppins', sans-serif;"> <!-- Change ml-auto to mr-auto to push items to the left -->
+                <!-- Dropdown 1: Account -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Accounts
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">Settings</a>
+                    </div>
+                </li>
+                <!-- Dropdown 2: Deposit -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Deposits
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="#">Bank Transfer</a>
+                        <a class="dropdown-item" href="#">Credit Card</a>
+                    </div>
+                </li>
+                <!-- Dropdown 3: Insurance -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Insurance
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <a class="dropdown-item" href="#">Life Insurance</a>
+                        <a class="dropdown-item" href="#">Health Insurance</a>
+                    </div>
+                </li>
+                <!-- Dropdown 4: Others -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Cards
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                        <a class="dropdown-item" href="#">Option 1</a>
+                        <a class="dropdown-item" href="#">Option 2</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Payments
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                        <a class="dropdown-item" href="#">Option 1</a>
+                        <a class="dropdown-item" href="#">Option 2</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Loans
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                        <a class="dropdown-item" href="#">Option 1</a>
+                        <a class="dropdown-item" href="#">Option 2</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- Navbar Brand (Mobile) -->
+        <a class="navbar-brand d-lg-none" href="#">My Website</a>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+<footer class="text-center text-lg-start text-white" style="background-color: #182052; border-radius: 2rem 2rem 0 0">
+    <div class="container p-4 pb-0">
+        <section class="">
+            <div class="row">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <div class="row">
+                        <div class="col-auto">
+                            <img src="../static/images/logo.png" class="static" style="width: 30px; height: 30px"/>
+                        </div>
+                        <div class="col">
+                            <a class="navbar-brand display-6 fw-bold" style="font-weight: bold; font-family: 'Montserrat'; color: white" th:href="#">MyBank</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Company</h6>
+                    <p><a>Home</a></p>
+                    <p><a>About</a></p>
+                    <p><a>Solutions</a></p>
+                    <p><a>Pricing</a></p>
+                    <p><a>Team</a></p>
+                    <p><a>Career</a></p>
+                </div>
+
+                <div class="col-md-3 col-lg-2 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Documentation</h6>
+                    <p><a>Help Centre</a></p>
+                    <p><a>Contact</a></p>
+                    <p><a>FAQ</a></p>
+                    <p><a>Privacy Policy</a></p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Social</h6>
+                    <p><a> Facebook</a></p>
+                    <p><a> Instagram</a></p>
+                    <p><a> Youtube</a></p>
+                    <p><a> Twitter</a></p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-3">
+
+        <section class="p-3 pt-0">
+            <div class="row d-flex align-items-center">
+                <div class="col-md-7 col-lg-4 text-center text-md-start">
+                    <div class="p-3">
+                        <p>© MyBank Inc. All Rights Reserved 2024</p>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-8 ml-lg-0 text-center text-md-end justify-content-end">
+                    <p>Terms & Conditions</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

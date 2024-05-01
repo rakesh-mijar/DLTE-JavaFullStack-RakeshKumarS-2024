@@ -120,7 +120,7 @@
 <!--                    <schemaDirectory>C:/Users/xxshetur/Desktop</schemaDirectory>-->
                     <schemaDirectory>src/main/resources</schemaDirectory>
                     <!-- Specify the name of the XSD file -->
-                    <schemaFiles>transactions.xsd</schemaFiles>
+                    <schemaFiles>transactions2.xsd</schemaFiles>
                     <outputDirectory>src/main/java</outputDirectory>
                     <clearOutputDir>false</clearOutputDir>
                 </configuration>

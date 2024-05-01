@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bank - Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body class="bg-dark text-white">
+    <div id="title-logo">
+        <!-- <img src="bank.jpg" alt="Logo"> Replace with your actual logo path and alt text -->
+        <img src="bank.jpg" alt="Logo" style="max-width: 50px; max-height: 50px;">
+        <h1>
+            <i class="fa fa-globe"></i>&nbsp; My Bank
+        </h1>
+        <!-- <h1>  Title Page Name</h1> Replace with your actual title page name -->
+    </div>
+       
+<div class="container mt-5 px-4">
+   
+    <div class="row justify-content-center align-items-center vh-100"> <!-- Center both horizontally and vertically -->
+        <!-- Left Content -->
+        <div class="col-md-6 pr-md-4">
+
+            <h1 class="login">Login</h1>
+            <p>Sign in to continue</p> 
+            
+            <h3>New User? Register here/Activate</h3>
+            <h3>Forgot Login Password!!</h3>
+            <button type="submit" class="btn btn-orange mt-3">Lear More</button>
+
+        </div>
+
+                <!-- Right Login Card -->
+            
+                    <div class="col-md-6 ml-auto d-flex align-items-center justify-content-center">
+                    <!-- <div class="card text-dark mb-3 p-3 shadow-lg"> -->
+                        <div class="card text-white  mb-3 p-3 shadow-lg ">
+                        <h2 class="mb-4">Sign in</h2>
+                        <form action="/login" method="post">
+                            <!-- Email Input -->
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email" required autofocus>
+                            </div>
+        
+                            <!-- Password Input -->
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter your password" required autofocus>
+                            </div>
+        
+                            <!-- Login Button -->
+                            <button type="submit" class="btn btn-orange mt-3">Login</button>
+                        </form>
+                    </div>
+                </div>
+    </div>
+</div>
+
+</body>
+</html>

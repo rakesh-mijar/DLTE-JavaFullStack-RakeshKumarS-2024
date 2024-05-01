@@ -138,15 +138,15 @@ public class AccountController {
 //            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Account number does not match the authenticated user.");
 //        }
 
-        // Find accounts associated with the authenticated customer's customer ID
-        List<Accounts> customerAccounts = myBankCustomersService.findByAccountNumber(customers.getCustomerId());
-        // Check if the provided account number belongs to the authenticated customer
-        boolean accountExists = customerAccounts.stream()
-                .anyMatch(acc -> Objects.equals(account.getAccountNumber(), acc.getAccountNumber()));
-
-        if (!accountExists) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Account number does not match the authenticated user.");
-        }
+//        // Find accounts associated with the authenticated customer's customer ID
+//        List<Accounts> customerAccounts = myBankCustomersService.findByAccountNumber(customers.getCustomerId());
+//        // Check if the provided account number belongs to the authenticated customer
+//        boolean accountExists = customerAccounts.stream()
+//                .anyMatch(acc -> Objects.equals(account.getAccountNumber(), acc.getAccountNumber()));
+//
+//        if (!accountExists) {
+//            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Account number does not match the authenticated user.");
+//        }
 
         try {
             account.setCustomerId(customers.getCustomerId());
@@ -163,7 +163,7 @@ public class AccountController {
             return ResponseEntity.status(HttpStatus.OK).body(responseMap);
             //return ResponseEntity.ok(updatedAccount);
         } catch (AccountNotFoundException accountException) {
-            logger.warn(resourceBundle.getString("no.active.accounts"));
+            logger.warn(resourceBundle.getString("inactive.account"));
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(accountException.getMessage());
         }catch ( CustomerNotFoundException customerException){
             logger.warn(resourceBundle.getString("no.customer.id"));
