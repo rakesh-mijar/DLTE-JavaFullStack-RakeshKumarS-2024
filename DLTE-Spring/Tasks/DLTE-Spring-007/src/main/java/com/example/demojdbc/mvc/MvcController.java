@@ -65,20 +65,20 @@ public class MvcController {
         return "filterBy";
     }
 
-//    @GetMapping("/tasks")
-//    public String search(@RequestParam("filterBy") String filterBy,@RequestParam("search") String searchTerm,Model model){
-//        List<TransactionNew> transactionNewList=null;
-//        switch (filterBy){
-//            case "filterBySender":transactionNewList=transactionService.apiFindBySender(searchTerm);
-//                                    break;
-//            case "filterByReceiver":transactionNewList=transactionService.apiFindByReciever(searchTerm);
-//                                    break;
-//            case "filterByAmount":transactionNewList=transactionService.apiFindByAmount(Double.parseDouble(searchTerm));
-//                                    break;
-//        }
-//        model.addAttribute("transactions",transactionNewList);
-//        return "filterBy";
-//    }
+    @GetMapping("/tasks")
+    public String search(@RequestParam("filterBy") String filterBy,@RequestParam("search") String searchTerm,Model model){
+        List<TransactionNew> transactionNewList=null;
+        switch (filterBy){
+            case "filterBySender":transactionNewList=transactionService.apiFindBySender(searchTerm);
+                                    break;
+            case "filterByReceiver":transactionNewList=transactionService.apiFindByReciever(searchTerm);
+                                    break;
+            case "filterByAmount":transactionNewList=transactionService.apiFindByAmount(Double.parseDouble(searchTerm));
+                                    break;
+        }
+        model.addAttribute("transactions",transactionNewList);
+        return "filterBy";
+    }
 
     @GetMapping("/previous")
     public String deleteDisplay(Model model){
