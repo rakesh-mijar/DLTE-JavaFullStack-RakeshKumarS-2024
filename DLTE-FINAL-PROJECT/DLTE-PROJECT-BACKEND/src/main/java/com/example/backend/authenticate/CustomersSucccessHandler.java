@@ -32,7 +32,7 @@ public class CustomersSucccessHandler extends SimpleUrlAuthenticationSuccessHand
                 myBankCustomers.setAttempts(1);
                 myBankCustomersService.updateAttempts(myBankCustomers);
             }
-            super.setDefaultTargetUrl("/customer/dash/");
+            super.setDefaultTargetUrl("/customer/dashboard/");
         }else{
             logger.warn(resourceBundle.getString("max.reached"));
             //super.setDefaultTargetUrl("/login");

@@ -45,7 +45,8 @@ public class CustomerSecureConfig{
     @Bean
     public CorsConfigurationSource corsConfigurationSource(){
         CorsConfiguration configuration=new CorsConfiguration();
-        configuration.setAllowedOriginPatterns(Arrays.asList(resourceBundle.getString("ui.path")));
+//        configuration.setAllowedOriginPatterns(Arrays.asList(resourceBundle.getString("ui.path")));
+        configuration.setAllowedOriginPatterns(Arrays.asList("*"));
 
         configuration.addAllowedMethod("*");
         configuration.addAllowedHeader("*");
@@ -77,7 +78,10 @@ public class CustomerSecureConfig{
         httpSecurity.authorizeRequests().antMatchers("/v3/api-docs").permitAll();
         httpSecurity.authorizeRequests().antMatchers("/customer/**").permitAll();
 
-        httpSecurity.authorizeRequests().anyRequest().authenticated();
+        httpSecurity.authorizeRequests().antMatchers("/accountsrepo/accounts.wsdl").permitAll().anyRequest().authenticated();
+
+       // httpSecurity.authorizeRequests().anyRequest().authenticated();
+
 
 
         AuthenticationManagerBuilder builder = httpSecurity.getSharedObject(AuthenticationManagerBuilder.class);

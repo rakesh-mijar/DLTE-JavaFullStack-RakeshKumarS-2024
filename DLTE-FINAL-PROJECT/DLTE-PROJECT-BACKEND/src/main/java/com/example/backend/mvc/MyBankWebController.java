@@ -27,9 +27,14 @@ public class MyBankWebController {
                 return "index";
         }
 
-        @RequestMapping(value="/index", method = RequestMethod.GET)
+        @RequestMapping(value="/dashboard", method = RequestMethod.GET)
         public String homePage(){
             return "dashboard";
+        }
+
+        @GetMapping("/view")
+        public String view(){
+                return "viewAccounts";
         }
 }
 

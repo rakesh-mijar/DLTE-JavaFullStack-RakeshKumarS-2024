@@ -1,0 +1,48 @@
+.navbar-custom {
+    background-color: #182052;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.navbar-brand-custom {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    padding-right: 20px;
+}
+.profile-logo {
+    height: 30px;
+    margin-right: 10px;
+}
+.user-info {
+    color: #ffffff;
+    margin-right: 15px;
+}
+.logout-btn {
+    color: #ffffff;
+    background-color: #182052;
+    border-color: #182052;
+}
+
+.space-above-navbar {
+    height: 50px;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.navbar .dropdown-menu a {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.navbar .dropdown {
+    font-size: 1rem;
+    display: flex;
+
+}
+
+.navbar .dropdown:last-child {
+    margin-right: 0;
+}
