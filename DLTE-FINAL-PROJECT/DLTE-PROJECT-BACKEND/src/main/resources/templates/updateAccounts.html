@@ -173,7 +173,7 @@
         <div class="p-5 m-5 rounded-5 shadow custom-form">
             <div class="form group">
                 <label>Account Id</label>
-                <input type="number" id="accountId" class="form-control" placeholder="Account id" readonly/>
+                <input type="number" id="accountId" class="form-control" placeholder="***" readonly/>
             </div>
             <div class="form group">
                 <label>Account Number</label>
@@ -181,7 +181,7 @@
             </div>
             <div class="form group">
                 <label>Customer Id</label>
-                <input type="number" id="customerId" class="form-control" placeholder="Customer id" readonly/>
+                <input type="number" id="customerId" class="form-control" placeholder="***" readonly/>
             </div>
             <div class="form group">
                 <label>Account Type</label>
@@ -214,56 +214,48 @@
 <footer th:insert="footer :: foot"></footer>
 <script>
     $(document).ready(() => {
-        const accountDetails = JSON.parse(sessionStorage.getItem("accountDetails"));
-        if (accountDetails) {
-            $("#accountId").val(accountDetails.accountId);
-            $("#accountNumber").val(accountDetails.accountNumber);
-            $("#customerId").val(accountDetails.customerId);
-            $("#accountType").val(accountDetails.accountType);
-            $("#accountStatus").val(accountDetails.accountStatus);
-            $("#accountBalance").val(accountDetails.accountBalance);
-        }
+        const urlParams = new URLSearchParams(window.location.search);
+        const accountNumber = urlParams.get('accountNumber');
+        const accountType = urlParams.get('accountType');
+        const accountStatus = urlParams.get('accountStatus');
+        const accountBalance = urlParams.get('accountBalance');
+
+        $("#accountId").val("***");
+        $("#accountNumber").val(accountNumber);
+        $("#customerId").val("***");
+        $("#accountType").val(accountType);
+        $("#accountStatus").val(accountStatus);
+        $("#accountBalance").val(accountBalance);
 
         $("#add").click(() => {
-            const accountId = $("#accountId").val();
-            const accountNumber = $("#accountNumber").val();
-            const customerId = $("#customerId").val();
-            const accountType = $("#accountType").val();
-            const accountStatus = $("#accountStatus").val();
-            const accountBalance = $("#accountBalance").val();
-
             const request = {
-                "accountId": accountId,
                 "accountNumber": accountNumber,
-                "customerId": customerId,
                 "accountType": accountType,
                 "accountStatus": accountStatus,
                 "accountBalance": accountBalance
             };
 
-            console.log(JSON.stringify(request));
-
             $.ajax({
                 url: "http://localhost:8082/accounts/closeAccounts",
                 type: "PUT",
                 dataType: "text",
-                beforeSend: function (handler) {
-                    handler.setRequestHeader("Authorization","Basic "+sessionStorage.getItem("logged"))
-                },
                 contentType: "application/json;charset=utf-8",
                 data: JSON.stringify(request),
                 success: function (response) {
                     $("#status").empty();
-                    // $("#status").append("<p>Account Service Closed Successfully</p>");
-                    $("#status").append('<div class="alert alert-success d-flex align-items-center" role="alert"> <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg> <div> Account Service Closed Successfully </div> </div>');                },
+                    $("#status").append('<div class="alert alert-success d-flex align-items-center" role="alert"> <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg> <div> Account Service Closed Successfully </div> </div>');
+                },
                 error: function (xhr, status, error) {
                     let errorMessage = xhr.responseText;
-                    //alert("Error: " + errorMessage);
-                    // $("#status").append('<div class="alert alert-warning d-flex align-items-center" role="alert"> <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg> <div>' + errorMessage + '</div> </div>');
-                    window.location.href = "/customer/error/?message=" + errorMessage;
+                    let errorCode = xhr.status;
+                    window.location.href = "/customer/error/?message=" + encodeURIComponent(errorMessage) + "&code=" + encodeURIComponent(errorCode);
                 }
             });
         });
     });
 </script>
+
+
+
+
 </html>

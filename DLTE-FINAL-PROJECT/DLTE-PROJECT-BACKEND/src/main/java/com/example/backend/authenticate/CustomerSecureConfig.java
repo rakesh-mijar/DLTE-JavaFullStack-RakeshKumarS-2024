@@ -61,8 +61,6 @@ public class CustomerSecureConfig{
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
         httpSecurity.httpBasic();//enables http basic authentication
-        //httpSecurity.formLogin().usernameParameter("username").failureHandler(customersFailureHandler).successHandler(customersSucccessHandler);
-        //httpSecurity.csrf().disable();//Cross-Site Request Forgery
         httpSecurity.cors();//Cross-Origin Resource Sharing (CORS) support
 
 
@@ -78,9 +76,9 @@ public class CustomerSecureConfig{
         httpSecurity.authorizeRequests().antMatchers("/v3/api-docs").permitAll();
         httpSecurity.authorizeRequests().antMatchers("/customer/**").permitAll();
 
-        httpSecurity.authorizeRequests().antMatchers("/accountsrepo/accounts.wsdl").permitAll().anyRequest().authenticated();
+        httpSecurity.authorizeRequests().antMatchers("/accountsrepo/accounts.wsdl").permitAll();
 
-       // httpSecurity.authorizeRequests().anyRequest().authenticated();
+        httpSecurity.authorizeRequests().anyRequest().authenticated();
 
 
 

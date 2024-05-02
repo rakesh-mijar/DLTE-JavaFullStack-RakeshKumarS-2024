@@ -112,69 +112,25 @@
     </div>
 </div>
 </body>
-<!--<script>-->
-<!--    $(document).ready(()=>{-->
-<!--        $("#loginForm").click(()=>{-->
-<!--            var username = $("#username").val()-->
-<!--            var password = $("#password").val()-->
-
-<!--            const credentials = btoa(username+":"+password)-->
-
-<!--            $.ajax({-->
-<!--                url:"http://localhost:8082/customer/",-->
-<!--                type:"GET",-->
-<!--                beforeSend:function(handler){-->
-<!--                    handler.setRequestHeader("Authorization","Basic "+credentials)-->
-<!--                },-->
-<!--                success:function(response){-->
-<!--                    //alert(JSON.stringify(response))-->
-<!--                    sessionStorage.setItem("logged",credentials)-->
-<!--                    location.assign("http://localhost:8082/customer/dashboard/")-->
-<!--                },-->
-<!--                error:function(error){-->
-<!--                    //alert(JSON.stringify(error))-->
-
-<!--                }-->
-<!--            })-->
-<!--        })-->
-<!--    })-->
 <!--</script>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
         $("#loginForm").submit(function(event) {
             event.preventDefault(); // Prevent form submission
-
-            // Retrieve username and password
-            var username = $("#username").val();
-            var password = $("#password").val();
-
-            // Encode credentials
-            var credentials = btoa(username + ":" + password);
-
-            // Store credentials in sessionStorage
-            sessionStorage.setItem("logged", credentials);
+            //
+            // // Retrieve username and password
+            // var username = $("#username").val();
+            // var password = $("#password").val();
+            //
+            // // Encode credentials
+            // var credentials = btoa(username + ":" + password);
+            //
+            // // Store credentials in sessionStorage
+            // sessionStorage.setItem("logged", credentials);
 
             // Submit the form
             this.submit();
-
-            // // Submit the form
-            // $.ajax({
-            //     url: "http://localhost:8082/customer/", // Update URL accordingly
-            //     type: "GET",
-            //     beforeSend: function(handler) {
-            //         handler.setRequestHeader("Authorization", "Basic " + credentials);
-            //     },
-            //     success: function(response) {
-            //         // Handle success response
-            //         sessionStorage.setItem("logged", credentials);
-            //         // Redirect the user to the dashboard or another page
-            //         window.location.href = "http://localhost:8082/customer/dashboard";
-            //     },
-            //     error: function(xhr, status, error) {
-            //         // Handle error response (e.g., display an error message)
-            //         alert("Login failed. Please try again.");
-            //     }
         });
     });
 </script>
