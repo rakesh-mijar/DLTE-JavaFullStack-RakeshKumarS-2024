@@ -1,64 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org" lang="en">-->
-<!--<head >-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <title>My Bank - Login</title>-->
-<!--    <link rel="stylesheet"  type="text/css" th:href="@{'/css/style.css'}">-->
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
-
-<!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
-<!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
-<!--    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@800&display=swap" rel="stylesheet">-->
-<!--    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap" rel="stylesheet">-->
-<!--</head>-->
-<!--<body class="bg-dark text-white">-->
-<!--<h1 th:if="${param.error}" style="text-align: center; margin-bottom: 20px;">-->
-<!--    <span style="font-size: 20px; color: Red;" th:text="${session?.SPRING_SECURITY_LAST_EXCEPTION?.message}"></span>-->
-<!--</h1>-->
-<!--<div id="title-logo">-->
-<!--    <img src="bank.jpg" alt="Logo" style="max-width: 50px; max-height: 50px;">-->
-<!--    <h1>-->
-<!--        <i class="fa fa-globe"></i>&nbsp-->
-<!--    </h1>-->
-<!--</div>-->
-
-<!--<div class="container mt-5 px-4">-->
-<!--    <div class="row justify-content-center align-items-center vh-100">-->
-<!--        <div class="col-md-6 pr-md-4">-->
-<!--            <h1 class="login">Login</h1>-->
-<!--            <p>Sign in to continue</p>-->
-<!--            <button type="submit" class="btn btn-orange mt-3">Learn More</button>-->
-<!--        </div>-->
-<!--        <div class="col-md-6 ml-auto d-flex align-items-center justify-content-center">-->
-<!--            <div class="card text-white  mb-3 p-3 shadow-lg ">-->
-<!--                <h2 class="mb-4">Sign in</h2>-->
-<!--                <form action="#" th:action="@{'/customer/'}" method="post" >-->
-<!--                    &lt;!&ndash; Username Input &ndash;&gt;-->
-<!--                    <div class="form-group">-->
-<!--                        <label for="username">Username</label>-->
-<!--                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required autofocus>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; Password Input &ndash;&gt;-->
-<!--                    <div class="form-group">-->
-<!--                        <label for="password">Password</label>-->
-<!--                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required autofocus>-->
-<!--                    </div>-->
-<!--                    <button type="submit" class="btn btn-orange mt-3">Login</button>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!--</body>-->
-<!--</html>-->
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
@@ -66,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Bank - Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" th:href="@{'/css/style.css'}">
-
+    <link rel="stylesheet" type="text/css" th:href="@{'/css/index.css'}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
-<body class="bg-dark text-white" th:background="@{'/images/bg.jpg'}">
+<body class="bg-dark text-white" th:background="@{'/images/login-image.jpg'}">
 <div id="title-logo">
     <img src="/images/logo.png" alt="Logo" style="max-width: 50px; max-height: 50px;">
     <h1>
@@ -114,25 +52,13 @@
 </body>
 <!--</script>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $("#loginForm").submit(function(event) {
-            event.preventDefault(); // Prevent form submission
-            //
-            // // Retrieve username and password
-            // var username = $("#username").val();
-            // var password = $("#password").val();
-            //
-            // // Encode credentials
-            // var credentials = btoa(username + ":" + password);
-            //
-            // // Store credentials in sessionStorage
-            // sessionStorage.setItem("logged", credentials);
-
-            // Submit the form
-            this.submit();
-        });
-    });
-</script>
+<!--<script>-->
+<!--    $(document).ready(function() {-->
+<!--        $("#loginForm").submit(function(event) {-->
+<!--            event.preventDefault();-->
+<!--            this.submit();-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
 </html>
 

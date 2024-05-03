@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -19,6 +20,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 @Configuration
 public class CustomerSecureConfig{
 
@@ -61,22 +63,28 @@ public class CustomerSecureConfig{
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
         httpSecurity.httpBasic();//enables http basic authentication
-        httpSecurity.cors();//Cross-Origin Resource Sharing (CORS) support
+        //Cross-Origin Resource Sharing (CORS) support
 
+        httpSecurity.authorizeRequests().antMatchers("/customer/").permitAll();
+        httpSecurity.logout().permitAll();
 
+        httpSecurity.authorizeRequests().antMatchers("/images/**").permitAll();
+        httpSecurity.authorizeRequests().antMatchers("/css/**").permitAll();
+        httpSecurity.authorizeRequests().antMatchers("/profile/register").permitAll();
+        httpSecurity.authorizeRequests().antMatchers("/v3/api-docs").permitAll();
+
+        httpSecurity.formLogin().usernameParameter("username").failureHandler(customersFailureHandler).successHandler(customersSucccessHandler);
         httpSecurity.formLogin().loginPage("/customer/").
                 usernameParameter("username").
                 failureHandler(customersFailureHandler).
                 successHandler(customersSucccessHandler);
         httpSecurity.csrf().disable();
-        httpSecurity.logout().permitAll();
-        httpSecurity.authorizeRequests().antMatchers("/images/**").permitAll();
-        httpSecurity.authorizeRequests().antMatchers("/css/**").permitAll();
-        httpSecurity.authorizeRequests().antMatchers("/profile/register").permitAll();
-        httpSecurity.authorizeRequests().antMatchers("/v3/api-docs").permitAll();
-        httpSecurity.authorizeRequests().antMatchers("/customer/**").permitAll();
+        httpSecurity.cors();
+
+
 
         httpSecurity.authorizeRequests().antMatchers("/accountsrepo/accounts.wsdl").permitAll();
+
 
         httpSecurity.authorizeRequests().anyRequest().authenticated();
 

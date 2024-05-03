@@ -1,9 +1,17 @@
+/*body {*/
+/*    background-size: cover;*/
+/*    background-repeat: no-repeat;*/
+/*    position: relative;*/
+/*}*/
 body {
 
     background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
+    background-position: center ;
+    /*overflow: visible;*/
+    /*background-size: 100vw 100vh;*/
+    /*min-height: 100vh;*/
 }
+
 
 .card {
     border: none;
@@ -60,14 +68,24 @@ input::placeholder {
 
 
 
+/*#title-logo {*/
+/*    position: absolute;*/
+/*    top: -3%;*/
+/*    left: 4%;*/
+/*    z-index: 1000;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*}*/
+
 #title-logo {
     position: absolute;
-    top: -3%;
+    top: 3%;
     left: 4%;
     z-index: 1000;
     display: flex;
     align-items: center;
 }
+
 
 .btn-orange {
     transition: all 0.3s ease;

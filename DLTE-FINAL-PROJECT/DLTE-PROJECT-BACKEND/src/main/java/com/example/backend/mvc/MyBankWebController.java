@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.validation.constraints.Null;
 import java.util.ResourceBundle;
 
 @Controller
@@ -50,13 +51,18 @@ public class MyBankWebController {
         public String error(){
                 return "errorpage";
         }
+
         @GetMapping("/name")
         @ResponseBody
         public String customerName(){
-                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-                String name = authentication.getName();
-                MyBankCustomers customer = myBankCustomersService.findByUsername(name);
-                return customer.getCustomerName();
+                try {
+                        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+                        String name = authentication.getName();
+                        MyBankCustomers customer = myBankCustomersService.findByUsername(name);
+                        return customer.getCustomerName();
+                }catch (NullPointerException exception){
+                        return "Error: Customer Name not availbale";
+                }
         }
 }
 

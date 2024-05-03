@@ -27,6 +27,8 @@ public class CustomersSucccessHandler extends SimpleUrlAuthenticationSuccessHand
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         MyBankCustomers myBankCustomers= (MyBankCustomers) authentication.getPrincipal();
+        System.out.println(authentication.getPrincipal());
+
         if(!myBankCustomers.getCustomerStatus().equals("Inactive")){
             if(myBankCustomers.getAttempts() >1){
                 myBankCustomers.setAttempts(1);
