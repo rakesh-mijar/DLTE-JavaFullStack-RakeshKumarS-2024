@@ -75,13 +75,14 @@ public class AccountsServices implements AccountRepository {
     public Accounts UpdateAccountService(Accounts accounts) throws ServerException {
         try {
             CallableStatementCreator creator = con -> {
-                CallableStatement statement = con.prepareCall("{call close_account_service(?,?,?,?,?,?)}");
+                CallableStatement statement = con.prepareCall("{call close_account_service(?,?,?,?,?,?,?)}");
                 statement.setLong(1, accounts.getAccountNumber());
                 statement.registerOutParameter(2, Types.NUMERIC);
-                statement.registerOutParameter(3, Types.VARCHAR);
+                statement.registerOutParameter(3, Types.NUMERIC);//
                 statement.registerOutParameter(4, Types.VARCHAR);
-                statement.registerOutParameter(5, Types.NUMERIC);
-                statement.registerOutParameter(6, Types.VARCHAR);
+                statement.registerOutParameter(5, Types.VARCHAR);
+                statement.registerOutParameter(6, Types.NUMERIC);
+                statement.registerOutParameter(7, Types.VARCHAR);
                 return statement;
             };
 
@@ -90,6 +91,7 @@ public class AccountsServices implements AccountRepository {
                     new SqlParameter[]{//parameters of stored procedure
                             new SqlParameter(Types.NUMERIC),
                             new SqlOutParameter("p_customer_id", Types.NUMERIC),
+                            new SqlOutParameter("p_account_id", Types.NUMERIC),
                             new SqlOutParameter("p_account_type", Types.VARCHAR),
                             new SqlOutParameter("p_account_status", Types.VARCHAR),
                             new SqlOutParameter("p_account_balance", Types.NUMERIC),
@@ -102,12 +104,16 @@ public class AccountsServices implements AccountRepository {
             if (result.equals("SQLSUCESS")) {
                 // Success case
                 long accountNumber=accounts.getAccountNumber();
+                long customerId = ((Number) returnedExecution.get("p_customer_id")).longValue();
+                long accountId = ((Number) returnedExecution.get("p_account_id")).longValue();
                 String accountType = (String) returnedExecution.get("p_account_type");
                 String accountStatus = (String) returnedExecution.get("p_account_status");
                 double accountBalance = ((Number) returnedExecution.get("p_account_balance")).doubleValue();
                 logger.info(resourceBundle.getString("account.close.service"));
 
                 Accounts accounts1 = new Accounts();
+                accounts1.setCustomerId(customerId);
+                accounts1.setAccountId(accountId);
                 accounts1.setAccountNumber(accountNumber);
                 accounts1.setAccountType(accountType);
                 accounts1.setAccountStatus(accountStatus);

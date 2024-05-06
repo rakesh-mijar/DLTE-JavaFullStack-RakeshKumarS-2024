@@ -4,6 +4,7 @@ import com.project.dao.entities.Accounts;
 import com.project.dao.entities.MyBankCustomers;
 import com.project.dao.remotes.CustomerRepository;
 import com.project.dao.security.MyBankCustomersService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -12,9 +13,13 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -35,6 +40,43 @@ public class CustomerServiceTest {
     @InjectMocks
     private MyBankCustomersService myBankCustomersService;
 
+    MyBankCustomers userDetails;
+    @BeforeEach
+    void setUp(){
+        userDetails = new MyBankCustomers();
+    }
+    @Test
+    public void testIsAccountNonExpired() {
+        assertTrue(userDetails.isAccountNonExpired());
+    }
+
+    @Test
+    public void testIsAccountNonLocked() {
+        assertTrue(userDetails.isAccountNonLocked());
+    }
+
+    @Test
+    public void testIsCredentialsNonExpired() {
+        assertTrue(userDetails.isCredentialsNonExpired());
+    }
+
+    @Test
+    public void testIsEnabled() {
+        assertTrue(userDetails.isEnabled());
+    }
+
+    @Test
+    public void testGetMaxAttempt() {
+        int expectedMaxAttempt = 3;
+        assertEquals(expectedMaxAttempt, userDetails.getMaxAttempt());
+    }
+
+    @Test
+    public void testGetAuthorities() {
+        Collection<? extends GrantedAuthority> authorities = userDetails.getAuthorities();
+
+        assertNull(authorities); // Since the method returns null
+    }
     @Test
     void testSigningUp() {
         MyBankCustomers myBankCustomers = new MyBankCustomers();
@@ -48,9 +90,6 @@ public class CustomerServiceTest {
         lenient().when(customerRepository.signingUp(any(MyBankCustomers.class))).thenReturn(myBankCustomers);
 
         MyBankCustomers savedCustomer = myBankCustomersService.signingUp(myBankCustomers);
-
-//        System.out.println(savedCustomer.getUsername());
-//        System.out.println(savedCustomer.getPassword());
         // Assertions
         assertNotNull(savedCustomer);
         assertEquals("mahesh", savedCustomer.getUsername());
@@ -138,5 +177,25 @@ public class CustomerServiceTest {
 
         verify(jdbcTemplate).update("update mybank_app_customer set attempts = ? where username = ?", 1, "johndoe");
        // System.out.println(myBankCustomers.getAttempts());
+    }
+
+    @Test
+
+    public void testPasswordMatch() {
+
+        MyBankCustomersService myBankUsersServices = mock(MyBankCustomersService.class);
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String username = "testUser";
+        String rawPassword = "password123";
+        String encodedPassword =passwordEncoder.encode(rawPassword);
+        MyBankCustomers customer = new MyBankCustomers();
+        customer.setUsername(username);
+        customer.setPassword(encodedPassword);
+        when(myBankUsersServices.loadUserByUsername(username))
+                .thenReturn(customer);
+        UserDetails userDetails = myBankUsersServices.loadUserByUsername(username);
+        String enteredPassword="password123";
+        assertTrue(passwordEncoder.matches(enteredPassword, userDetails.getPassword()));
+
     }
 }

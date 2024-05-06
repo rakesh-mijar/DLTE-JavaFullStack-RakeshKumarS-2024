@@ -33,6 +33,8 @@ public class MyBankCustomers implements UserDetails {
     private final int maxAttempt=3;
     private Integer attempts;
 
+
+
     public Long getCustomerId() {
         return customerId;
     }
@@ -92,6 +94,7 @@ public class MyBankCustomers implements UserDetails {
     public void setAttempts(Integer attempts) {
         this.attempts = attempts;
     }
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

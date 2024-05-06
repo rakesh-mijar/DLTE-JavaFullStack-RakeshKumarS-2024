@@ -79,12 +79,18 @@ public class AccountController {
             responseMap.put("accountStatus", updatedAccount.getAccountStatus());
             responseMap.put("accountBalance", updatedAccount.getAccountBalance());
 
-            return ResponseEntity.status(HttpServletResponse.SC_OK).body(responseMap);
+            return ResponseEntity.status(HttpServletResponse.SC_OK).body(responseMap+resourceBundle.getString("account.close.service"));
             //return ResponseEntity.ok(updatedAccount);
-        } catch (AccountNotFoundException accountException) {
-            logger.warn(resourceBundle.getString("inactive.account"));
-            return ResponseEntity.status(HttpServletResponse.SC_OK).body(accountException.getMessage());
-        }catch (ServerException  | DataAccessException serverException) {
+//        } catch (AccountNotFoundException accountException) {
+//            logger.warn(resourceBundle.getString("inactive.account"));
+//            return ResponseEntity.status(HttpServletResponse.SC_OK).body(accountException.getMessage());
+        }
+            catch (AccountNotFoundException accountException) {
+                logger.warn(resourceBundle.getString("inactive.account"));
+                return ResponseEntity.status(HttpServletResponse.SC_OK).body(resourceBundle.getString("loan.error.one")+accountException.getMessage());
+
+            }
+        catch (ServerException | DataAccessException serverException) {
             logger.warn(resourceBundle.getString("no.data"));
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(serverException.getMessage());
         }

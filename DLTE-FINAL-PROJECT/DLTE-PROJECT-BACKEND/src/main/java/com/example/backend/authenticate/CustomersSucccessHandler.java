@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.security.authentication.LockedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
@@ -38,7 +39,8 @@ public class CustomersSucccessHandler extends SimpleUrlAuthenticationSuccessHand
         }else{
             logger.warn(resourceBundle.getString("max.reached"));
             //super.setDefaultTargetUrl("/login");
-            super.setDefaultTargetUrl("/customer/?error="+ resourceBundle.getString("no.customer"));
+           super.setDefaultTargetUrl("/customer/?error="+ new LockedException(resourceBundle.getString("account.suspended")).getMessage());
+        //resourceBundle.getString("no.customer"));
 
         }
         super.onAuthenticationSuccess(request,response,authentication);

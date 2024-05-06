@@ -72,6 +72,39 @@ public class BackendRestTest {
     @Mock
     private CustomerRepository customerRepository;
 
+    @Mock
+    private Authentication authentication;
+
+
+    @Test
+    public void testCloseAccountService_Success() throws ServerException {
+        // Arrange
+        String username = "testuser";
+        MyBankCustomers customer = new MyBankCustomers();
+        customer.setCustomerId(1L);
+        customer.setUsername(username);
+
+        Accounts account = new Accounts();
+        account.setCustomerId(customer.getCustomerId());
+        account.setAccountNumber(123456L);
+        account.setAccountType("Savings");
+
+        when(authentication.getName()).thenReturn(username);
+        when(customerRepository.findByUsername(username)).thenReturn(customer);
+        when(accountRepository.UpdateAccountService(any(Accounts.class))).thenReturn(account);
+
+        // Act
+        ResponseEntity<Object> responseEntity = accountController.closeAccountService(account);
+
+        // Assert
+        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+        assertNotNull(responseEntity.getBody());
+
+        Map<String, Object> responseMap = (Map<String, Object>) responseEntity.getBody();
+        assertEquals("123456", responseMap.get("accountNumber"));
+        assertEquals("Savings", responseMap.get("accountType"));
+        // Add more assertions based on expected response data
+    }
 
     @Test
     @WithAnonymousUser
@@ -92,13 +125,13 @@ public class BackendRestTest {
     @Test
     public void testCloseAccounervice_Success() throws Exception {
         // Mock authentication
-        Authentication authentication = mock(Authentication.class);
+        //Authentication authentication = mock(Authentication.class);
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        lenient().when(authentication.getName()).thenReturn("shreyas12");
+        lenient().when(authentication.getName()).thenReturn("rakesh123");
 
         // Mock customer
         MyBankCustomers customer = new MyBankCustomers();
-        lenient().when(customerRepository.findByUsername("shreyas12")).thenReturn(customer);
+        lenient().when(customerRepository.findByUsername("rakesh123")).thenReturn(customer);
 
         // Mock account
         Accounts account = new Accounts();

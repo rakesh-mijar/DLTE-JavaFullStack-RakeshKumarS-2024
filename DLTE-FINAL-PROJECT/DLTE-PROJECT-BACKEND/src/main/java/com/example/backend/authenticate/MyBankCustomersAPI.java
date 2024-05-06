@@ -2,6 +2,7 @@ package com.example.backend.authenticate;
 
 import com.project.dao.entities.MyBankCustomers;
 
+import com.project.dao.remotes.CustomerRepository;
 import com.project.dao.security.MyBankCustomersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,12 +22,15 @@ public class MyBankCustomersAPI {
     MyBankCustomersService customersService;
 
     @Autowired
+    CustomerRepository repository;
+
+    @Autowired
     PasswordEncoder passwordEncoder;
 
     @PostMapping("/register")
     public MyBankCustomers save(@Valid @RequestBody MyBankCustomers myBankCustomers){
         myBankCustomers.setPassword(passwordEncoder.encode(myBankCustomers.getPassword()));
-        return customersService.signingUp(myBankCustomers);
+        return repository.signingUp(myBankCustomers);
     }
     @ResponseStatus(HttpStatus.OK)
     @ExceptionHandler(MethodArgumentNotValidException.class)

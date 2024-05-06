@@ -10,16 +10,19 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.CallableStatementCreator;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
 import java.rmi.ServerException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @ExtendWith(MockitoExtension.class)
@@ -32,16 +35,48 @@ class DaoTest {
     private AccountsServices accountsServices;
 
     @Test
+    public void testFilterByCustomerStatus_DataAccessException() {
+        // Mocking jdbcTemplate.query to throw DataAccessException
+        when(jdbcTemplate.query(any(String.class), any(Object[].class), any(RowMapper.class)))
+                .thenThrow(new DataAccessException("Test DataAccessException") {});
+
+        // Call the method under test using assertThrows
+        assertThrows(ServerException.class, () -> {
+            accountsServices.filterByCustomerStatus(123L);
+        });
+    }
+
+    @Test
+    public void testUpdateAccountService_DataAccessException() {
+        // Mocking jdbcTemplate.call to throw DataAccessException
+        when(jdbcTemplate.call(any(CallableStatementCreator.class), any(List.class)))
+                .thenThrow(new DataAccessException("Test DataAccessException") {});
+
+        // Prepare a sample Accounts object for testing
+        Accounts accounts = new Accounts();
+        accounts.setAccountNumber(123456L);
+
+        // Call the method under test using assertThrows
+        assertThrows(ServerException.class, () -> {
+            accountsServices.UpdateAccountService(accounts);
+        });
+    }
+
+    @Test
     void testUpdateAccountService_Success1() throws ServerException {
 
         Accounts accounts = new Accounts();
         accounts.setAccountNumber(123456789L);
+        accounts.setAccountId(100L);
+        accounts.setCustomerId(1L);
         accounts.setAccountBalance(500.0);
         accounts.setAccountStatus("Active");
         accounts.setAccountType("savings");
 
         Map<String, Object> returnedExecution = new HashMap<>();
         returnedExecution.put("p_result", "SQLSUCESS");
+        returnedExecution.put("p_account_id", 100L);
+        returnedExecution.put("p_customer_id",1L);
         returnedExecution.put("p_account_number", 123456789L);
         returnedExecution.put("p_account_type", "savings");
         returnedExecution.put("p_account_status", "Inactive");
@@ -60,12 +95,16 @@ class DaoTest {
     void testUpdateAccountService_S2() throws ServerException{
         Accounts accounts = new Accounts();
         accounts.setAccountNumber(123456789L);
+        accounts.setAccountId(100L);
+        accounts.setCustomerId(1L);
         accounts.setAccountBalance(500.0);
         accounts.setAccountStatus("Active");
         accounts.setAccountType("savings");
 
         Map<String, Object> returnedExecution = new HashMap<>();
         returnedExecution.put("p_result", "SQLSUCESS");
+        returnedExecution.put("p_account_id", 100L);
+        returnedExecution.put("p_customer_id",1L);
         returnedExecution.put("p_account_number", 123456789L);
         returnedExecution.put("p_account_type", "savings");
         returnedExecution.put("p_account_status", "Inactive");

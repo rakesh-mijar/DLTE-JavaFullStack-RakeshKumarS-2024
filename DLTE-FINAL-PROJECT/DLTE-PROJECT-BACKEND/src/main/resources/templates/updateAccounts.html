@@ -89,6 +89,25 @@
     </div>
 </div>
 
+<div class="modal" id="updateModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header justify-content-center">
+                <img th:src="@{'/images/tick.jpg'}" alt="Alert Image">
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+                <p id="successMessage" style="color: #182052; font-family: 'Poppins', sans-serif;"></p>
+<!--                <p>Click <span style="color: #182052; font-family: 'Poppins', sans-serif;">Back to Dashboard</span> to go back to Dashboard</p>-->
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer justify-content-center">
+<!--                <button href="/customer/update" type="button" class="col-10 col-md-4 btn btn-outline-white rounded-pill" id="backHome" >OK</button>-->
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 <footer th:insert="footer :: foot"></footer>
 <script>
@@ -139,6 +158,14 @@
 
 
     $(document).ready(() => {
+        // $(".modal-footer").click(function(event) {
+        //     event.preventDefault();
+        //
+        //     window.location.href = "/customer/update";
+        // });
+        function hideModal() {
+            $('#updateModal').modal('hide');
+        }
         // Retrieve account details from session storage
         const storedAccountDetails = sessionStorage.getItem('accountDetails');
         const accountDetails = JSON.parse(storedAccountDetails);
@@ -166,16 +193,29 @@
                 contentType: "application/json;charset=utf-8",
                 data: JSON.stringify(request),
                 success: function (response) {
-                    $("#status").empty();
-                    $("#status").append('<div class="alert alert-success d-flex align-items-center" role="alert"> <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg> <div> Account Service Closed Successfully </div> </div>');
-                    // // Clear session storage after success
-                    sessionStorage.removeItem('accountDetails');
+                    console.log(response);
+                    var excRegex = /EXC00\d\s*:/;
+                    // var validationRegex = /EXV00\d\s*:/;
+                    if (excRegex.test(response)) {
+                        var errorMessage = response.replace(excRegex, '').trim();
+                        var errorCode = response.match(excRegex)[0].trim();
+                        window.location.href = "/customer/error/?message=" + encodeURIComponent(errorMessage)  + "&code=" + encodeURIComponent(errorCode);
+                    }
+                    else {
+                        var responseMessage = response.replace(/^{.*?}(.*)$/, '$1').trim();
+                        $("#successMessage").text(responseMessage);
+                        $("#updateModal").modal("show");
+                        setTimeout(hideModal, 2000);
+                        sessionStorage.removeItem('accountDetails');
+                    }
                 },
                 error: function (xhr, status, error) {
+                    // If there's an error in the AJAX request itself
                     let errorMessage = xhr.responseText;
-                    let errorCode = 200;
+                    let errorCode = 200; // Assuming 200 for error status
                     window.location.href = "/customer/error/?message=" + encodeURIComponent(errorMessage) + "&code=" + encodeURIComponent(errorCode);
                 }
+
             });
         }
         });

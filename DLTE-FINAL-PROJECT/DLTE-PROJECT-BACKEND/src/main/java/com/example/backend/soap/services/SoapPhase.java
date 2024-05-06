@@ -74,7 +74,7 @@ public class SoapPhase {
                         })
                         .collect(Collectors.toList());
 
-                logger.info("success.fetch");
+                logger.info(resourceBundle.getString("success.fetch"));
                 serviceStatus.setStatus(HttpServletResponse.SC_OK);
                 serviceStatus.setMessage(resourceBundle.getString("account.fetch.success"));
                 filterByStatusResponse.setServiceStatus(serviceStatus);

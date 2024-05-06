@@ -85,7 +85,7 @@
 
                 if (accounts.length === 0) {
                     let errorMessage = "No active accounts found.";
-                    window.location.href = "/customer/error/?message=" + encodeURIComponent(errorMessage);
+                    window.location.href = "/customer/error/?message=" + encodeURIComponent(errorMessage)+ "&code=" + encodeURIComponent(200);
                     return;
                 }
 

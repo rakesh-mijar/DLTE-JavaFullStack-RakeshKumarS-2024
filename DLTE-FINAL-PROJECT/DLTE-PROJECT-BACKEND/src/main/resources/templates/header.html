@@ -35,7 +35,23 @@
     </style>
     <script>
         $(document).ready(function () {
-            function getUserName() {
+            // $(".dropdown-item").click(function(event) {
+            //     event.preventDefault();
+            //
+            //     window.location.href = "customer/error/?message=" + encodeURIComponent("Page under development");
+            // });
+            $(".dropdown-item").click(function(event) {
+                event.preventDefault();
+                // Check if the clicked dropdown item is "View Accounts"
+                if ($(this).text().trim() === "View Accounts") {
+                    // Redirect to the View Accounts page
+                    window.location.href = "/customer/view";
+                } else {
+                    // Redirect to the error page with a message
+                    window.location.href = "/customer/error/?message=" + encodeURIComponent("Page under development") + "&code=" + encodeURIComponent(200);
+                }
+            });
+             function getUserName() {
                 $.ajax({
                     type: "GET",
                     url: "/customer/name",
@@ -85,7 +101,7 @@
         </button>
         <!-- Navbar Items -->
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto" style="font-size: 20px; font-weight: 400; font-family: 'Poppins', sans-serif;"> <!-- Change ml-auto to mr-auto to push items to the left -->
+            <ul class="navbar-nav mr-auto" style="font-size: 20px; font-weight: 400; font-family: 'Poppins', sans-serif;">
                 <!-- Dropdown 1: Account -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -102,8 +118,10 @@
                         Deposits
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                        <a class="dropdown-item" href="#">Bank Transfer</a>
-                        <a class="dropdown-item" href="#">Credit Card</a>
+                        <a class="dropdown-item" href="#">Available Deposits</a>
+                        <a class="dropdown-item" href="#">Search Deposits</a>
+                        <a class="dropdown-item" href="#">Deposit Calculator</a>
+                        <a class="dropdown-item" href="#">Avail Deposits</a>
                     </div>
                 </li>
                 <!-- Dropdown 3: Insurance -->
@@ -112,8 +130,10 @@
                         Insurance
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                        <a class="dropdown-item" href="#">Life Insurance</a>
-                        <a class="dropdown-item" href="#">Health Insurance</a>
+                        <a class="dropdown-item" href="#">List Insurance plans</a>
+                        <a class="dropdown-item" href="#">Search Insurance</a>
+                        <a class="dropdown-item" href="#">Choose Insurance And View benefits</a>
+                        <a class="dropdown-item" href="#">Avail Insurance</a>
                     </div>
                 </li>
                 <!-- Dropdown 4: Others -->
@@ -122,8 +142,10 @@
                         Cards
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
-                        <a class="dropdown-item" href="#">Option 1</a>
-                        <a class="dropdown-item" href="#">Option 2</a>
+                        <a class="dropdown-item" href="#">List Cards</a>
+                        <a class="dropdown-item" href="#">Manage Cards</a>
+                        <a class="dropdown-item" href="#">Activation</a>
+                        <a class="dropdown-item" href="#">New Card Request</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -131,8 +153,12 @@
                         Payments
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
-                        <a class="dropdown-item" href="#">Option 1</a>
+                        <a class="dropdown-item" href="#">Search Payee</a>
                         <a class="dropdown-item" href="#">Option 2</a>
+                        <a class="dropdown-item" href="#">List available payee</a>
+                        <a class="dropdown-item" href="#">New Payee</a>
+                        <a class="dropdown-item" href="#">Modify Payee</a>
+                        <a class="dropdown-item" href="#">Make Payment</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -140,14 +166,20 @@
                         Loans
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown6">
-                        <a class="dropdown-item" href="#">Option 1</a>
-                        <a class="dropdown-item" href="#">Option 2</a>
+                        <a class="dropdown-item" href="#">List Available Loans</a>
+                        <a class="dropdown-item" href="#">Search Loans</a>
+                        <a class="dropdown-item" href="#">Choose Loan and EMI Calculator</a>
+                        <a class="dropdown-item" href="#">Apply Loan</a>
                     </div>
                 </li>
             </ul>
         </div>
         <!-- Navbar Brand (Mobile) -->
-        <a class="navbar-brand d-lg-none" href="#">My Website</a>
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <button onclick="window.location.href='/customer/dashboard'" class="btn btn-primary mt-3 me-3" style="border-radius: 10px;">Go to Dashboard</button>
+            </div>
+        </div>
     </div>
 </nav>
 
@@ -155,5 +187,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </div>
 </body>
-
 </html>

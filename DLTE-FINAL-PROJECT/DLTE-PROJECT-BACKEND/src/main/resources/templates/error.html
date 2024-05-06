@@ -1,74 +1,75 @@
 <!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org" lang="en">-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
 <!--<head>-->
 <!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 <!--    <title>Error Page</title>-->
-<!--    &lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
-<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjIcsSv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">-->
-<!--    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>-->
-<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
-
+<!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@400;700&display=swap" rel="stylesheet">-->
 <!--    <style>-->
-<!--        body, html {-->
-<!--            height: 100%;-->
-<!--            margin: 0;-->
+<!--        body {-->
+<!--            background-color: #f8f9fa;-->
+<!--        }-->
+<!--        .error-container {-->
+<!--            height: 100vh;-->
 <!--            display: flex;-->
 <!--            justify-content: center;-->
 <!--            align-items: center;-->
+<!--            justify-self: center;-->
 <!--        }-->
-<!--        #errorMessage {-->
-<!--            background-color: #ffffff;-->
-<!--            border-radius: 10px;-->
-<!--            padding: 20px;-->
-<!--            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);-->
-<!--            max-width: 400px;-->
-<!--            text-align: center;-->
-<!--            color: #212529;-->
-<!--            font-size: 18px;-->
+<!--        h1,h2 {-->
+<!--            color: #003870;-->
+<!--            font-size: 24px;-->
+<!--            margin-bottom: 20px;-->
 <!--        }-->
-<!--        .btn-primary {-->
-<!--            background-color: #0d6efd;-->
-<!--            border-color: #0d6efd;-->
-<!--            font-weight: bold;-->
+<!--        .error-code {-->
+<!--            font-size: 3rem;-->
+<!--            color: #182052;-->
+<!--            font-size: 46px;-->
+<!--            font-family: "Montserrat", sans-serif;-->
 <!--        }-->
-<!--        .btn-primary:hover {-->
-<!--            background-color: #0b5ed7;-->
-<!--            border-color: #0b5ed7;-->
+<!--        #errorMessage{-->
+<!--            color: #182052;-->
+<!--            font-family: "Poppins", sans-serif;-->
 <!--        }-->
+<!--        .custom-btn {-->
+<!--            background-color: #182052;-->
+<!--            width: 200px; /* Set the width to 200 pixels */-->
+<!--            height: 50px; /* Set the height to 50 pixels */-->
+<!--        }-->
+
+
 <!--    </style>-->
 <!--</head>-->
 <!--<body>-->
-<!--&lt;!&ndash;<div id="errorMessage">&ndash;&gt;-->
-<!--<div id="errorMessage">-->
-<!--    <p>An error occurred:</p>-->
-<!--    <p id="errorCode"></p>-->
-<!--    <p id="errorText"></p>-->
-<!--    <button onclick="window.location.href='/customer/dashboard'" class="btn btn-primary mt-3">Go to Dashboard</button>-->
+<!--<div class="container error-container">-->
+<!--    <div class="row text-center">-->
+<!--        <div class="col">-->
+<!--            <h1 class="error-code" id="errorCode"></h1>-->
+<!--            <br/></br>-->
+<!--            <h2 id="errorMessage"></h2>-->
+<!--            <h2 th:unless="${param.code}">404 - Page not found</h2>-->
+<!--            <br/></br>-->
+<!--            <a th:href="@{'/customer/dashboard'}"><button class="btn rounded-4 border-0 col-10 text-white custom-btn">Go Back to Dashboard</button></a>-->
+<!--        </div>-->
+<!--    </div>-->
 <!--</div>-->
-<!--</div>-->
+
 <!--<script>-->
-<!--    $(document).ready(() => {-->
-<!--        // Function to get URL query parameter-->
-<!--        function getQueryParam(name) {-->
-<!--            const urlParams = new URLSearchParams(window.location.search);-->
-<!--            return urlParams.get(name);-->
-<!--        }-->
+<!--    // Get the error code and message from the URL parameters-->
+<!--    const params = new URLSearchParams(window.location.search);-->
+<!--    window.errorCode = params.get('code');-->
+<!--    window.errorMessage = params.get('message');-->
 
-<!--        // Get error message and error code from query parameters-->
-<!--        const errorMessage = getQueryParam("message");-->
-<!--        const errorCode = getQueryParam("code");-->
-
-<!--        // Display error message and error code in errorMessage div-->
-<!--        $("#errorText").text(errorMessage);-->
-<!--        $("#errorCode").text("Error Code: " + errorCode);-->
-<!--    });-->
+<!--    // Update the error code and message in the error page-->
+<!--    document.getElementById('errorCode').innerText = errorCode;-->
+<!--    document.getElementById('errorMessage').innerText = errorMessage;-->
 <!--</script>-->
 <!--</body>-->
 <!--</html>-->
-
-
 
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
@@ -81,6 +82,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
         body {
             background-color: #f8f9fa;
@@ -92,6 +94,11 @@
             align-items: center;
             justify-self: center;
         }
+        h1,h2 {
+            color: #003870;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
         .error-code {
             font-size: 3rem;
             color: #182052;
@@ -102,13 +109,38 @@
             color: #182052;
             font-family: "Poppins", sans-serif;
         }
-        .custom-btn {
-            background-color: #182052;
-            width: 200px; /* Set the width to 200 pixels */
-            height: 50px; /* Set the height to 50 pixels */
+        #notFoundMessage{
+            color: #182052;
+            font-family: "Poppins", sans-serif;
+            font-size: 46px;
+        }
+        /*.custom-btn {*/
+        /*    background-color: #182052;*/
+        /*    width: 200px; !* Set the width to 200 pixels *!*/
+        /*    height: 50px; !* Set the height to 50 pixels *!*/
+        /*}*/
+        button {
+            background-color: powderblue;
+            color: #003870;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+            border-color:#003870;
+
         }
 
+        button:hover {
+            background-color: lightblue;
+        }
 
+        button i {
+            margin-left: 7px;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
@@ -118,8 +150,12 @@
             <h1 class="error-code" id="errorCode"></h1>
             <br/></br>
             <h2 id="errorMessage"></h2>
+            <div id="notFoundMessage" style="display: none;">
+                404 - Page not found
+            </div>
             <br/></br>
-            <a th:href="@{'/customer/dashboard'}"><button class="btn rounded-4 border-0 col-10 text-white custom-btn">Go Back to Dashboard</button></a>
+<!--           // <a id="dashboardLink" href="/customer/dashboard"><button class="btn rounded-4 border-0 col-10 text-white custom-btn">Go Back to Dashboard</button></a>-->
+            <a th:href="@{'/customer/dashboard'}"><button >BACK TO HOME<i class="bi bi-arrow-right-circle-fill"></i></button></a>
         </div>
     </div>
 </div>
@@ -127,12 +163,18 @@
 <script>
     // Get the error code and message from the URL parameters
     const params = new URLSearchParams(window.location.search);
-    window.errorCode = params.get('code');
-    window.errorMessage = params.get('message');
+    const errorCode = params.get('code');
+    const errorMessage = params.get('message');
 
-    // Update the error code and message in the error page
-    document.getElementById('errorCode').innerText = errorCode;
-    document.getElementById('errorMessage').innerText = errorMessage;
+    // Display error code and message if available
+    if (errorCode && errorMessage) {
+        document.getElementById('errorCode').innerText = errorCode;
+        document.getElementById('errorMessage').innerText = errorMessage;
+    } else {
+        // If code and message are not available, show 404 message and hide dashboard link
+        document.getElementById('notFoundMessage').style.display = 'block';
+        document.getElementById('dashboardLink').style.display = 'none';
+    }
 </script>
 </body>
 </html>

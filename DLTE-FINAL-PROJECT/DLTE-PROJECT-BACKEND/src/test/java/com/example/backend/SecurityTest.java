@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +18,8 @@ import org.springframework.security.authentication.LockedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.ResourceBundle;
@@ -37,6 +40,7 @@ public class SecurityTest {
 
     private MockHttpServletRequest request;
     private MockHttpServletResponse response;
+
 
     @BeforeEach
     public void setup() {
@@ -89,9 +93,7 @@ public class SecurityTest {
 
         successHandler.onAuthenticationSuccess(request, response, authentication);
         System.out.println("Redirected URL: " + response.getRedirectedUrl());
-        assertEquals("/customer/?error=User not exists", response.getRedirectedUrl());
-
-        assert response.getRedirectedUrl().equals("/customer/?error=User not exists");
+        assertEquals("/customer/?error=Account suspended contact admin to redeem", response.getRedirectedUrl());
     }
 
     ResourceBundle resourceBundle = ResourceBundle.getBundle("accounts");
@@ -128,6 +130,34 @@ public class SecurityTest {
         assert response.getRedirectedUrl().equals(expectedRedirectUrl);
     }
 
+    @Mock
+    private Authentication authentication;
+    @InjectMocks
+    private CustomersSucccessHandler customerSuccessHandler;
 
 
+    @Test
+    public void testOnAuthenticationSuccess_InactiveCustomer1() throws Exception {
+        // Arrange
+        String username = "testuser";
+        MyBankCustomers customer = new MyBankCustomers();
+        customer.setUsername(username);
+        customer.setCustomerStatus("Inactive");
+        customer.setAttempts(2); // Less than max attempts
+        customer.setCustomerId(1L);
+        customer.setCustomerName("Ram");
+        customer.setCustomerAddress("Bangalore");
+        customer.setCustomerContact(9898987678L);
+        customer.setPassword("mohan");
+
+        when(authentication.getPrincipal()).thenReturn(customer);
+
+
+        customerSuccessHandler.onAuthenticationSuccess(request, response, authentication);
+
+        System.out.println(response.getRedirectedUrl());
+        assertEquals("/customer/?error=Account suspended contact admin to redeem", response.getRedirectedUrl());
+        // Assert
+        //Mockito.verify(response).encodeRedirectURL("/customer/?error=Account suspended contact admin to redeem");
+    }
 }
