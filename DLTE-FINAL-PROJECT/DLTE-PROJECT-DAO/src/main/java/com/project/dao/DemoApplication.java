@@ -1,11 +1,8 @@
 package com.project.dao;
 
-import com.project.dao.entities.Accounts;
-import com.project.dao.services.AccountsServices;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
 
 import java.rmi.ServerException;
 import java.sql.SQLSyntaxErrorException;
@@ -14,10 +11,12 @@ import java.sql.SQLSyntaxErrorException;
 public class DemoApplication {
 
 
-    public static void main(String[] args) throws ServerException, SQLSyntaxErrorException {
+    public static void main(String[] args) {
 
         SpringApplication.run(DemoApplication.class, args);
-//        ConfigurableApplicationContext context= SpringApplication.run(DemoApplication.class, args);
+//       ConfigurableApplicationContext context= SpringApplication.run(DemoApplication.class, args);
+//        AccountsServices debitCardServices=context.getBean(AccountsServices.class);
+//        System.out.println(debitCardServices.filterByCustomerStatus(3L));
 //
 //
 //        Accounts account = new Accounts();

@@ -1,18 +1,34 @@
-package com.project.dao.security;
+package com.project.dao.entities;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.Collection;
 
 
 public class MyBankCustomers implements UserDetails {
     private Long customerId;
+    @NotNull(message = "ERR-001")
+    @Pattern(regexp = "^[a-zA-Z ]+$", message = "name.invalid")
     private String customerName;
+    @NotNull(message = "ERR-001")
+    @Pattern(regexp = "^[a-zA-Z ]+$", message = "address.invalid")
     private String customerAddress;
+    @NotNull(message = "ERR-001")
+    @Pattern(regexp = "^(?i)(Active|Inactive)$", message = "customer.status.invalid")
     private String customerStatus;
+    @NotNull(message = "ERR-001")
+    @Digits(integer = 10, fraction = 0, message = "digits.customerContact")
     private Long customerContact;
+    @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "username.invalid")
     private String username;
+    @NotNull(message = "ERR-001")
+    @Size(min = 8, message = "password.length.invalid")
+    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!]).*$", message = "password.invalid")
     private String password;
     private final int maxAttempt=3;
     private Integer attempts;
@@ -127,3 +143,4 @@ public class MyBankCustomers implements UserDetails {
                 '}';
     }
 }
+

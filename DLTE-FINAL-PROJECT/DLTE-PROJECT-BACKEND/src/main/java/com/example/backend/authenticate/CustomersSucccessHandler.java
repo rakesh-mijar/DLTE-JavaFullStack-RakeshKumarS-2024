@@ -1,13 +1,13 @@
 package com.example.backend.authenticate;
 
-import com.project.dao.security.MyBankCustomers;
+import com.project.dao.entities.MyBankCustomers;
+import com.project.dao.remotes.CustomerRepository;
 import com.project.dao.security.MyBankCustomersService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.LockedException;
+
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 @Component
 public class CustomersSucccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     @Autowired
-    MyBankCustomersService myBankCustomersService;
+    CustomerRepository myBankCustomersService;
     ResourceBundle resourceBundle=ResourceBundle.getBundle("accounts");
     Logger logger= LoggerFactory.getLogger(CustomersSucccessHandler.class);
 

@@ -1,6 +1,7 @@
 package com.example.backend.authenticate;
 
-import com.project.dao.security.MyBankCustomers;
+import com.project.dao.entities.MyBankCustomers;
+import com.project.dao.remotes.CustomerRepository;
 import com.project.dao.security.MyBankCustomersService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.LockedException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
-import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
+
 
 import org.springframework.stereotype.Component;
 
@@ -21,7 +22,7 @@ import java.util.ResourceBundle;
 @Component
 public class CustomersFailureHandler extends SimpleUrlAuthenticationFailureHandler{
     @Autowired
-    MyBankCustomersService myBankCustomersService;
+    CustomerRepository myBankCustomersService;
 
     ResourceBundle resourceBundle=ResourceBundle.getBundle("accounts");
     Logger logger= LoggerFactory.getLogger(CustomersFailureHandler.class);
@@ -36,7 +37,9 @@ public class CustomersFailureHandler extends SimpleUrlAuthenticationFailureHandl
                    myBankCustomers.setAttempts(myBankCustomers.getAttempts()+1);
                    myBankCustomersService.updateAttempts(myBankCustomers);
                    logger.warn(resourceBundle.getString("invalid.credits"));
-                   exception=new LockedException("Attempts are taken");
+                   int leftAttempts=4;
+                   exception = new LockedException(leftAttempts-myBankCustomers.getAttempts() + " " + resourceBundle.getString("customer.password.attempts"));
+                   //exception=new LockedException("Attempts are taken");
                    String err = myBankCustomers.getAttempts()+" "+exception.getMessage();
                    logger.warn(err);
                    super.setDefaultFailureUrl("/customer/?error="+err);

@@ -17,13 +17,11 @@
         .update-btn2 {
             background-color: white;
             color: #182052;
-            border: 2px solid #182052; /* Add border */
+            border: 2px solid #182052;
             border-radius: 20px;
             padding: 5px 15px;
             cursor: pointer;
         }
-
-
         .card2 {
             background-color: #182052;
             color: white;
@@ -47,8 +45,8 @@
 <body>
 <header th:insert="header :: head"></header>
 <div class="container">
-    <div class="row justify-content-center"> <!-- Centering the account details -->
-        <div class="col-md-12"> <!-- Adjust column width as needed -->
+    <div class="row justify-content-center">
+        <div class="col-md-12">
             <div id="accountDetails" class="mt-3"></div>
         </div>
     </div>
@@ -62,15 +60,12 @@
     let currentPage = 1;
     const itemsPerPage = 2;
 
-    // Function to change the current page
     function changePage(page) {
         currentPage = page;
         fetchActiveAccounts();
     }
 
-    // Function to fetch active accounts
     function fetchActiveAccounts() {
-        // Construct SOAP request
         var soapRequest = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://accounts.services">
             <soapenv:Header/>
             <soapenv:Body>
@@ -79,7 +74,6 @@
             </soapenv:Body>
         </soapenv:Envelope>`;
 
-        // Make AJAX call to SOAP service
         $.ajax({
             url: "http://localhost:8082/accountsrepo/accounts.wsdl",
             type: "POST",
@@ -87,10 +81,8 @@
             contentType: "text/xml;charset=utf-8",
             data: soapRequest,
             success: function(response) {
-                // Parse response to extract account details
                 var accounts = $(response).find("ns2\\:accounts");
 
-                // If no accounts are present, redirect to error page
                 if (accounts.length === 0) {
                     let errorMessage = "No active accounts found.";
                     window.location.href = "/customer/error/?message=" + encodeURIComponent(errorMessage);
@@ -103,7 +95,6 @@
                 var startIndex = (currentPage - 1) * itemsPerPage;
                 var endIndex = startIndex + itemsPerPage;
 
-                // Iterate through each account
                 accounts.each(function(index) {
                     if (index >= startIndex && index < endIndex) {
                         var accountId = $(this).find("ns2\\:accountId").text();
@@ -113,7 +104,6 @@
                         var accountStatus = $(this).find("ns2\\:accountStatus").text();
                         var accountBalance = $(this).find("ns2\\:accountBalance").text();
 
-                        // Construct HTML for each account
                         var accountHTML = `
                             <div class="card2 mt-3">
                                 <div class="card-body">
@@ -126,18 +116,14 @@
                             </div>
                         `;
 
-                        // Append account HTML to the overall account details HTML
                         accountDetailsHTML += accountHTML;
                     }
                 });
 
-                // Display active accounts in HTML
                 $("#accountDetails").html(accountDetailsHTML);
 
-                // Hide error message if previously shown
                 $("#errorMessage").addClass("d-none");
 
-                // Render pagination
                 renderPagination(accounts.length);
             },
             error: function(xhr, status, error) {
@@ -158,13 +144,26 @@
         $("#pagination").html(`<nav aria-label="Page navigation"><ul class="pagination">${paginationHTML}</ul></nav>`);
     }
 
+    // function redirectToCloseAccountPage(accountNumber, accountType, accountStatus, accountBalance) {
+    //     // Construct URL with parameters
+    //     var url = "/customer/update?accountNumber=" + encodeURIComponent(accountNumber) +
+    //         "&accountType=" + encodeURIComponent(accountType) +
+    //         "&accountStatus=" + encodeURIComponent(accountStatus) +
+    //         "&accountBalance=" + encodeURIComponent(accountBalance);
+    //     window.location.href = url;
+    // }
+
     function redirectToCloseAccountPage(accountNumber, accountType, accountStatus, accountBalance) {
-        // Construct URL with parameters
-        var url = "/customer/update?accountNumber=" + encodeURIComponent(accountNumber) +
-            "&accountType=" + encodeURIComponent(accountType) +
-            "&accountStatus=" + encodeURIComponent(accountStatus) +
-            "&accountBalance=" + encodeURIComponent(accountBalance);
-        window.location.href = url;
+        // Store account details in session storage
+        var accountDetails = {
+            accountNumber: accountNumber,
+            accountType: accountType,
+            accountStatus: accountStatus,
+            accountBalance: accountBalance
+        };
+        sessionStorage.setItem('accountDetails', JSON.stringify(accountDetails));
+
+        window.location.href = "/customer/update";
     }
     fetchActiveAccounts();
 </script>

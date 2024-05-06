@@ -52,6 +52,7 @@
             <div class="form group">
                 <label>Account Number</label>
                 <input type="number" id="accountNumber" class="form-control" placeholder="Account Number" readonly/>
+                <small id="accountNumberError" class="text-danger"></small>
             </div>
 <!--            <div class="form group">-->
 <!--                <label>Customer Id</label>-->
@@ -60,14 +61,17 @@
             <div class="form group">
                 <label>Account Type</label>
                 <input type="text" id="accountType" class="form-control" placeholder="Account Type" readonly/>
+                <small id="accountTypeError" class="text-danger"></small>
             </div>
             <div class="form group">
                 <label>Account status</label>
                 <input type="text" id="accountStatus" class="form-control" placeholder="Account Status" readonly/>
+                <small id="accountStatusError" class="text-danger"></small>
             </div>
             <div class="form group">
                 <label>Account Balance</label>
                 <input type="number" id="accountBalance" class="form-control" placeholder="Account Balance" readonly/>
+                <small id="accountBalanceError" class="text-danger"></small>
             </div>
 <!--            <div class="m-5 row justify-content-around">-->
 <!--                <button id="add" class="col-1 btn custom-button3"><p class="display-6 bi bi-cash-coin"></p> Close Account</button>-->
@@ -84,29 +88,75 @@
         </div>
     </div>
 </div>
+
 </body>
 <footer th:insert="footer :: foot"></footer>
 <script>
+    function validation() {
+        const accountNumber = $("#accountNumber").val();
+        const accountType = $("#accountType").val();
+        const accountStatus = $("#accountStatus").val();
+        const accountBalance = $("#accountBalance").val();
+        let isValid = true;
+
+        // Account Number validation
+        if (accountNumber.trim() === '') {
+            $("#accountNumberError").text("Account Number is required");
+            isValid = false;
+        } else {
+            $("#accountNumberError").text('');
+        }
+
+        // Account Type validation
+        if (accountType.trim() === '') {
+            $("#accountTypeError").text("Account Type is required");
+            isValid = false;
+        } else {
+            $("#accountTypeError").text('');
+        }
+
+        // Account Status validation
+        if (accountStatus.trim() === '') {
+            $("#accountStatusError").text("Account Status is required");
+            isValid = false;
+        } else {
+            $("#accountStatusError").text('');
+        }
+
+        // Account Balance validation
+        if (accountBalance.trim() === '') {
+            $("#accountBalanceError").text("Account Balance is required");
+            isValid = false;
+        } else if (isNaN(accountBalance)) {
+            $("#accountBalanceError").text("Account Balance must be a number");
+            isValid = false;
+        } else {
+            $("#accountBalanceError").text('');
+        }
+        return isValid;
+    }
+
+
+
     $(document).ready(() => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const accountNumber = urlParams.get('accountNumber');
-        const accountType = urlParams.get('accountType');
-        const accountStatus = urlParams.get('accountStatus');
-        const accountBalance = urlParams.get('accountBalance');
+        // Retrieve account details from session storage
+        const storedAccountDetails = sessionStorage.getItem('accountDetails');
+        const accountDetails = JSON.parse(storedAccountDetails);
 
         $("#accountId").val("***");
-        $("#accountNumber").val(accountNumber);
+        $("#accountNumber").val(accountDetails.accountNumber);
         $("#customerId").val("***");
-        $("#accountType").val(accountType);
-        $("#accountStatus").val(accountStatus);
-        $("#accountBalance").val(accountBalance);
+        $("#accountType").val(accountDetails.accountType);
+        $("#accountStatus").val(accountDetails.accountStatus);
+        $("#accountBalance").val(accountDetails.accountBalance);
 
         $("#add").click(() => {
+            if (validation()) {
             const request = {
-                "accountNumber": accountNumber,
-                "accountType": accountType,
-                "accountStatus": accountStatus,
-                "accountBalance": accountBalance
+                "accountNumber": accountDetails.accountNumber,
+                "accountType": accountDetails.accountType,
+                "accountStatus": accountDetails.accountStatus,
+                "accountBalance": accountDetails.accountBalance
             };
 
             $.ajax({
@@ -118,18 +168,17 @@
                 success: function (response) {
                     $("#status").empty();
                     $("#status").append('<div class="alert alert-success d-flex align-items-center" role="alert"> <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg> <div> Account Service Closed Successfully </div> </div>');
+                    // // Clear session storage after success
+                    sessionStorage.removeItem('accountDetails');
                 },
                 error: function (xhr, status, error) {
                     let errorMessage = xhr.responseText;
-                    let errorCode = xhr.status;
+                    let errorCode = 200;
                     window.location.href = "/customer/error/?message=" + encodeURIComponent(errorMessage) + "&code=" + encodeURIComponent(errorCode);
                 }
             });
+        }
         });
     });
 </script>
-
-
-
-
 </html>

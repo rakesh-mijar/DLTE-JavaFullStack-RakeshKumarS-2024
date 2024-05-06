@@ -1,5 +1,6 @@
 package com.example.backend.authenticate;
 
+import com.project.dao.remotes.CustomerRepository;
 import com.project.dao.security.MyBankCustomersService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,8 +59,6 @@ public class CustomerSecureConfig{
         source.registerCorsConfiguration("/**",configuration);
         return source;
     }
-
-    //for processing incoming HTTP requests and enforcing security rules
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
         httpSecurity.httpBasic();//enables http basic authentication
@@ -80,8 +79,6 @@ public class CustomerSecureConfig{
                 successHandler(customersSucccessHandler);
         httpSecurity.csrf().disable();
         httpSecurity.cors();
-
-
 
         httpSecurity.authorizeRequests().antMatchers("/accountsrepo/accounts.wsdl").permitAll();
 

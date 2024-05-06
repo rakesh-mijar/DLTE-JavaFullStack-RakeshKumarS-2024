@@ -1,19 +1,20 @@
 package com.example.backend.soap.services;
 
+import com.project.dao.entities.MyBankCustomers;
 import com.project.dao.exceptions.AccountNotFoundException;
-import com.project.dao.exceptions.CustomerNotFoundException;
-import com.project.dao.exceptions.ServerException;
+
+
 import com.project.dao.remotes.AccountRepository;
-import com.project.dao.security.MyBankCustomers;
+import com.project.dao.remotes.CustomerRepository;
+
+
 import com.project.dao.security.MyBankCustomersService;
-import com.project.dao.services.AccountsServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -23,9 +24,9 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import services.accounts.*;
 
 import javax.servlet.http.HttpServletResponse;
+import java.rmi.ServerException;
 import java.sql.SQLSyntaxErrorException;
-import java.util.ArrayList;
-import java.util.Iterator;
+
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
@@ -46,10 +47,9 @@ public class SoapPhase {
     @Autowired
     public AccountRepository accountsServices;
 
-    //lambda expression to filter the account details of customer based on customer id
     @PayloadRoot(namespace = url, localPart = "filterByStatusRequest")
     @ResponsePayload
-    public FilterByStatusResponse filterByStatus(@RequestPayload FilterByStatusRequest filterByStatusRequest) throws CustomerNotFoundException {
+    public FilterByStatusResponse filterByStatus(@RequestPayload FilterByStatusRequest filterByStatusRequest){
 
         FilterByStatusResponse filterByStatusResponse = new FilterByStatusResponse();
         ServiceStatus serviceStatus = new ServiceStatus();
@@ -58,13 +58,14 @@ public class SoapPhase {
         String username=authentication.getName();
 
         MyBankCustomers myBankCustomer=myBankCustomersService.findByUsername(username);
-
+        
 
         try {
             //if(myBankCustomers.getCustomerId()==filterByStatusRequest.getCustomerId()) {
+            if (myBankCustomer != null && accountsServices != null) {
                 List<com.project.dao.entities.Accounts> fromDao = accountsServices.filterByCustomerStatus(myBankCustomer.getCustomerId());
 
-                //lambda expression to filter the account details of customer based on customer id
+
                 List<services.accounts.Accounts> actualAccounts = fromDao.stream()
                         .map(account -> {
                             services.accounts.Accounts currentAccount = new services.accounts.Accounts();
@@ -78,6 +79,12 @@ public class SoapPhase {
                 serviceStatus.setMessage(resourceBundle.getString("account.fetch.success"));
                 filterByStatusResponse.setServiceStatus(serviceStatus);
                 filterByStatusResponse.getAccounts().addAll(actualAccounts);
+            }else {
+                logger.warn("Null object detected: myBankCustomer or accountsServices");
+                serviceStatus.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                serviceStatus.setMessage("Null object detected: myBankCustomer or accountsServices");
+                filterByStatusResponse.setServiceStatus(serviceStatus);
+            }
            // }
 //            else{
 //                logger.info("failure.fetch");
@@ -85,34 +92,22 @@ public class SoapPhase {
 //                serviceStatus.setMessage(resourceBundle.getString("authorization.error"));
 //                filterByStatusResponse.setServiceStatus(serviceStatus);
 //            }
-        } catch ( CustomerNotFoundException e) {
+        }catch (AccountNotFoundException e) {
             logger.warn("failure.fetch");
-            serviceStatus.setStatus(HttpServletResponse.SC_NO_CONTENT);//204
+            serviceStatus.setStatus(HttpServletResponse.SC_OK);//404
             serviceStatus.setMessage(e.getMessage());
             filterByStatusResponse.setServiceStatus(serviceStatus);
-        }catch ( AccountNotFoundException e) {
-            logger.warn("failure.fetch");
-            serviceStatus.setStatus(HttpServletResponse.SC_NOT_FOUND);//404
-            serviceStatus.setMessage(e.getMessage());
-            filterByStatusResponse.setServiceStatus(serviceStatus);
-        }catch (ServerException | java.rmi.ServerException e) {
+        }catch (ServerException | SQLSyntaxErrorException e) {
             logger.warn("failure.fetch");
             serviceStatus.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);//500
             serviceStatus.setMessage(e.getMessage());
             filterByStatusResponse.setServiceStatus(serviceStatus);
-        } catch (SQLSyntaxErrorException e) {
-            e.printStackTrace();
+//        } catch (SQLSyntaxErrorException e) {
+//            e.printStackTrace();
         }
 
         return filterByStatusResponse;
     }
-    //    List<Account> received = accountService.filterByStatus(filterByStatusRequest.getCustomerId());
-//    List<services.account.Account> returnAccount = new ArrayList<>();
-//
-//for (Account account : received) {
-//        services.account.Account currentAccount = new services.account.Account();
-//        BeanUtils.copyProperties(account, currentAccount);
-//        returnAccount.add(currentAccount);
-//        }
+
 }
 

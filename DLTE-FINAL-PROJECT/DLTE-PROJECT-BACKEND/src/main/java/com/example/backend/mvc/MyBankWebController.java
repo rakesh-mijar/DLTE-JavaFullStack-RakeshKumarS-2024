@@ -1,7 +1,7 @@
 package com.example.backend.mvc;
 
-import com.project.dao.entities.Customers;
-import com.project.dao.security.MyBankCustomers;
+
+import com.project.dao.entities.MyBankCustomers;
 import com.project.dao.security.MyBankCustomersService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.validation.constraints.Null;
+
 import java.util.ResourceBundle;
 
 @Controller
@@ -49,7 +49,7 @@ public class MyBankWebController {
 
         @GetMapping("/error")
         public String error(){
-                return "errorpage";
+                return "error";
         }
 
         @GetMapping("/name")
