@@ -1,0 +1,180 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: AccountController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.backend.rest.services</a> ]
+</div>
+
+<h1>Coverage Summary for Class: AccountController (com.example.backend.rest.services)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AccountController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    80%
+  </span>
+  <span class="absValue">
+    (24/ 30)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.backend.rest.services;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;import com.project.dao.entities.Accounts;
+<i>5</i>&nbsp;import com.project.dao.entities.MyBankCustomers;
+<i>6</i>&nbsp;import com.project.dao.exceptions.AccountNotFoundException;
+<i>7</i>&nbsp;import com.project.dao.remotes.AccountRepository;
+<i>8</i>&nbsp;import com.project.dao.remotes.CustomerRepository;
+<i>9</i>&nbsp;import com.project.dao.security.MyBankCustomersService;
+<i>10</i>&nbsp;import io.swagger.v3.oas.annotations.Operation;
+<i>11</i>&nbsp;import io.swagger.v3.oas.annotations.responses.ApiResponse;
+<i>12</i>&nbsp;import io.swagger.v3.oas.annotations.responses.ApiResponses;
+<i>13</i>&nbsp;import org.slf4j.Logger;
+<i>14</i>&nbsp;import org.slf4j.LoggerFactory;
+<i>15</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>16</i>&nbsp;import org.springframework.dao.DataAccessException;
+<i>17</i>&nbsp;import org.springframework.http.HttpStatus;
+<i>18</i>&nbsp;import org.springframework.http.ResponseEntity;
+<i>19</i>&nbsp;import org.springframework.security.core.Authentication;
+<i>20</i>&nbsp;import org.springframework.security.core.context.SecurityContextHolder;
+<i>21</i>&nbsp;import org.springframework.validation.FieldError;
+<i>22</i>&nbsp;import org.springframework.web.bind.MethodArgumentNotValidException;
+<i>23</i>&nbsp;import org.springframework.web.bind.annotation.*;
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;import javax.servlet.http.HttpServletResponse;
+<i>26</i>&nbsp;import javax.validation.Valid;
+<i>27</i>&nbsp;import java.rmi.ServerException;
+<i>28</i>&nbsp;import java.util.*;
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;@RestController
+<i>31</i>&nbsp;@RequestMapping(&quot;/accounts&quot;)
+<b class="fc"><i>32</i>&nbsp;public class AccountController {</b>
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;    //http://localhost:7001/backend-0.0.1-SNAPSHOT/v3/api-docs
+<i>35</i>&nbsp;    //http://localhost:8082/accounts/closeAccounts
+<i>36</i>&nbsp;
+<i>37</i>&nbsp;    @Autowired
+<i>38</i>&nbsp;    private AccountRepository accountService;
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    @Autowired
+<i>41</i>&nbsp;    private CustomerRepository myBankCustomersService;
+<i>42</i>&nbsp;
+<b class="fc"><i>43</i>&nbsp;    ResourceBundle resourceBundle=ResourceBundle.getBundle(&quot;accounts&quot;);</b>
+<b class="fc"><i>44</i>&nbsp;    Logger logger= LoggerFactory.getLogger(AccountController.class);</b>
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;
+<i>47</i>&nbsp;    @Operation(summary = &quot;Closing the account service&quot;)
+<i>48</i>&nbsp;    @PutMapping(&quot;/closeAccounts&quot;)
+<i>49</i>&nbsp;    @ApiResponses(value = {
+<i>50</i>&nbsp;            @ApiResponse(responseCode = &quot;200&quot;, description = &quot;Account closed successfully&quot;),
+<i>51</i>&nbsp;            @ApiResponse(responseCode = &quot;500&quot;, description = &quot;Internal server error&quot;),
+<i>52</i>&nbsp;            @ApiResponse(responseCode = &quot;400&quot;,description = &quot;Bad Request&quot;),
+<i>53</i>&nbsp;            @ApiResponse(responseCode = &quot;EXC001&quot;,description = &quot;Account is already inactive&quot;)
+<i>54</i>&nbsp;    })
+<i>55</i>&nbsp;    public ResponseEntity&lt;Object&gt; closeAccountService(@Valid @RequestBody Accounts account) {
+<b class="fc"><i>56</i>&nbsp;        Authentication authentication=SecurityContextHolder.getContext().getAuthentication();</b>
+<b class="fc"><i>57</i>&nbsp;        System.out.println(authentication);</b>
+<b class="fc"><i>58</i>&nbsp;        String username = authentication.getName();</b>
+<b class="fc"><i>59</i>&nbsp;        MyBankCustomers customers=myBankCustomersService.findByUsername(username);</b>
+<i>60</i>&nbsp;
+<i>61</i>&nbsp;        try {
+<b class="fc"><i>62</i>&nbsp;            account.setCustomerId(customers.getCustomerId());</b>
+<b class="fc"><i>63</i>&nbsp;            System.out.println(account);</b>
+<b class="fc"><i>64</i>&nbsp;            Accounts updatedAccount = accountService.UpdateAccountService(account);</b>
+<b class="fc"><i>65</i>&nbsp;            logger.warn(resourceBundle.getString(&quot;account.close.service&quot;));</b>
+<i>66</i>&nbsp;
+<b class="fc"><i>67</i>&nbsp;            Map&lt;String, Object&gt; responseMap = new HashMap&lt;&gt;();</b>
+<b class="fc"><i>68</i>&nbsp;            responseMap.put(&quot;accountNumber&quot;, updatedAccount.getAccountNumber());</b>
+<b class="fc"><i>69</i>&nbsp;            responseMap.put(&quot;accountType&quot;, updatedAccount.getAccountType());</b>
+<b class="fc"><i>70</i>&nbsp;            responseMap.put(&quot;accountStatus&quot;, updatedAccount.getAccountStatus());</b>
+<b class="fc"><i>71</i>&nbsp;            responseMap.put(&quot;accountBalance&quot;, updatedAccount.getAccountBalance());</b>
+<i>72</i>&nbsp;
+<b class="fc"><i>73</i>&nbsp;            return ResponseEntity.status(HttpServletResponse.SC_OK).body(responseMap+resourceBundle.getString(&quot;account.close.service&quot;));</b>
+<i>74</i>&nbsp;        }
+<b class="nc"><i>75</i>&nbsp;            catch (AccountNotFoundException accountException) {</b>
+<b class="nc"><i>76</i>&nbsp;                logger.warn(resourceBundle.getString(&quot;inactive.account&quot;));</b>
+<b class="nc"><i>77</i>&nbsp;                return ResponseEntity.status(HttpServletResponse.SC_OK).body(resourceBundle.getString(&quot;account.error.one&quot;)+accountException.getMessage());</b>
+<i>78</i>&nbsp;
+<i>79</i>&nbsp;            }
+<b class="nc"><i>80</i>&nbsp;        catch (ServerException serverException) {</b>
+<b class="nc"><i>81</i>&nbsp;            logger.warn(resourceBundle.getString(&quot;no.data&quot;));</b>
+<b class="nc"><i>82</i>&nbsp;            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(serverException.getMessage());</b>
+<i>83</i>&nbsp;        }
+<i>84</i>&nbsp;    }
+<i>85</i>&nbsp;    @ResponseStatus(HttpStatus.OK)
+<i>86</i>&nbsp;    @ExceptionHandler(MethodArgumentNotValidException.class)
+<i>87</i>&nbsp;    public Map&lt;String, String&gt; handleValidationExceptions(MethodArgumentNotValidException ex) {
+<b class="fc"><i>88</i>&nbsp;        Map&lt;String, String&gt; errors = new HashMap&lt;&gt;();</b>
+<b class="fc"><i>89</i>&nbsp;        ex.getBindingResult().getAllErrors().forEach((error) -&gt; {</b>
+<b class="fc"><i>90</i>&nbsp;            String fieldName = ((FieldError) error).getField();</b>
+<b class="fc"><i>91</i>&nbsp;            String errorMessage = error.getDefaultMessage();</b>
+<b class="fc"><i>92</i>&nbsp;            errors.put(fieldName, errorMessage);</b>
+<b class="fc"><i>93</i>&nbsp;        });</b>
+<b class="fc"><i>94</i>&nbsp;        return errors;</b>
+<i>95</i>&nbsp;    }
+<i>96</i>&nbsp;
+<i>97</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-05-08 18:23</div>
+</div>
+</body>
+</html>

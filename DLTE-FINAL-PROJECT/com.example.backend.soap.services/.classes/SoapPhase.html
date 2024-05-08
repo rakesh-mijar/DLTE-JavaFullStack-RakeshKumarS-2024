@@ -1,0 +1,189 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: SoapPhase</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.example.backend.soap.services</a> ]
+</div>
+
+<h1>Coverage Summary for Class: SoapPhase (com.example.backend.soap.services)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SoapPhase</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    74.4%
+  </span>
+  <span class="absValue">
+    (29/ 39)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.example.backend.soap.services;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.project.dao.entities.MyBankCustomers;
+<i>4</i>&nbsp;import com.project.dao.exceptions.AccountNotFoundException;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import com.project.dao.remotes.AccountRepository;
+<i>8</i>&nbsp;import com.project.dao.remotes.CustomerRepository;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;import com.project.dao.security.MyBankCustomersService;
+<i>12</i>&nbsp;import org.slf4j.Logger;
+<i>13</i>&nbsp;import org.slf4j.LoggerFactory;
+<i>14</i>&nbsp;import org.springframework.beans.BeanUtils;
+<i>15</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>16</i>&nbsp;import org.springframework.context.annotation.ComponentScan;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;import org.springframework.http.ResponseEntity;
+<i>19</i>&nbsp;import org.springframework.security.core.Authentication;
+<i>20</i>&nbsp;import org.springframework.security.core.context.SecurityContextHolder;
+<i>21</i>&nbsp;import org.springframework.ws.server.endpoint.annotation.Endpoint;
+<i>22</i>&nbsp;import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
+<i>23</i>&nbsp;import org.springframework.ws.server.endpoint.annotation.RequestPayload;
+<i>24</i>&nbsp;import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+<i>25</i>&nbsp;import services.accounts.*;
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;import javax.servlet.http.HttpServletResponse;
+<i>28</i>&nbsp;import java.rmi.ServerException;
+<i>29</i>&nbsp;import java.sql.SQLSyntaxErrorException;
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;import java.util.List;
+<i>32</i>&nbsp;import java.util.ResourceBundle;
+<i>33</i>&nbsp;import java.util.stream.Collectors;
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;@Endpoint
+<i>37</i>&nbsp;@ComponentScan(&quot;com.project.dao&quot;)
+<b class="fc"><i>38</i>&nbsp;public class SoapPhase {</b>
+<b class="fc"><i>39</i>&nbsp;    ResourceBundle resourceBundle=ResourceBundle.getBundle(&quot;accounts&quot;);</b>
+<b class="fc"><i>40</i>&nbsp;    private final String url=&quot;http://accounts.services&quot;;</b>
+<i>41</i>&nbsp;
+<b class="fc"><i>42</i>&nbsp;    private Logger logger= LoggerFactory.getLogger(SoapPhase.class);</b>
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;    //http://localhost:8082/accountsrepo/accounts.wsdl
+<i>45</i>&nbsp;    @Autowired
+<i>46</i>&nbsp;    private MyBankCustomersService myBankCustomersService;
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;    @Autowired
+<i>49</i>&nbsp;    public AccountRepository accountsServices;
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;    @PayloadRoot(namespace = url, localPart = &quot;filterByStatusRequest&quot;)
+<i>52</i>&nbsp;    @ResponsePayload
+<i>53</i>&nbsp;    public FilterByStatusResponse filterByStatus(@RequestPayload FilterByStatusRequest filterByStatusRequest){
+<i>54</i>&nbsp;
+<b class="fc"><i>55</i>&nbsp;        FilterByStatusResponse filterByStatusResponse = new FilterByStatusResponse();</b>
+<b class="fc"><i>56</i>&nbsp;        ServiceStatus serviceStatus = new ServiceStatus();</b>
+<i>57</i>&nbsp;
+<b class="fc"><i>58</i>&nbsp;        Authentication authentication=SecurityContextHolder.getContext().getAuthentication();</b>
+<b class="fc"><i>59</i>&nbsp;        String username=authentication.getName();</b>
+<i>60</i>&nbsp;
+<b class="fc"><i>61</i>&nbsp;        MyBankCustomers myBankCustomer=myBankCustomersService.findByUsername(username);</b>
+<i>62</i>&nbsp;        
+<i>63</i>&nbsp;
+<i>64</i>&nbsp;        try {
+<b class="fc"><i>65</i>&nbsp;            if (myBankCustomer != null &amp;&amp; accountsServices != null) {</b>
+<b class="fc"><i>66</i>&nbsp;                List&lt;com.project.dao.entities.Accounts&gt; fromDao = accountsServices.filterByCustomerStatus(myBankCustomer.getCustomerId());</b>
+<i>67</i>&nbsp;
+<i>68</i>&nbsp;
+<b class="fc"><i>69</i>&nbsp;                List&lt;services.accounts.Accounts&gt; actualAccounts = fromDao.stream()</b>
+<b class="fc"><i>70</i>&nbsp;                        .map(account -&gt; {</b>
+<b class="fc"><i>71</i>&nbsp;                            services.accounts.Accounts currentAccount = new services.accounts.Accounts();</b>
+<b class="fc"><i>72</i>&nbsp;                            BeanUtils.copyProperties(account, currentAccount);</b>
+<b class="fc"><i>73</i>&nbsp;                            return currentAccount;</b>
+<i>74</i>&nbsp;                        })
+<b class="fc"><i>75</i>&nbsp;                        .collect(Collectors.toList());</b>
+<i>76</i>&nbsp;
+<b class="fc"><i>77</i>&nbsp;                logger.info(resourceBundle.getString(&quot;success.fetch&quot;));</b>
+<b class="fc"><i>78</i>&nbsp;                serviceStatus.setStatus(HttpServletResponse.SC_OK);</b>
+<b class="fc"><i>79</i>&nbsp;                serviceStatus.setMessage(resourceBundle.getString(&quot;account.fetch.success&quot;));</b>
+<b class="fc"><i>80</i>&nbsp;                filterByStatusResponse.setServiceStatus(serviceStatus);</b>
+<b class="fc"><i>81</i>&nbsp;                filterByStatusResponse.getAccounts().addAll(actualAccounts);</b>
+<b class="fc"><i>82</i>&nbsp;            }else {</b>
+<b class="fc"><i>83</i>&nbsp;                logger.warn(resourceBundle.getString(&quot;null.account&quot;));</b>
+<b class="fc"><i>84</i>&nbsp;                serviceStatus.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);</b>
+<b class="fc"><i>85</i>&nbsp;                serviceStatus.setMessage(resourceBundle.getString(&quot;null.account&quot;));</b>
+<b class="fc"><i>86</i>&nbsp;                filterByStatusResponse.setServiceStatus(serviceStatus);</b>
+<i>87</i>&nbsp;            }
+<b class="nc"><i>88</i>&nbsp;        }catch (AccountNotFoundException e) {</b>
+<b class="nc"><i>89</i>&nbsp;            logger.warn(resourceBundle.getString(&quot;failure.fetch&quot;));</b>
+<b class="nc"><i>90</i>&nbsp;            serviceStatus.setStatus(HttpServletResponse.SC_OK);</b>
+<b class="nc"><i>91</i>&nbsp;            serviceStatus.setMessage(resourceBundle.getString(&quot;account.error.two&quot;)+e.getMessage());</b>
+<b class="nc"><i>92</i>&nbsp;            filterByStatusResponse.setServiceStatus(serviceStatus);</b>
+<b class="nc"><i>93</i>&nbsp;        }catch (ServerException | SQLSyntaxErrorException e) {</b>
+<b class="nc"><i>94</i>&nbsp;            logger.warn(resourceBundle.getString(&quot;failure.fetch&quot;));</b>
+<b class="nc"><i>95</i>&nbsp;            serviceStatus.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);//500</b>
+<b class="nc"><i>96</i>&nbsp;            serviceStatus.setMessage(e.getMessage());</b>
+<b class="nc"><i>97</i>&nbsp;            filterByStatusResponse.setServiceStatus(serviceStatus);</b>
+<i>98</i>&nbsp;//        } catch (SQLSyntaxErrorException e) {
+<i>99</i>&nbsp;//            e.printStackTrace();
+<b class="fc"><i>100</i>&nbsp;        }</b>
+<i>101</i>&nbsp;
+<b class="fc"><i>102</i>&nbsp;        return filterByStatusResponse;</b>
+<i>103</i>&nbsp;    }
+<i>104</i>&nbsp;
+<i>105</i>&nbsp;}
+<i>106</i>&nbsp;
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-05-08 18:23</div>
+</div>
+</body>
+</html>

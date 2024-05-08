@@ -1,0 +1,244 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "OpenAPI definition",
+        "version": "v0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8082",
+            "description": "Generated server url"
+        }
+    ],
+    "paths": {
+        "/accounts/closeAccounts": {
+            "put": {
+                "tags": [
+                    "account-controller"
+                ],
+                "summary": "Closing the account service",
+                "operationId": "closeAccountService",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Accounts"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Account closed successfully",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "EXC001": {
+                        "description": "Account is already inactive",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/profile/register": {
+            "post": {
+                "tags": [
+                    "my-bank-customers-api"
+                ],
+                "operationId": "save",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MyBankCustomers"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MyBankCustomers"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/customer/name": {
+            "get": {
+                "tags": [
+                    "my-bank-web-controller"
+                ],
+                "operationId": "customerName",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Accounts": {
+                "required": [
+                    "accountBalance",
+                    "accountNumber",
+                    "accountStatus",
+                    "accountType"
+                ],
+                "type": "object",
+                "properties": {
+                    "accountId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "accountNumber": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "customerId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "accountType": {
+                        "pattern": "^[a-zA-Z]+$",
+                        "type": "string"
+                    },
+                    "accountStatus": {
+                        "pattern": "^(?i)(active|inactive)$",
+                        "type": "string"
+                    },
+                    "accountBalance": {
+                        "type": "number",
+                        "format": "double"
+                    }
+                }
+            },
+            "GrantedAuthority": {
+                "type": "object",
+                "properties": {
+                    "authority": {
+                        "type": "string"
+                    }
+                }
+            },
+            "MyBankCustomers": {
+                "required": [
+                    "customerAddress",
+                    "customerContact",
+                    "customerName",
+                    "customerStatus",
+                    "password"
+                ],
+                "type": "object",
+                "properties": {
+                    "customerId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "customerName": {
+                        "pattern": "^[a-zA-Z ]+$",
+                        "type": "string"
+                    },
+                    "customerAddress": {
+                        "pattern": "^[a-zA-Z ]+$",
+                        "type": "string"
+                    },
+                    "customerStatus": {
+                        "pattern": "^(?i)(Active|Inactive)$",
+                        "type": "string"
+                    },
+                    "customerContact": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "username": {
+                        "pattern": "^[a-zA-Z0-9]+$",
+                        "type": "string"
+                    },
+                    "password": {
+                        "maxLength": 2147483647,
+                        "minLength": 8,
+                        "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!]).*$",
+                        "type": "string"
+                    },
+                    "maxAttempt": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "attempts": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "enabled": {
+                        "type": "boolean"
+                    },
+                    "authorities": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/GrantedAuthority"
+                        }
+                    },
+                    "accountNonLocked": {
+                        "type": "boolean"
+                    },
+                    "accountNonExpired": {
+                        "type": "boolean"
+                    },
+                    "credentialsNonExpired": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        }
+    }
+}
