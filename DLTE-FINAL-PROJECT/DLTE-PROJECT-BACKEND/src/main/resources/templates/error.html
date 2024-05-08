@@ -114,11 +114,6 @@
             font-family: "Poppins", sans-serif;
             font-size: 46px;
         }
-        /*.custom-btn {*/
-        /*    background-color: #182052;*/
-        /*    width: 200px; !* Set the width to 200 pixels *!*/
-        /*    height: 50px; !* Set the height to 50 pixels *!*/
-        /*}*/
         button {
             background-color: powderblue;
             color: #003870;
@@ -161,17 +156,14 @@
 </div>
 
 <script>
-    // Get the error code and message from the URL parameters
     const params = new URLSearchParams(window.location.search);
     const errorCode = params.get('code');
     const errorMessage = params.get('message');
 
-    // Display error code and message if available
     if (errorCode && errorMessage) {
         document.getElementById('errorCode').innerText = errorCode;
         document.getElementById('errorMessage').innerText = errorMessage;
     } else {
-        // If code and message are not available, show 404 message and hide dashboard link
         document.getElementById('notFoundMessage').style.display = 'block';
         document.getElementById('dashboardLink').style.display = 'none';
     }

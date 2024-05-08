@@ -2,6 +2,7 @@ package com.example.backend;
 
 import com.example.backend.authenticate.CustomersFailureHandler;
 import com.example.backend.authenticate.CustomersSucccessHandler;
+import com.project.dao.DemoApplication;
 import com.project.dao.entities.MyBankCustomers;
 import com.project.dao.remotes.CustomerRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,6 +13,7 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.security.authentication.LockedException;
@@ -53,7 +55,7 @@ public class SecurityTest {
     public void testOnAuthenticationSuccess_ActiveCustomer() throws Exception {
         Authentication authentication = mock(Authentication.class);
         MyBankCustomers customer = new MyBankCustomers();
-        customer.setCustomerStatus("Active");
+        customer.setCustomerStatus("active");
         customer.setCustomerId(1L);
         customer.setCustomerName("Ram");
         customer.setCustomerAddress("Bangalore");
@@ -93,7 +95,7 @@ public class SecurityTest {
 
         successHandler.onAuthenticationSuccess(request, response, authentication);
         System.out.println("Redirected URL: " + response.getRedirectedUrl());
-        assertEquals("/customer/?error=Account suspended contact admin to redeem", response.getRedirectedUrl());
+        assertEquals("/customer/?errors=Account suspended contact admin to redeem", response.getRedirectedUrl());
     }
 
     ResourceBundle resourceBundle = ResourceBundle.getBundle("accounts");
@@ -114,7 +116,7 @@ public class SecurityTest {
 
         when(customerRepository.findByUsername(username)).thenReturn(customer);
 
-        // Simulating authentication failure
+
         int maxAttempts = 3;
         int remainingAttempts = maxAttempts - customer.getAttempts();
         String exceptionMessage = remainingAttempts + " Attempts are taken";
@@ -156,8 +158,19 @@ public class SecurityTest {
         customerSuccessHandler.onAuthenticationSuccess(request, response, authentication);
 
         System.out.println(response.getRedirectedUrl());
-        assertEquals("/customer/?error=Account suspended contact admin to redeem", response.getRedirectedUrl());
+        assertEquals("/customer/?errors=Account suspended contact admin to redeem", response.getRedirectedUrl());
         // Assert
         //Mockito.verify(response).encodeRedirectURL("/customer/?error=Account suspended contact admin to redeem");
+    }
+    @Mock
+    private SpringApplicationBuilder mockApplicationBuilder;
+
+    @Test
+    void configureTest() {
+        ServletInitializer servletInitializer = new ServletInitializer();
+
+        servletInitializer.configure(mockApplicationBuilder);
+
+        verify(mockApplicationBuilder).sources(BackendApplication.class);
     }
 }

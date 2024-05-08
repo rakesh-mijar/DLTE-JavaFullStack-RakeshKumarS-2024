@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
 <body class="bg-dark text-white" th:background="@{'/images/login-image.jpg'}">
 <div id="title-logo">
@@ -24,7 +23,6 @@
         <div class="col-md-6 pr-md-4">
             <h1 class="login">Login</h1>
             <p>Sign in to continue</p>
-            <button type="submit" class="btn btn-orange mt-3">Learn More</button>
         </div>
         <div class="col-md-6 ml-auto d-flex align-items-center justify-content-center">
             <div class="card text-white mb-3 p-3 shadow-lg">
@@ -32,6 +30,10 @@
                 <h5 th:if="${param.error}" style="text-align: center; margin-bottom: 20px;">
                     <span style="font-size: 20px; color: Red;" th:text="${session?.SPRING_SECURITY_LAST_EXCEPTION?.message}"></span>
                 </h5>
+                <h5 th:if="${param.errors}" style="text-align: center; margin-bottom: 20px;">
+                    <span style="font-size: 20px; color: Red;" th:text="${param.errors}"></span>
+                </h5>
+<!--                <h5 th:if="${param.errors}" class="error-message text-warning`" th:text="${param.errors}"></h5>-->
                 <form id="loginForm" th:action="@{'/customer/'}" method="post">
                     <!-- Username Input -->
                     <div class="form-group">
@@ -43,7 +45,12 @@
                         <label for="password">Password</label>
                         <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required autofocus>
                     </div>
-                    <button type="submit" class="btn btn-orange mt-3">Login</button>
+<!--                    <button type="submit" class="btn btn-orange mt-3">Login</button>-->
+                    <div class="row justify-content-around mt-4">
+<!--                        <input type="submit" id="login" value="login" class="btn btn-orange mt-3"/>-->
+                        <button type="submit" class="btn btn-orange mt-3">Login</button>
+                        <button type="reset" id="reset" class="btn btn-primary mt-3" style="background-color: #6c757d;">Reset</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -51,13 +58,6 @@
 </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<!--<script>-->
-<!--    $(document).ready(function() {-->
-<!--        $("#loginForm").submit(function(event) {-->
-<!--            event.preventDefault();-->
-<!--            this.submit();-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
+
 </html>
 

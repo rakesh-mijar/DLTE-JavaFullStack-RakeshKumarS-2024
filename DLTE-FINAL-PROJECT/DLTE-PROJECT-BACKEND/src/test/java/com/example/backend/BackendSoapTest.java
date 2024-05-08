@@ -42,7 +42,7 @@ import static org.mockito.Mockito.*;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
-class BackendApplicationTests {
+class BackendSoapTest {
 
     @Mock
     private AccountRepository accountsServices;
@@ -140,7 +140,7 @@ class BackendApplicationTests {
         FilterByStatusRequest request = new FilterByStatusRequest();
         FilterByStatusResponse response = soapPhase.filterByStatus(request);
 
-        assertEquals("Null object detected: myBankCustomer or accountsServices", response.getServiceStatus().getMessage());
+        assertEquals("Null object detected", response.getServiceStatus().getMessage());
     }
 
     @Test

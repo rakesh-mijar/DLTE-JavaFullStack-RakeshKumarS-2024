@@ -12,22 +12,22 @@ import java.util.Collection;
 
 public class MyBankCustomers implements UserDetails {
     private Long customerId;
-    @NotNull(message = "ERR-001")
-    @Pattern(regexp = "^[a-zA-Z ]+$", message = "name.invalid")
+    @NotNull(message = "ERR002")
+    @Pattern(regexp = "^[a-zA-Z ]+$", message = "ERR006")
     private String customerName;
-    @NotNull(message = "ERR-001")
-    @Pattern(regexp = "^[a-zA-Z ]+$", message = "address.invalid")
+    @NotNull(message = "ERR002")
+    @Pattern(regexp = "^[a-zA-Z ]+$", message = "ERR007")
     private String customerAddress;
-    @NotNull(message = "ERR-001")
-    @Pattern(regexp = "^(?i)(Active|Inactive)$", message = "customer.status.invalid")
+    @NotNull(message = "ERR002")
+    @Pattern(regexp = "^(?i)(Active|Inactive)$", message = "ERR004")
     private String customerStatus;
-    @NotNull(message = "ERR-001")
-    @Digits(integer = 10, fraction = 0, message = "digits.customerContact")
+    @NotNull(message = "ERR002")
+    @Digits(integer = 10, fraction = 0, message = "ERR008")
     private Long customerContact;
-    @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "username.invalid")
+    @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "ERR009")
     private String username;
-    @NotNull(message = "ERR-001")
-    @Size(min = 8, message = "password.length.invalid")
+    @NotNull(message = "ERR002")
+    @Size(min = 8, message = "ERR010")
     @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!]).*$", message = "password.invalid")
     private String password;
     private final int maxAttempt=3;

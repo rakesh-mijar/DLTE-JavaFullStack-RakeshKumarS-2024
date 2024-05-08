@@ -27,7 +27,7 @@ public class ValidationTest {
         account.setAccountType("123");
         account.setAccountNumber(123456721L);
         account.setAccountStatus("Activ");
-        account.setAccountBalance(-1000D);
+        account.setAccountBalance(1000D);
 
 
         Set<ConstraintViolation<Accounts>> accounts = validatorFactoryBean.validate(account);
@@ -44,13 +44,14 @@ public class ValidationTest {
 
                 switch (property) {
                     case "accountNumber":
-                        assertEquals("Account number should be 12 digits", actualMessage, "Incorrect message for accountNumber validation");
+                        assertEquals("ERR001:Account number should be 12 digits", actualMessage, "Incorrect message for accountNumber validation");
                         break;
                     case "accountType":
-                        assertEquals("Invalid account type. Only alphabetic characters are allowed.", actualMessage, "Incorrect message for accountType validation");
+                        assertEquals("ERR003: Invalid account type. Only alphabetic characters are allowed.", actualMessage, "Incorrect message for accountType validation");
                         break;
                     case "accountStatus":
-                        assertEquals("Invalid account status. It must be either 'active' or 'inactive'.", actualMessage, "Incorrect message for accountStatus validation");
+                        assertEquals("ERR004: Invalid status entered. It must be either 'active' or 'inactive'." +
+                                "", actualMessage, "Incorrect message for accountStatus validation");
                         break;
                     case "accountBalance":
                         assertEquals("The account balance is limited to 10 digits", actualMessage, "Incorrect message for accountBalance validation");
@@ -90,16 +91,16 @@ public class ValidationTest {
                         assertEquals("name is not valid", message, "Incorrect message for customerName validation");
                         break;
                     case "customerAddress":
-                        assertEquals("enter valid address", message, "Incorrect message for customerAddress validation");
+                        assertEquals("ERR007: Enter valid address", message, "Incorrect message for customerAddress validation");
                         break;
                     case "customerStatus":
                         assertEquals("Customer status is invalid", message, "Incorrect message for customerStatus validation");
                         break;
                     case "customerContact":
-                        assertEquals("Enter 10 digits only", message, "Incorrect message for customerContact validation");
+                        assertEquals("ERR008: Enter 10 digits only", message, "Incorrect message for customerContact validation");
                         break;
                     case "username":
-                        assertEquals("enter valid username", message, "Incorrect message for username validation");
+                        assertEquals("ERR009: Enter valid username", message, "Incorrect message for username validation");
                         break;
                     case "password":
                         assertEquals("Password is invalid", message, "Incorrect message for password validation");

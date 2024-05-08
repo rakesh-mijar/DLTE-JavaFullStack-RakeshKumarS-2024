@@ -50,22 +50,13 @@ public class AccountController {
             @ApiResponse(responseCode = "200", description = "Account closed successfully"),
             @ApiResponse(responseCode = "500", description = "Internal server error"),
             @ApiResponse(responseCode = "400",description = "Bad Request"),
+            @ApiResponse(responseCode = "EXC001",description = "Account is already inactive")
     })
     public ResponseEntity<Object> closeAccountService(@Valid @RequestBody Accounts account) {
         Authentication authentication=SecurityContextHolder.getContext().getAuthentication();
         System.out.println(authentication);
         String username = authentication.getName();
         MyBankCustomers customers=myBankCustomersService.findByUsername(username);
-
-////        // Find accounts associated with the authenticated customer's customer ID
-//        List<Accounts> customerAccounts = myBankCustomersService.findByAccountNumber(customers.getCustomerId());
-////        // Check if the provided account number belongs to the authenticated customer
-//        boolean accountExists = customerAccounts.stream()
-//                .anyMatch(acc -> Objects.equals(account.getAccountNumber(), acc.getAccountNumber()));
-//
-//        if (!accountExists) {
-//            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Account number does not match the authenticated user.");
-//        }
 
         try {
             account.setCustomerId(customers.getCustomerId());
@@ -80,17 +71,13 @@ public class AccountController {
             responseMap.put("accountBalance", updatedAccount.getAccountBalance());
 
             return ResponseEntity.status(HttpServletResponse.SC_OK).body(responseMap+resourceBundle.getString("account.close.service"));
-            //return ResponseEntity.ok(updatedAccount);
-//        } catch (AccountNotFoundException accountException) {
-//            logger.warn(resourceBundle.getString("inactive.account"));
-//            return ResponseEntity.status(HttpServletResponse.SC_OK).body(accountException.getMessage());
         }
             catch (AccountNotFoundException accountException) {
                 logger.warn(resourceBundle.getString("inactive.account"));
-                return ResponseEntity.status(HttpServletResponse.SC_OK).body(resourceBundle.getString("loan.error.one")+accountException.getMessage());
+                return ResponseEntity.status(HttpServletResponse.SC_OK).body(resourceBundle.getString("account.error.one")+accountException.getMessage());
 
             }
-        catch (ServerException | DataAccessException serverException) {
+        catch (ServerException serverException) {
             logger.warn(resourceBundle.getString("no.data"));
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(serverException.getMessage());
         }

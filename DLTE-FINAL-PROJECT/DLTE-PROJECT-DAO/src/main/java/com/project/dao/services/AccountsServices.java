@@ -26,26 +26,6 @@ public class AccountsServices implements AccountRepository {
 
 
     @Override
-//    public List<Accounts> filterByCustomerStatus(Long customerId) throws SQLSyntaxErrorException, ServerException {
-//        // Query for active accounts related to the customer
-//        List<Accounts> shortlisted;
-//        try {
-//            shortlisted = jdbcTemplate.query("SELECT a.*\n" +
-//                            "FROM MYBANK_APP_ACCOUNT a\n" +
-//                            "INNER JOIN MYBANK_APP_CUSTOMER c ON a.CUSTOMER_ID = c.CUSTOMER_ID\n" +
-//                            "WHERE c.CUSTOMER_ID = ? AND c.CUSTOMER_STATUS = 'Active' AND a.ACCOUNT_STATUS = 'Active'",
-//                    new Object[]{customerId}, new AccountsMapper());
-//        } catch (DataAccessException e) {
-//            logger.info(resourceBundle.getString("no.connection.established"));
-//            throw new ServerException(resourceBundle.getString("no.connection.established"));
-//        }
-//
-//        if (shortlisted.isEmpty()) {
-//            logger.info(resourceBundle.getString("no.active.accounts"));
-//            throw new AccountNotFoundException(resourceBundle.getString("no.active.accounts"));
-//        }
-//        return shortlisted;
-//    }
     public List<Accounts> filterByCustomerStatus(Long customerId) throws ServerException {
         List<Accounts> activeAccounts = new ArrayList<>();
         try {
@@ -63,7 +43,7 @@ public class AccountsServices implements AccountRepository {
 
         if (activeAccounts.isEmpty()) {
             logger.info(resourceBundle.getString("no.active.accounts"));
-            throw new AccountNotFoundException(resourceBundle.getString("no.active.accounts") + customerId);
+            throw new AccountNotFoundException(resourceBundle.getString("no.active.accounts"));
         }
 
         return activeAccounts;
@@ -125,7 +105,10 @@ public class AccountsServices implements AccountRepository {
                 throw new AccountNotFoundException(resourceBundle.getString("inactive.account"));
           } else if (result.equals("SQLERR-004")) {
                 logger.warn(resourceBundle.getString("no.data"));
-                throw new ServerException(resourceBundle.getString("no.data"));
+                throw new AccountNotFoundException(resourceBundle.getString("no.data"));
+            }else if (result.equals("SQLERR-005")) {
+                logger.warn(resourceBundle.getString("error.fetch"));
+                throw new ServerException(resourceBundle.getString("error.fetch"));
             }
         } catch (DataAccessException e) {
             logger.warn(resourceBundle.getString("data.error"));

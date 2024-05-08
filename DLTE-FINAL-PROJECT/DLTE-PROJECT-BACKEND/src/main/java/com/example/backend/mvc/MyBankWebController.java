@@ -40,11 +40,11 @@ public class MyBankWebController {
 
         @GetMapping("/view")
         public String view(){
-                return "viewAccounts";
+                return "viewaccounts";
         }
         @GetMapping("/update")
         public String update(){
-                return "updateAccounts";
+                return "updateaccounts";
         }
 
         @GetMapping("/error")
@@ -61,7 +61,7 @@ public class MyBankWebController {
                         MyBankCustomers customer = myBankCustomersService.findByUsername(name);
                         return customer.getCustomerName();
                 }catch (NullPointerException exception){
-                        return "Error: Customer Name not availbale";
+                        return bundle.getString("error.name");
                 }
         }
 }

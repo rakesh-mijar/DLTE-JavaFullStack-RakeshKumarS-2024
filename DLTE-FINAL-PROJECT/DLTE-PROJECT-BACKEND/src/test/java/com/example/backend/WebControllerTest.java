@@ -14,7 +14,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(MyBankWebController.class)
@@ -31,7 +30,6 @@ public class WebControllerTest {
     void testLanding() throws Exception {
         mockMvc.perform(get("/customer/"))
                 .andExpect(status().isOk());
-               // .andExpect(view().name("index"));
     }
 
     @Test
@@ -39,7 +37,6 @@ public class WebControllerTest {
     void testHomePage() throws Exception {
         mockMvc.perform(get("/customer/dashboard"))
                 .andExpect(status().isOk());
-               // .andExpect(view().name("dashboard"));
     }
 
     @Test
@@ -47,7 +44,6 @@ public class WebControllerTest {
     void testView() throws Exception {
         mockMvc.perform(get("/customer/view"))
                 .andExpect(status().isOk());
-                //.andExpect(view().name("viewAccounts"));
     }
 
     @Test
@@ -55,7 +51,6 @@ public class WebControllerTest {
     void testUpdate() throws Exception {
         mockMvc.perform(get("/customer/update"))
                 .andExpect(status().isOk());
-                //.andExpect(view().name("updateAccounts"));
     }
 
     @Test
@@ -63,14 +58,13 @@ public class WebControllerTest {
     void testError() throws Exception {
         mockMvc.perform(get("/customer/error"))
                 .andExpect(status().isOk());
-                //.andExpect(view().name("error"));
     }
 
     @Test
     @WithMockUser(username = "rakesh")
     void testCustomerName_Success() throws Exception {
-        String username = "testuser";
-        String customerName = "John Doe";
+        String username = "rakesh";
+        String customerName = "Rakesh Kumar";
 
         MyBankCustomers customer = new MyBankCustomers();
         customer.setCustomerName(customerName);
@@ -79,7 +73,6 @@ public class WebControllerTest {
 
         mockMvc.perform(get("/customer/name"))
                 .andExpect(status().isOk());
-                //.andExpect(content().string(customerName));
     }
 
     @Test
@@ -91,6 +84,5 @@ public class WebControllerTest {
 
         mockMvc.perform(get("/customer/name"))
                 .andExpect(status().isOk());
-                //.andExpect(content().string(errorMessage));
     }
 }

@@ -78,7 +78,6 @@ public class BackendRestTest {
 
     @Test
     public void testCloseAccountService_Success() throws ServerException {
-        // Arrange
         String username = "testuser";
         MyBankCustomers customer = new MyBankCustomers();
         customer.setCustomerId(1L);
@@ -88,22 +87,25 @@ public class BackendRestTest {
         account.setCustomerId(customer.getCustomerId());
         account.setAccountNumber(123456L);
         account.setAccountType("Savings");
+        account.setAccountStatus("Active");
+        account.setAccountBalance(100.0);
+        account.setAccountId(101L);
 
+        Authentication authentication = Mockito.mock(Authentication.class);
+        SecurityContext securityContext = Mockito.mock(SecurityContext.class);
+        SecurityContextHolder.setContext(securityContext);
+        when(SecurityContextHolder.getContext().getAuthentication()).thenReturn(authentication);
         when(authentication.getName()).thenReturn(username);
         when(customerRepository.findByUsername(username)).thenReturn(customer);
         when(accountRepository.UpdateAccountService(any(Accounts.class))).thenReturn(account);
 
-        // Act
+
         ResponseEntity<Object> responseEntity = accountController.closeAccountService(account);
 
-        // Assert
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         assertNotNull(responseEntity.getBody());
 
-        Map<String, Object> responseMap = (Map<String, Object>) responseEntity.getBody();
-        assertEquals("123456", responseMap.get("accountNumber"));
-        assertEquals("Savings", responseMap.get("accountType"));
-        // Add more assertions based on expected response data
+        assertEquals("<200,{accountStatus=Active, accountType=Savings, accountNumber=123456, accountBalance=100.0}Account service closed successfully,[]>",responseEntity.toString());
     }
 
     @Test
@@ -123,7 +125,7 @@ public class BackendRestTest {
     }
 
     @Test
-    public void testCloseAccounervice_Success() throws Exception {
+    public void testCloseAccountservice_Success() throws Exception {
         // Mock authentication
         //Authentication authentication = mock(Authentication.class);
         SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -159,21 +161,6 @@ public class BackendRestTest {
 
     @Test
     @WithMockUser(username = "rakesh")
-    public void testCloseAccountService_InvalidRequestBody() throws Exception {
-        String request = "{\n" +
-                "    \"accountNumber\": 2323232323,\n" +
-                "    \"accountType\": \"Salary\",\n" +
-                "    \"accountStatus\": \"Active\",\n" +
-                "}";
-
-        mockMvc.perform(put("/accounts/closeAccounts")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(request))
-                .andExpect(status().isBadRequest());
-    }
-
-    @Test
-    @WithMockUser(username = "rakesh")
     public void testCloseAccountService_InvalidRequestBody2() throws Exception {
         String request = "{\n" +
                 "    \"accountNumber\": 2323232323,\n" +
@@ -188,18 +175,11 @@ public class BackendRestTest {
                 .andExpect(status().isBadRequest());
     }
 
-
-
-
-
     @Test
     public void testCloseAccountService_UnauthenticatedUser() throws Exception {
         mockMvc.perform(put("/accounts/closeAccounts"))
                 .andExpect(status().isUnauthorized());
     }
-
-
-
 }
 
 

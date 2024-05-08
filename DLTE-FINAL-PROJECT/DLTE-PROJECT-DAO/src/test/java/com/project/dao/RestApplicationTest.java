@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 @ExtendWith(MockitoExtension.class)
-class DaoTest {
+class RestApplicationTest {
 
     @Mock
     private JdbcTemplate jdbcTemplate;
@@ -155,13 +155,13 @@ class DaoTest {
         accounts.setAccountBalance(1000.0);
 
         when(jdbcTemplate.call(any(CallableStatementCreator.class), anyList()))
-                .thenReturn(Collections.singletonMap("p_result", "SQLERR-004"));
+                .thenReturn(Collections.singletonMap("p_result", "SQLERR-005"));
 
         ServerException exception = assertThrows(ServerException.class, () -> {
             accountsServices.UpdateAccountService(accounts);
         });
 
-        assertEquals("No Data Found", exception.getMessage());
+        assertEquals("Error in fetching data", exception.getMessage());
     }
 
 
@@ -182,7 +182,7 @@ class DaoTest {
             accountsServices.UpdateAccountService(accounts);
         });
 
-        assertEquals("Database error check the account id again", exception.getMessage());
+        assertEquals("Database error check the details again", exception.getMessage());
     }
 
 

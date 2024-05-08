@@ -39,9 +39,7 @@ public class CustomersSucccessHandler extends SimpleUrlAuthenticationSuccessHand
         }else{
             logger.warn(resourceBundle.getString("max.reached"));
             //super.setDefaultTargetUrl("/login");
-           super.setDefaultTargetUrl("/customer/?error="+ new LockedException(resourceBundle.getString("account.suspended")).getMessage());
-        //resourceBundle.getString("no.customer"));
-
+           super.setDefaultTargetUrl("/customer/?errors="+ new LockedException(resourceBundle.getString("account.suspended")).getMessage());
         }
         super.onAuthenticationSuccess(request,response,authentication);
     }

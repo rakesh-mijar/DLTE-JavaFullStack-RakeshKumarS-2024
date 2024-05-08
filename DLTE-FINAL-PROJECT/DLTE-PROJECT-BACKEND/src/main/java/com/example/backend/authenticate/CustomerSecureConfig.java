@@ -48,7 +48,6 @@ public class CustomerSecureConfig{
     @Bean
     public CorsConfigurationSource corsConfigurationSource(){
         CorsConfiguration configuration=new CorsConfiguration();
-//        configuration.setAllowedOriginPatterns(Arrays.asList(resourceBundle.getString("ui.path")));
         configuration.setAllowedOriginPatterns(Arrays.asList("*"));
 
         configuration.addAllowedMethod("*");

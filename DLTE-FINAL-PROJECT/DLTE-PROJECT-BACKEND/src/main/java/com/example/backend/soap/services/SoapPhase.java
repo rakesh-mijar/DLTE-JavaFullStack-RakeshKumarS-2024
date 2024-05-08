@@ -15,6 +15,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -61,7 +62,6 @@ public class SoapPhase {
         
 
         try {
-            //if(myBankCustomers.getCustomerId()==filterByStatusRequest.getCustomerId()) {
             if (myBankCustomer != null && accountsServices != null) {
                 List<com.project.dao.entities.Accounts> fromDao = accountsServices.filterByCustomerStatus(myBankCustomer.getCustomerId());
 
@@ -80,25 +80,18 @@ public class SoapPhase {
                 filterByStatusResponse.setServiceStatus(serviceStatus);
                 filterByStatusResponse.getAccounts().addAll(actualAccounts);
             }else {
-                logger.warn("Null object detected: myBankCustomer or accountsServices");
+                logger.warn(resourceBundle.getString("null.account"));
                 serviceStatus.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-                serviceStatus.setMessage("Null object detected: myBankCustomer or accountsServices");
+                serviceStatus.setMessage(resourceBundle.getString("null.account"));
                 filterByStatusResponse.setServiceStatus(serviceStatus);
             }
-           // }
-//            else{
-//                logger.info("failure.fetch");
-//                serviceStatus.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-//                serviceStatus.setMessage(resourceBundle.getString("authorization.error"));
-//                filterByStatusResponse.setServiceStatus(serviceStatus);
-//            }
         }catch (AccountNotFoundException e) {
-            logger.warn("failure.fetch");
-            serviceStatus.setStatus(HttpServletResponse.SC_OK);//404
-            serviceStatus.setMessage(e.getMessage());
+            logger.warn(resourceBundle.getString("failure.fetch"));
+            serviceStatus.setStatus(HttpServletResponse.SC_OK);
+            serviceStatus.setMessage(resourceBundle.getString("account.error.two")+e.getMessage());
             filterByStatusResponse.setServiceStatus(serviceStatus);
         }catch (ServerException | SQLSyntaxErrorException e) {
-            logger.warn("failure.fetch");
+            logger.warn(resourceBundle.getString("failure.fetch"));
             serviceStatus.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);//500
             serviceStatus.setMessage(e.getMessage());
             filterByStatusResponse.setServiceStatus(serviceStatus);

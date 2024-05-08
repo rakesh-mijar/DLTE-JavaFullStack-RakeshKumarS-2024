@@ -6,19 +6,19 @@ import javax.validation.constraints.*;
 
 public class Accounts {
     private Long accountId;
-    @Range(min = 100000000000L, max = 999999999999L,message = "account.number.limit")
-    @NotNull(message="account.number.null")
-    @Digits(integer=12,fraction=0,message="account.number.limit")
+    @Range(min = 100000000000L, max = 999999999999L,message = "ERR001")
+    @NotNull(message="ERR002")
+    @Digits(integer=12,fraction=0,message="ERR001")
     private Long accountNumber;
     private  Long customerId;
-    @NotNull(message="account.type.null")
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "account.type.invalid")
+    @NotNull(message="ERR002")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "ERR003")
     private String accountType;
-    @NotNull(message="account.status.null")
-    @Pattern(regexp = "^(?i)(active|inactive)$", message = "account.status.invalid")
+    @NotNull(message="ERR002")
+    @Pattern(regexp = "^(?i)(active|inactive)$", message = "ERR004")
     private String accountStatus;
-    @NotNull(message="account.balance.null")
-    @Digits(integer=10,fraction=0,message="account.balance.limit")
+    @NotNull(message="ERR002")
+    @Digits(integer=10,fraction=0,message="ERR005")
     private  Double accountBalance;
 
     public Accounts(Long accountId, Long accountNumber, Long customerId, String accountType, String accountStatus, Double accountBalance) {
